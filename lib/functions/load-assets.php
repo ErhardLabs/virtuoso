@@ -25,6 +25,9 @@ function enqueue_assets() {
 	wp_enqueue_style( 'dashicons' );
 	wp_enqueue_script( CHILD_TEXT_DOMAIN . '-responsive-menu', CHILD_URL . '/assets/js/dist/responsive-menu.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
+
+	wp_enqueue_script( CHILD_TEXT_DOMAIN . '-nav-scroll', CHILD_URL . '/assets/js/dist/nav-scroll.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+
 //	$localized_script_args = array(
 //		'mainMenu' => __( 'Menu', CHILD_TEXT_DOMAIN ),
 //		'subMenu'  => __( 'Menu', CHILD_TEXT_DOMAIN ),
