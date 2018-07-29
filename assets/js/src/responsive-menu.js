@@ -48,14 +48,14 @@ jQuery( function ( $ ) {
   });
 
   function setupMenus() {
-    if ( window.innerWidth <= 768 ) {
+    if ( window.innerWidth <= 769 ) {
       $( '.nav-primary' ).addClass( 'mobile-navigation' );
       $( 'ul.menu-secondary > li' ).addClass( 'moved-item' ); // tag moved items so we can move them back
       $( 'ul.menu-secondary > li' ).appendTo( 'ul.menu-primary' );
       $( '.nav-secondary' ).hide();
     }
 
-    if ( window.innerWidth > 767 ) {
+    if ( window.innerWidth > 768 ) {
       $( '.nav-primary' ).removeClass( 'mobile-navigation mobile-navigation-open' );
       $('.responsive-menu-icon span').removeClass( 'ti-close' ).addClass('ti-menu');
       $( '.nav-primary .genesis-nav-menu, nav .sub-menu' ).removeAttr( 'style' );
