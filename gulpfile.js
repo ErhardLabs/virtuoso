@@ -8,14 +8,11 @@ const gulp = require('gulp'),
 
   // JS Processes
   babel = require('gulp-babel'),
-  source = require('vinyl-source-stream'),
   buffer = require('vinyl-buffer'),
   uglify = require('gulp-uglify'),
 
 
   // Sass/CSS processes
-  bourbon = require('bourbon').includePaths,
-  neat = require('bourbon-neat').includePaths,
   sass = require('gulp-sass'),
   postcss = require('gulp-postcss'),
   autoprefixer = require('autoprefixer'),
@@ -119,14 +116,13 @@ gulp.task('postcss', () => {
     .pipe(sourcemaps.init())
 
     .pipe(sass({
-      includePaths: [].concat(bourbon, neat),
       errLogToConsole: true,
       outputStyle: 'expanded' // Options: nested, expanded, compact, compressed
     }))
 
     .pipe(postcss([
       autoprefixer({
-        browsers: ['last 2 versions']
+        browsers: ['defaults']
       }),
       cssMQPacker({
         sort: true

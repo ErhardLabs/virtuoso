@@ -8,8 +8,6 @@
     "autoprefixer": "^6.7.6",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
-    "bourbon": "^4.2.6",
-    "bourbon-neat": "^3.0.0",
     "browser-sync": "^2.24.6",
     "css-mqpacker": "^5.0.1",
     "del": "^3.0.0",
@@ -29,7 +27,6 @@
     "restart": "^0.1.0",
     "sass-rem": "^1.2.2",
     "vinyl-buffer": "^1.0.1",
-    "vinyl-source-stream": "^2.0.0",
     "watchify": "^3.11.0"
   },
   "dependencies": {
