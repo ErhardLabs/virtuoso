@@ -18,8 +18,16 @@ namespace ErhardLabs\Virtuoso;
  * @return void
  */
 function unregister_menu_callbacks() {
+	global $project_config;
+
+	$project_config = get_project_settings_defaults();
+
 	remove_action( 'genesis_after_header', 'genesis_do_nav' );
-	add_action( 'genesis_header', 'genesis_do_nav', 11 );
+
+	if ( $project_config['header-design']['logo-left'] ) {
+		add_action( 'genesis_header', 'genesis_do_nav', 11 );
+	}
+
 	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 }
 
@@ -32,11 +40,11 @@ function unregister_menu_callbacks() {
  *
  * @return array
  */
-add_filter( 'genesis_attr_site-header', __NAMESPACE__ . '\set_header_defaults' );
-function set_header_defaults( $classes ) {
+add_filter( 'genesis_attr_site-header', __NAMESPACE__ . '\set_header_class' );
+function set_header_class( $classes ) {
+	global $project_config;
 
-	$config = get_project_settings_defaults();
-	if ( $config['header-design']['logo-left'] ) {
+	if ( $project_config['header-design']['logo-left'] ) {
 		$classes['class'] .= ' logo-left';
 	} else {
 		$classes['class'] .= ' logo-middle';

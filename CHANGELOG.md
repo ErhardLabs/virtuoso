@@ -1,7 +1,7 @@
 ## 1.0.5 @28.Jul.2018 
 - `get_configuration_parameters` grab the config file settings
 - `get_project_settings_defaults` get the settings for the particular project
-- `set_header_defaults` set the header design
+- `set_header_class` set the header design
 
 ## 1.0.4 @24.Jul.2018 
 - Include sexy popup if it's available in header.php
@@ -9,11 +9,11 @@
 - `add_menu_items` Add addition menu items to navigation
 - Added WooCommerce Theme Support
 
-## 1.0.3 @17.Feb.2017
+## 1.0.3
 
 - Changed the `setup_child_theme()` callback priority number to 15 to ensure that Genesis' setups run first before the child theme.
 
-## 1.0.2 @17.Oct.2016
+## 1.0.2
 
 - Fixed path for enqueuing `/assets/js/responsive-menu.js`
 
