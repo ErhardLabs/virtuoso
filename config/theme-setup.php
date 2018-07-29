@@ -34,6 +34,7 @@ return array(
 		),
 		'genesis-menus'               => array(
 			'primary' => __( 'Primary Navigation Menu', CHILD_TEXT_DOMAIN ),
+			'secondary' => __( 'Secondary Navigation Menu', CHILD_TEXT_DOMAIN ),
 			'footer'  => __( 'Footer Navigation Menu', CHILD_TEXT_DOMAIN ),
 		),
 //		'genesis-after-entry-widget-area' => null,

@@ -11,8 +11,23 @@ jQuery( function ( $ ) {
     $('.responsive-menu-icon span').toggleClass( 'ti-menu ti-close' );
 
     if ( $( '.nav-primary' ).hasClass( 'mobile-navigation-open' ) ) {
+
+      // Prevent Scrolling
+      $('html, body').css({
+        margin: 0,
+        height: '100%',
+        overflow: 'hidden'
+      });
+
       $( this ).next( '.nav-primary .genesis-nav-menu' ).fadeIn('slow');
     } else {
+
+      $('html, body').css({
+        margin: 0,
+        height: 'unset',
+        overflow: 'unset'
+      });
+
       $( this ).next( '.nav-primary .genesis-nav-menu' ).hide();
     }
 
@@ -41,7 +56,8 @@ jQuery( function ( $ ) {
     }
 
     if ( window.innerWidth > 767 ) {
-      $( '.nav-primary' ).removeClass( 'mobile-navigation' );
+      $( '.nav-primary' ).removeClass( 'mobile-navigation mobile-navigation-open' );
+      $('.responsive-menu-icon span').removeClass( 'ti-close' ).addClass('ti-menu');
       $( '.nav-primary .genesis-nav-menu, nav .sub-menu' ).removeAttr( 'style' );
       $( '.responsive-menu > .menu-item' ).removeClass( 'menu-open' );
       $( '.nav-secondary' ).show();
