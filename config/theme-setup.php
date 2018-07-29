@@ -44,7 +44,7 @@ return array(
 		'genesis-menus'                   => array(
 			'primary'   => __( 'Primary Navigation', CHILD_TEXT_DOMAIN ),
 			'secondary' => __( 'Secondary Navigation', CHILD_TEXT_DOMAIN ),
-			'tertiary' => __( 'Footer Navigation', CHILD_TEXT_DOMAIN )
+			'footer' => __( 'Footer Navigation', CHILD_TEXT_DOMAIN )
 		),
 		'woocommerce',
 //		'genesis-after-entry-widget-area' => null,
