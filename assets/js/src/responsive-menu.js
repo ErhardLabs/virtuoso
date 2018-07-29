@@ -11,8 +11,23 @@ jQuery( function ( $ ) {
     $('.responsive-menu-icon span').toggleClass( 'ti-menu ti-close' );
 
     if ( $( '.nav-primary' ).hasClass( 'mobile-navigation-open' ) ) {
+
+      // Prevent Scrolling
+      $('html, body').css({
+        margin: 0,
+        height: '100%',
+        overflow: 'hidden'
+      });
+
       $( this ).next( '.nav-primary .genesis-nav-menu' ).fadeIn('slow');
     } else {
+
+      $('html, body').css({
+        margin: 0,
+        height: 'unset',
+        overflow: 'unset'
+      });
+
       $( this ).next( '.nav-primary .genesis-nav-menu' ).hide();
     }
 
@@ -33,15 +48,16 @@ jQuery( function ( $ ) {
   });
 
   function setupMenus() {
-    if ( window.innerWidth <= 768 ) {
+    if ( window.innerWidth <= 769 ) {
       $( '.nav-primary' ).addClass( 'mobile-navigation' );
       $( 'ul.menu-secondary > li' ).addClass( 'moved-item' ); // tag moved items so we can move them back
       $( 'ul.menu-secondary > li' ).appendTo( 'ul.menu-primary' );
       $( '.nav-secondary' ).hide();
     }
 
-    if ( window.innerWidth > 767 ) {
-      $( '.nav-primary' ).removeClass( 'mobile-navigation' );
+    if ( window.innerWidth > 768 ) {
+      $( '.nav-primary' ).removeClass( 'mobile-navigation mobile-navigation-open' );
+      $('.responsive-menu-icon span').removeClass( 'ti-close' ).addClass('ti-menu');
       $( '.nav-primary .genesis-nav-menu, nav .sub-menu' ).removeAttr( 'style' );
       $( '.responsive-menu > .menu-item' ).removeClass( 'menu-open' );
       $( '.nav-secondary' ).show();

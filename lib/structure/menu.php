@@ -74,8 +74,8 @@ add_filter( 'wp_nav_menu_items', __NAMESPACE__ . '\add_menu_items', 10, 2 );
 function add_menu_items( $menu, $args ) {
 
 	if ( 'primary' === $args->theme_location ) {
-		$menu .= '<li class="menu-item menu-contact"><a href="#"><span class="ti-email"></span></a></li>';
-		$menu .= '<li class="menu-item menu-contact"><a href="#"><span class="ti-shopping-cart"></span></a></li>';
+		$menu .= '<li class="menu-item menu-email"><a href="#"><span class="ti-email"></span></a></li>';
+		$menu .= '<li class="menu-item menu-cart"><a href="#"><span class="ti-shopping-cart"></span></a></li>';
 	}
 
 	// 'secondary' navigation menu
@@ -83,8 +83,6 @@ function add_menu_items( $menu, $args ) {
 
 		if ( is_user_logged_in() ) {
 			// Add buddy press profile link if user is logged in
-
-			$menu .= '<li class="menu-item create logged-in"><a href="/fuzes/create">Create</a></li>';
 			$menu .= '<li class="menu-item user-image"><a href="/fuzes/all"><img src="' . get_avatar_url( get_current_user_id() ) . '"></a></li>';
 		} else {
 			$menu .= '<li class="menu-item create phoen-login-signup-popup-open"><a href="">Login</a></li>';
