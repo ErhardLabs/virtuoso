@@ -1,5 +1,7 @@
 ## 1.0.5 @28.Jul.2018 
 - `get_configuration_parameters` grab the config file settings
+- `get_project_settings_defaults` get the settings for the particular project
+- `set_header_defaults` set the header design
 
 ## 1.0.4 @24.Jul.2018 
 - Include sexy popup if it's available in header.php

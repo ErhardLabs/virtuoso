@@ -45,7 +45,9 @@ function enqueue_assets() {
 add_filter( 'stylesheet_uri', __NAMESPACE__ . '\replace_default_style_sheet', 10, 2 );
 function replace_default_style_sheet() {
 
-	if( get_site_url() == 'http://tylerpaulsonpictures.com' || get_site_url() == 'https://tylerpaulsonpictures.com'){
+	$config = get_project_settings_defaults();
+
+	if( get_site_url() == $config['URLS']['production'] ){
 		return CHILD_URL . '/style.min.css';
 	}
 	return CHILD_URL . '/style.css';

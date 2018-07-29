@@ -23,6 +23,28 @@ function unregister_menu_callbacks() {
 	remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 }
 
+/**
+ * Set the design of the header based on the theme configuration settings
+ *
+ * @since 1.0.5
+ *
+ * @param array
+ *
+ * @return array
+ */
+add_filter( 'genesis_attr_site-header', __NAMESPACE__ . '\set_header_defaults' );
+function set_header_defaults( $classes ) {
+
+	$config = get_project_settings_defaults();
+	if ( $config['header-design']['logo-left'] ) {
+		$classes['class'] .= ' logo-left';
+	} else {
+		$classes['class'] .= ' logo-middle';
+	}
+
+	return $classes;
+}
+
 add_filter( 'wp_nav_menu_args', __NAMESPACE__ . '\setup_secondary_menu_args' );
 /**
  * Reduce the secondary navigation menu to one level depth.

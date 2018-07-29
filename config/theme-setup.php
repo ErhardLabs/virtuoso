@@ -80,4 +80,22 @@ return array(
 			'crop'   => true,
 		),
 	),
+	//=============================================
+	// Project Settings
+	//=============================================
+	'project_settings' => array(
+		'URLS' => array(
+			'production'  => 'https://virtuoso.com',
+			'staging' => 'https://staging.virtuoso.com',
+			'local'   => 'https://virtuoso.test',
+		),
+		'header-design' => array(
+			'logo-left' => true,
+			'logo-middle' => false,
+		),
+		'sticky-contact' => array (
+			'align-left' => false,
+			'alight-right' => true,
+		)
+	),
 );
