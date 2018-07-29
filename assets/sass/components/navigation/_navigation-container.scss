@@ -1,0 +1,49 @@
+/* ## Navigation Container
+--------------------------------------------- */
+
+.navigation-container {
+
+  @include media-query('med'){
+    margin-bottom: 17px;
+    margin-top: -87px;
+    min-height: 70px;
+  }
+
+  .create {
+    background: #686868;
+    border-radius: 5px;
+
+    a{
+      padding: 10px 20px;
+    }
+
+    &.logged-in a::after {
+      content: '\2304';
+      color: $white;
+      margin-left: 5px;
+      font-size: 16px;
+    }
+  }
+
+  .user-image {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-left: 20px;
+
+    @include media-query('sm'){
+      margin-bottom: 20px;
+    }
+
+    a {
+      padding: 0;
+    }
+
+    img{
+      border-radius: 50%;
+      width: 100%;
+    }
+
+  }
+
+}

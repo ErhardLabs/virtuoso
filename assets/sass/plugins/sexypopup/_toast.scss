@@ -1,0 +1,23 @@
+.popup_toast {
+  position: absolute;
+  text-align: center;
+  display: none;
+  box-shadow: 0px 3px 13px #555;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  width: 200px;
+  margin: 0 auto;
+  color: #3c3c3c;
+  margin-bottom: 2em;
+  border-radius: 8px;
+  z-index: 101;
+
+  p{
+    margin: 0 !important;
+    font-family: $font-family--roboto;
+
+  }
+
+}

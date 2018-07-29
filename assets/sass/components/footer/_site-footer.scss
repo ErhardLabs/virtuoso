@@ -1,0 +1,14 @@
+/* # Site Footer
+---------------------------------------------------------------------------------------------------- */
+
+.site-footer {
+  background-color: $siteFooter--background-color;
+  @include rem( font-size, $site-footer--font-size );
+  line-height: 1;
+  padding: 4rem 0;
+  text-align: center;
+
+  p {
+    margin-bottom: 0;
+  }
+}

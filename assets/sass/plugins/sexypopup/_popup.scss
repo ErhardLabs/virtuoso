@@ -1,0 +1,71 @@
+.sexy_popup_container{
+  background:rgba(0,0,0,.4);
+  display:none;
+  height:100%;
+  position:fixed;
+  text-align:center;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  width:100%;
+  z-index:100;
+
+  .helper{
+    display:inline-block;
+    height:100%;
+    vertical-align:middle;
+  }
+
+  .link_wrapper {
+    background-color: #fff;
+    box-shadow: 0px 5px 30px #555;
+    display: inline-block;
+    height: auto;
+    max-width: 400px;
+    min-height: 100px;
+    vertical-align: middle;
+    width: 60%;
+    position: relative;
+    border-radius: 8px;
+    padding: 15px 5%;
+  }
+
+  .copy_link {
+    padding: 5px 15px;
+
+  }
+
+  .share_buttons {
+    padding-top: 1em;
+  }
+
+  .popup_text {
+    margin: 0;
+    color: #000;
+  }
+
+  .popupCloseButton {
+    color: $gray;
+    border-radius: 50px;
+    cursor: pointer;
+    display: inline-block;
+    position: absolute;
+    top: -23px;
+    right: -6px;
+    font-size: 40px;
+
+    i:hover {
+      color: $gray--medium;
+    }
+  }
+
+}
+
+#popup_text {
+  font-family: $font-family--roboto-light;
+}
+
+#popup_link {
+  font-family: $font-family--roboto;
+}

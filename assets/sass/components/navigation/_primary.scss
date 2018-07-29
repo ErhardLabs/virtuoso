@@ -1,0 +1,32 @@
+/* ## Primary Navigation
+--------------------------------------------- */
+
+.nav-primary {
+  background-color: $primary-nav--background-color;
+  //float: left;
+  //width: 100%;
+
+  .menu-primary {
+    display: none;
+  }
+
+  > .wrap {
+    position: relative;
+    padding: 0;
+  }
+
+  @include media-query('med'){
+    //text-align: right;
+    //width: 40%;
+    margin-bottom: 0;
+
+    .menu-primary {
+      display: block;
+      float: right;
+      width: auto;
+      clear: none;
+      text-align: center;
+    }
+
+  }
+}

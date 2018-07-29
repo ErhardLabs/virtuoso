@@ -1,0 +1,31 @@
+/* ## Responsive Menu Icon
+--------------------------------------------- */
+
+.responsive-menu-icon {
+  text-align: center;
+  float: right;
+  position: absolute;
+  right: 0;
+  top: 52%;
+  height: 16px;
+  margin-top: -16px;
+
+  //&::before {
+  //  color: $black;
+  //  content: "\f333";
+  //  display: inline-block;
+  //  font: normal 20px/1 'dashicons';
+  //  margin: 0 auto;
+  //  padding: 10px;
+  //
+  //
+  //}
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  @include media-query('med'){
+    display: none;
+  }
+}

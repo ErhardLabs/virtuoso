@@ -1,0 +1,30 @@
+//
+// Site Title
+//========================
+
+.site-title {
+  @include rem( font-size, $site-title--font-size );
+  font-weight: 700;
+  line-height: 1.2;
+
+  a {
+    background: url('assets/images/logo.png') no-repeat 0 0;
+    background-size: 94px;
+    float: left;
+    height: 80px;
+  }
+
+  > a {
+    display: block;
+    //height: 50px;
+    text-indent: -9999px;
+  }
+
+  a,
+  a:hover,
+  a:focus {
+    color: $site-title--link-color;
+    text-decoration: none;
+  }
+
+}
