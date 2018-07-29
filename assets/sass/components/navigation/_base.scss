@@ -56,7 +56,7 @@
 
     a {
       background-color: $submenu--link-background-color;
-      border-bottom: 1px solid $submenu--border-color;
+      //border-bottom: 1px solid $submenu--border-color;
       border-top: 0;
       @include rem( font-size, $submenu--font-size );
       padding: 20px;

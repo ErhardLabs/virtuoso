@@ -19,14 +19,15 @@ add_action( 'genesis_setup', __NAMESPACE__ . '\setup_child_theme', 15 );
  * @return void
  */
 function setup_child_theme() {
+
+	$config = get_configuration_parameters();
+
 	load_child_theme_textdomain( CHILD_TEXT_DOMAIN, apply_filters( 'child_theme_textdomain', CHILD_THEME_DIR . '/languages', CHILD_TEXT_DOMAIN ) );
 
 	unregister_genesis_callbacks();
-	unregister_header_callbacks();
-	unregister_sidebar_callbacks();
 
-	adds_theme_supports();
-	adds_new_image_sizes();
+	adds_theme_supports(  $config['add_theme_support'] );
+	adds_new_image_sizes( $config['theme_image_sizes']  );
 }
 
 /**
@@ -38,6 +39,8 @@ function setup_child_theme() {
  */
 function unregister_genesis_callbacks() {
 	unregister_menu_callbacks();
+	unregister_header_callbacks();
+	unregister_sidebar_callbacks();
 }
 
 /**
@@ -45,44 +48,11 @@ function unregister_genesis_callbacks() {
  *
  * @since 1.0.0
  *
+ * @param array
+ *
  * @return void
  */
-function adds_theme_supports() {
-	$config = array(
-		'html5'                           => array(
-			'caption',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'search-form'
-		),
-		'genesis-accessibility'           => array(
-			'404-page',
-			'drop-down-menu',
-			'headings',
-			'rems',
-			'search-form',
-			'skip-links'
-		),
-		'genesis-responsive-viewport'     => null,
-		'custom-header'                   => array(
-			'width'           => 600,
-			'height'          => 160,
-			'header-selector' => '.site-title a',
-			'header-text'     => false,
-			'flex-height'     => true,
-		),
-		'custom-background'               => null,
-		'genesis-after-entry-widget-area' => null,
-		'genesis-footer-widgets'          => 3,
-		'genesis-menus'                   => array(
-			'primary'   => __( 'Primary Navigation', CHILD_TEXT_DOMAIN ),
-			'secondary' => __( 'Secondary Navigation', CHILD_TEXT_DOMAIN ),
-			'tertiary' => __( 'Footer Navigation', CHILD_TEXT_DOMAIN )
-		),
-		'woocommerce',
-	);
-
+function adds_theme_supports( array $config ) {
 	foreach ( $config as $feature => $args ) {
 		add_theme_support( $feature, $args );
 	}
@@ -93,16 +63,11 @@ function adds_theme_supports() {
  *
  * @since 1.0.0
  *
+ * @param array
+ *
  * @return void
  */
-function adds_new_image_sizes() {
-	$config = array(
-		'featured-image' => array(
-			'width'  => 720,
-			'height' => 400,
-			'crop'   => true,
-		),
-	);
+function adds_new_image_sizes( array $config ) {
 
 	foreach( $config as $name => $args ) {
 		$crop = array_key_exists( 'crop', $args ) ? $args['crop'] : false;
@@ -155,12 +120,5 @@ function update_theme_settings_defaults() {
  * @return array
  */
 function get_theme_settings_defaults() {
-	return array(
-		'blog_cat_num'              => 12,
-		'content_archive'           => 'full',
-		'content_archive_limit'     => 0,
-		'content_archive_thumbnail' => 0,
-		'posts_nav'                 => 'numeric',
-		'site_layout'               => 'full-width-content',
-	);
+	return get_configuration_parameters( 'theme_default_settings' );
 }

@@ -32,9 +32,9 @@ function load_nonadmin_files() {
 		'functions/formatting.php',
 		'functions/load-assets.php',
 		'functions/markup.php',
-//		'structure/archive.php',
+		'structure/archive.php',
 		'structure/comments.php',
-//		'structure/footer.php',
+		'structure/footer.php',
 		'structure/header.php',
 		'structure/menu.php',
 		'structure/post.php',
@@ -76,6 +76,36 @@ function load_specified_files( array $filenames, $folder_root = '' ) {
 
 	foreach( $filenames as $filename ) {
 		include( $folder_root . $filename );
+	}
+}
+
+/**
+ * Get runtime configuration parameters.
+ *
+ * @since 1.0.5
+ *
+ * @param string $key Configuration parameter key
+ * @param string $config_file (Optional) Configuration filename without the extension.
+ *
+ * @return array|null|mixed
+ */
+function get_configuration_parameters( $key = '', $config_file = 'theme-setup' ) {
+	static $config = array();
+
+	if ( ! $config_file ) {
+		return;
+	}
+
+	if ( ! array_key_exists( $config_file, $config ) ) {
+		$config[ $config_file ] = (array) include( CHILD_THEME_DIR . '/config/' . $config_file . '.php' );
+	}
+
+	if ( ! $key ) {
+		return $config[ $config_file ];
+	}
+
+	if ( array_key_exists( $key, $config[ $config_file ] ) ) {
+		return $config[ $config_file ][ $key ];
 	}
 }
 

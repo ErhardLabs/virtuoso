@@ -20,14 +20,27 @@
     z-index: 99999;
     ul {
       margin: 30px auto;
-    }
 
-    ul.sub-menu {
-      margin: 0 auto;
+      &.sub-menu {
+        margin: 0 auto;
+
+        li {
+          &::after {
+            content: "";
+            border-top: 2px solid;
+            width: 2em;
+            display: block;
+            margin: .2em auto;
+          }
+        }
+
+      }
+
     }
 
     li {
       display: block;
+
     }
 
     .responsive-menu-icon {

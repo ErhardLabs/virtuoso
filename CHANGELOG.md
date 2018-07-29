@@ -1,4 +1,5 @@
 ## 1.0.5 @28.Jul.2018 
+- `get_configuration_parameters` grab the config file settings
 
 ## 1.0.4 @24.Jul.2018 
 - Include sexy popup if it's available in header.php
