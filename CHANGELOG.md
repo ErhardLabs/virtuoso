@@ -1,3 +1,5 @@
+## 1.0.5 @28.Jul.2018 
+
 ## 1.0.4 @24.Jul.2018 
 - Include sexy popup if it's available in header.php
 - Enqueue .min file if the environment is Production and not a Development (e.g localhost, staging)

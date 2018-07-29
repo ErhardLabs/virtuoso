@@ -161,6 +161,6 @@ function get_theme_settings_defaults() {
 		'content_archive_limit'     => 0,
 		'content_archive_thumbnail' => 0,
 		'posts_nav'                 => 'numeric',
-		'site_layout'               => 'content-sidebar',
+		'site_layout'               => 'full-width-content',
 	);
 }
