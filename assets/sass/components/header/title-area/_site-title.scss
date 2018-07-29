@@ -9,9 +9,10 @@
 
   a {
     background: url('assets/images/logo.svg') no-repeat 0 0;
-    background-size: 94px;
+    background-size: cover;
     float: left;
     height: 80px;
+    width: 100px;
   }
 
   > a {
