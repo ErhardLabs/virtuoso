@@ -5,10 +5,9 @@
   background-color: $primary-nav--background-color;
   //float: left;
   //width: 100%;
+  clear: both;
 
-  .menu-primary {
-    display: none;
-  }
+  display: none;
 
   > .wrap {
     position: relative;
@@ -19,9 +18,10 @@
     //text-align: right;
     //width: 40%;
     margin-bottom: 0;
+    display: block;
+    clear: none;
 
     .menu-primary {
-      display: block;
       float: right;
       width: auto;
       clear: none;

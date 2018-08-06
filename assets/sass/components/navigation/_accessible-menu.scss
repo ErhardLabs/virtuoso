@@ -18,7 +18,7 @@
   display: none;
   visibility: hidden;
 
-  @media only screen and (max-width: 1023px) {
+  @media only screen and (max-width: #{map-get($breakpoints, 'med')}) {
     border-width: 0;
     background-color: $nav-toggle--background-color;
     color: $nav-toggle--color;
@@ -30,7 +30,7 @@
   }
 }
 
-@media only screen and (max-width: 1023px) {
+@media only screen and (max-width: #{map-get($breakpoints, 'med')}) {
   .sub-menu-toggle {
     float: right;
     padding: 10px;
@@ -59,7 +59,12 @@
     position: relative;
     right: 0;
     z-index: 1000;
-    width: 100%;
+    //width: 100%;
+
+    padding-right: 0;
+    height: 80px;
+    float: right;
+    width: auto;
 
     .site-header & {
       border: 0;

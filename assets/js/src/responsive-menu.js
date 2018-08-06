@@ -44,7 +44,7 @@
 
   };
 
-  $( '.nav-primary .genesis-nav-menu' ).addClass( 'responsive-menu' ).before( '<div class="responsive-menu-icon"><span class="ti-menu"></span></div>' );
+  //$( '.nav-primary .genesis-nav-menu' ).addClass( 'responsive-menu' ).before( '<div class="responsive-menu-icon"><span class="ti-menu"></span></div>' );
 
 
   $( '.responsive-menu-icon' ).unbind().click( function (e) {
