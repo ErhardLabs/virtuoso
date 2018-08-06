@@ -28,11 +28,11 @@ function enqueue_assets() {
 
 	wp_enqueue_script( CHILD_TEXT_DOMAIN . '-nav-scroll', CHILD_URL . '/assets/js/dist/nav-scroll.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
-//	$localized_script_args = array(
-//		'mainMenu' => __( 'Menu', CHILD_TEXT_DOMAIN ),
-//		'subMenu'  => __( 'Menu', CHILD_TEXT_DOMAIN ),
-//	);
-//	wp_localize_script( CHILD_TEXT_DOMAIN . '-responsive-menu', 'developersL10n', $localized_script_args );
+	$localized_script_args = array(
+		'mainMenu' => __( 'Menu', CHILD_TEXT_DOMAIN ),
+		'subMenu'  => __( 'Menu', CHILD_TEXT_DOMAIN ),
+	);
+	wp_localize_script( CHILD_TEXT_DOMAIN . '-responsive-menu', 'virtuosoMenu', $localized_script_args );
 }
 
 /**
