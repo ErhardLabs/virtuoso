@@ -30,6 +30,24 @@ function setup_child_theme() {
 	adds_new_image_sizes( $config['theme_image_sizes']  );
 }
 
+
+//add_action('upload_mimes', __NAMESPACE__ . '\add_file_types_to_uploads');
+/**
+ * Support other file types to upload
+ *
+ * @since 1.0.5
+ *
+ * @param array $file_types
+ *
+ * @return array $file_types
+ */
+function add_file_types_to_uploads($file_types){
+	$new_filetypes = array();
+	$new_filetypes['svg'] = 'image/svg+xml';
+	$file_types = array_merge($file_types, $new_filetypes );
+	return $file_types;
+}
+
 /**
  * Unregister Genesis callbacks.  We do this here because the child theme loads before Genesis.
  *
@@ -53,6 +71,7 @@ function unregister_genesis_callbacks() {
  * @return void
  */
 function adds_theme_supports( array $config ) {
+
 	foreach ( $config as $feature => $args ) {
 		add_theme_support( $feature, $args );
 	}
@@ -103,6 +122,7 @@ add_action( 'after_switch_theme', __NAMESPACE__ . '\update_theme_settings_defaul
  * @return void
  */
 function update_theme_settings_defaults() {
+
 	$config = get_theme_settings_defaults();
 
 	if ( function_exists( 'genesis_update_settings' ) ) {

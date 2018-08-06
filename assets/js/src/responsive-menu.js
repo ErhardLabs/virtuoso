@@ -44,47 +44,6 @@
 
   };
 
-  //$( '.nav-primary .genesis-nav-menu' ).addClass( 'responsive-menu' ).before( '<div class="responsive-menu-icon"><span class="ti-menu"></span></div>' );
-
-
-  $( '.responsive-menu-icon' ).unbind().click( function (e) {
-
-    e.preventDefault();
-
-    $( '.nav-primary' ).toggleClass( 'mobile-navigation-open' );
-    $('.responsive-menu-icon span').toggleClass( 'ti-menu ti-close' );
-
-    if ( $( '.nav-primary' ).hasClass( 'mobile-navigation-open' ) ) {
-
-      // Prevent Scrolling
-      $('html, body').css({
-        margin: 0,
-        height: '100%',
-        overflow: 'hidden'
-      });
-
-      $( this ).next( '.nav-primary .genesis-nav-menu' ).fadeIn('slow');
-    } else {
-
-      $('html, body').css({
-        margin: 0,
-        height: 'unset',
-        overflow: 'unset'
-      });
-
-      $( this ).next( '.nav-primary .genesis-nav-menu' ).hide();
-    }
-
-  });
-
-  $( '.responsive-menu' ).on( 'click', '.menu-item', function ( event ) {
-    if ( event.target !== this )
-      return;
-    $( this ).find( '.sub-menu:first' ).slideToggle( function () {
-      $( this ).parent().toggleClass( 'menu-open' );
-    });
-  });
-
   function _setupMenus() {
     if ( window.innerWidth <= 769 ) {
       $( '.nav-primary' ).addClass( 'mobile-navigation' );
@@ -236,6 +195,28 @@
     if ( typeof virtuoso.params !== 'undefined' ) {
       virtuoso.init();
     }
+
+    $( '.menu-toggle' ).click( function (e) {
+
+      if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
+
+        //Prevent Scrolling
+        $('html, body').css({
+          margin: 0,
+          height: '100%',
+          overflow: 'hidden'
+        });
+
+      } else {
+
+        $('html, body').css({
+          margin: 0,
+          height: 'unset',
+          overflow: 'unset'
+        });
+      }
+
+    });
 
   });
 

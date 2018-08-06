@@ -90,6 +90,7 @@ function load_specified_files( array $filenames, $folder_root = '' ) {
  * @return array|null|mixed
  */
 function get_configuration_parameters( $key = '', $config_file = 'theme-setup' ) {
+
 	static $config = array();
 
 	if ( ! $config_file ) {

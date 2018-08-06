@@ -62,7 +62,7 @@
     //width: 100%;
 
     padding-right: 0;
-    height: 80px;
+    height: $site-title--min-height;
     float: right;
     width: auto;
 
@@ -83,7 +83,7 @@
     }
 
     &.activated:before {
-      content: '\e64b';
+      content: '\e646';
       font-family: 'themify';
     }
 
