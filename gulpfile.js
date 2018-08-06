@@ -197,9 +197,10 @@ gulp.task('sync', (done) => {
  * Individual tasks.
  */
 
-gulp.task('clean', (done) => {
-  del(['dist']);
-  done();
+gulp.task('clean', () => {
+  return del([
+    theme_jsDIST
+  ], {force:true} );
 });
 
 /********************
@@ -208,11 +209,11 @@ gulp.task('clean', (done) => {
 
 
 gulp.task('watch:code', () => {
-  gulp.watch('./assets/sass/**/*.scss', gulp.series('styles'));
-  gulp.watch('./assets/js/src/*.js', gulp.series('js') );
-  // gulp.watch('./**/*.php').on('change', function() {
-  //   reload();
-  // });
+  gulp.watch('./assets/sass/**/*.scss', gulp.series('styles', reload));
+  gulp.watch('./assets/js/src/*.js', gulp.series('js', reload) );
+  gulp.watch('./**/*.php').on('change', function() {
+    reload();
+  });
 
 });
 
@@ -222,5 +223,5 @@ function reload() {
 
 gulp.task('build', gulp.series('clean', 'styles', 'js' ) );
 
-gulp.task('watch', gulp.series('build', 'watch:code') );
+gulp.task('watch', gulp.series('build', 'sync', 'watch:code') );
 
