@@ -72,9 +72,20 @@
 
     &:before,
     &.activated:before {
-      margin-right: 10px;
+      //margin-right: 10px;
       text-rendering: auto;
       transform: translate(0, 0);
     }
+
+    &:before {
+      content: '\e68e';
+      font-family: 'themify';
+    }
+
+    &.activated:before {
+      content: '\e64b';
+      font-family: 'themify';
+    }
+
   }
 }

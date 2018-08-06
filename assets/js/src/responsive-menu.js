@@ -36,7 +36,7 @@
     }
     $( 'nav .sub-menu' ).before( toggleButtons.submenu ); // add the submenu nav buttons
     $( '.' + mainMenuButtonClass ).each( _addClassID );
-    $( '.' + mainMenuButtonClass ).addClass('dashicons-before dashicons-menu');
+    // $( '.' + mainMenuButtonClass ).addClass('dashicons-before dashicons-menu');
     $( '.' + subMenuButtonClass ).addClass('dashicons-before dashicons-arrow-down');
     $( window ).on( 'resize.virtuoso', _doResize ).triggerHandler( 'resize.virtuoso' );
     $( '.' + mainMenuButtonClass ).on( 'click.virtuoso-mainbutton', _mainmenuToggle );
@@ -231,7 +231,7 @@
     // run test on resize of the window
     $( window ).resize( _setupMenus() );
 
-    virtuoso.params = typeof virtuosoMenu === 'undefined' ? '' : virtuosoMenu;
+    virtuoso.params = typeof virtuosoLocalizedArgs === 'undefined' ? '' : virtuosoLocalizedArgs;
 
     if ( typeof virtuoso.params !== 'undefined' ) {
       virtuoso.init();
