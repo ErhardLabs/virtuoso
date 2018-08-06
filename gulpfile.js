@@ -217,8 +217,9 @@ gulp.task('watch:code', () => {
 
 });
 
-function reload() {
+function reload(done) {
   browserSync.reload({ stream: false});
+  done();
 }
 
 gulp.task('build', gulp.series('clean', 'styles', 'js' ) );
