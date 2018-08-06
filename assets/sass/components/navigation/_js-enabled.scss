@@ -42,6 +42,19 @@
       }
     }
 
+    .nav-primary {
+      position: absolute;
+      height: 100vh;
+      width: 100vw;
+      left: 0;
+      padding: 10rem 3rem;
+      z-index: 2;
+
+      @include media-query('med') {
+        padding-right: 0;
+      }
+    }
+
     .nav-primary, .site-header {
       .genesis-nav-menu .menu-item {
         display: block;
