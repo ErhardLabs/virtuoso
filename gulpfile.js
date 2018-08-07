@@ -209,11 +209,11 @@ gulp.task('clean', () => {
 
 
 gulp.task('watch:code', () => {
-  gulp.watch('./assets/sass/**/*.scss', gulp.series('styles', reload));
-  gulp.watch('./assets/js/src/*.js', gulp.series('js', reload) );
-  gulp.watch('./**/*.php').on('change', function() {
-    reload();
-  });
+  gulp.watch('./assets/sass/**/*.scss', gulp.series('styles'));
+  gulp.watch('./assets/js/src/*.js', gulp.series('js') );
+  // gulp.watch('./**/*.php').on('change', function() {
+  //   reload();
+  // });
 
 });
 
@@ -224,5 +224,5 @@ function reload(done) {
 
 gulp.task('build', gulp.series('clean', 'styles', 'js' ) );
 
-gulp.task('watch', gulp.series('build', 'sync', 'watch:code') );
+gulp.task('watch', gulp.series('build', 'watch:code') );
 

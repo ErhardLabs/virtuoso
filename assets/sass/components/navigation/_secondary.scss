@@ -5,10 +5,12 @@
 .nav-secondary {
   background-color: $secondary-nav--background-color;
 
-  @include media-query('med'){
-    float: right;
-    width: 40%;
-    margin-bottom: 0;
+  .logo-middle & {
+    @include media-query('med'){
+      float: right;
+      width: 40%;
+      margin-bottom: 0;
+    }
   }
 
 }
