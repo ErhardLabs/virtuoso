@@ -20,7 +20,7 @@ namespace ErhardLabs\Virtuoso;
 function unregister_menu_callbacks() {
 	global $project_config;
 
-	$project_config = get_project_settings_defaults();
+	$project_config = get_theme_settings_defaults();
 
 	remove_action( 'genesis_after_header', 'genesis_do_nav' );
 

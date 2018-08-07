@@ -30,7 +30,6 @@ function setup_child_theme() {
 	adds_new_image_sizes( $config['theme_image_sizes']  );
 }
 
-
 //add_action('upload_mimes', __NAMESPACE__ . '\add_file_types_to_uploads');
 /**
  * Support other file types to upload
@@ -142,18 +141,3 @@ function update_theme_settings_defaults() {
 function get_theme_settings_defaults() {
 	return get_configuration_parameters( 'theme_default_settings' );
 }
-
-
-/**
- * Get the project settings defaults.
- *
- * @since 1.0.5
- *
- * @return array
- */
-function get_project_settings_defaults() {
-	return get_configuration_parameters( 'project_settings' );
-}
-
-
-
