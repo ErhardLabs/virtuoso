@@ -77,8 +77,8 @@ return array(
 			'local'   => 'https://virtuoso.test',
 		),
 		'header-design' => array(
-			'logo-left' => false,
-			'logo-middle' => true,
+			'logo-left' => true,
+			'logo-middle' => false,
 		),
 		'sticky-contact' => array (
 			'align-left' => false,

@@ -63,7 +63,6 @@ function handleErrors() {
  * Theme JS es6 Task Handler
  */
 gulp.task('themeJS', (done) => {
-
   dir.readFiles(theme_jsSRC, {
       match: /.js$/,
       exclude: /^.+\.min\.js$/ // exclude minified files

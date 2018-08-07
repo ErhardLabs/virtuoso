@@ -3,19 +3,19 @@
 
 .nav-primary {
   background-color: $primary-nav--background-color;
+  display: none;
 
   .logo-middle & {
     float: left;
     width: 100%;
 
-    .menu-primary {
-      display: none;
-    }
+    //.menu-primary {
+    //  display: none;
+    //}
   }
 
   .logo-left & {
     clear: both;
-    display: none;
   }
 
   > .wrap {
@@ -26,18 +26,14 @@
   @include media-query('med'){
 
     margin-bottom: 0;
+    display: block;
 
     .logo-middle & {
       text-align: right;
       width: 40%;
-
-      .menu-primary {
-        display: block;
-      }
       
     }
     .logo-left & {
-      display: block;
       clear: none;
 
       .menu-primary {
