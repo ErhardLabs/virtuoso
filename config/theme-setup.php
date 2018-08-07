@@ -69,21 +69,8 @@ return array(
 		'content_archive_thumbnail' => 0,
 		'posts_nav'                 => 'numeric',
 		'site_layout'               => 'full-width-content',
-	),
-	//=============================================
-	// Image Sizes
-	//=============================================
-	'theme_image_sizes' => array(
-		'featured-image' => array(
-			'width'  => 720,
-			'height' => 400,
-			'crop'   => true,
-		),
-	),
-	//=============================================
-	// Project Settings
-	//=============================================
-	'project_settings' => array(
+
+		// Virtuoso Settings
 		'URLS' => array(
 			'production'  => 'https://virtuoso.com',
 			'staging' => 'https://staging.virtuoso.com',
@@ -97,5 +84,16 @@ return array(
 			'align-left' => false,
 			'alight-right' => true,
 		)
+	),
+	//=============================================
+	// Image Sizes
+	//=============================================
+	'theme_image_sizes' => array(
+		'featured-image' => array(
+			'width'  => 720,
+			'height' => 400,
+			'crop'   => true,
+		),
+
 	),
 );

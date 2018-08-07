@@ -28,6 +28,7 @@ function init_constants() {
 
 	define( 'CHILD_THEME_DIR', get_stylesheet_directory() );
 	define( 'CHILD_CONFIG_DIR', CHILD_THEME_DIR . '/config/' );
+
 }
 
 init_constants();

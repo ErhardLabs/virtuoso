@@ -46,7 +46,7 @@ function enqueue_assets() {
 add_filter( 'stylesheet_uri', __NAMESPACE__ . '\replace_default_style_sheet', 10, 2 );
 function replace_default_style_sheet() {
 
-	$config = get_project_settings_defaults();
+	$config = get_theme_settings_defaults();
 
 	if( get_site_url() == $config['URLS']['production'] ){
 		return CHILD_URL . '/style.min.css';

@@ -2,7 +2,8 @@
 - `get_configuration_parameters` grab the config file settings
 - `get_project_settings_defaults` get the settings for the particular project
 - `set_header_class` set the header design
-- `add_file_types_to_uploads` add custom file types you'd like to upload
+- `add_file_types_to_uploads` add custom file types you'd like to upload. Not enabled by default
+- `setup_database_settings` Setup the Virtuoso theme settings if they haven't been created
 
 ## 1.0.4 @24.Jul.2018 
 - Include sexy popup if it's available in header.php
