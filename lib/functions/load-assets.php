@@ -37,7 +37,7 @@ function enqueue_assets() {
 }
 
 /**
- * Enqueue .min file if the environment is Production and not a Development (e.g localhost, staging)
+ * Enqueue .min files if the environment is Production and not a Development (e.g localhost, staging)
  *
  * @since 1.0.4
  *

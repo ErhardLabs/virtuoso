@@ -10,6 +10,10 @@
  */
 namespace ErhardLabs\Virtuoso;
 
+global $project_config;
+
+$project_config = get_theme_settings_defaults();
+
 /**
  * Unregister menu callbacks.
  *
@@ -18,7 +22,6 @@ namespace ErhardLabs\Virtuoso;
  * @return void
  */
 function unregister_menu_callbacks() {
-	global $project_config;
 
 	$project_config = get_theme_settings_defaults();
 
@@ -40,8 +43,11 @@ function unregister_menu_callbacks() {
  *
  * @return array
  */
-add_filter( 'genesis_attr_site-header', __NAMESPACE__ . '\set_header_class' );
+
+add_filter( 'body_class', __NAMESPACE__ . '\set_header_class' );
+
 function set_header_class( $classes ) {
+
 	global $project_config;
 
 	if ( $project_config['header-design']['logo-left'] ) {
@@ -74,9 +80,9 @@ function setup_secondary_menu_args( array $args ) {
 	return $args;
 }
 
-// TODO dynamically render menu based on what the config file says for the header layout
-
-//add_filter( 'genesis_after_header', __NAMESPACE__ . '\render_header_menu' );
+if ( $project_config['header-design']['logo-middle'] ) {
+	add_filter( 'genesis_after_header', __NAMESPACE__ . '\render_header_menu' );
+}
 /**
  * Wrap the primary and secondary navigation together
  *

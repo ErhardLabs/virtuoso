@@ -59,12 +59,17 @@
     position: relative;
     right: 0;
     z-index: 1000;
-    //width: 100%;
 
-    padding-right: 0;
+    .logo-middle &{
+      width: 100%;
+    }
+
+    .logo-left &{
+      width: auto;
+      padding-right: 0;
+    }
     height: $site-title--min-height;
     float: right;
-    width: auto;
 
     .site-header & {
       border: 0;

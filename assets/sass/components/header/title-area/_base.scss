@@ -3,12 +3,19 @@
 //==============================
 
 .title-area {
-  //display: inline-block;
-  //height: $site-title--min-height;
-  //margin-right: auto;
-  //margin-left: auto;
-  //idth: $title-area--width;
-  float: left;
-  position: relative;
-  z-index: 1;
+
+  .logo-middle & {
+    display: inline-block;
+    height: $site-title--min-height;
+    margin-right: auto;
+    margin-left: auto;
+    width: $title-area--width;
+  }
+
+  .logo-left & {
+    float: left;
+    position: relative;
+    z-index: 1;
+  }
+
 }

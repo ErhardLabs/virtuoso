@@ -36,7 +36,6 @@
     }
     $( 'nav .sub-menu' ).before( toggleButtons.submenu ); // add the submenu nav buttons
     $( '.' + mainMenuButtonClass ).each( _addClassID );
-    // $( '.' + mainMenuButtonClass ).addClass('dashicons-before dashicons-menu');
     $( '.' + subMenuButtonClass ).addClass('dashicons-before dashicons-arrow-down');
     $( window ).on( 'resize.virtuoso', _doResize ).triggerHandler( 'resize.virtuoso' );
     $( '.' + mainMenuButtonClass ).on( 'click.virtuoso-mainbutton', _mainmenuToggle );
@@ -44,19 +43,18 @@
 
   };
 
-  function _setupMenus() {
+  function _combineMenus() {
+
+    console.log('yo');
     if ( window.innerWidth <= 769 ) {
-      $( '.nav-primary' ).addClass( 'mobile-navigation' );
+
       $( 'ul.menu-secondary > li' ).addClass( 'moved-item' ); // tag moved items so we can move them back
       $( 'ul.menu-secondary > li' ).appendTo( 'ul.menu-primary' );
       $( '.nav-secondary' ).hide();
     }
 
     if ( window.innerWidth > 768 ) {
-      $( '.nav-primary' ).removeClass( 'mobile-navigation mobile-navigation-open' );
-      $('.responsive-menu-icon span').removeClass( 'ti-close' ).addClass('ti-menu');
       $( '.nav-primary .genesis-nav-menu, nav .sub-menu' ).removeAttr( 'style' );
-      $( '.responsive-menu > .menu-item' ).removeClass( 'menu-open' );
       $( '.nav-secondary' ).show();
       $( 'ul.menu-primary > li.moved-item' ).appendTo( 'ul.menu-secondary' );
     }
@@ -185,10 +183,12 @@
   $(document).ready(function () {
 
     // run test on initial page load
-    _setupMenus();
+    _combineMenus();
 
     // run test on resize of the window
-    $( window ).resize( _setupMenus() );
+    $( window ).resize( function () {
+        _combineMenus();
+    });
 
     virtuoso.params = typeof virtuosoLocalizedArgs === 'undefined' ? '' : virtuosoLocalizedArgs;
 

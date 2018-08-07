@@ -3,11 +3,20 @@
 
 .nav-primary {
   background-color: $primary-nav--background-color;
-  //float: left;
-  //width: 100%;
-  clear: both;
-
   display: none;
+
+  .logo-middle & {
+    float: left;
+    width: 100%;
+
+    //.menu-primary {
+    //  display: none;
+    //}
+  }
+
+  .logo-left & {
+    clear: both;
+  }
 
   > .wrap {
     position: relative;
@@ -15,17 +24,25 @@
   }
 
   @include media-query('med'){
-    //text-align: right;
-    //width: 40%;
+
     margin-bottom: 0;
     display: block;
-    clear: none;
 
-    .menu-primary {
-      float: right;
-      width: auto;
+    .logo-middle & {
+      text-align: right;
+      width: 40%;
+      
+    }
+    .logo-left & {
       clear: none;
-      text-align: center;
+
+      .menu-primary {
+        float: right;
+        width: auto;
+        clear: none;
+        text-align: center;
+      }
+      
     }
 
   }
