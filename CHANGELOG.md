@@ -1,10 +1,14 @@
-## 1.0.5 @28.Jul.2018 
+## [Unreleased]
+
+## 1.0.5 @2018-07-28 
+### Added
 - `get_configuration_parameters` grab the config file settings
 - `get_project_settings_defaults` get the settings for the particular project
 - `set_header_class` set the header design by adding a class to the body tag
 - `add_file_types_to_uploads` add custom file types you'd like to upload. Not enabled by default
 
-## 1.0.4 @24.Jul.2018 
+## 1.0.4 @2018-07-24
+### Added
 - Include sexy popup if it's available in header.php
 - Enqueue .min file if the environment is Production and not a Development (e.g localhost, staging)
 - `add_menu_items` Add addition menu items to navigation

@@ -44,8 +44,6 @@
   };
 
   function _combineMenus() {
-
-    console.log('yo');
     if ( window.innerWidth <= 769 ) {
 
       $( 'ul.menu-secondary > li' ).addClass( 'moved-item' ); // tag moved items so we can move them back
