@@ -43,6 +43,12 @@
 
   };
 
+  /**
+   * Combine Primary and Secondary menus into one menu for mobile responsiveness
+   *
+   * @return void
+   *
+   */
   function _combineMenus() {
     if ( window.innerWidth <= 769 ) {
 
@@ -58,7 +64,13 @@
     }
   }
 
-  // add nav class and ID to related button
+
+  /**
+   * Add nav class and ID to related button
+   *
+   * @return void
+   *
+   */
   function _addClassID() {
     let $this = $( this ),
       nav   = $this.next( 'nav' ),
@@ -69,7 +81,12 @@
     $this.attr( 'id', 'mobile-' + $( nav ).attr( id ) );
   }
 
-  // Change Skiplinks and Superfish
+  /**
+   * Change Skiplinks and Superfish
+   *
+   * @return void
+   *
+   */
   function _doResize() {
     let buttons = $( 'button[id^="mobile-"]' ).attr( 'id' );
     if ( typeof buttons === 'undefined' ) {
@@ -81,7 +98,10 @@
   }
 
   /**
-   * action to happen when the main menu button is clicked
+   * Action when the main menu button is clicked
+   *
+   * @return void
+   *
    */
   function _mainmenuToggle() {
     let $this = $( this );
@@ -92,7 +112,10 @@
   }
 
   /**
-   * action for submenu toggles
+   * Action for submenu toggles
+   *
+   * @return void
+   *
    */
   function _submenuToggle() {
 
@@ -110,6 +133,9 @@
 
   /**
    * activate/deactivate superfish
+   *
+   * @return void
+   *
    */
   function _superfishToggle( buttons ) {
     if ( typeof $( '.js-superfish' ).superfish !== 'function' ) {
@@ -127,7 +153,10 @@
   }
 
   /**
-   * modify skip links to match mobile buttons
+   * Modify skip links to match mobile buttons
+   *
+   * @return void
+   *
    */
   function _changeSkipLink( buttons ) {
     let startLink = 'genesis-nav',
@@ -143,6 +172,12 @@
     });
   }
 
+  /**
+   * Should the submenus be closed?
+   *
+   * @return void
+   *
+   */
   function _maybeClose( buttons ) {
     if ( 'none' !== _getDisplayValue( buttons ) ) {
       return;
@@ -156,9 +191,12 @@
   }
 
   /**
-   * generic function to get the display value of an element
+   * Get the display value of an element
+   *
    * @param  {id} $id ID to check
+   *
    * @return {string}     CSS value of display property
+   *
    */
   function _getDisplayValue( $id ) {
     let element = document.getElementById( $id ),
@@ -168,9 +206,12 @@
 
   /**
    * Toggle aria attributes
+   *
    * @param  {button} $this     passed through
    * @param  {aria-xx} attribute aria attribute to toggle
+   *
    * @return {bool}           from _ariaReturn
+   *
    */
   function _toggleAria( $this, attribute ) {
     $this.attr( attribute, function( index, value ) {
@@ -180,10 +221,10 @@
 
   $(document).ready(function () {
 
-    // run test on initial page load
+    // Check to see if menus should be combined on initial page load
     _combineMenus();
 
-    // run test on resize of the window
+    // Check to see if menus should be combined on resize of the window
     $( window ).resize( function () {
         _combineMenus();
     });
@@ -198,7 +239,7 @@
 
       if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
 
-        //Prevent Scrolling
+        //Prevent page scrolling if mobile menu is activated
         $('html, body').css({
           margin: 0,
           height: '100%',
