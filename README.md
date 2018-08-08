@@ -16,7 +16,7 @@ This theme includes the following features:
 This child theme is dependent upon the following:
 
 1. The [Genesis](http://www.studiopress.com/features/) theming framework from [StudioPress](http://www.studiopress.com).
-2. NPM
+2. [Node](https://nodejs.org/en/)
 
 ## Instructions to install:
 
