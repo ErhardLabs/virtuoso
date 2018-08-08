@@ -31,15 +31,23 @@ To make styling changes, navigate to `assets/sass`.  There you will find each of
 
 The variables are setup for our color scheme.  Therefore, you want to use the variables found in the `utilities/variables/_variables.scss` file.
 
-## Gulp and Sass
+## JS Files
+
+Navigate to `assets/js/src`.  This is where you will add new JS files or make changes to existing files.
+
+`assets/js/dist` is where the compiled JS will go. This is also the directory you will point to when enqueueing JS files.
+
+## Gulp Sass and JS
 
 When you are actively making styling changes, you need to convert the Sass files into a compressed CSS file.  The first step is to make sure that you have all of the node modules installed, i.e. that are defined in the `package.json` file.  To install, you will need npm and node installed in your machine.
 
 Once you've ran through the install instructions, you'll have access to several Gulp commands.
  
- `gulp watch` - changes to the Sass files and have them compiled into native CSS.  And changes to the JS files will be compiled with [Babel](https://babeljs.io/), linted, and minified. 
- `gulp styles` - changes to the Sass files and have them compiled into native CSS
- `gulp js` - changes to the JS files will be compiled with [Babel](https://babeljs.io/), linted, and minified. 
+ `gulp watch` - changes to the Sass files and have them compiled into native CSS.  And changes to the JS files will be compiled with [Babel](https://babeljs.io/), linted, and minified.
+ 
+ `gulp styles` - changes to the Sass files and have them compiled into native CSS. Only runs once.
+ 
+ `gulp js` - changes to the JS files will be compiled with [Babel](https://babeljs.io/), linted, and minified. Only runs once.
 
 ## Contributions
 
