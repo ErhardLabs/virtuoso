@@ -48,7 +48,7 @@
       width: 100vw;
       left: 0;
       padding: 10rem 3rem;
-      z-index: 9999;
+      z-index: 9998;
 
       @include media-query('med') {
         padding-right: 0;
