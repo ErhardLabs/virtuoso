@@ -155,8 +155,9 @@ function add_cart_count_to_navigation( $items, $args ) {
 			$items .= '<li class="' . esc_attr( $css_class ) . '">';
 			$items .= '<a class="cart-contents" href="' . get_permalink( wc_get_page_id( 'cart' ) ) . '">';
 			$items .= '<span class="cart-icon ti-shopping-cart">';
-
 			$items .= get_cart_count_menu_item();
+
+			//$items .= '<span class="menu-cart-count">' . get_cart_count_menu_item() . '</span>';
 
 			$items .= '</span>';
 
@@ -202,6 +203,8 @@ function get_cart_count_menu_item( $woocommerce = true ) {
 			$items .= '<span class="menu-cart-count">' . WC()->cart->get_cart_contents_count() . '</span>';
 		} else if ( WC()->cart->get_cart_contents_count() >= 10 ) {
 			$items .= '<span class="menu-cart-count">9+</span>';
+		} else if ( WC()->cart->get_cart_contents_count() == 0 ){
+			$items .= '<span class="menu-cart-count menu-cart-empty"></span>';
 		}
 	} else {
 
@@ -209,6 +212,8 @@ function get_cart_count_menu_item( $woocommerce = true ) {
 			$items .= '<span class="menu-cart-count">' . edd_get_cart_quantity() . '</span>';
 		} else if ( edd_get_cart_quantity() >= 10 ) {
 			$items .= '<span class="menu-cart-count">9+</span>';
+		} else if ( edd_get_cart_quantity() == 0 ){
+			$items .= '<span class="menu-cart-count menu-cart-empty"></span>';
 		}
 	}
 
@@ -227,7 +232,11 @@ add_filter( 'woocommerce_add_to_cart_fragments', __NAMESPACE__ . '\my_woocommerc
  */
 function my_woocommerce_add_to_cart_fragments( $fragments ) {
 	// Add our fragment
+	ob_start();
 
-	$fragments['span.menu-cart-count'] .= get_cart_count_menu_item();
+	echo get_cart_count_menu_item();
+
+	$fragments['span.menu-cart-count'] = ob_get_clean();
+
 	return $fragments;
 }
