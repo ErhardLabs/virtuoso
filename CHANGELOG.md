@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+
+## 1.0.6 @2018-08-08 
+### Added
+- `add_cart_count_to_navigation` Adds the WooCommerce or Easy Digital Downloads cart icons/items to the top_nav menu area as the last item.
+- `get_cart_count_menu_item` Get the cart count menu item
+- `my_woocommerce_add_to_cart_fragments` Updates the Top Navigation WooCommerce cart link contents when an item is added via AJAX.
+
 ## 1.0.5 @2018-07-28 
 ### Added
 - `get_configuration_parameters` grab the config file settings

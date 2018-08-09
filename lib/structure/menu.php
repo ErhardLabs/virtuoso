@@ -111,7 +111,7 @@ function add_menu_items( $menu, $args ) {
 
 	if ( 'primary' === $args->theme_location ) {
 		$menu .= '<li class="menu-item menu-email"><a href="#"><span class="ti-email"></span></a></li>';
-		$menu .= '<li class="menu-item menu-cart"><a href="#"><span class="ti-shopping-cart"></span></a></li>';
+
 	}
 
 	// 'secondary' navigation menu
@@ -126,4 +126,108 @@ function add_menu_items( $menu, $args ) {
 	}
 
 	return $menu;
+}
+
+
+add_filter( 'wp_nav_menu_items', __NAMESPACE__ . '\add_cart_count_to_navigation', 10, 2 );
+/**
+ * Adds the WooCommerce or Easy Digital Downloads cart icons/items to the top_nav menu area as the last item.
+ *
+ *
+ * @since 1.0.6
+ *
+ * @param string $items
+ * @param $args
+ *
+ * @return string $items
+ */
+function add_cart_count_to_navigation( $items, $args ) {
+	// Top Navigation Area Only
+	global $project_config;
+
+	if ( property_exists( $args, 'theme_location' ) && ( ($args->theme_location === 'primary' && $project_config['header-design']['logo-left'] ) || ( $args->theme_location === 'secondary' && $project_config['header-design']['logo-middle'] ) ) ) {
+		// WooCommerce
+		if ( class_exists( 'woocommerce' ) ) {
+			$css_class = 'menu-item menu-item-type-cart menu-item-type-woocommerce-cart';
+			// Is this the cart page?
+			if ( is_cart() )
+				$css_class .= ' current-menu-item';
+			$items .= '<li class="' . esc_attr( $css_class ) . '">';
+			$items .= '<a class="cart-contents" href="' . get_permalink( wc_get_page_id( 'cart' ) ) . '">';
+			$items .= '<span class="cart-icon ti-shopping-cart">';
+
+			$items .= get_cart_count_menu_item();
+
+			$items .= '</span>';
+
+			$items .= '</a>';
+			$items .= '</li>';
+
+		}
+		// Easy Digital Downloads
+		else if ( class_exists( 'Easy_Digital_Downloads' ) ) {
+			$css_class = 'menu-item menu-item-type-cart menu-item-type-edd-cart';
+			// Is this the cart page?
+			if ( edd_is_checkout() )
+				$css_class .= ' current-menu-item';
+			$items .= '<li class="' . esc_attr( $css_class ) . '">';
+			$items .= '<a class="cart-contents" href="' . esc_url( edd_get_checkout_uri() ) . '">';
+			$items .= '<span class="ti-shopping-cart"></span>';
+			$items .=  get_cart_count_menu_item( false );
+			$items .= '</a>';
+			$items .= '</li>';
+		}
+	}
+	return $items;
+}
+
+
+/**
+ * Get the cart count menu item
+ *
+ *
+ * @since 1.0.6
+ *
+ * @param bool $woocommerce
+ *
+ * @return string $items
+ */
+function get_cart_count_menu_item( $woocommerce = true ) {
+
+	$items = '';
+
+	if ( $woocommerce ) {
+
+		if ( WC()->cart->get_cart_contents_count() > 0 && WC()->cart->get_cart_contents_count() < 10 ) {
+			$items .= '<span class="menu-cart-count">' . WC()->cart->get_cart_contents_count() . '</span>';
+		} else if ( WC()->cart->get_cart_contents_count() >= 10 ) {
+			$items .= '<span class="menu-cart-count">9+</span>';
+		}
+	} else {
+
+		if ( edd_get_cart_quantity() > 0 && edd_get_cart_quantity() < 10 ) {
+			$items .= '<span class="menu-cart-count">' . edd_get_cart_quantity() . '</span>';
+		} else if ( edd_get_cart_quantity() >= 10 ) {
+			$items .= '<span class="menu-cart-count">9+</span>';
+		}
+	}
+
+	return $items;
+}
+
+add_filter( 'woocommerce_add_to_cart_fragments', __NAMESPACE__ . '\my_woocommerce_add_to_cart_fragments', 10, 1 );
+/**
+ * Updates the Top Navigation WooCommerce cart link contents when an item is added via AJAX.
+ *
+ * @since 1.0.6
+ *
+ * @param array $fragments
+ *
+ * @return array $fragments
+ */
+function my_woocommerce_add_to_cart_fragments( $fragments ) {
+	// Add our fragment
+
+	$fragments['span.menu-cart-count'] .= get_cart_count_menu_item();
+	return $fragments;
 }
