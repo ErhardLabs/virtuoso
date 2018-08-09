@@ -184,7 +184,7 @@ gulp.task('sync', (done) => {
   //Initialize Browsersync with a PHP server.
   connect.server({}, function () {
     browserSync.init(files, {
-      proxy: 'https://virtuoso.test/'
+      proxy: 'https://tylerpaulsonpictures.test/'
     });
 
   });
