@@ -51,9 +51,9 @@ function set_header_class( $classes ) {
 	global $project_config;
 
 	if ( $project_config['header-design']['logo-left'] ) {
-		$classes['class'] .= ' logo-left';
+		$classes[] .= ' logo-left';
 	} else {
-		$classes['class'] .= ' logo-middle';
+		$classes[] .= ' logo-middle';
 	}
 
 	return $classes;
