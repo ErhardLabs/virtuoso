@@ -20,8 +20,7 @@
     "lint:scripts": "cross-env eslint './assets/js/*.js'",
     "i18n": "npm run i18n:textdomain && npm run i18n:pot",
     "i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
-    "i18n:pot": "npx wpi18n makepot",
-    "rename": "theme-claim"
+    "i18n:pot": "npx wpi18n makepot"
   },
   "devDependencies": {
     "babel-core": "^6.26.3",
@@ -41,8 +40,7 @@
     "postcss-preset-env": "^5.3.0",
     "rimraf": "^2.6.2",
     "stylelint": "^9.4.0",
-    "stylelint-config-wordpress": "^13.0.0",
-    "theme-claim": "^0.1.2"
+    "stylelint-config-wordpress": "^13.0.0"
   },
   "dependencies": {
     "component-install": "^1.0.1"
