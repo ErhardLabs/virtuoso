@@ -21,7 +21,6 @@ add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_assets' );
 function enqueue_assets() {
 
 	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Roboto:300,400,900', array(), CHILD_THEME_VERSION );
-	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-styles', CHILD_URL . '/dist/styles/style.css', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-ion-icons', 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( 'dashicons' );
 	wp_enqueue_script( CHILD_TEXT_DOMAIN . '-app', CHILD_URL . '/dist/js/app.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
@@ -35,20 +34,15 @@ function enqueue_assets() {
 }
 
 /**
- * Enqueue .min files if the environment is Production and not a Development (e.g localhost, staging)
+ * Enqueue the style sheet in the dist folder
  *
- * @since 1.0.4
+ * @since 1.0.7
  *
  * @return string
  */
-//add_filter( 'stylesheet_uri', __NAMESPACE__ . '\replace_default_style_sheet', 10, 2 );
+add_filter( 'stylesheet_uri', __NAMESPACE__ . '\replace_default_style_sheet', 10, 2 );
 function replace_default_style_sheet() {
 
-	$config = get_theme_settings_defaults();
-
-	if( get_site_url() == $config['URLS']['production'] ){
-		return CHILD_URL . '/style.min.css';
-	}
-	return CHILD_URL . '/style.css';
+	return CHILD_URL . '/dist/styles/style.css';
 
 }
