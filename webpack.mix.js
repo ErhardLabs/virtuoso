@@ -1,5 +1,11 @@
 let mix = require('laravel-mix');
 
+/*
+ * Sets the development path to assets. By default, this is the `/resources`
+ * folder in the theme.
+ */
+const devPath  = 'assets';
+
 mix.setPublicPath( 'dist' );
 
 /*
@@ -38,7 +44,7 @@ mix.version();
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
 
-mix.js('assets/js/app.js', 'js');
+mix.js(`${devPath}/js/app.js`, 'js');
 
 
 /*
@@ -57,7 +63,7 @@ let sassConfig = {
   indentWidth : 1
 };
 
-mix.sass( 'assets/sass/style.scss', 'styles', sassConfig );
+mix.sass( `${devPath}/sass/style.scss`, 'styles', sassConfig );
 
 
 /*

@@ -5,6 +5,8 @@
 - Gulp
 ### Added
 - webpack support
+### Changed
+- enqueue only the style sheet in the dist folder
 
 ## 1.0.6 @2018-08-08 
 ### Added
