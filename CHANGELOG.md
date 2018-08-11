@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## 1.0.7 @2018-08-10 
+### Removed
+- Gulp
+### Added
+- webpack support
 
 ## 1.0.6 @2018-08-08 
 ### Added
