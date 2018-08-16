@@ -22,8 +22,14 @@ function enqueue_assets() {
 
 	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Roboto:300,400,900', array(), CHILD_THEME_VERSION );
 	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-ion-icons', 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array(), CHILD_THEME_VERSION );
+
+	wp_enqueue_script( CHILD_TEXT_DOMAIN . '-waypoints', CHILD_URL . '/dist/js/jquery.waypoints.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+
+	wp_enqueue_style( CHILD_TEXT_DOMAIN . '-animate', CHILD_URL . '/dist/styles/animate.min.css' );
+
 	wp_enqueue_style( 'dashicons' );
 	wp_enqueue_script( CHILD_TEXT_DOMAIN . '-app', CHILD_URL . '/dist/js/app.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+
 
 
 	$localized_script_args = array(

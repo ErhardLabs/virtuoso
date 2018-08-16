@@ -3,6 +3,7 @@ phpunit.xml
 .travis.yml
 /bin
 tests/mocks/env/
+virtuoso.pot
 
 
 # Sass cache
@@ -11,6 +12,7 @@ tests/mocks/env/
 # Development files
 /node_modules
 /assets/vendor/
+*.map
 
 .idea/
 
