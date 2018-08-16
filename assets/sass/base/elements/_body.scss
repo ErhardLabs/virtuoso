@@ -12,13 +12,10 @@ body {
   font-weight: 400;
   line-height: $base--line-height;
   margin: 0;
+  opacity: 0;
 
-  /* Chrome fix */
-  //> div {
-  //  font-size: $base__div--font-size;
-  //
-  //   @include media( $breakpoint__screen-size--small ) {
-  //    font-size: $base__div--font-size--small-screen;
-  //  }
-  //}
+  &.body-loaded {
+    opacity: 1;
+    transition: 0.7s opacity;
+  }
 }
