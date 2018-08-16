@@ -1,4 +1,4 @@
-<?php
+b<?php
 /**
  * File autoloader
  *
@@ -40,6 +40,7 @@ function load_nonadmin_files() {
 		'structure/post.php',
 		'structure/sidebar.php',
 		'components/customizer/customizer.php',
+    'components/widgets.php',
 	);
 
 	load_specified_files( $filenames );

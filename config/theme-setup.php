@@ -42,9 +42,9 @@ return array(
 		'genesis-after-entry-widget-area' => null,
 		'genesis-footer-widgets'          => 3,
 		'genesis-menus'                   => array(
-			'primary'   => __( 'Primary Navigation', CHILD_TEXT_DOMAIN ),
-			'secondary' => __( 'Secondary Navigation', CHILD_TEXT_DOMAIN ),
-			'footer' => __( 'Footer Navigation', CHILD_TEXT_DOMAIN )
+			'primary'   => __( 'Primary Navigation', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+			'secondary' => __( 'Secondary Navigation', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+			'footer' => __( 'Footer Navigation', CHILD_TEXT_DOMAIN, 'virtuoso' )
 		),
 		'woocommerce',
 //		'genesis-after-entry-widget-area' => null,

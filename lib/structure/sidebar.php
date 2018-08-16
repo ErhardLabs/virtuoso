@@ -20,3 +20,4 @@ namespace ErhardLabs\Virtuoso;
 function unregister_sidebar_callbacks() {
 	remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
 }
+

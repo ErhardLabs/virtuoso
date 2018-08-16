@@ -27,8 +27,8 @@ function enqueue_assets() {
 
 
 	$localized_script_args = array(
-		'mainMenu' => __( '', CHILD_TEXT_DOMAIN ),
-		'subMenu'  => __( 'Menu', CHILD_TEXT_DOMAIN ),
+		'mainMenu' => __( '', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+		'subMenu'  => __( 'Menu', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 	);
 	wp_localize_script( CHILD_TEXT_DOMAIN . '-app', 'virtuosoLocalizedArgs', $localized_script_args );
 }
