@@ -3,6 +3,8 @@ import Animation from './Animation.js';
 
 $(document).ready(function () {
 
+  $('body').addClass('body-loaded');
+
 // Array of elements to animate
   const animationsElements = [
     {className: '.post', animation: 'wp-fadeInUp', delay: 'wp-delay-1'},
