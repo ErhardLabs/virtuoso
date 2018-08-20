@@ -9,6 +9,15 @@ const devPath  = 'assets';
 mix.setPublicPath( 'dist' );
 
 /*
+ * Copy node modules we want in our project
+ *
+ * @link https://laravel.com/docs/5.6/mix#copying-files-and-directories
+ */
+
+mix.copy('node_modules/animate.css/animate.min.css', 'dist/styles/animate.min.css');
+mix.copy('node_modules/waypoints/lib/jquery.waypoints.min.js', 'dist/js/jquery.waypoints.min.js');
+
+/*
  * Set Laravel Mix options.
  *
  * @link https://laravel.com/docs/5.6/mix#postcss
@@ -36,7 +45,6 @@ mix.sourceMaps();
  * @link https://laravel.com/docs/5.6/mix#versioning-and-cache-busting
  */
 mix.version();
-
 
 /*
  * Compile JavaScript.
@@ -71,11 +79,11 @@ mix.sass( `${devPath}/sass/style.scss`, 'styles', sassConfig );
  *
  * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
  */
-mix.browserSync( {
-  proxy : 'https://virtuoso.test',
-  port  : 8080,
-  files : [
-    '**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2,js,css}',
-    `/lib/**/*.php`
-  ]
-} );
+// mix.browserSync( {
+//   proxy : 'https://tylerpaulsonpictures.test',
+//   port  : 8080,
+//   files : [
+//     '**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2,js,css}',
+//     `/lib/**/*.php`
+//   ]
+// } );

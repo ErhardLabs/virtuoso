@@ -1,3 +1,13 @@
+/* # Sexy Animations
+---------------------------------------------------------------------------------------------------- */
+.wp-animation {
+	opacity: 0;
+}
+
+.wp-animation.animated {
+	opacity: 1;
+}
+
 /* ## Icons
 --------------------------------------------- */
 @font-face {
@@ -1701,7 +1711,13 @@ body {
 	font-weight: 400;
 	line-height: 1.612;
 	margin: 0;
-	/* Chrome fix */
+	opacity: 0;
+}
+
+body.body-loaded {
+	opacity: 1;
+	-webkit-transition: 0.7s opacity;
+	transition: 0.7s opacity;
 }
 
 a,
