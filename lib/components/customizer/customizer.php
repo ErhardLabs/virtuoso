@@ -25,6 +25,17 @@ function register_with_customizer() {
 
 	global $wp_customize;
 
+
+  $wp_customize->add_section('slide-out-sidebar', array(
+      'title'      => __('Slide-Out Sidebar', CHILD_TEXT_DOMAIN),
+      'priority'   => 1,
+  ) );
+
+
+
+
+
+
 	$wp_customize->add_setting(
 		$prefix . '_link_color',
 		array(
@@ -66,5 +77,30 @@ function register_with_customizer() {
 			)
 		)
 	);
+
+
+
+
+
+//  $wp_customize->add_setting(
+//      $prefix . '_slide_out_sidebar',
+//      array(
+////          'default'           => get_default_accent_color(),
+////          'sanitize_callback' => 'sanitize_hex_color',
+//      )
+//  );
+//
+//  $wp_customize->add_control(
+//      new WP_Customize_Color_Control(
+//          $wp_customize,
+//          $prefix . '_slide_out_sidebar',
+//          array(
+//              'description' => __( 'Change the default color for button hovers.', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+//              'label'       => __( 'Slide-Out Sidebar', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+//              'section'     => 'slide-out-sidebar',
+//              'settings'    => $prefix . '_accent_color',
+//          )
+//      )
+//  );
 
 }

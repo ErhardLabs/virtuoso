@@ -3,10 +3,10 @@
   /* ///////////////////////////////
 
 
-Primary styles for the input boxes
+  Primary styles for the input boxes
 
 
-////////////////////////////////*/
+  ////////////////////////////////*/
 
   input,
   textarea {
@@ -33,15 +33,10 @@ Primary styles for the input boxes
   /* ///////////////////////////////
 
 
-Animate the placeholders on focus
+  Animate the placeholders on focus
 
 
-////////////////////////////////*/
-
-  /*input::-webkit-input-placeholder {*/
-  /*-webkit-transition: all 0.3s ease-in-out !important;*/
-  /*transition: all 0.3s ease-in-out !important;*/
-  /*}*/
+  ////////////////////////////////*/
 
   input[type=text]:focus::-webkit-input-placeholder,
   input[type=email]:focus::-webkit-input-placeholder,

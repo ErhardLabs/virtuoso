@@ -39,7 +39,7 @@ function display_slide_out_sidebar() {
       </section>
 
       <section id="loading">
-        <img src="<?php echo SEXY_WOOCHECKOUT_URL . '/assets/img/loading.gif';?>"/>
+        <img src="<?php echo get_stylesheet_directory_uri() . '/assets/images/loading.gif';?>"/>
       </section>
 
       <?php dynamic_sidebar('slider'); ?>

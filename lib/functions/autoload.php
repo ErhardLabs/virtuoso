@@ -29,10 +29,18 @@ function load_nonadmin_files() {
 		'setup.php',
 		'components/customizer/css-handler.php',
 		'components/customizer/helpers.php',
+    'components/customizer/customizer.php',
+      'components/customizer/class.virtuoso-customizer.php',
+
 		'functions/formatting.php',
 		'functions/load-assets.php',
-		'functions/markup.php',
-		'structure/archive.php',
+    'functions/markup.php',
+
+    'functions/woocommerce/ajax.php',
+    'functions/woocommerce/customizations.php',
+    'functions/woocommerce/form-fields.php',
+
+    'structure/archive.php',
 		'structure/comments.php',
 		'structure/footer.php',
 		'structure/header.php',
@@ -54,7 +62,6 @@ add_action( 'admin_init', __NAMESPACE__ . '\load_admin_files' );
  */
 function load_admin_files() {
 	$filenames = array(
-      'components/customizer/customizer.php',
 //      'components/widgets/class.virtuoso-widgets.php',
 	);
 
@@ -73,7 +80,7 @@ add_action( 'widgets_init', __NAMESPACE__ . '\load_widget_areas' );
 function load_widget_areas() {
 
   register_sidebar( array(
-      'name' => __( 'Slide-Out Sidebar', 'slide-out-sidebar' ),
+      'name' => __( 'Slide-Out Sidebar', 'virtuoso' ),
       'id' => 'slider',
       'description' => __( '', '' ),
       'before_widget' => '<section id="%1$s" class="widget %2$s">',
