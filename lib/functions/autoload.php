@@ -1,4 +1,4 @@
-b<?php
+<?php
 /**
  * File autoloader
  *
@@ -39,14 +39,12 @@ function load_nonadmin_files() {
 		'structure/menu.php',
 		'structure/post.php',
 		'structure/sidebar.php',
-		'components/customizer/customizer.php',
-    'components/widgets.php',
 	);
 
 	load_specified_files( $filenames );
 }
 
-//add_action( 'admin_init', __NAMESPACE__ . '\load_admin_files' );
+add_action( 'admin_init', __NAMESPACE__ . '\load_admin_files' );
 /**
  * Load admin files.
  *
@@ -56,11 +54,36 @@ function load_nonadmin_files() {
  */
 function load_admin_files() {
 	$filenames = array(
-
+      'components/customizer/customizer.php',
+//      'components/widgets/class.virtuoso-widgets.php',
 	);
 
 	load_specified_files( $filenames );
 }
+
+
+add_action( 'widgets_init', __NAMESPACE__ . '\load_widget_areas' );
+/**
+ * Load widget areas.
+ *
+ * @since 1.0.1
+ *
+ * @return void
+ */
+function load_widget_areas() {
+
+  register_sidebar( array(
+      'name' => __( 'Slide-Out Sidebar', 'slide-out-sidebar' ),
+      'id' => 'slider',
+      'description' => __( '', '' ),
+      'before_widget' => '<section id="%1$s" class="widget %2$s">',
+      'after_widget'  => '</section>',
+      'before_title'  => '<h4 class="widgettitle">',
+      'after_title'   => '</h4>',
+  ) );
+
+}
+
 
 /**
  * Load each of the specified files.

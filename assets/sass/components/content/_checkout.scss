@@ -1,0 +1,136 @@
+.woocommerce {
+
+  .woocommerce-info {
+    display: none;
+  }
+
+  #billing_company_field, #billing_phone_field, .woocommerce-additional-fields, #shipping_company_field, #shipping_phone_field {
+    display: none;
+  }
+
+  form .form-row {
+    margin: 0;
+  }
+
+  form.checkout_coupon {
+    padding: 10px;
+  }
+
+  table.cart td.actions .coupon .input-text {
+    float: left;
+    padding: 8px 10px !important;
+  }
+
+  .woocommerce-checkout {
+
+    form.checkout_coupon {
+      display:block !important;
+    }
+
+    p {
+      line-height: 0em;
+    }
+
+    .payment_box.payment_method_simplify_commerce p {
+      line-height: 1.5em;
+    }
+
+    .one-third {
+      width: 33.33% !important;
+    }
+
+    .select2-container .select2-selection--single .select2-selection__rendered {
+      padding-bottom: 1px;
+    }
+
+    .checkout_coupon {
+      padding: 30px;
+
+      p.form-row-last .button {
+        width: 100%;
+        height: 45px;
+      }
+
+      p.form-row-first {
+        padding-right: 20px;
+      }
+
+      .form-row-last {
+        margin: 10px 0 0px;
+      }
+
+      .button {
+        font-size: 14px !important;
+        margin-top: -5px;
+      }
+
+      .form-row {
+        width: 100% !important;
+      }
+    }
+
+    .woocommerce-remove-coupon {
+      color: salmon;
+    }
+
+
+    .woocommerce-checkout-review-order-table .woocommerce-Price-amount,
+    .woocommerce-checkout-review-order-table th.product-total {
+      float: right;
+    }
+
+
+    .footer-widgets {
+      display: none;
+    }
+
+    #place_order {
+      box-shadow: inset 0 0 0 4px #ffe593 !important;
+      -webkit-transition: color 0.25s 0.08333s !important;
+      transition: color 0.25s 0.08333s !important;
+      position: relative !important;
+      background: none !important;
+      border: none !important;
+      cursor: pointer !important;
+      line-height: 1.5 !important;
+      padding: 1em 2em !important;
+      letter-spacing: 0.05rem !important;
+      margin: 0 auto !important;
+    }
+
+    /* Checkout Upsells */
+    .cross-sells {
+      text-align: center;
+    }
+
+    .the_champ_login_container a{
+      color: #fff;
+    }
+
+    h2 {
+      margin-bottom: 2em;
+    }
+
+    .cross-sells li.product{
+      float: none !important;
+      width: unset !important;
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .checkout_coupon p.form-row-first {
+    width: 66.67% !important;
+  }
+
+  .checkout_coupon p.form-row-last {
+    width: 33.33% !important;
+  }
+
+  .checkout_coupon .form-row-first {
+    padding-right: 100px !important;
+  }
+
+}
+
+@media (min-width: 1025px) {}
