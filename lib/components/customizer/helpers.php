@@ -18,7 +18,7 @@ namespace ErhardLabs\Virtuoso\Customizer;
  * @return string
  */
 function get_settings_prefix() {
-	return 'developers';
+	return 'virtuoso';
 }
 
 /**

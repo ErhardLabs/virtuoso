@@ -10,11 +10,13 @@
  */
 namespace Theme\Virtuoso\Structure;
 
+use Theme\Virtuoso;
+
 class Menu {
 
 	public function __construct() {
 
-		$project_config = virtuoso()->get_theme_settings_defaults();
+		$project_config = Virtuoso::get_theme_settings_defaults();
 
 		add_filter( 'body_class', array($this, 'set_header_class' ) );
 		add_filter( 'wp_nav_menu_args', array($this, 'setup_secondary_menu_args' ) );
@@ -110,7 +112,7 @@ class Menu {
 	 *
 	 * @since 1.0.4
 	 *
-	 * @param string $menu
+	 * @param string $
 	 * @param array $args
 	 *
 	 * @return string

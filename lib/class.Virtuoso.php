@@ -10,12 +10,6 @@
  */
 namespace Theme;
 
-//require 'functions/autoload.php';
-
-use Theme\Virtuoso\Structure\Menu;
-use Theme\Virtuoso\Structure\Header;
-use Theme\Virtuoso\Structure\SideBar;
-
 class Virtuoso {
 
 	/**
@@ -28,33 +22,9 @@ class Virtuoso {
 
 	public function __construct() {
 
-		$this->define_constants();
-
 		add_action( 'genesis_setup', array($this, 'setup_child_theme') , 15 );
 		add_filter( 'genesis_theme_settings_defaults', array($this, 'set_theme_settings_defaults' ) );
 		add_action( 'after_switch_theme', array($this, 'update_theme_settings_defaults' ) );
-
-	}
-
-	/**
-	 * Initialize the theme's constants.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return void
-	 */
-
-	function define_constants() {
-
-		$child_theme = wp_get_theme();
-
-		define( 'CHILD_THEME_NAME', $child_theme->get( 'Name' ) );
-		define( 'CHILD_THEME_URL', $child_theme->get( 'ThemeURI' ) );
-		define( 'CHILD_THEME_VERSION', $child_theme->get( 'Version' ) );
-		define( 'CHILD_TEXT_DOMAIN', $child_theme->get( 'TextDomain' ) );
-
-		define( 'CHILD_THEME_DIR', get_stylesheet_directory() );
-		define( 'CHILD_CONFIG_DIR', CHILD_THEME_DIR . '/config/' );
 
 	}
 
@@ -101,9 +71,9 @@ class Virtuoso {
 	 * @return void
 	 */
 	function unregister_genesis_callbacks() {
-		Menu::unregister_menu_callbacks();
-		Header::unregister_header_callbacks();
-		SideBar::unregister_sidebar_callbacks();
+		unregister_menu_callbacks();
+		unregister_header_callbacks();
+		unregister_sidebar_callbacks();
 	}
 
 	/**

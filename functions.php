@@ -9,9 +9,10 @@
  * @license     GNU General Public License 2.0+
  */
 
-// Include the main Virtuoso class.
-include_once dirname( __FILE__ ) . '/lib/class.Virtuoso.php';
 
+include_once ( 'lib/init.php' );
+// Include the main Virtuoso class.
+include_once ('lib/functions/autoload.php');
 
 /**
  * Main instance of Virtuoso
@@ -21,9 +22,9 @@ include_once dirname( __FILE__ ) . '/lib/class.Virtuoso.php';
  * @since  1.2.1
  * @return Theme\Virtuoso
  */
-function virtuoso() {
-	return Theme\Virtuoso::instance();
-}
+//function virtuoso() {
+//	return Theme\Virtuoso::instance();
+//}
 
 // Global for backwards compatibility.
-$GLOBALS['virtuoso'] = virtuoso();
+//$GLOBALS['virtuoso'] = virtuoso();

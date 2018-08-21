@@ -48,9 +48,9 @@ class AutoLoad {
 
 			'structure/archive.php',
 			'structure/comments.php',
-			'structure/footer.php',
-			'structure/header.php',
-			'structure/menu.php',
+//			'structure/footer.php',
+//			'structure/header.php',
+//			'structure/menu.php',
 			'structure/post.php',
 			'structure/sidebar.php',
 		);
