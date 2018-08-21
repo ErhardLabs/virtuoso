@@ -8,8 +8,22 @@
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+
  */
-namespace ErhardLabs\Virtuoso;
 
-include_once( 'lib/init.php' );
+// Include the main Virtuoso class.
+include_once dirname( __FILE__ ) . '/lib/class.Virtuoso.php';
 
-include_once( 'lib/functions/autoload.php' );
+
+/**
+ * Main instance of Virtuoso
+ *
+ * Returns the main instance of WC to prevent the need to use globals.
+ *
+ * @since  1.2.1
+ * @return Theme\Virtuoso
+ */
+function virtuoso() {
+	return Theme\Virtuoso::instance();
+}
+
+// Global for backwards compatibility.
+$GLOBALS['virtuoso'] = virtuoso();

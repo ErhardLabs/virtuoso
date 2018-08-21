@@ -4,7 +4,7 @@ phpunit.xml
 /bin
 tests/mocks/env/
 virtuoso.pot
-
+mix-manifest.json
 
 # Sass cache
 .sass-cache/
