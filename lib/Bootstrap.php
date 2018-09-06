@@ -8,9 +8,9 @@
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+
  */
-namespace Theme;
+namespace Virtuoso\Lib;
 
-class Virtuoso {
+class Bootstrap {
 
 	/**
 	 * The single instance of the class.

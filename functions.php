@@ -9,22 +9,9 @@
  * @license     GNU General Public License 2.0+
  */
 
-
+namespace Virtuoso;
+require_once __DIR__ . '/vendor/autoload.php';
 include_once ( 'lib/init.php' );
-// Include the main Virtuoso class.
-include_once ('lib/functions/autoload.php');
+use Virtuoso\Lib\Bootstrap;
 
-/**
- * Main instance of Virtuoso
- *
- * Returns the main instance of WC to prevent the need to use globals.
- *
- * @since  1.2.1
- * @return Theme\Virtuoso
- */
-//function virtuoso() {
-//	return Theme\Virtuoso::instance();
-//}
-
-// Global for backwards compatibility.
-//$GLOBALS['virtuoso'] = virtuoso();
+$virtuoso = new Bootstrap();

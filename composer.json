@@ -1,0 +1,11 @@
+{
+  "autoload": {
+    "psr-4": {
+      "Virtuoso\\": "",
+      "Virtuoso\\Lib\\": "lib/"
+    }
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^7"
+  }
+}

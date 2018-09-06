@@ -8,7 +8,7 @@
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+
  */
-namespace ErhardLabs\Virtuoso;
+namespace Virtuoso;
 
 /**
 * Initialize the theme's constants.
