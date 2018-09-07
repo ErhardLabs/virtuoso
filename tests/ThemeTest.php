@@ -5,7 +5,7 @@ use PHPUnit\Framework\TestCase;
 final class ThemeTest extends TestCase {
 
 	public function testThemeConfigurationParameters() {
-		$virtuoso = new Virtuoso\Lib\Virtuoso();
+		$virtuoso = new Virtuoso\Lib\VirtuosoTheme();
 	}
 
 

@@ -11,7 +11,7 @@
 namespace Virtuoso;
 
 require_once 'vendor/autoload.php';
-use Virtuoso\Lib\Virtuoso;
+use Virtuoso\Lib\VirtuosoTheme;
 
 // Initialize the Virtuoso Genesis Child Theme
-$virtuoso = new Virtuoso();
+$virtuoso = new VirtuosoTheme();

@@ -1,44 +1,9 @@
 <?php
 
-namespace Virtuoso\Lib;
+namespace Virtuoso\Config;
 
 
 class ThemeConfig {
-
-	/**
-	 * Get runtime configuration parameters.
-	 *
-	 * @since 1.0.5
-	 *
-	 * @param string $key Configuration parameter key
-	 * @param string $config_file (Optional) Configuration filename without the extension.
-	 *
-	 * @return array|null|mixed
-	 */
-	protected function get_configuration_parameters( $key = '' ) {
-
-		$config = $this->config_settings();
-
-		if ( ! $key ) {
-			return $config;
-		}
-
-
-		if ( array_key_exists( $key, $config ) ) {
-			return $config[ $key ];
-		}
-	}
-
-	/**
-	 * Get the theme settings defaults.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return array
-	 */
-	protected function get_theme_settings_defaults() {
-		return $this->get_configuration_parameters( 'theme_default_settings' );
-	}
 
 	private function config_settings() {
 		return array(
@@ -128,6 +93,41 @@ class ThemeConfig {
 
 			),
 		);
+	}
+
+	/**
+	 * Get runtime configuration parameters.
+	 *
+	 * @since 1.0.5
+	 *
+	 * @param string $key Configuration parameter key
+	 * @param string $config_file (Optional) Configuration filename without the extension.
+	 *
+	 * @return array|null|mixed
+	 */
+	protected function get_configuration_parameters( $key = '' ) {
+
+		$config = $this->config_settings();
+
+		if ( ! $key ) {
+			return $config;
+		}
+
+
+		if ( array_key_exists( $key, $config ) ) {
+			return $config[ $key ];
+		}
+	}
+
+	/**
+	 * Get the theme settings defaults.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @return array
+	 */
+	protected function get_theme_settings_defaults() {
+		return $this->get_configuration_parameters( 'theme_default_settings' );
 	}
 
 }

@@ -11,6 +11,9 @@
 
 namespace Virtuoso\Lib;
 
+// Config
+use Virtuoso\Config\ThemeConfig;
+
 // Components
 use Virtuoso\Lib\Components\Customizer\Customizer;
 
@@ -28,7 +31,7 @@ use Virtuoso\Lib\Structure\Archive;
 use Virtuoso\Lib\Structure\Footer;
 
 
-class Virtuoso extends ThemeConfig {
+class VirtuosoTheme extends ThemeConfig {
 
 	public function __construct() {
 

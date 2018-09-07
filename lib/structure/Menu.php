@@ -11,7 +11,7 @@
 
 namespace Virtuoso\Lib\Structure;
 
-use Virtuoso\Lib\ThemeConfig;
+use Virtuoso\Config\ThemeConfig;
 
 class Menu extends ThemeConfig {
 
