@@ -56,6 +56,8 @@ class VirtuosoTheme extends ThemeConfig {
 		$archive  = new Archive( $config );
 		$archive  = new Footer( $config );
 
+		add_filter( 'body_class', [ $this, 'set_body_no_js' ] );
+
 	}
 
 	private function init_constants() {
@@ -86,6 +88,21 @@ class VirtuosoTheme extends ThemeConfig {
 
 		$this->adds_theme_supports( $config['add_theme_support'] );
 		$this->adds_new_image_sizes( $config['theme_image_sizes'] );
+	}
+
+	/**
+	 * Set the design of the header based on the theme configuration settings
+	 *
+	 * @since 1.0.5
+	 *
+	 * @param array
+	 *
+	 * @return array
+	 */
+	function set_body_no_js( $classes ) {
+
+		return array_merge( $classes, array( 'virtuoso-no-js' ) );
+
 	}
 
 	/**

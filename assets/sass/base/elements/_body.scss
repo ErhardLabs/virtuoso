@@ -14,7 +14,7 @@ body {
   margin: 0;
   opacity: 0;
 
-  &.body-loaded {
+  &.body-loaded, &.virtuoso-no-js {
     opacity: 1;
     transition: 0.7s opacity;
   }

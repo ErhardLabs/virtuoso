@@ -22,6 +22,7 @@ class Menu extends ThemeConfig {
 		$this->config = $config;
 
 		add_filter( 'body_class', [ $this, 'set_header_class' ] );
+
 		add_filter( 'wp_nav_menu_args', [ $this, 'setup_secondary_menu_args' ] );
 
 		if ( $config['header-design']['logo-middle'] ) {
@@ -54,6 +55,8 @@ class Menu extends ThemeConfig {
 
 		remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 	}
+
+
 
 	/**
 	 * Set the design of the header based on the theme configuration settings

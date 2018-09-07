@@ -1714,7 +1714,7 @@ body {
 	opacity: 0;
 }
 
-body.body-loaded {
+body.body-loaded, body.virtuoso-no-js {
 	opacity: 1;
 	-webkit-transition: 0.7s opacity;
 	transition: 0.7s opacity;
