@@ -12,6 +12,7 @@
 namespace Virtuoso\Lib\Structure;
 
 class Footer {
+	public $config = "";
 	public function __construct( $config ) {
 		add_action( 'get_footer', array( $this, 'display_slide_out_sidebar' ) );
 	}

@@ -13,7 +13,7 @@ namespace Virtuoso\Lib\Structure;
 
 
 class Header {
-
+	public $config = "";
 	public function __construct( $config ) {
 		add_action( 'genesis_after_header', [ $this, 'include_sexy_popup' ] );
 

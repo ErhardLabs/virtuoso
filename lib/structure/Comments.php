@@ -12,6 +12,7 @@
 namespace Virtuoso\Lib\Structure;
 
 class Comments {
+	public $config = "";
 	public function __construct( $config ) {
 		add_filter( 'genesis_comment_list_args', [ $this, 'setup_comments_gravatar' ] );
 	}

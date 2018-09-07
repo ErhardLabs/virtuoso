@@ -13,6 +13,7 @@ namespace Virtuoso\Lib\Structure;
 
 
 class Post {
+	public $config = "";
 	public function __construct( $config ) {
 		add_filter( 'genesis_author_box_gravatar_size', [ $this, 'setup_author_box_gravatar_size' ] );
 	}

@@ -12,6 +12,7 @@
 namespace Virtuoso\Lib\Structure;
 
 class Archive {
+	public $config = "";
 	public function __construct( $config ) {
 
 	}
