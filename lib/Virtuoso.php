@@ -32,6 +32,8 @@ class Virtuoso extends ThemeConfig {
 
 	public function __construct() {
 
+		$this->init_constants();
+
 		$config = $this->get_theme_settings_defaults();
 
 		add_action( 'genesis_setup', [ $this, 'setup_child_theme' ], 15 );
@@ -51,6 +53,17 @@ class Virtuoso extends ThemeConfig {
 		$archive  = new Archive( $config );
 		$archive  = new Footer( $config );
 
+	}
+
+	private function init_constants() {
+		$child_theme = wp_get_theme();
+
+		define( 'CHILD_THEME_NAME', $child_theme->get( 'Name' ) );
+		define( 'CHILD_THEME_URL', $child_theme->get( 'ThemeURI' ) );
+		define( 'CHILD_THEME_VERSION', $child_theme->get( 'Version' ) );
+		define( 'CHILD_TEXT_DOMAIN', $child_theme->get( 'TextDomain' ) );
+
+		define( 'CHILD_THEME_DIR', get_stylesheet_directory() );
 	}
 
 	/**
