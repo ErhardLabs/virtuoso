@@ -2,18 +2,19 @@
 /**
  * Sidebar (widgetized areas) HTML markup structure
  *
- * @package     ErhardLabs\Virtuoso
+ * @package     Virtuoso\lib\Structure
  * @since       1.0.0
  * @author      ErhardLabs
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+
  */
-namespace Theme\Virtuoso\Structure;
+
+namespace Virtuoso\Lib\Structure;
 
 
 class SideBar {
 
-	public function __construct() {
+	public function __construct( $config ) {
 
 	}
 
@@ -24,7 +25,7 @@ class SideBar {
 	 *
 	 * @return void
 	 */
-	public static function unregister_sidebar_callbacks() {
+	public static function unregister_sidebar_callbacks( $config ) {
 		remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
 	}
 

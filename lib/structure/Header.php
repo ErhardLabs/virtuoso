@@ -2,19 +2,20 @@
 /**
  * Header HTML markup structure
  *
- * @package     ErhardLabs\Virtuoso
+ * @package     Virtuoso\lib\Structure
  * @since       1.0.0
  * @author      ErhardLabs
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+
  */
-namespace Theme\Virtuoso\Structure;
+
+namespace Virtuoso\Lib\Structure;
 
 
 class Header {
 
-	public function __construct() {
-		add_action( 'genesis_after_header', array( $this, 'include_sexy_popup') );
+	public function __construct( $config ) {
+		add_action( 'genesis_after_header', [ $this, 'include_sexy_popup' ] );
 
 	}
 
@@ -25,8 +26,8 @@ class Header {
 	 *
 	 * @return void
 	 */
-	public static function unregister_header_callbacks() {
-		unregister_sidebar('header-right' );
+	public static function unregister_header_callbacks( $config ) {
+		unregister_sidebar( 'header-right' );
 
 	}
 
@@ -41,8 +42,8 @@ class Header {
 
 		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-		if (!is_admin() && is_plugin_active( 'sexy-popup/index.php' )){
-			include_once(SEXY_POPUP_PATH . "inc/views/popup.php");
+		if ( ! is_admin() && is_plugin_active( 'sexy-popup/index.php' ) ) {
+			include_once( SEXY_POPUP_PATH . "inc/views/popup.php" );
 		}
 	}
 

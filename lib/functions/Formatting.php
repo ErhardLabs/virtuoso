@@ -2,10 +2,15 @@
 /**
  * Description
  *
- * @package     ErhardLabs\Virtuoso
+ * @package     Virtuoso\lib\Functions
  * @since       1.0.0
  * @author      ErhardLabs
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+
  */
-namespace ErhardLabs\Virtuoso;
+namespace Virtuoso\Lib\Functions;
+
+class Formatting {
+	public function __construct() {
+	}
+}
