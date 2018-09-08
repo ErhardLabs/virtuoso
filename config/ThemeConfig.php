@@ -1,5 +1,13 @@
 <?php
-
+/**
+ * Functions to access theme supports and theme configuration items
+ *
+ * @package     Virtuoso\lib\Functions
+ * @since       1.0.3
+ * @author      ErhardLabs
+ * @link        https://sumnererhard.com https://graysonerhard.com
+ * @license     GNU General Public License 2.0+
+ */
 namespace Virtuoso\Config;
 
 

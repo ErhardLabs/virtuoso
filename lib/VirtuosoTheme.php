@@ -1,6 +1,6 @@
 <?php
 /**
- * Setup your child theme
+ * Setup the Virtuoso child theme
  *
  * @package     Virtuoso\lib
  * @since       1.0.3

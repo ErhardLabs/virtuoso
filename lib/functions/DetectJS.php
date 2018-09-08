@@ -1,9 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: sumnererhard
- * Date: 9/8/18
- * Time: 12:32 PM
+ * Detect if the browser has JavaScript Enabled
+ *
+ * @package     Virtuoso\lib\Functions
+ * @since       1.0.3
+ * @author      ErhardLabs
+ * @link        https://sumnererhard.com https://graysonerhard.com
+ * @license     GNU General Public License 2.0+
  */
 
 namespace Virtuoso\Lib\Functions;
