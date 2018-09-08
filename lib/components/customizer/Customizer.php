@@ -3,7 +3,7 @@
  * Customizer handler.
  *
  * @package     Virtuoso\lib
- * @since       1.0.0
+ * @since       2.0.0
  * @author      ErhardLabs
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+

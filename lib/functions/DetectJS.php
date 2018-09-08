@@ -3,7 +3,7 @@
  * Detect if the browser has JavaScript Enabled
  *
  * @package     Virtuoso\lib\Functions
- * @since       1.0.3
+ * @since       2.1.7
  * @author      ErhardLabs
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+
@@ -28,7 +28,7 @@ class DetectJS {
 	/**
 	 * JS Detection Script
 	 *
-	 * @since 1.0.5
+	 * @since 2.1.7
 	 *
 	 *
 	 * @return string
@@ -40,7 +40,7 @@ class DetectJS {
 	/**
 	 * Set virtuoso-no-js in the body class
 	 *
-	 * @since 1.0.5
+	 * @since 2.1.7
 	 *
 	 * @param array
 	 *
@@ -52,7 +52,15 @@ class DetectJS {
 
 	}
 
-	public static function get_javascript_detection() {;
+	/**
+	 * Get JavaScript status
+	 *
+	 * @since 2.1.7
+	 *
+	 *
+	 * @return string
+	 */
+	public static function is_javascript_enabled() {;
 		$jsEnabled = false;
 
 		if ( in_array( 'virtuoso-js', get_body_class() ) ) {

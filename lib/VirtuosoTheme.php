@@ -3,7 +3,7 @@
  * Setup the Virtuoso child theme
  *
  * @package     Virtuoso\lib
- * @since       1.0.3
+ * @since       2.1.7
  * @author      ErhardLabs
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+

@@ -3,7 +3,7 @@
  * Archive HTML markup structure
  *
  * @package     Virtuoso\lib\Structure
- * @since       1.0.0
+ * @since       2.1.7
  * @author      ErhardLabs
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+
