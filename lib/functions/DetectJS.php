@@ -48,4 +48,15 @@ class DetectJS {
 		return array_merge( $classes, array( 'virtuoso-no-js' ) );
 
 	}
+
+	public static function get_javascript_detection() {;
+		$jsEnabled = false;
+
+		if ( in_array( 'virtuoso-js', get_body_class() ) ) {
+			$jsEnabled = true;
+		}
+
+		return $jsEnabled;
+	}
+
 }
