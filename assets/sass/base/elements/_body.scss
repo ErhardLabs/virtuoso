@@ -14,8 +14,9 @@ body {
   margin: 0;
   opacity: 0;
 
-  &.body-loaded, &.virtuoso-no-js {
+
+  &.sexy-animations, &.virtuoso-no-js {
     opacity: 1;
-    transition: 0.7s opacity;
+    transition: opacity 1s;
   }
 }

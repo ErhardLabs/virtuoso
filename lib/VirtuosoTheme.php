@@ -21,6 +21,7 @@ use Virtuoso\Lib\Components\Customizer\Customizer;
 use Virtuoso\Lib\Functions\Formatting;
 use Virtuoso\Lib\Functions\EnqueueAssets;
 use Virtuoso\Lib\Functions\Markup;
+use Virtuoso\Lib\Functions\DetectJS;
 
 // Structure
 use Virtuoso\Lib\Structure\Menu;
@@ -43,11 +44,14 @@ class VirtuosoTheme extends ThemeConfig {
 		add_filter( 'genesis_theme_settings_defaults', [ $this, 'set_theme_settings_defaults' ] );
 		add_action( 'after_switch_theme', [ $this, 'update_theme_settings_defaults' ] );
 
+		$detectJS = new DetectJS();
+
 		$customizer = new Customizer();
 
 		$formatting = new Formatting();
 		$loadAssets = new EnqueueAssets();
 		$markup     = new Markup();
+
 
 		$menu     = new Menu( $config );
 		$header   = new Header( $config );
@@ -55,8 +59,6 @@ class VirtuosoTheme extends ThemeConfig {
 		$comments = new Comments( $config );
 		$archive  = new Archive( $config );
 		$archive  = new Footer( $config );
-
-		add_filter( 'body_class', [ $this, 'set_body_no_js' ] );
 
 	}
 
@@ -88,21 +90,6 @@ class VirtuosoTheme extends ThemeConfig {
 
 		$this->adds_theme_supports( $config['add_theme_support'] );
 		$this->adds_new_image_sizes( $config['theme_image_sizes'] );
-	}
-
-	/**
-	 * Set the design of the header based on the theme configuration settings
-	 *
-	 * @since 1.0.5
-	 *
-	 * @param array
-	 *
-	 * @return array
-	 */
-	function set_body_no_js( $classes ) {
-
-		return array_merge( $classes, array( 'virtuoso-no-js' ) );
-
 	}
 
 	/**

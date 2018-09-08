@@ -8,6 +8,24 @@
 	opacity: 1;
 }
 
+@-webkit-keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1 !important;
+	}
+}
+
+@keyframes fadein {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1 !important;
+	}
+}
+
 /* ## Icons
 --------------------------------------------- */
 @font-face {
@@ -1714,10 +1732,10 @@ body {
 	opacity: 0;
 }
 
-body.body-loaded, body.virtuoso-no-js {
+body.sexy-animations, body.virtuoso-no-js {
 	opacity: 1;
-	-webkit-transition: 0.7s opacity;
-	transition: 0.7s opacity;
+	-webkit-transition: opacity 1s;
+	transition: opacity 1s;
 }
 
 a,

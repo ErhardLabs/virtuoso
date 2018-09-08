@@ -3,7 +3,7 @@ import Animation from './Animation.js';
 
 $(document).ready(function () {
 
-  $('body').addClass('body-loaded');
+  $('body').addClass('sexy-animations');
 
 // Array of elements to animate
   const animationsElements = [
