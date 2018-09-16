@@ -13,8 +13,12 @@ namespace Virtuoso\Lib\Structure;
 
 class Footer {
 	public $config = "";
+
 	public function __construct( $config ) {
-		add_action( 'get_footer', array( $this, 'display_slide_out_sidebar' ) );
+
+	    $this->config = $config;
+
+		add_action( 'get_footer', [ $this, 'display_slide_out_sidebar' ] );
 	}
 
 	/**
@@ -27,6 +31,8 @@ class Footer {
 	public static function unregister_footer_callbacks( $config ) {
 
 	}
+
+
 
 	function display_slide_out_sidebar() {
 		if ( ( ! is_checkout() ) && ( ! is_cart() ) ) { ?>

@@ -84,6 +84,10 @@ class ThemeConfig {
 					'logo-left'   => true,
 					'logo-middle' => false,
 				),
+				'footer-design'             => array(
+					'logo-left'   => false,
+					'logo-middle' => true,
+				),
 				'sticky-contact'            => array(
 					'align-left'   => false,
 					'alight-right' => true,
@@ -113,7 +117,7 @@ class ThemeConfig {
 	 *
 	 * @return array|null|mixed
 	 */
-	protected function get_configuration_parameters( $key = '' ) {
+	public function get_configuration_parameters( $key = '' ) {
 
 		$config = $this->config_settings();
 
@@ -134,7 +138,7 @@ class ThemeConfig {
 	 *
 	 * @return array
 	 */
-	protected function get_theme_settings_defaults() {
+	public function get_theme_settings_defaults() {
 		return $this->get_configuration_parameters( 'theme_default_settings' );
 	}
 
