@@ -5,7 +5,7 @@
 This theme includes the following features:
 
 1. [Genesis-powered](http://www.studiopress.com/features/)
-2. ModularConfiguration architecture
+2. Object Oriented architecture
 3. [Sass-powered](https://github.com/KnowTheCode/KTC-Child-Theme/tree/master/assets/sass) styling
 4. [webpack](https://webpack.js.org/) for asset bundling
 5. [Laravel Mix](https://github.com/JeffreyWay/laravel-mix) as an easy configuration wrapper for webpack
@@ -18,6 +18,7 @@ This child theme is dependent upon the following:
 
 1. The [Genesis](http://www.studiopress.com/features/) theming framework from [StudioPress](http://www.studiopress.com).
 2. [Node](https://nodejs.org/en/)
+3. [Composer](https://getcomposer.org/) 
 
 ## Instructions to install:
 
@@ -25,6 +26,7 @@ This child theme is dependent upon the following:
 2. Then type: `git clone https://github.com/ErhardLabs/virtuoso.git`
 3. Navigate into the new folder `virtuoso`
 4. Run `npm install`
+5. Run `composer install`
 
 ## Sass Files
 
