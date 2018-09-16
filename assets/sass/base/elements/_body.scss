@@ -14,8 +14,9 @@ body {
   margin: 0;
   opacity: 0;
 
-  &.body-loaded {
+  // Fade in the body so that other animations are less choppy. Body will still display even if the browser has JS disabled
+  &.sexy-animations, &.virtuoso-no-js {
     opacity: 1;
-    transition: 0.7s opacity;
+    transition: opacity 1s;
   }
 }

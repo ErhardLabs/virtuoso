@@ -1,7 +1,5 @@
 ( function ( document, $, undefined ) {
 
-  $( 'body' ).addClass( 'js' );
-
   'use strict';
 
   let virtuoso              = {},

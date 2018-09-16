@@ -1,10 +1,10 @@
 //
-// .js enabled styles
+// .virtuoso-js enabled styles
 //=======================
 
 @media only screen and (max-width: #{map-get($breakpoints, 'med')}) {
 
-  .js {
+  .virtuoso-js {
     .genesis-nav-menu {
       .sub-menu, .sub-menu a {
         width: 100%;

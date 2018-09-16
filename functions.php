@@ -8,8 +8,10 @@
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+
  */
-namespace ErhardLabs\Virtuoso;
+namespace Virtuoso;
 
-include_once( 'lib/init.php' );
+require_once 'vendor/autoload.php';
+use Virtuoso\Lib\VirtuosoTheme;
 
-include_once( 'lib/functions/autoload.php' );
+// Initialize the Virtuoso Genesis Child Theme
+$virtuoso = new VirtuosoTheme();
