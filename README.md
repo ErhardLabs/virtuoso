@@ -9,9 +9,10 @@ This theme includes the following features:
 1. [Genesis-powered](http://www.studiopress.com/features/)
 2. Object Oriented architecture combining elements from Laravel.
 3. [Sass-powered](https://github.com/KnowTheCode/KTC-Child-Theme/tree/master/assets/sass) styling
-4. [webpack](https://webpack.js.org/) for asset bundling
-5. [Laravel Mix](https://github.com/JeffreyWay/laravel-mix) as an easy configuration wrapper for webpack
-6. [PHP Unit Testing](https://phpunit.de/) for test driven developement
+4. Ability to write all of your Javascript in es6.
+5. [webpack](https://webpack.js.org/) for asset bundling
+6. [Laravel Mix](https://github.com/JeffreyWay/laravel-mix) as an easy configuration wrapper for webpack
+7. [PHP Unit Testing](https://phpunit.de/) for test driven developement
 
 
 ## Dependencies
