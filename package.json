@@ -39,10 +39,10 @@
     "rimraf": "^2.6.2",
     "stylelint": "^9.4.0",
     "stylelint-config-wordpress": "^13.0.0",
-    "waypoints": "^4.0.1",
-    "animate.css": "^3.7.0"
   },
   "dependencies": {
-    "component-install": "^1.0.1"
+    "component-install": "^1.0.1",
+    "waypoints": "^4.0.1",
+    "animate.css": "^3.7.0"
   }
 }

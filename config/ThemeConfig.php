@@ -59,7 +59,7 @@ class ThemeConfig {
 			//=============================================
 			'genesis_unregister_layout' => array(
 				'sidebar-content',
-//		'content-sidebar',
+//				'content-sidebar',
 				'content-sidebar-sidebar',
 				'sidebar-content-sidebar',
 				'sidebar-sidebar-content',
@@ -74,7 +74,35 @@ class ThemeConfig {
 				'content_archive_thumbnail' => 0,
 				'posts_nav'                 => 'numeric',
 				'site_layout'               => 'full-width-content',
-
+				'sidebar-widgets'                  => array(
+					array(
+						'id'           => 'front-page-1',
+						'name'         => __( 'Front Page 1', 'genesis-starter' ),
+						'description'  => __( 'Front page 1 widget area.', 'genesis-starter' ),
+						'before_title' => '<h1 itemprop="headline">',
+						'after_title'  => '</h1>',
+					),
+					array(
+						'id'          => 'front-page-2',
+						'name'        => __( 'Front Page 2', 'genesis-starter' ),
+						'description' => __( 'Front page 2 widget area.', 'genesis-starter' ),
+					),
+					array(
+						'id'          => 'front-page-3',
+						'name'        => __( 'Front Page 3', 'genesis-starter' ),
+						'description' => __( 'Front page 3 widget area.', 'genesis-starter' ),
+					),
+					array(
+						'id'          => 'front-page-4',
+						'name'        => __( 'Front Page 4', 'genesis-starter' ),
+						'description' => __( 'Front page 4 widget area.', 'genesis-starter' ),
+					),
+					array(
+						'id'          => 'front-page-5',
+						'name'        => __( 'Front Page 5', 'genesis-starter' ),
+						'description' => __( 'Front page 5 widget area.', 'genesis-starter' ),
+					),
+				),
 				// Virtuoso Settings
 				'URLS'                      => array(
 					'production' => 'https://tylerpaulsonpictures.com',
