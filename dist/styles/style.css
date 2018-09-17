@@ -4473,15 +4473,20 @@ p.entry-meta {
 	font-size: 14px;
 	font-size: 1.4rem;
 	line-height: 1;
-	padding: 4rem 0;
 	text-align: center;
 }
 
 .site-footer > .wrap {
-	margin: 0 auto;
+	color: #adb5bd;
 	border-top: 1px solid #f0f1f2;
 	padding: 5vw;
-	color: #adb5bd;
+}
+
+@media (min-width: 769px) {
+	.site-footer > .wrap {
+		padding: 3rem;
+		width: 90%;
+	}
 }
 
 .site-footer p {
