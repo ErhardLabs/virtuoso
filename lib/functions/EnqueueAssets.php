@@ -35,6 +35,7 @@ class EnqueueAssets {
 
 		wp_enqueue_style( 'dashicons' );
 		wp_enqueue_script( CHILD_TEXT_DOMAIN . '-app', CHILD_URL . '/dist/js/app.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+		wp_enqueue_script( CHILD_TEXT_DOMAIN . '-projectSpecific', CHILD_URL . '/dist/js/projectSpecific.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 
 

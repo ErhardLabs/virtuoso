@@ -53,6 +53,7 @@ mix.version();
  */
 
 mix.js(`${devPath}/js/app.js`, 'js');
+mix.js('project-specific/assets/js/projectSpecific.js', 'js');
 
 
 /*
