@@ -70,9 +70,9 @@ class Menu extends ThemeConfig {
 	function set_header_class( $classes ) {
 
 		if ( $this->config['header-design']['logo-left'] ) {
-			$classes[] .= ' logo-left';
+			$classes[] .= ' header-logo-left';
 		} else {
-			$classes[] .= ' logo-middle';
+			$classes[] .= ' header-logo-middle';
 		}
 
 		return $classes;

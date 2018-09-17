@@ -18,8 +18,10 @@ class Footer {
 
 		$this->config = $config;
 
+		add_filter( 'body_class', [ $this, 'set_footer_class' ] );
+
 		add_action( 'get_footer', [ $this, 'display_slide_out_sidebar' ] );
-		add_action( 'genesis_footer', [$this, 'custom_footer'] );
+		add_action( 'genesis_footer', [ $this, 'custom_footer' ] );
 	}
 
 	/**
@@ -34,9 +36,29 @@ class Footer {
 
 	}
 
+	/**
+	 * Set the design of the footer based on the theme configuration settings
+	 *
+	 * @since 1.0.5
+	 *
+	 * @param array
+	 *
+	 * @return array
+	 */
+	function set_footer_class( $classes ) {
+
+		if ( $this->config['footer-design']['footer-widgets-block'] ) {
+			$classes[] .= ' footer-widgets-block';
+		} else {
+			$classes[] .= ' footer-widgets-left-column';
+		}
+
+		return $classes;
+	}
+
 	public function custom_footer() {
-        include( CHILD_DIR . '/lib/views/footer-copyright.php' );
-    }
+		include( CHILD_DIR . '/lib/views/footer-copyright.php' );
+	}
 
 
 	function display_slide_out_sidebar() {
