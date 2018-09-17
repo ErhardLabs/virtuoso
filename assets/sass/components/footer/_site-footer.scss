@@ -5,15 +5,18 @@
   background-color: $siteFooter--background-color;
   @include rem( font-size, $site-footer--font-size );
   line-height: 1;
-  padding: 4rem 0;
   text-align: center;
 
   > .wrap {
-    margin: 0 auto;
-    border-top: 1px solid #f0f1f2;
-
-    padding: 5vw;
     color: #adb5bd;
+    border-top: 1px solid #f0f1f2;
+    padding: 5vw;
+
+    @include media-query('med'){
+      padding: 3rem;
+      width: 90%;
+
+    }
 
   }
 
