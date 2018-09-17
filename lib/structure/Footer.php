@@ -39,7 +39,7 @@ class Footer {
 	/**
 	 * Set the design of the footer based on the theme configuration settings
 	 *
-	 * @since 1.0.5
+	 * @since 2.1.8
 	 *
 	 * @param array
 	 *
@@ -56,6 +56,13 @@ class Footer {
 		return $classes;
 	}
 
+	/**
+	 * Custom footer text
+	 *
+	 * @since 2.1.8
+	 *
+	 * @return string
+	 */
 	public function custom_footer() {
 		include( CHILD_DIR . '/lib/views/footer-copyright.php' );
 	}

@@ -1,6 +1,10 @@
 ## [Unreleased]
 #### This Project uses Semantic Visioning
 
+## 2.1.8 @2018-09-8
+### Added
+- Footer configuration items
+
 ## 2.1.7 @2018-09-8
 ### Changed
 - All /lib PHP files have been upgraded/refactored into an Object Oriented architecture 
