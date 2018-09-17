@@ -16,9 +16,10 @@ class Footer {
 
 	public function __construct( $config ) {
 
-	    $this->config = $config;
+		$this->config = $config;
 
 		add_action( 'get_footer', [ $this, 'display_slide_out_sidebar' ] );
+		add_action( 'genesis_footer', [$this, 'custom_footer'] );
 	}
 
 	/**
@@ -29,9 +30,13 @@ class Footer {
 	 * @return void
 	 */
 	public static function unregister_footer_callbacks( $config ) {
+		remove_action( 'genesis_footer', 'genesis_do_footer' );
 
 	}
 
+	public function custom_footer() {
+        include( CHILD_DIR . '/lib/views/footer-copyright.php' );
+    }
 
 
 	function display_slide_out_sidebar() {

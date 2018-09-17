@@ -44,7 +44,7 @@ class ThemeConfig {
 				),
 				'custom-background'               => null,
 				'genesis-after-entry-widget-area' => null,
-				'genesis-footer-widgets'          => 3,
+				'genesis-footer-widgets'          => 4,
 				'genesis-menus'                   => array(
 					'primary'   => __( 'Primary Navigation', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 					'secondary' => __( 'Secondary Navigation', CHILD_TEXT_DOMAIN, 'virtuoso' ),
@@ -85,8 +85,8 @@ class ThemeConfig {
 					'logo-middle' => false,
 				),
 				'footer-design'             => array(
-					'logo-left'   => false,
-					'logo-middle' => true,
+					'logo-left'   => true,
+					'logo-middle' => false,
 				),
 				'sticky-contact'            => array(
 					'align-left'   => false,
