@@ -4,7 +4,7 @@
 
 .title-area {
 
-  .logo-middle & {
+  .header-logo-middle & {
     display: inline-block;
     height: $site-title--min-height;
     margin-right: auto;
@@ -12,7 +12,7 @@
     width: $title-area--width;
   }
 
-  .logo-left & {
+  .header-logo-left & {
     float: left;
     position: relative;
     z-index: 1;

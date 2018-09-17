@@ -8,6 +8,7 @@
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+
  */
+
 namespace Virtuoso\Config;
 
 
@@ -85,8 +86,8 @@ class ThemeConfig {
 					'logo-middle' => false,
 				),
 				'footer-design'             => array(
-					'logo-left'   => true,
-					'logo-middle' => false,
+					'footer-widgets-left-column' => false,
+					'footer-widgets-block'       => true,
 				),
 				'sticky-contact'            => array(
 					'align-left'   => false,

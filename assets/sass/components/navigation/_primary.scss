@@ -5,7 +5,7 @@
   background-color: $primary-nav--background-color;
   display: none;
 
-  .logo-middle & {
+  .header-logo-middle & {
     float: left;
     width: 100%;
 
@@ -14,7 +14,7 @@
     //}
   }
 
-  .logo-left & {
+  .header-logo-left & {
     clear: both;
   }
 
@@ -28,12 +28,12 @@
     margin-bottom: 0;
     display: block;
 
-    .logo-middle & {
+    .header-logo-middle & {
       text-align: right;
       width: 40%;
       
     }
-    .logo-left & {
+    .header-logo-left & {
       clear: none;
 
       .menu-primary {

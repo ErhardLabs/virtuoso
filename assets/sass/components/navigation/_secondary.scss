@@ -5,7 +5,7 @@
 .nav-secondary {
   background-color: $secondary-nav--background-color;
 
-  .logo-middle & {
+  .header-logo-middle & {
     @include media-query('med'){
       float: right;
       width: 40%;
