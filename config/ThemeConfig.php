@@ -77,30 +77,30 @@ class ThemeConfig {
 				'sidebar-widgets'                  => array(
 					array(
 						'id'           => 'front-page-1',
-						'name'         => __( 'Front Page 1', 'genesis-starter' ),
-						'description'  => __( 'Front page 1 widget area.', 'genesis-starter' ),
+						'name'         => __( 'Front Page 1', 'virtuoso' ),
+						'description'  => __( 'Front page 1 widget area.', 'virtuoso' ),
 						'before_title' => '<h1 itemprop="headline">',
 						'after_title'  => '</h1>',
 					),
 					array(
 						'id'          => 'front-page-2',
-						'name'        => __( 'Front Page 2', 'genesis-starter' ),
-						'description' => __( 'Front page 2 widget area.', 'genesis-starter' ),
+						'name'        => __( 'Front Page 2', 'virtuoso' ),
+						'description' => __( 'Front page 2 widget area.', 'virtuoso' ),
 					),
 					array(
 						'id'          => 'front-page-3',
-						'name'        => __( 'Front Page 3', 'genesis-starter' ),
-						'description' => __( 'Front page 3 widget area.', 'genesis-starter' ),
+						'name'        => __( 'Front Page 3', 'virtuoso' ),
+						'description' => __( 'Front page 3 widget area.', 'virtuoso' ),
 					),
 					array(
 						'id'          => 'front-page-4',
-						'name'        => __( 'Front Page 4', 'genesis-starter' ),
-						'description' => __( 'Front page 4 widget area.', 'genesis-starter' ),
+						'name'        => __( 'Front Page 4', 'virtuoso' ),
+						'description' => __( 'Front page 4 widget area.', 'virtuoso' ),
 					),
 					array(
 						'id'          => 'front-page-5',
-						'name'        => __( 'Front Page 5', 'genesis-starter' ),
-						'description' => __( 'Front page 5 widget area.', 'genesis-starter' ),
+						'name'        => __( 'Front Page 5', 'virtuoso' ),
+						'description' => __( 'Front page 5 widget area.', 'virtuoso' ),
 					),
 				),
 				// Virtuoso Settings

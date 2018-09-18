@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
+let fs = require('fs-extra');
 
 /*
  * Sets the development path to assets. By default, this is the `/resources`
@@ -54,7 +55,6 @@ mix.version();
 
 mix.js(`${devPath}/js/app.js`, 'js');
 mix.js('project-specific/assets/js/projectSpecific.js', 'js');
-
 
 /*
  * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
