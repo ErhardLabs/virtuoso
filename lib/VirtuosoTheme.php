@@ -31,7 +31,7 @@ use Virtuoso\Lib\Structure\Comments;
 use Virtuoso\Lib\Structure\Archive;
 use Virtuoso\Lib\Structure\Footer;
 
-use Virtuoso\Lib\Structure\FrontPage;
+use Virtuoso\FrontPage;
 
 
 class VirtuosoTheme extends ThemeConfig {
@@ -62,7 +62,7 @@ class VirtuosoTheme extends ThemeConfig {
 		$archive  = new Archive( $config );
 		$archive  = new Footer( $config );
 
-		$frontPage = new FrontPage();
+		//$frontPage = new FrontPage();
 
 	}
 

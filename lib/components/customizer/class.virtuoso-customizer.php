@@ -22,10 +22,10 @@ class MyTheme_Customize {
     //1. Define a new section (if desired) to the Theme Customizer
     $wp_customize->add_section( 'mytheme_options',
         array(
-            'title'       => __( 'MyTheme Options', CHILD_TEXT_DOMAIN ), //Visible title of section
+            'title'       => __( 'MyTheme Options', CHILD_TEXT_DOMAIN, 'virtuoso' ), //Visible title of section
             'priority'    => 35, //Determines what order this appears in
             'capability'  => 'edit_theme_options', //Capability needed to tweak
-            'description' => __('Allows you to customize some example settings for MyTheme.', CHILD_TEXT_DOMAIN), //Descriptive tooltip
+            'description' => __('Allows you to customize some example settings for MyTheme.', CHILD_TEXT_DOMAIN, 'virtuoso'), //Descriptive tooltip
         )
     );
 
@@ -44,7 +44,7 @@ class MyTheme_Customize {
         $wp_customize, //Pass the $wp_customize object (required)
         'mytheme_link_textcolor', //Set a unique ID for the control
         array(
-            'label'      => __( 'Link Color', CHILD_TEXT_DOMAIN ), //Admin-visible name of the control
+            'label'      => __( 'Link Color', CHILD_TEXT_DOMAIN, 'virtuoso' ), //Admin-visible name of the control
             'settings'   => 'link_textcolor', //Which setting to load and manipulate (serialized is okay)
             'priority'   => 10, //Determines the order this control appears in for the specified section
             'section'    => 'colors', //ID of the section this control should render in (can be one of yours, or a WordPress default section)

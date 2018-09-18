@@ -24,9 +24,6 @@
   },
   "devDependencies": {
     "browser-sync": "^2.24.6",
-    "restart": "^0.1.0",
-    "sass-rem": "^1.2.2",
-    "laravel-mix": "^2.1.0",
     "browser-sync-webpack-plugin": "2.2.2",
     "copy-webpack-plugin": "^4.5.2",
     "cross-env": "^5.2.0",
@@ -34,9 +31,12 @@
     "eslint-config-wordpress": "^2.0.0",
     "imagemin-mozjpeg": "^6.0.0",
     "imagemin-webpack-plugin": "^2.2.0",
+    "laravel-mix": "^2.1.0",
     "node-wp-i18n": "^1.2.0",
     "postcss-preset-env": "^5.3.0",
+    "restart": "^0.1.0",
     "rimraf": "^2.6.2",
+    "sass-rem": "^1.2.2",
     "stylelint": "^9.4.0",
     "stylelint-config-wordpress": "^13.0.0"
   },

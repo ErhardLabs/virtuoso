@@ -34,7 +34,7 @@ class Customizer extends CustomizerHelpers {
 
 
 		$wp_customize->add_section( 'slide-out-sidebar', array(
-			'title'    => __( 'Slide-Out Sidebar', CHILD_TEXT_DOMAIN ),
+			'title'    => __( 'Slide-Out Sidebar', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 			'priority' => 1,
 		) );
 
