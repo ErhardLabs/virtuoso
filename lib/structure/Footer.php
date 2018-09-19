@@ -20,7 +20,7 @@ class Footer {
 
 		add_filter( 'body_class', [ $this, 'set_footer_class' ] );
 
-		add_action( 'get_footer', [ $this, 'display_slide_out_sidebar' ] );
+//		add_action( 'get_footer', [ $this, 'display_slide_out_sidebar' ] );
 		add_action( 'genesis_footer', [ $this, 'custom_footer' ] );
 	}
 
@@ -64,11 +64,13 @@ class Footer {
 	 * @return string
 	 */
 	public function custom_footer() {
-		include( CHILD_DIR . '/lib/views/footer-copyright.php' );
+		return include( CHILD_DIR . '/lib/views/footer-copyright.php' );
 	}
 
 
-	function display_slide_out_sidebar() {
+	public function display_slide_out_sidebar() {
+
+
 		if ( ( ! is_checkout() ) && ( ! is_cart() ) ) { ?>
 
         <div id="slider" class="slider">
