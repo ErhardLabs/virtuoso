@@ -52,6 +52,7 @@ class ThemeConfig {
 					'footer'    => __( 'Footer Navigation', CHILD_TEXT_DOMAIN, 'virtuoso' )
 				),
 				'woocommerce',
+				'auto-wide',
 //		'genesis-after-entry-widget-area' => null,
 			),
 			//=============================================
