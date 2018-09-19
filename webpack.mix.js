@@ -1,5 +1,4 @@
 let mix = require('laravel-mix');
-let fs = require('fs-extra');
 
 /*
  * Sets the development path to assets. By default, this is the `/resources`

@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Virtuoso 2.1.7\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2018-09-18 00:34:39+00:00\n"
+"POT-Creation-Date: 2018-09-19 01:34:15+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -25,43 +25,43 @@ msgstr ""
 msgid "Footer Navigation"
 msgstr ""
 
-#: config/ThemeConfig.php:80
+#: config/ThemeConfig.php:81
 msgid "Front Page 1"
 msgstr ""
 
-#: config/ThemeConfig.php:81
+#: config/ThemeConfig.php:82
 msgid "Front page 1 widget area."
 msgstr ""
 
-#: config/ThemeConfig.php:87
+#: config/ThemeConfig.php:88
 msgid "Front Page 2"
 msgstr ""
 
-#: config/ThemeConfig.php:88
+#: config/ThemeConfig.php:89
 msgid "Front page 2 widget area."
 msgstr ""
 
-#: config/ThemeConfig.php:92
+#: config/ThemeConfig.php:93
 msgid "Front Page 3"
 msgstr ""
 
-#: config/ThemeConfig.php:93
+#: config/ThemeConfig.php:94
 msgid "Front page 3 widget area."
 msgstr ""
 
-#: config/ThemeConfig.php:97
+#: config/ThemeConfig.php:98
 msgid "Front Page 4"
 msgstr ""
 
-#: config/ThemeConfig.php:98
+#: config/ThemeConfig.php:99
 msgid "Front page 4 widget area."
 msgstr ""
 
-#: config/ThemeConfig.php:102
+#: config/ThemeConfig.php:103
 msgid "Front Page 5"
 msgstr ""
 
-#: config/ThemeConfig.php:103
+#: config/ThemeConfig.php:104
 msgid "Front page 5 widget area."
 msgstr ""
 
