@@ -4,10 +4,8 @@
  *
  * This file adds the front page to the Genesis Starter Theme.
  *
- * @package Genesis Starter
- * @author  SeoThemes
- * @license GPL-2.0+
- * @link    https://seothemes.com/themes/genesis-starter/
+ * @package Virtuoso
+ * @author  ErhardLabs
  */
 namespace Virtuoso;
 
