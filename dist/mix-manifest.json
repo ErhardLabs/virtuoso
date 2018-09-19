@@ -1,10 +1,7 @@
 {
-    "/js/app.js": "/js/app.js?id=b17ed8629b5b5bedc8f1",
-    "/styles/style.css": "/styles/style.css?id=182c3dd6c8e857b3f41e",
-    "/js/app.js.map": "/js/app.js.map?id=067309f1696ccac6fc05",
-    "/styles/style.css.map": "/styles/style.css.map?id=57db1d83579fa10fee11",
-    "/js/projectSpecific.js": "/js/projectSpecific.js?id=ec3509fb1895bcbb9bc7",
-    "/js/projectSpecific.js.map": "/js/projectSpecific.js.map?id=f46edefecf6f3805daa6",
+    "/js/app.js": "/js/app.js?id=642ea22bc098544320ad",
+    "/styles/style.css": "/styles/style.css?id=6eb05addbb4c795d2618",
+    "/js/projectSpecific.js": "/js/projectSpecific.js?id=aebd97253a934e4680e9",
     "/styles/animate.min.css": "/styles/animate.min.css?id=c78e4003414fbf2814dc",
     "/js/jquery.waypoints.min.js": "/js/jquery.waypoints.min.js?id=7d05f92297dede9ecfe3"
 }
