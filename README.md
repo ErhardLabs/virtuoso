@@ -2,8 +2,6 @@
 
 ## Features
 
-Virtuoso is a sweet blend between [Genesis](http://www.studiopress.com/features/) and [Laravel](https://laravel.com/)
-
 This theme includes the following features:
 
 1. [Genesis-powered](http://www.studiopress.com/features/)
