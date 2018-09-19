@@ -31,8 +31,6 @@ use Virtuoso\Lib\Structure\Comments;
 use Virtuoso\Lib\Structure\Archive;
 use Virtuoso\Lib\Structure\Footer;
 
-use Virtuoso\FrontPage;
-
 
 class VirtuosoTheme extends ThemeConfig {
 
@@ -45,6 +43,7 @@ class VirtuosoTheme extends ThemeConfig {
 		add_action( 'genesis_setup', [ $this, 'setup_child_theme' ], 15 );
 		add_filter( 'genesis_theme_settings_defaults', [ $this, 'set_theme_settings_defaults' ] );
 		add_action( 'after_switch_theme', [ $this, 'update_theme_settings_defaults' ] );
+		add_action( 'body_class', [ $this, 'add_gutenberg_class' ] );
 
 		$detectJS = new DetectJS();
 
@@ -61,8 +60,6 @@ class VirtuosoTheme extends ThemeConfig {
 		$comments = new Comments( $config );
 		$archive  = new Archive( $config );
 		$archive  = new Footer( $config );
-
-		//$frontPage = new FrontPage();
 
 	}
 
@@ -94,6 +91,23 @@ class VirtuosoTheme extends ThemeConfig {
 
 		$this->adds_theme_supports( $config['add_theme_support'] );
 		$this->adds_new_image_sizes( $config['theme_image_sizes'] );
+
+
+	}
+
+	/**
+	 * Check to see if Gutenburg is active on a page
+	 *
+	 * @since 2.1.8
+	 *
+	 * @return array
+	 */
+	public function add_gutenberg_class( $classes ) {
+		if ( function_exists( 'the_gutenberg_project' ) && has_blocks( get_the_ID() ) ) {
+			$classes[] = 'gutenberg-page';
+		}
+
+		return $classes;
 	}
 
 	/**

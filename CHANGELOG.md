@@ -4,6 +4,7 @@
 ## 2.1.8 @2018-09-8
 ### Added
 - Footer configuration items
+- Check to see if page is using Gutenberg
 
 ## 2.1.7 @2018-09-8
 ### Changed
