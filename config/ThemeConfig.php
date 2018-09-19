@@ -42,6 +42,8 @@ class ThemeConfig {
 					'header-selector' => '.site-title a',
 					'header-text'     => false,
 					'flex-height'     => true,
+					'flex-width'      => true,
+					'video'           => true,
 				),
 				'custom-background'               => null,
 				'genesis-after-entry-widget-area' => null,
@@ -75,7 +77,7 @@ class ThemeConfig {
 				'content_archive_thumbnail' => 0,
 				'posts_nav'                 => 'numeric',
 				'site_layout'               => 'full-width-content',
-				'sidebar-widgets'                  => array(
+				'sidebar-widgets'           => array(
 					array(
 						'id'           => 'front-page-1',
 						'name'         => __( 'Front Page 1', 'virtuoso' ),
