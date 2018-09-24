@@ -10,13 +10,15 @@
  */
 
 namespace Virtuoso\Lib\Structure;
-
+use Virtuoso\Lib\Components\Background_Video_HTML;
 
 class Header {
+
 	public $config = "";
+
 	public function __construct( $config ) {
 		add_action( 'genesis_after_header', [ $this, 'include_sexy_popup' ] );
-
+    add_action( 'genesis_after_header', [ $this, 'include_background_video' ] );
 	}
 
 	/**
@@ -46,5 +48,11 @@ class Header {
 			include_once( SEXY_POPUP_PATH . "inc/views/popup.php" );
 		}
 	}
+
+	function include_background_video() {
+
+    new Background_Video_HTML();
+
+  }
 
 }

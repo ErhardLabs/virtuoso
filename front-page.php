@@ -35,7 +35,7 @@ function virtuoso_front_page_loop() {
 
 		// Get custom header markup.
 		ob_start();
-		the_custom_header_markup();
+//		the_custom_header_markup();
 		$custom_header = ob_get_clean();
 
 		genesis_widget_area( 'front-page-1', array(

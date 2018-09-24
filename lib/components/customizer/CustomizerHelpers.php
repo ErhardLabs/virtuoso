@@ -22,7 +22,7 @@ class CustomizerHelpers {
 	 *
 	 * @return string
 	 */
-	protected function get_settings_prefix() {
+	static function get_settings_prefix() {
 		return 'virtuoso';
 	}
 
@@ -35,7 +35,7 @@ class CustomizerHelpers {
 	 *
 	 * @return string Hex color code for link color.
 	 */
-	protected function get_default_link_color() {
+	static function get_default_link_color() {
 		return '#c3251d';
 	}
 
@@ -48,7 +48,7 @@ class CustomizerHelpers {
 	 *
 	 * @return string Hex color code for accent color.
 	 */
-	protected function get_default_accent_color() {
+  static function get_default_accent_color() {
 		return '#c3251d';
 	}
 
@@ -61,7 +61,7 @@ class CustomizerHelpers {
 	 *
 	 * @return string
 	 */
-	protected function calculate_color_contrast( $color ) {
+  static function calculate_color_contrast( $color ) {
 
 		$hexcolor = str_replace( '#', '', $color );
 
@@ -85,7 +85,7 @@ class CustomizerHelpers {
 	 *
 	 * @return string
 	 */
-	protected function calculate_color_brightness( $color, $change ) {
+  static function calculate_color_brightness( $color, $change ) {
 
 		$hexcolor = str_replace( '#', '', $color );
 
