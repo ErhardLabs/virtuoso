@@ -2576,10 +2576,8 @@ img.alignright {
 .video-background {
 	background: #000;
 	position: fixed;
-	top: -20px;
 	right: 0;
 	left: 0;
-	bottom: -20px;
 	z-index: -99;
 }
 

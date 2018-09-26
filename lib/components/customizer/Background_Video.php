@@ -131,7 +131,7 @@ class Background_Video
     $wp_customize->add_control(
         $prefix . '_below_header',
         array(
-            'label' => __('Display video below header/nav menu', CHILD_TEXT_DOMAIN, 'virtuoso'),
+            'label' => __('Display Below Header', CHILD_TEXT_DOMAIN, 'virtuoso'),
             'section' => 'background_video',
             'type' => 'checkbox',
         )
