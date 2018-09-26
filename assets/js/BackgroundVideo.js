@@ -6,7 +6,7 @@ class BackgroundVideo {
 
     document.addEventListener("DOMContentLoaded", function(event) {
       self.homeVideo = $('#landing_yt_player').data('id');
-      self.playlistID = $('#landing_yt_player').data('playlist-id');
+      self.playlistIDs = $('#landing_yt_player').data('playlist-id');
       self.homeVideoStartTime = $('#landing_yt_player').data('start-time');
       self.belowHeader = $('#landing_yt_player').data('below-header');
       // this.thumb = '<img src="https://img.youtube.com/vi/'+homeVideo+'/maxresdefault.jpg">';
@@ -20,7 +20,7 @@ class BackgroundVideo {
       // Loads the IFrame Player API code asynchronously.
       BackgroundVideo.loadIframePlayerAPI();
 
-      self.processIframe();
+      // self.processIframe();
     });
 
   }
@@ -47,8 +47,8 @@ class BackgroundVideo {
         // let src = 'https://www.youtube.com/embed/' + this.homeVideo + '?rel=0&controls=0&showinfo=0&autoplay=1&disablekb=1&loop=1&enablejsapi=1';
         let src = 'https://www.youtube.com/embed/' + this.homeVideo + '?rel=0&controls=0&showinfo=0&autoplay=1&loop=1&enablejsapi=1';
 
-        if (this.playlistID !== '') {
-          src += '&playlist=' + this.playlistID;
+        if (this.playlistIDs !== '') {
+          src += '&playlist=' + this.playlistIDs;
         }
 
         if (this.homeVideoStartTime !== '') {

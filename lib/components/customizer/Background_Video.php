@@ -60,6 +60,7 @@ class Background_Video
         $prefix . '_playlist',
         array(
             'label' => __('Video Playlist', CHILD_TEXT_DOMAIN, 'virtuoso'),
+            'description' => __('Comma separate each additional video ID you want to play after the video above.', CHILD_TEXT_DOMAIN, 'virtuoso'),
             'section' => 'background_video',
             'type' => 'text',
         )
