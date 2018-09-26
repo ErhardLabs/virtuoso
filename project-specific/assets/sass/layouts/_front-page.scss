@@ -1,0 +1,49 @@
+.home {
+  .front-page-1 {
+    text-align: center;
+    color: $white;
+    max-width: 650px;
+    margin: 100px auto 0 auto;
+
+    h1 {
+      font-size: 4.6em;
+      text-shadow: 1px 1px 1px #222;
+      margin: 0;
+    }
+
+    .widget {
+      margin-bottom: 15px;
+    }
+
+    .textwidget {
+      font-size: 30px;
+      text-shadow: 1px 1px 10px #222;
+    }
+
+    .widget_custom_html {
+
+      .link_wrap {
+        float: left;
+        width: 33.33%;
+        padding: 10px;
+
+        a {
+          border-radius: 40px;
+          background: white;
+          color: $black;
+          font-size: 24px;
+          text-shadow: none;
+          padding: 10px 20px;
+        }
+      }
+
+    }
+  }
+
+
+}
+
+
+//@include media-query('med') {
+//
+//}

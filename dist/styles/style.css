@@ -4781,3 +4781,40 @@ p.entry-meta {
 .archive-title {
 	font-size: 20px;
 }
+
+.home .front-page-1 {
+	text-align: center;
+	color: #fff;
+	max-width: 650px;
+	margin: 100px auto 0 auto;
+}
+
+.home .front-page-1 h1 {
+	font-size: 4.6em;
+	text-shadow: 1px 1px 1px #222;
+	margin: 0;
+}
+
+.home .front-page-1 .widget {
+	margin-bottom: 15px;
+}
+
+.home .front-page-1 .textwidget {
+	font-size: 30px;
+	text-shadow: 1px 1px 10px #222;
+}
+
+.home .front-page-1 .widget_custom_html .link_wrap {
+	float: left;
+	width: 33.33%;
+	padding: 10px;
+}
+
+.home .front-page-1 .widget_custom_html .link_wrap a {
+	border-radius: 40px;
+	background: white;
+	color: #3d3d3d;
+	font-size: 24px;
+	text-shadow: none;
+	padding: 10px 20px;
+}
