@@ -1,5 +1,9 @@
 ## [Unreleased]
-#### This Project uses Semantic Visioning
+#### This Project uses Semantic Versioning
+
+## 2.2.0 @2018-09-26
+### Added
+- Background video feature in customizer
 
 ## 2.1.8 @2018-09-8
 ### Added
