@@ -14,6 +14,7 @@ class Background_Video_HTML
   public $videoID;
   public $playlistID;
   public $startTime;
+  public $belowHeader;
 
   public function __construct() {
 
@@ -22,6 +23,7 @@ class Background_Video_HTML
     $this->videoID = get_theme_mod($prefix.'_video_id');
     $this->playlistID = get_theme_mod($prefix.'_playlist');
     $this->startTime = get_theme_mod($prefix.'_start_time');
+    $this->belowHeader = get_theme_mod($prefix.'_below_header');
     $this->determine_display_locations();
 
   }
@@ -51,7 +53,7 @@ class Background_Video_HTML
 //    $videoID = get_post_meta( get_the_ID(), 'ge_video_bg', true );
 
     if ((is_product_category()) || (is_front_page()) || ($this->videoID !== '')) {
-      echo "<span id='landing_yt_player' data-id='" . $this->videoID . "' data-playlist-id='" . $this->playlistID . "' data-start-time='" . $this->startTime . "'></span>";
+      echo "<span id='landing_yt_player' data-id='" . $this->videoID . "' data-playlist-id='" . $this->playlistID . "' data-start-time='" . $this->startTime . "' data-below-header='" . $this->belowHeader. "'></span>";
     }
 
   }

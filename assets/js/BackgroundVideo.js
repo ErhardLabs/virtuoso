@@ -2,21 +2,26 @@ class BackgroundVideo {
 
   constructor() {
 
-    this.homeVideo = $('#landing_yt_player').data('id');
-    this.playlistID = $('#landing_yt_player').data('playlist-id');
-    this.homeVideoStartTime = $('#landing_yt_player').data('start-time');
-    // this.thumb = '<img src="https://img.youtube.com/vi/'+homeVideo+'/maxresdefault.jpg">';
-    // this.thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">';
-    this.thumb = '<img src="https://img.youtube.com/vi/'+this.homeVideo+'/0.jpg">';
-    this.thumbSrc = 'https://img.youtube.com/vi/'+this.homeVideo+'/maxresdefault.jpg';
-    this.play = '<div class="play"></div>';
+    let self = this;
 
-    this.addVideoHTML();
+    document.addEventListener("DOMContentLoaded", function(event) {
+      self.homeVideo = $('#landing_yt_player').data('id');
+      self.playlistID = $('#landing_yt_player').data('playlist-id');
+      self.homeVideoStartTime = $('#landing_yt_player').data('start-time');
+      self.belowHeader = $('#landing_yt_player').data('below-header');
+      // this.thumb = '<img src="https://img.youtube.com/vi/'+homeVideo+'/maxresdefault.jpg">';
+      // this.thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">';
+      self.thumb = '<img src="https://img.youtube.com/vi/' + self.homeVideo + '/0.jpg">';
+      self.thumbSrc = 'https://img.youtube.com/vi/' + self.homeVideo + '/maxresdefault.jpg';
+      self.play = '<div class="play"></div>';
 
-    // Loads the IFrame Player API code asynchronously.
-    BackgroundVideo.loadIframePlayerAPI();
+      self.addVideoHTML();
 
-    this.processIframe();
+      // Loads the IFrame Player API code asynchronously.
+      BackgroundVideo.loadIframePlayerAPI();
+
+      self.processIframe();
+    });
 
   }
 
@@ -24,10 +29,14 @@ class BackgroundVideo {
 
     if (typeof this.homeVideo !== 'undefined') {
 
+      let offset = (this.belowHeader) ? document.getElementsByClassName('site-header')[0].offsetHeight : 0;
+      offset += (document.getElementById('wpadminbar')) ? document.getElementById('wpadminbar').offsetHeight : 0;
+      offset+='px';
+
       if ($(window).width() < 768) {
 
         $('body').prepend(
-            '<div class="video-background" style="background-image: url('+this.thumbSrc+')">' +
+            '<div class="video-background" style="background-image: url(' + this.thumbSrc + '); top: ' + offset +'">' +
             '<div class="video-foreground" >' +
             '</div>' +
             '</div>'
@@ -42,15 +51,15 @@ class BackgroundVideo {
         }
 
         if (this.homeVideoStartTime !== '') {
-          src += '&start='+this.homeVideoStartTime;
+          src += '&start=' + this.homeVideoStartTime;
         }
 
 
         // INSERT VIDEO PLAYER
         $('body').prepend(
-            '<div class="video-background">' +
+            '<div class="video-background" style="top: ' + offset +'">' +
             '<div class="video-foreground">' +
-            '<iframe class="home_video" id="yt_home_embed" width="1280" height="720" src="'+src+'" frameborder="0" allowfullscreen></iframe>' +
+            '<iframe class="home_video" id="yt_home_embed" width="2460" height="1440" src="' + src + '" frameborder="0" allowfullscreen></iframe>' +
             '</div>' +
             '</div>'
         );
@@ -64,7 +73,7 @@ class BackgroundVideo {
   // Loads the IFrame Player API code asynchronously.
   static loadIframePlayerAPI() {
     let tag = document.createElement('script');
-    tag.src = "https://www.youtube.com/iframe_api";
+    tag.src = 'https://www.youtube.com/iframe_api';
     let firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
     console.log(tag);
@@ -86,15 +95,15 @@ class BackgroundVideo {
 
     let self = this;
 
-    div.onload = function() {
+    div.onload = function () {
       let iframe = document.createElement("iframe");
-      let embed = "https://www.youtube.com/embed/videoseries?list="+self.playlistID;
+      let embed = "https://www.youtube.com/embed/videoseries?list=" + self.playlistID;
       iframe.setAttribute("src", embed);
       iframe.setAttribute("frameborder", "0");
       iframe.setAttribute("allowfullscreen", "1");
       console.log(this);
       this.parentNode.replaceChild(iframe, this);
-  };
+    };
 
     v.appendChild(div);
 
@@ -107,13 +116,13 @@ class BackgroundVideo {
 
 new BackgroundVideo();
 
-window.onYouTubeIframeAPIReady = function() {
+window.onYouTubeIframeAPIReady = function () {
   document.dispatchEvent(new CustomEvent('onYouTubeIframeAPIReady', {}))
 
   console.log('YT API loaded!');
   let player = new YT.Player('yt_home_embed', {
     events: {
-      'onReady': function() {
+      'onReady': function () {
         // Mute!
         player.mute();
         player.playVideo();

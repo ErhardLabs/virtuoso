@@ -8,6 +8,14 @@
   z-index: -99;
 }
 
+.video-foreground {
+  position: relative;
+  padding-bottom: 56.25%;
+  overflow: hidden;
+  max-width: 100%;
+  height: auto;
+}
+
 .video-background iframe {
   position: absolute;
   top: 0;

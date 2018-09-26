@@ -121,6 +121,24 @@ class Background_Video
 
     $this->settings[] = $prefix . '_woo_archive_display';
 
+    $wp_customize->add_setting(
+        $prefix . '_below_header',
+        array(
+            'default' => true,
+        )
+    );
+
+    $wp_customize->add_control(
+        $prefix . '_below_header',
+        array(
+            'label' => __('Display video below header/nav menu', CHILD_TEXT_DOMAIN, 'virtuoso'),
+            'section' => 'background_video',
+            'type' => 'checkbox',
+        )
+    );
+
+    $this->settings[] = $prefix . '_below_header';
+
   }
 
   public function live_preview() {
