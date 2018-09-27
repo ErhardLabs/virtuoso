@@ -19,12 +19,8 @@
   "autoload": {
     "psr-4": {
       "Virtuoso\\": "",
-      "Virtuoso\\Lib\\": "lib/"
-    },
-    "classmap": [
-      "config/",
-      "lib/"
-    ]
+      "Virtuoso\\Lib\\": "Lib/"
+    }
   },
   "require-dev": {
     "phpunit/phpunit": "^7"
