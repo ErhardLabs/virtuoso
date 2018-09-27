@@ -60,7 +60,7 @@ class DetectJS {
 	 *
 	 * @return string
 	 */
-	public static function is_javascript_enabled() {;
+	public static function is_javascript_enabled() {
 		$jsEnabled = false;
 
 		if ( in_array( 'virtuoso-js', get_body_class() ) ) {
