@@ -10,7 +10,8 @@
   .menu-cart-count {
     position: absolute;
     font-size: 1.5rem;
-    font-family: $font-family--roboto-black;
+    font-family: $base--font-family;
+    font-weight: bold;
     background: $black;
     width: 100%;
     height: 100%;
