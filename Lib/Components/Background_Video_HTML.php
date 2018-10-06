@@ -42,9 +42,9 @@ class Background_Video_HTML
         $this->display_in_category();
       }
 
-      $this->display();
-
     }
+
+	  $this->display();
 
   }
 
@@ -52,7 +52,7 @@ class Background_Video_HTML
 
 //    $videoID = get_post_meta( get_the_ID(), 'ge_video_bg', true );
 
-    if ((is_product_category()) || (is_front_page()) || ($this->videoID !== '')) {
+    if ((is_front_page()) || ($this->videoID !== '')) {
       echo "<span id='landing_yt_player' data-id='" . $this->videoID . "' data-playlist-id='" . $this->playlistID . "' data-start-time='" . $this->startTime . "' data-below-header='" . $this->belowHeader. "'></span>";
     }
 
