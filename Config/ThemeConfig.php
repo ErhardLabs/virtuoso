@@ -117,8 +117,8 @@ class ThemeConfig {
 					'logo-middle' => false,
 				),
 				'footer-design'             => array(
-					'footer-widgets-left-column' => false,
-					'footer-widgets-block'       => true,
+					'footer-widgets-left-column' => true,
+					'footer-widgets-block'       => false,
 				),
 				'sticky-contact'            => array(
 					'align-left'   => false,
