@@ -33,23 +33,16 @@ class BackgroundVideo {
       // offset += (document.getElementById('wpadminbar')) ? document.getElementById('wpadminbar').offsetHeight : 0;
       offset+='px';
 
-      if ($(window).width() < 768) {
-
-        $('body').prepend(
-            '<div class="video-background" style="background-image: url(' + this.thumbSrc + '); top: ' + offset +'">' +
-            '<div class="video-foreground" >' +
-            '</div>' +
-            '</div>'
-        );
-
-      } else {
-
+      if ($(window).width() > 576 ) {
         // let src = 'https://www.youtube.com/embed/' + this.homeVideo + '?rel=0&controls=0&showinfo=0&autoplay=1&disablekb=1&loop=1&enablejsapi=1';
-        let src = 'https://www.youtube.com/embed/' + this.homeVideo + '?rel=0&controls=0&showinfo=0&autoplay=1&loop=1&enablejsapi=1';
+        let src = 'https://www.youtube.com/embed/';
 
         if (this.playlistIDs !== '') {
-          src += '&playlist=' + this.playlistIDs;
+          src += '?rel=0?listType=playlist&list='+ this.playlistIDs + '&controls=0&showinfo=0&autoplay=1&loop=1&enablejsapi=1';
+        } else {
+          src += this.homeVideo + '?rel=0&controls=0&showinfo=0&autoplay=1&loop=1&enablejsapi=1&playlist=' + this.homeVideo;
         }
+
 
         if (this.homeVideoStartTime !== '') {
           src += '&start=' + this.homeVideoStartTime;
@@ -61,6 +54,7 @@ class BackgroundVideo {
             '<div class="video-background">' +
             '<div class="video-foreground">' +
             '<iframe class="home_video" id="yt_home_embed" width="2460" height="1440" src="' + src + '" frameborder="0" allowfullscreen style="top: ' + offset +'"></iframe>' +
+            '<div class="video-overlay" >' +
             '</div>' +
             '</div>'
         );
