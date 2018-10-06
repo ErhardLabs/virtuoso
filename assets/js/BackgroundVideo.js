@@ -33,8 +33,7 @@ class BackgroundVideo {
       // offset += (document.getElementById('wpadminbar')) ? document.getElementById('wpadminbar').offsetHeight : 0;
       offset+='px';
 
-      if ($(window).width() > 500 ) {
-
+      if ($(window).width() > 576 ) {
         // let src = 'https://www.youtube.com/embed/' + this.homeVideo + '?rel=0&controls=0&showinfo=0&autoplay=1&disablekb=1&loop=1&enablejsapi=1';
         let src = 'https://www.youtube.com/embed/';
 
