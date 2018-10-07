@@ -8,18 +8,20 @@
 //$gray--light: #ddd;
 //$gray--medium: #777;
 //$gray: #333;
-
+$umbra--dark-blue: #0B0C10;
+$umbra--blue-accent: #66FCF1;
+$transparent: rgba(0,0,0,0.0);
 //
 ////
 //// Color Configuration
 ////===========================
 //
-//$link--color: $gray--medium;
+$link--color: $gray--medium;
 //$link--hover-color: $gray--medium;
 //
 //// Elements
-//$base__color: $gray;
-//$body--background-color: $umbra--dark-blue;
+$base__color: $white;
+$body--background-color: $umbra--dark-blue;
 //
 //// Form Elements
 //$input--background-color: $white;
@@ -36,31 +38,33 @@
 ////
 //// Header
 ////======================
-//$site-header--background-color: $transparent;
+$site-header--background-color: $transparent;
 //$site-title--link-color: $black;
+$video-overlay--background-color: rgba(0,0,0,.5);
+$video-background--blur: blur(10px);
 //
 ////
 //// Navigation
 ////============================
-//$nav--link-color: $white;
+$nav--link-color: $white;
 //$nav--hover-color: $gray--medium;
 //$submenu--border-color: $gray--lighter;
 //$submenu--link-background-color: $white;
 //
-//$primary-nav--background-color: $transparent;
+$primary-nav--background-color: $transparent;
 //$primary-nav--border-color: $gray--lighter;
 //$primary-nav--link-color: $nav--link-color;
 //
-//$secondary-nav--background-color: $transparent;
+$secondary-nav--background-color: $transparent;
 //$secondary-nav--border-color: $gray--lighter;
 //$secondary-nav--link-color: $nav--link-color;
 //
-//$js-nav--background-color: $white;
+$js-nav--background-color: $umbra--dark-blue;
 //$js-nav--hover-color: $black;
 //$js-nav--focus-color: $gray--medium;
 //
-//$nav-toggle--background-color: $white;
-//$nav-toggle--color: $gray;
+$nav-toggle--background-color: unset;
+$nav-toggle--color: $white;
 //
 //$archive-pagination--background-color: $white;
 //$archive-pagination--color: $gray;
