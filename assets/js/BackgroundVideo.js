@@ -27,7 +27,7 @@ class BackgroundVideo {
 
   addVideoHTML() {
 
-    if (typeof this.homeVideo !== 'undefined') {
+    if (this.homeVideo || this.playlistIDs) {
 
       let offset = (this.belowHeader) ? document.getElementsByClassName('site-header')[0].offsetHeight : 0;
       // offset += (document.getElementById('wpadminbar')) ? document.getElementById('wpadminbar').offsetHeight : 0;
