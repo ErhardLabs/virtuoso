@@ -1,42 +1,64 @@
 .home {
+
+  .site-inner {
+    padding: 0 !important;
+  }
+
   .front-page-1 {
     text-align: center;
     color: $white;
     max-width: 650px;
     margin: 100px auto 0 auto;
+    height: 80vh;
+    .arc-top {
+      position: absolute;
+      left: 0;
 
-    h1 {
-      font-size: 4.6em;
-      text-shadow: 1px 1px 1px #222;
-      margin: 0;
-    }
+      right: 0;
 
-    .widget {
-      margin-bottom: 15px;
-    }
-
-    .textwidget {
-      font-size: 30px;
-      text-shadow: 1px 1px 10px #222;
-    }
-
-    .widget_custom_html {
-
-      .link_wrap {
-        float: left;
-        width: 33.33%;
-        padding: 10px;
-
-        a {
-          border-radius: 40px;
-          background: white;
-          color: $black;
-          font-size: 24px;
-          text-shadow: none;
-          padding: 10px 20px;
-        }
+      @media (max-width: 780px) {
+        bottom: -80px;
       }
+      @media (min-width: 781px) {
+        bottom: -60px;
+      }
+    }
+  }
 
+  .front-page-2 {
+    background: linear-gradient(180deg, #12141a, $umbra--dark-blue 40%);
+    text-align: center;
+    position: relative;
+
+    .wrap {
+      padding: 0;
+    }
+
+
+
+    .content {
+      padding: 2em 5%;
+    }
+
+    //background: url('../../project-specific/assets/images/moon-bkg.svg') no-repeat 0;
+    //background-size: contain;
+
+  }
+  .front-page-5 {
+
+    text-align: center;
+    background: $umbra--dark-blue;
+
+    .wrap {
+      padding: 2em 5%;
+    }
+    .front-team_wrap {
+      display: flex;
+      flex-direction: column;
+
+      @include media-query('med'){
+        flex-direction: row;
+      }
     }
   }
 

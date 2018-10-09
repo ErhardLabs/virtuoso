@@ -35,9 +35,7 @@ use Virtuoso\Lib\Structure\Footer;
 class VirtuosoTheme extends ThemeConfig {
 
 	public function __construct() {
-
 		$this->init_constants();
-
 		$config = $this->get_theme_settings_defaults();
 
 		add_action( 'genesis_setup', [ $this, 'setup_child_theme' ], 15 );
