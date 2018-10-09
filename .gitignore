@@ -18,3 +18,5 @@ vendor
 .idea/
 
 _keep-old/
+/project-specific/assets/js/*
+/project-specific/assets/sass/*
