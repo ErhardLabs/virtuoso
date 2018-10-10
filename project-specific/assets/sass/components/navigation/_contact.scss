@@ -1,0 +1,9 @@
+.nav-primary {
+  .contact {
+    a {
+      padding: 1em 2em;
+      @include rect-button($white, none, $hover-effect: true);
+    }
+
+  }
+}
