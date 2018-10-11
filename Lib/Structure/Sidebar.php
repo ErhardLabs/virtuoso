@@ -11,22 +11,24 @@
 
 namespace Virtuoso\Lib\Structure;
 
+use Virtuoso\Config\ThemeConfig;
 
 class Sidebar {
 	public $config = "";
-	public function __construct( $config ) {
+	public function __construct() {
 
-		$this->config = $config;
+		$this->config = ThemeConfig::get_configuration_parameters( 'theme_default_settings' );
 
-		add_action( 'widgets_init', [ $this, 'register_sidebar_widgets' ] );
+		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
+    add_action('get_footer', [ $this, 'display' ]);
 	}
 
-	public function register_sidebar_widgets() {
+	public function register_widgets() {
 
-		$sidebar_widgets = $this->config['sidebar-widgets'];
+		$widgets = $this->config['sidebar-widgets'];
 
-		foreach ( $sidebar_widgets as $sidebar_widget ) {
-			genesis_register_sidebar($sidebar_widget);
+		foreach ( $widgets as $widget ) {
+			genesis_register_sidebar($widget);
 		}
 
 	}
@@ -38,9 +40,52 @@ class Sidebar {
 	 *
 	 * @return void
 	 */
-	public static function unregister_sidebar_callbacks( $config ) {
-		//remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-	}
+	public static function unregister_sidebar_callbacks( $config )
+  {
+//    remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+  }
+
+
+  public function display() {
+
+    if ((!is_checkout()) && (!is_cart())) { ?>
+
+      <div id="slider" class="slider">
+        <section id="close_slider" class="widget widget_text">
+          <div class="textwidget">
+            <a href="#/" class="close" data-wpel-link="internal"><i class="fa fa-times-circle fa-2x"></i></a>
+          </div>
+        </section>
+
+        <section id="sexy-woo-messages" class="widget widget_text">
+          <div class="textwidget"></div>
+        </section>
+
+        <section id="loading">
+          <img src="<?php echo SEXY_WOOCHECKOUT_URL . '/assets/img/loading.gif';?>"/>
+        </section>
+
+        <?php dynamic_sidebar('slider'); ?>
+        <section id="sexy-woo-cart">
+          <h4>CART</h4>
+          <div id="sexy-woo-cart-container">
+            <?php echo do_shortcode('[woocommerce_cart]'); ?>
+          </div>
+          <a href="#" class="cart_plus plus_btn"><i class="fas fa-plus"></i></a>
+        </section>
+<!--        <section id="sexy-woo-checkout">-->
+<!--          <h4>CHECKOUT</h4>-->
+<!--          --><?php //echo do_shortcode('[woocommerce_checkout]'); ?>
+<!---->
+<!---->
+<!--          <a href="#" class="checkout_plus plus_btn"><span>+</span></a>-->
+<!--        </section>-->
+
+      </div>
+
+      <?php
+    }
+  }
 
 }
 

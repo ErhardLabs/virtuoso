@@ -30,6 +30,7 @@ use Virtuoso\Lib\Structure\Sidebar;
 use Virtuoso\Lib\Structure\Comments;
 use Virtuoso\Lib\Structure\Archive;
 use Virtuoso\Lib\Structure\Footer;
+use Virtuoso\Lib\Structure\Post;
 
 
 class VirtuosoTheme extends ThemeConfig {
@@ -54,10 +55,11 @@ class VirtuosoTheme extends ThemeConfig {
 
 		$menu     = new Menu();
 		$header   = new Header();
-		$sidebar  = new Sidebar( $config );
+		$sidebar  = new Sidebar();
 		$comments = new Comments();
 		$archive  = new Archive();
 		$footer  = new Footer();
+		$post = new Post();
 
 	}
 

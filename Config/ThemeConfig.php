@@ -14,7 +14,7 @@ namespace Virtuoso\Config;
 
 class ThemeConfig {
 
-	private function config_settings() {
+	static function config_settings() {
 		return array(
 			//=============================================
 			// Theme support features to add
@@ -77,7 +77,7 @@ class ThemeConfig {
 				'content_archive_thumbnail' => 0,
 				'posts_nav'                 => 'numeric',
 				'site_layout'               => 'full-width-content',
-				'sidebar-widgets'           => array(
+				'front-page-widgets'           => array(
 					array(
 						'id'           => 'front-page-1',
 						'name'         => __( 'Front Page 1', 'virtuoso' ),
@@ -106,6 +106,17 @@ class ThemeConfig {
 						'description' => __( 'Front page 5 widget area.', 'virtuoso' ),
 					),
 				),
+        'sidebar-widgets'       => array(
+            array(
+                'name' => __( 'Slide-Out Sidebar', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+                'id' => 'slider',
+//                'description' => __( '', '' ),
+                'before_widget' => '<section id="%1$s" class="widget %2$s">',
+                'after_widget'  => '</section>',
+                'before_title'  => '<h4 class="widgettitle">',
+                'after_title'   => '</h4>',
+            ),
+        ),
 			),
 			//=============================================
 			// Image Sizes
@@ -131,9 +142,9 @@ class ThemeConfig {
 	 *
 	 * @return array|null|mixed
 	 */
-	public function get_configuration_parameters( $key = '' ) {
+	static function get_configuration_parameters( $key = '' ) {
 
-		$config = $this->config_settings();
+		$config = ThemeConfig::config_settings();
 
 		if ( ! $key ) {
 			return $config;
@@ -152,8 +163,8 @@ class ThemeConfig {
 	 *
 	 * @return array
 	 */
-	public function get_theme_settings_defaults() {
-		return $this->get_configuration_parameters( 'theme_default_settings' );
+	static function get_theme_settings_defaults() {
+		return ThemeConfig::get_configuration_parameters( 'theme_default_settings' );
 	}
 
 }

@@ -42,30 +42,23 @@ class Slide_Out_Sidebar
     );
 
     $wp_customize->add_control(
-        $prefix . '_link_color',
-        array(
-            'label' => __('Background Video YouTube ID', CHILD_TEXT_DOMAIN, 'virtuoso'),
-            'section' => 'slide_out_sidebar',
-            'type' => 'text',
+        new WP_Customize_Color_Control(
+            $wp_customize,
+            $prefix . '_link_color',
+            array(
+                'description' => __( 'Change the default color for linked titles, menu links, post info links and more.', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+                'label'       => __( 'Link Color', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+                'section'     => 'slide_out_sidebar',
+                'settings'    => $prefix . '_link_color',
+                'type'        => 'color'
+            )
         )
     );
 
 
     $this->settings[] = $prefix . '_link_color';
-//
-//    $wp_customize->add_control(
-//        new WP_Customize_Color_Control(
-//            $wp_customize,
-//            $prefix . '_link_color',
-//            array(
-//                'description' => __( 'Change the default color for linked titles, menu links, post info links and more.', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-//                'label'       => __( 'Link Color', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-//                'section'     => 'slide_out_sidebar',
-//                'settings'    => $prefix . '_link_color',
-//                'type'        => 'color'
-//            )
-//        )
-//    );
+
+
 //
 //    $wp_customize->add_setting(
 //        $prefix . '_accent_color',
