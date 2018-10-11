@@ -4599,6 +4599,13 @@ p.entry-meta {
 	margin-bottom: 0;
 }
 
+#floatingContact {
+	position: fixed;
+	right: 5vw;
+	top: 90vh;
+	z-index: 9999;
+}
+
 /* # Plugins
 ---------------------------------------------------------------------------------------------------- */
 /* ## Genesis eNews Extended
