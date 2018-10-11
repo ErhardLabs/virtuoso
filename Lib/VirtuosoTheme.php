@@ -52,7 +52,7 @@ class VirtuosoTheme extends ThemeConfig {
 		$markup     = new Markup();
 
 
-		$menu     = new Menu( $config );
+		$menu     = new Menu();
 		$header   = new Header( $config );
 		$sidebar  = new SideBar( $config );
 		$comments = new Comments( $config );
@@ -121,7 +121,7 @@ class VirtuosoTheme extends ThemeConfig {
 
 		$config = $this->get_theme_settings_defaults();
 
-		Menu::unregister_menu_callbacks( $config );
+		Menu::unregister_menu_callbacks();
 		Header::unregister_header_callbacks( $config );
 		Sidebar::unregister_sidebar_callbacks( $config );
 		Comments::unregister_comments_callbacks( $config );
