@@ -1,9 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: gerhard
- * Date: 9/24/18
- * Time: 3:15 PM
+ * Customizer handler for Background Video
+ *
+ * @package     Virtuoso\Lib\Components\Customizer
+ * @since       2.0.0
+ * @author      ErhardLabs
+ * @link        https://sumnererhard.com https://graysonerhard.com
+ * @license     GNU General Public License 2.0+
  */
 
 namespace Virtuoso\Lib\Components\Customizer;
