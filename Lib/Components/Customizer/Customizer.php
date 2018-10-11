@@ -14,7 +14,7 @@ namespace Virtuoso\Lib\Components\Customizer;
 class Customizer {
 
 	public function __construct() {
-		add_action( 'customize_register', array( $this, 'register_with_customizer' ) );
+		add_action( 'customize_register', [ $this, 'register_with_customizer' ] );
 	}
 
 	/**
@@ -27,6 +27,7 @@ class Customizer {
 	public function register_with_customizer() {
 
 	  new Background_Video();
+	  new HeaderMenuLayout();
 //    new Slide_Out_Sidebar();
 
 	}
