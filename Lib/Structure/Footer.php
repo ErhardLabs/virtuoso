@@ -30,7 +30,7 @@ class Footer {
 	 *
 	 * @return void
 	 */
-	public static function unregister_footer_callbacks( $config ) {
+	public static function unregister_footer_callbacks() {
 		remove_action( 'genesis_footer', 'genesis_do_footer' );
 
 	}

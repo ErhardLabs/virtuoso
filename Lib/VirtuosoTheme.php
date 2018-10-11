@@ -53,10 +53,10 @@ class VirtuosoTheme extends ThemeConfig {
 
 
 		$menu     = new Menu();
-		$header   = new Header( $config );
+		$header   = new Header();
 		$sidebar  = new SideBar( $config );
-		$comments = new Comments( $config );
-		$archive  = new Archive( $config );
+		$comments = new Comments();
+		$archive  = new Archive();
 		$footer  = new Footer();
 
 	}
@@ -122,11 +122,11 @@ class VirtuosoTheme extends ThemeConfig {
 		$config = $this->get_theme_settings_defaults();
 
 		Menu::unregister_menu_callbacks();
-		Header::unregister_header_callbacks( $config );
+		Header::unregister_header_callbacks();
 		Sidebar::unregister_sidebar_callbacks( $config );
-		Comments::unregister_comments_callbacks( $config );
-		Archive::unregister_archive_callbacks( $config );
-		Footer::unregister_footer_callbacks( $config );
+		Comments::unregister_comments_callbacks();
+		Archive::unregister_archive_callbacks();
+		Footer::unregister_footer_callbacks();
 	}
 
 	/**

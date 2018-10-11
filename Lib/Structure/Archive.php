@@ -12,8 +12,7 @@
 namespace Virtuoso\Lib\Structure;
 
 class Archive {
-	public $config = "";
-	public function __construct( $config ) {
+	public function __construct() {
 
 	}
 
@@ -24,7 +23,7 @@ class Archive {
 	 *
 	 * @return void
 	 */
-	public static function unregister_archive_callbacks( $config ) {
+	public static function unregister_archive_callbacks() {
 
 	}
 }
