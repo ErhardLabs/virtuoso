@@ -124,7 +124,7 @@ class Menu {
 	function add_menu_items( $menu, $args ) {
 
 		if ( 'primary' === $args->theme_location ) {
-			//$menu .= '<li class="menu-item menu-email"><a href="#"><span class="ti-email"></span></a></li>';
+			$menu .= '<li class="menu-item menu-email"><a href="#"><span class="ti-email"></span></a></li>';
 
 		}
 
