@@ -10,20 +10,12 @@
  */
 
 namespace Virtuoso\Lib\Structure;
-
-use Virtuoso\Config\ThemeConfig;
 use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
 
-class Menu extends ThemeConfig {
-
-	public $config = "";
-
+class Menu {
 	public $headerMenuLayout;
 
-	public function __construct( $config ) {
-
-		$this->config = $config;
-
+	public function __construct() {
 		$prefix = CustomizerHelpers::get_settings_prefix();
 
 		$this->headerMenuLayout = get_theme_mod($prefix.'_header_design', $default = true);
@@ -165,7 +157,7 @@ class Menu extends ThemeConfig {
 	function add_cart_count_to_navigation( $items, $args ) {
 		// Top Navigation Area Only
 
-		if ( property_exists( $args, 'theme_location' ) && ( ( $args->theme_location === 'primary' && $this->config['header-design']['logo-left'] ) || ( $args->theme_location === 'secondary' && $this->config['header-design']['logo-middle'] ) ) ) {
+		if ( property_exists( $args, 'theme_location' ) && ( ( $args->theme_location === 'primary' && $this->headerMenuLayout == 'logo-left' ) || ( $args->theme_location === 'secondary' && $this->headerMenuLayout == 'logo-middle' ) ) ) {
 			// WooCommerce
 			if ( class_exists( 'woocommerce' ) ) {
 				$css_class = 'menu-item menu-item-type-cart menu-item-type-woocommerce-cart';
