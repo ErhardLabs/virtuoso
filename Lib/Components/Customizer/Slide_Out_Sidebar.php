@@ -7,8 +7,6 @@
  */
 
 namespace Virtuoso\Lib\Components\Customizer;
-use WP_Customize_Color_Control;
-
 
 class Slide_Out_Sidebar
 {
@@ -32,54 +30,123 @@ class Slide_Out_Sidebar
         'priority' => 1,
     ) );
 
-
     $wp_customize->add_setting(
-        $prefix . '_link_color',
+        $prefix . '_width',
         array(
-//            'default'           => CustomizerHelpers::get_default_link_color(),
-//            'sanitize_callback' => 'sanitize_hex_color',
+            'default'           => '400px',
         )
     );
 
     $wp_customize->add_control(
-        new WP_Customize_Color_Control(
-            $wp_customize,
-            $prefix . '_link_color',
-            array(
-                'description' => __( 'Change the default color for linked titles, menu links, post info links and more.', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-                'label'       => __( 'Link Color', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-                'section'     => 'slide_out_sidebar',
-                'settings'    => $prefix . '_link_color',
-                'type'        => 'color'
-            )
+        $prefix . '_width',
+        array(
+            'label' => __('Width', CHILD_TEXT_DOMAIN, 'virtuoso'),
+            'section' => 'slide_out_sidebar',
+            'type' => 'text',
         )
     );
 
+    $this->settings[] = $prefix . '_width';
 
-    $this->settings[] = $prefix . '_link_color';
+    $wp_customize->add_setting(
+        $prefix . '_enabled',
+        array(
+            'default'           => true,
+        )
+    );
+
+    $wp_customize->add_control(
+        $prefix . '_enabled',
+        array(
+            'label' => __('Enabled', CHILD_TEXT_DOMAIN, 'virtuoso'),
+            'section' => 'slide_out_sidebar',
+            'type' => 'checkbox',
+        )
+    );
+
+    $this->settings[] = $prefix . '_enabled';
+
+    $wp_customize->add_setting(
+        $prefix . '_cart_item_quantity',
+        array(
+            'default'           => true,
+        )
+    );
+
+    $wp_customize->add_control(
+        $prefix . '_cart_item_quantity',
+        array(
+            'label' => __('Show cart item quantity', CHILD_TEXT_DOMAIN, 'virtuoso'),
+            'section' => 'slide_out_sidebar',
+            'type' => 'checkbox',
+        )
+    );
+
+    $this->settings[] = $prefix . '_cart_item_quantity';
+
+    $wp_customize->add_setting(
+        $prefix . '_cart_classes',
+        array(
+//            'default'           => true,
+        )
+    );
+
+    $wp_customize->add_control(
+        $prefix . '_cart_classes',
+        array(
+            'label' => __('Custom Cart Classes/IDs', CHILD_TEXT_DOMAIN, 'virtuoso'),
+            'description' => __('Add cart classes or IDs (with prepending period or pound symbol). For multiple classes/IDs, comma separate them', CHILD_TEXT_DOMAIN, 'virtuoso'),
+            'section' => 'slide_out_sidebar',
+            'type' => 'text',
+        )
+    );
+
+    $this->settings[] = $prefix . '_cart_classes';
+
+    $sidebarWidgets = get_option( 'sidebars_widgets');
+    $sliderWidgets = $sidebarWidgets['slider'];
+    foreach($sliderWidgets as $widget) {
+
+      $widgetPieces = explode('-', $widget);
+      $widgetName = $widgetPieces[0];
+      $widgetIndex = $widgetPieces[1];
+      $widgetData = get_option('widget_'.$widgetName);
+      if (isset($widgetData['_multiwidget'])) {
+        unset($widgetData['_multiwidget']);
+      }
+
+      foreach($widgetData as $data) {
+        if (count($data) < 1) {
+          continue;
+        }
 
 
-//
-//    $wp_customize->add_setting(
-//        $prefix . '_accent_color',
-//        array(
-//            'default'           => CustomizerHelpers::get_default_accent_color(),
-//            'sanitize_callback' => 'sanitize_hex_color',
-//        )
-//    );
-//
-//    $wp_customize->add_control(
-//        new WP_Customize_Color_Control(
-//            $wp_customize,
-//            $prefix . '_accent_color',
-//            array(
-//                'description' => __( 'Change the default color for button hovers.', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-//                'label'       => __( 'Accent Color', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-//                'section'     => 'colors',
-//                'settings'    => $prefix . '_accent_color',
-//            )
-//        )
-//    );
+        $widgetTitle = $data['title'];
+        $widgetSlug = strtolower($widgetTitle);
+
+        $wp_customize->add_setting(
+            $prefix . '_' . $widgetSlug . '_widget_class_list',
+            array(
+//            'default'           => true,
+            )
+        );
+
+        $wp_customize->add_control(
+            $prefix . '_' . $widgetSlug . '_widget_class_list',
+            array(
+                'label' => __("Custom $widgetTitle Classes/IDs", CHILD_TEXT_DOMAIN, 'virtuoso'),
+                'description' => __("Add $widgetSlug classes or IDs (with prepending period or pound symbol). For multiple classes/IDs, comma separate them", CHILD_TEXT_DOMAIN, 'virtuoso'),
+                'section' => 'slide_out_sidebar',
+                'type' => 'text',
+            )
+        );
+
+        $this->settings[] = $prefix . '_' . $widgetSlug . '_widget_class_list';
+
+      }
+    }
+
+
 
   }
 
