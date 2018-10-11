@@ -10,18 +10,19 @@
  */
 
 namespace Virtuoso\Lib\Structure;
+use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
+use Virtuoso\Lib\Components\FloatingContactHTML;
 
 class Footer {
-	public $config = "";
+	public $footerLayout;
 
-	public function __construct( $config ) {
-
-		$this->config = $config;
-
+	public function __construct() {
+		$prefix = CustomizerHelpers::get_settings_prefix();
+		$this->footerLayout = get_theme_mod($prefix.'_footer_design');
 		add_filter( 'body_class', [ $this, 'set_footer_class' ] );
-
 //		add_action( 'get_footer', [ $this, 'display_slide_out_sidebar' ] );
 		add_action( 'genesis_footer', [ $this, 'custom_footer' ] );
+		add_action( 'genesis_after_footer', [ $this, 'include_floating_contact' ] );
 	}
 
 	/**
@@ -31,9 +32,8 @@ class Footer {
 	 *
 	 * @return void
 	 */
-	public static function unregister_footer_callbacks( $config ) {
+	public static function unregister_footer_callbacks() {
 		remove_action( 'genesis_footer', 'genesis_do_footer' );
-
 	}
 
 	/**
@@ -47,7 +47,7 @@ class Footer {
 	 */
 	function set_footer_class( $classes ) {
 
-		if ( $this->config['footer-design']['footer-widgets-block'] ) {
+		if ( $this->footerLayout == 'footer-widgets-block' ) {
 			$classes[] .= ' footer-widgets-block';
 		} else {
 			$classes[] .= ' footer-widgets-left-column';
@@ -67,9 +67,12 @@ class Footer {
 		return include( CHILD_DIR . '/lib/views/footer-copyright.php' );
 	}
 
+	public function include_floating_contact() {
+	    new FloatingContactHTML();
+    }
+
 
 	public function display_slide_out_sidebar() {
-
 
 		if ( ( ! is_checkout() ) && ( ! is_cart() ) ) { ?>
 

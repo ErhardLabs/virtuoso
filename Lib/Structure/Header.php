@@ -13,10 +13,7 @@ namespace Virtuoso\Lib\Structure;
 use Virtuoso\Lib\Components\Background_Video_HTML;
 
 class Header {
-
-	public $config = "";
-
-	public function __construct( $config ) {
+	public function __construct() {
 		add_action( 'genesis_after_header', [ $this, 'include_sexy_popup' ] );
     add_action( 'genesis_after_header', [ $this, 'include_background_video' ] );
 	}
@@ -28,7 +25,7 @@ class Header {
 	 *
 	 * @return void
 	 */
-	public static function unregister_header_callbacks( $config ) {
+	public static function unregister_header_callbacks() {
 		unregister_sidebar( 'header-right' );
 
 	}

@@ -10,20 +10,16 @@ function initialize() {
   let cartIconClass;
 	
 	// console.log('slider-div');
+  sliderDivItems = [
+    { element: '.contact', text: 'Contact' }
+  ];
 
   if (typeof localized_sexy_config.sexy_woocheckout_cart_icon_class !== 'undefined') {
 
     cartIconClass = '.'+localized_sexy_config.sexy_woocheckout_cart_icon_class;
 
     // Classes/ID's that should open the slider div
-    sliderDivItems = [
-      { element: cartIconClass, text: 'cart' },
-      { element: cartIconClass + ' span', text: 'cart' },
-      { element: '#read-more', text: 'Read More' },
-      { element: '.menu-contact', text: 'Contact' },
-      { element: '.sexy-contact', text: 'Contact' },
-      { element: '.footer-contact', text: 'Contact' },
-    ];
+
 
   } else {
 

@@ -10,22 +10,21 @@
  */
 
 namespace Virtuoso\Lib\Structure;
+use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
 
-use Virtuoso\Config\ThemeConfig;
+class Menu {
+	public $headerMenuLayout;
 
-class Menu extends ThemeConfig {
+	public function __construct() {
+		$prefix = CustomizerHelpers::get_settings_prefix();
 
-	public $config = "";
-
-	public function __construct( $config ) {
-
-		$this->config = $config;
+		$this->headerMenuLayout = get_theme_mod($prefix.'_header_design', $default = true);
 
 		add_filter( 'body_class', [ $this, 'set_header_class' ] );
 
 		add_filter( 'wp_nav_menu_args', [ $this, 'setup_secondary_menu_args' ] );
 
-		if ( $config['header-design']['logo-middle'] ) {
+		if ( $this->headerMenuLayout == 'logo-middle' ) {
 			add_filter( 'genesis_after_header', [ $this, 'render_header_menu' ] );
 		}
 
@@ -39,17 +38,18 @@ class Menu extends ThemeConfig {
 	/**
 	 * Unregister menu callbacks.
 	 *
-	 * @param $config array
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return void
 	 */
-	public static function unregister_menu_callbacks( $config ) {
+	public static function unregister_menu_callbacks() {
 
 		remove_action( 'genesis_after_header', 'genesis_do_nav' );
+		$prefix = CustomizerHelpers::get_settings_prefix();
+		$headerMenuLayout = get_theme_mod($prefix.'_header_design', $default = true);
 
-		if ( $config['header-design']['logo-left'] ) {
+		if ( $headerMenuLayout == 'logo-left' ) {
 			add_action( 'genesis_header', 'genesis_do_nav', 11 );
 		}
 
@@ -69,7 +69,7 @@ class Menu extends ThemeConfig {
 	 */
 	function set_header_class( $classes ) {
 
-		if ( $this->config['header-design']['logo-left'] ) {
+		if ( $this->headerMenuLayout == 'logo-left' ) {
 			$classes[] .= ' header-logo-left';
 		} else {
 			$classes[] .= ' header-logo-middle';
@@ -157,7 +157,7 @@ class Menu extends ThemeConfig {
 	function add_cart_count_to_navigation( $items, $args ) {
 		// Top Navigation Area Only
 
-		if ( property_exists( $args, 'theme_location' ) && ( ( $args->theme_location === 'primary' && $this->config['header-design']['logo-left'] ) || ( $args->theme_location === 'secondary' && $this->config['header-design']['logo-middle'] ) ) ) {
+		if ( property_exists( $args, 'theme_location' ) && ( ( $args->theme_location === 'primary' && $this->headerMenuLayout == 'logo-left' ) || ( $args->theme_location === 'secondary' && $this->headerMenuLayout == 'logo-middle' ) ) ) {
 			// WooCommerce
 			if ( class_exists( 'woocommerce' ) ) {
 				$css_class = 'menu-item menu-item-type-cart menu-item-type-woocommerce-cart';

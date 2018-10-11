@@ -1,0 +1,45 @@
+@mixin minimal-dropdown() {
+  appearance: none;
+  background-color: $white;
+  border-radius: unset;
+  border: none;
+  border-bottom: solid 1px $black;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.0075);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: block;
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  height: 30px;
+  outline: none;
+  padding-left: 18px;
+  padding-right: 30px;
+  position: relative;
+  text-align: left !important;
+  transition: all 0.2s ease-in-out;
+  user-select: none;
+  white-space: nowrap;
+  width: auto;
+  &:focus {
+    background-color: darken($white, 2%);
+  }
+  &:hover {
+    background-color: darken($white, 1%);
+  }
+  // Arrow
+  &:after {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid transparent;
+    border-bottom-color: #000;
+    border-left-color: #000;
+    margin-left: -20px;
+    pointer-events: none;
+    -webkit-transform: rotateZ(-45deg);
+    transform: rotateZ(-45deg);
+  }
+
+}

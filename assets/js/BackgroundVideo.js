@@ -9,6 +9,7 @@ class BackgroundVideo {
       self.playlistIDs = $('#landing_yt_player').data('playlist-id');
       self.homeVideoStartTime = $('#landing_yt_player').data('start-time');
       self.belowHeader = $('#landing_yt_player').data('below-header');
+      self.blurVideoBackground = $('#landing_yt_player').data('blur');
       // this.thumb = '<img src="https://img.youtube.com/vi/'+homeVideo+'/maxresdefault.jpg">';
       // this.thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">';
       self.thumb = '<img src="https://img.youtube.com/vi/' + self.homeVideo + '/0.jpg">';
@@ -27,7 +28,7 @@ class BackgroundVideo {
 
   addVideoHTML() {
 
-    if (typeof this.homeVideo !== 'undefined') {
+    if (this.homeVideo || this.playlistIDs) {
 
       let offset = (this.belowHeader) ? document.getElementsByClassName('site-header')[0].offsetHeight : 0;
       // offset += (document.getElementById('wpadminbar')) ? document.getElementById('wpadminbar').offsetHeight : 0;
@@ -47,13 +48,17 @@ class BackgroundVideo {
         if (this.homeVideoStartTime !== '') {
           src += '&start=' + this.homeVideoStartTime;
         }
+        let blur = 'no-blur';
+        if(this.blurVideoBackground) {
+          blur = 'blur';
+        }
 
 
         // INSERT VIDEO PLAYER
         $('body').prepend(
             '<div class="video-background">' +
             '<div class="video-foreground">' +
-            '<iframe class="home_video" id="yt_home_embed" width="2460" height="1440" src="' + src + '" frameborder="0" allowfullscreen style="top: ' + offset +'"></iframe>' +
+            '<iframe class="home_video ' + blur + '" id="yt_home_embed" width="2460" height="1440" src="' + src + '" frameborder="0" allowfullscreen style="top: ' + offset +'"></iframe>' +
             '<div class="video-overlay" >' +
             '</div>' +
             '</div>'
