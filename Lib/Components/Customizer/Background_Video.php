@@ -60,7 +60,7 @@ class Background_Video
         $prefix . '_playlist',
         array(
             'label' => __('Video Playlist', CHILD_TEXT_DOMAIN, 'virtuoso'),
-            'description' => __('Comma separate each additional video ID you want to play after the video above.', CHILD_TEXT_DOMAIN, 'virtuoso'),
+            'description' => __('Add playlist ID.', CHILD_TEXT_DOMAIN, 'virtuoso'),
             'section' => 'background_video',
             'type' => 'text',
         )
@@ -103,6 +103,24 @@ class Background_Video
     );
 
     $this->settings[] = $prefix . '_sticky';
+
+	  $wp_customize->add_setting(
+		  $prefix . '_blur_vid_bg',
+		  array(
+			  'default' => false,
+		  )
+	  );
+
+	  $wp_customize->add_control(
+		  $prefix . '_blur_vid_bg',
+		  array(
+			  'label' => __('Blur Background Video', CHILD_TEXT_DOMAIN, 'virtuoso'),
+			  'section' => 'background_video',
+			  'type' => 'checkbox',
+		  )
+	  );
+
+	  $this->settings[] = $prefix . '_blur_vid_bg';
 
     $wp_customize->add_setting(
         $prefix . '_woo_archive_display',
