@@ -107,15 +107,6 @@ class ThemeConfig {
 					),
 				),
 				// Virtuoso Settings
-				'URLS'                      => array(
-					'production' => 'https://tylerpaulsonpictures.com',
-					'staging'    => 'https://staging.tylerpaulsonpictures.com',
-					'local'      => 'https://tylerpaulsonpictures.test',
-				),
-				'header-design'             => array(
-					'logo-left'   => true,
-					'logo-middle' => false,
-				),
 				'footer-design'             => array(
 					'footer-widgets-left-column' => true,
 					'footer-widgets-block'       => false,
