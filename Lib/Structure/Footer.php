@@ -11,6 +11,7 @@
 
 namespace Virtuoso\Lib\Structure;
 use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
+use Virtuoso\Lib\Components\FloatingContactHTML;
 
 class Footer {
 	public $footerLayout;
@@ -21,6 +22,7 @@ class Footer {
 		add_filter( 'body_class', [ $this, 'set_footer_class' ] );
 //		add_action( 'get_footer', [ $this, 'display_slide_out_sidebar' ] );
 		add_action( 'genesis_footer', [ $this, 'custom_footer' ] );
+		add_action( 'genesis_after_footer', [ $this, 'include_floating_contact' ] );
 	}
 
 	/**
@@ -32,7 +34,6 @@ class Footer {
 	 */
 	public static function unregister_footer_callbacks() {
 		remove_action( 'genesis_footer', 'genesis_do_footer' );
-
 	}
 
 	/**
@@ -66,9 +67,12 @@ class Footer {
 		return include( CHILD_DIR . '/lib/views/footer-copyright.php' );
 	}
 
+	public function include_floating_contact() {
+	    new FloatingContactHTML();
+    }
+
 
 	public function display_slide_out_sidebar() {
-
 
 		if ( ( ! is_checkout() ) && ( ! is_cart() ) ) { ?>
 
