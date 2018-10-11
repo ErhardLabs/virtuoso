@@ -24,10 +24,10 @@ function visual_services() {
 
     <div class="visual_services_wrap">
       <h4>Select a service below</h4>
-      <div class='link_wrap'>
+      <div class='link_wrap one-half first'>
         <a href="/photos" class="button">PHOTOGRAPHY</a>
       </div>
-      <div class='link_wrap'>
+      <div class='link_wrap one-half'>
         <a href="/videos" class="button">VIDEOGRAPHY</a>
       </div>
     </div>

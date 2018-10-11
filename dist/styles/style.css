@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Oxygen|Rajdhani);/* # Sexy Animations
+/* # Sexy Animations
 ---------------------------------------------------------------------------------------------------- */
 .wp-animation {
 	opacity: 0;
@@ -1719,10 +1719,10 @@ html {
 }
 
 body {
-	background: #0B0C10;
+	background: #eee;
 	/* Fallback */
-	color: #fff;
-	font-family: "Oxygen", sans-serif;
+	color: #333;
+	font-family: "Roboto", sans-serif;
 	font-size: 16px;
 	font-size: 1.6rem;
 	-webkit-font-smoothing: antialiased;
@@ -1819,7 +1819,7 @@ h3,
 h4,
 h5,
 h6 {
-	font-family: "Oxygen", sans-serif;
+	font-family: "Roboto", sans-serif;
 	font-weight: 600;
 	line-height: 1.2;
 	margin: 0 0 10px;
@@ -2466,7 +2466,7 @@ img.alignright {
 /* # Site Header
 ---------------------------------------------------------------------------------------------------- */
 .site-header {
-	background-color: rgba(0, 0, 0, 0);
+	background-color: #fff;
 	text-align: center;
 	padding: 15px 0;
 	-webkit-transition: padding 400ms linear;
@@ -2630,8 +2630,8 @@ img.alignright {
 }
 
 .video-background iframe.blur {
-	-webkit-filter: blur(10px);
-	        filter: blur(10px);
+	-webkit-filter: none;
+	        filter: none;
 }
 
 /* # Site Navigation
@@ -2659,7 +2659,7 @@ img.alignright {
 }
 
 .genesis-nav-menu a {
-	color: #fff;
+	color: #3d3d3d;
 	text-decoration: none;
 	display: block;
 	padding: 32px 8px;
@@ -2766,8 +2766,8 @@ img.alignright {
 	.sub-menu-toggle,
 	.menu-toggle {
 		border-width: 0;
-		background-color: unset;
-		color: #fff;
+		background-color: #fff;
+		color: #333;
 		display: block;
 		margin: 0 auto;
 		overflow: hidden;
@@ -2897,7 +2897,7 @@ img.alignright {
 /* ## Primary Navigation
 --------------------------------------------- */
 .nav-primary {
-	background-color: rgba(0, 0, 0, 0);
+	background-color: #fff;
 	display: none;
 }
 
@@ -2936,7 +2936,7 @@ img.alignright {
 }
 
 .nav-secondary {
-	background-color: rgba(0, 0, 0, 0);
+	background-color: #fff;
 }
 
 @media (min-width: 769px) {
@@ -3064,7 +3064,7 @@ img.alignright {
 	.virtuoso-js .nav-primary,
 	.virtuoso-js nav button:focus,
 	.virtuoso-js .menu-toggle:focus {
-		background-color: #0B0C10;
+		background-color: #fff;
 	}
 	.virtuoso-js nav button:hover,
 	.virtuoso-js .menu-toggle:hover,
@@ -4599,6 +4599,13 @@ p.entry-meta {
 	margin-bottom: 0;
 }
 
+#floatingContact {
+	position: fixed;
+	right: 5vw;
+	top: 90vh;
+	z-index: 9999;
+}
+
 /* # Plugins
 ---------------------------------------------------------------------------------------------------- */
 /* ## Genesis eNews Extended
@@ -4714,11 +4721,11 @@ p.entry-meta {
 }
 
 #popup_text {
-	font-family: "Oxygen", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
 #popup_link {
-	font-family: "Oxygen", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
 .popup_toast {
@@ -4741,7 +4748,7 @@ p.entry-meta {
 
 .popup_toast p {
 	margin: 0 !important;
-	font-family: "Oxygen", sans-serif;
+	font-family: "Roboto", sans-serif;
 }
 
 /* # Woocommerce
@@ -4756,7 +4763,7 @@ p.entry-meta {
 .menu-item-type-woocommerce-cart .menu-cart-count {
 	position: absolute;
 	font-size: 1.5rem;
-	font-family: "Oxygen", sans-serif;
+	font-family: "Roboto", sans-serif;
 	font-weight: bold;
 	background: #3d3d3d;
 	width: 100%;
@@ -4794,157 +4801,4 @@ p.entry-meta {
 .archive-description .entry-title,
 .archive-title {
 	font-size: 20px;
-}
-
-.button {
-	padding: .5em 3em;
-	text-align: center !important;
-	color: #fff !important;
-	background: none !important;
-	border: solid 1px #66FCF1;
-	border-radius: 4px;
-}
-
-.button:hover {
-	-webkit-box-shadow: 0 10px 48px -13px #ababab !important;
-	        box-shadow: 0 10px 48px -13px #ababab !important;
-	color: white !important;
-}
-
-.btn {
-	font-weight: bold;
-	font-size: 1.5em;
-	padding: 1em 3em;
-	text-align: center !important;
-	color: #fff !important;
-	background: none !important;
-	border: solid 1px #66FCF1;
-	border-radius: 4px;
-}
-
-.btn:hover {
-	-webkit-box-shadow: 0 10px 48px -13px #ababab !important;
-	        box-shadow: 0 10px 48px -13px #ababab !important;
-	color: white !important;
-}
-
-.nav-primary .contact a {
-	padding: 1em 2em;
-	text-align: center !important;
-	color: #fff !important;
-	background: none !important;
-	border: solid 1px #66FCF1;
-	border-radius: 4px;
-}
-
-.nav-primary .contact a:hover {
-	-webkit-box-shadow: 0 10px 48px -13px #ababab !important;
-	        box-shadow: 0 10px 48px -13px #ababab !important;
-	color: white !important;
-}
-
-.home p {
-	color: #C5C6C7;
-}
-
-.home .site-inner {
-	padding: 0 !important;
-}
-
-.home .site-inner:after {
-	clear: none;
-}
-
-.home .front-page-1 {
-	text-align: center;
-	color: #fff;
-	max-width: 650px;
-	margin: 100px auto 0 auto;
-	height: 80vh;
-}
-
-.home .front-page-1 .arc-top {
-	position: absolute;
-	left: 0;
-	right: 0;
-}
-
-@media (max-width: 780px) {
-	.home .front-page-1 .arc-top {
-		bottom: -74px;
-	}
-}
-
-@media (min-width: 781px) {
-	.home .front-page-1 .arc-top {
-		bottom: -60px;
-	}
-}
-
-.home .front-page-2 {
-	background: -webkit-gradient(linear, left top, left bottom, from(#161923), color-stop(60%, #0B0C10));
-	background: linear-gradient(180deg, #161923, #0B0C10 60%);
-	text-align: center;
-	position: relative;
-}
-
-.home .front-page-2 .wrap {
-	padding: 2em 5%;
-}
-
-.home .front-page-2 .widget_text {
-	max-width: 400px;
-	margin: 0 auto;
-}
-
-.home .front-page-5 {
-	text-align: center;
-	background: url("../../project-specific/assets/images/bottom-bkg.svg");
-	background-position: center;
-	background-size: cover;
-}
-
-.home .front-page-5 .wrap {
-	padding: 2em 5% 4em 5%;
-}
-
-.home .front-page-5 .front-team_wrap {
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-pack: center;
-	    -ms-flex-pack: center;
-	        justify-content: center;
-	-webkit-box-orient: vertical;
-	-webkit-box-direction: normal;
-	    -ms-flex-direction: column;
-	        flex-direction: column;
-	-webkit-box-align: center;
-	    -ms-flex-align: center;
-	        align-items: center;
-}
-
-@media (min-width: 769px) {
-	.home .front-page-5 .front-team_wrap {
-		-webkit-box-orient: horizontal;
-		-webkit-box-direction: normal;
-		    -ms-flex-direction: row;
-		        flex-direction: row;
-		-webkit-box-pack: space-evenly;
-		    -ms-flex-pack: space-evenly;
-		        justify-content: space-evenly;
-		-webkit-box-align: unset;
-		    -ms-flex-align: unset;
-		        align-items: unset;
-	}
-}
-
-.home .front-page-5 .front-team_wrap .team-member {
-	padding-top: 2em;
-	max-width: 300px;
-}
-
-.home .front-page-5 .front-team_wrap .team-member p {
-	text-align: left;
-	padding-top: 1em;
 }
