@@ -10,16 +10,15 @@
  */
 
 namespace Virtuoso\Lib\Structure;
+use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
 
 class Footer {
-	public $config = "";
+	public $footerLayout;
 
-	public function __construct( $config ) {
-
-		$this->config = $config;
-
+	public function __construct() {
+		$prefix = CustomizerHelpers::get_settings_prefix();
+		$this->footerLayout = get_theme_mod($prefix.'_footer_design');
 		add_filter( 'body_class', [ $this, 'set_footer_class' ] );
-
 //		add_action( 'get_footer', [ $this, 'display_slide_out_sidebar' ] );
 		add_action( 'genesis_footer', [ $this, 'custom_footer' ] );
 	}
@@ -47,7 +46,7 @@ class Footer {
 	 */
 	function set_footer_class( $classes ) {
 
-		if ( $this->config['footer-design']['footer-widgets-block'] ) {
+		if ( $this->footerLayout == 'footer-widgets-block' ) {
 			$classes[] .= ' footer-widgets-block';
 		} else {
 			$classes[] .= ' footer-widgets-left-column';
