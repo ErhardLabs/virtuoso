@@ -57,7 +57,7 @@ class VirtuosoTheme extends ThemeConfig {
 		$sidebar  = new SideBar( $config );
 		$comments = new Comments( $config );
 		$archive  = new Archive( $config );
-		$archive  = new Footer( $config );
+		$footer  = new Footer( $config );
 
 	}
 
@@ -68,8 +68,10 @@ class VirtuosoTheme extends ThemeConfig {
 		define( 'CHILD_THEME_URL', $child_theme->get( 'ThemeURI' ) );
 		define( 'CHILD_THEME_VERSION', $child_theme->get( 'Version' ) );
 		define( 'CHILD_TEXT_DOMAIN', $child_theme->get( 'TextDomain' ) );
-
 		define( 'CHILD_THEME_DIR', get_stylesheet_directory() );
+
+    //		GRANDCHILD PLUGIN
+    define( 'GRANDCHILD_PLUGIN_DIR', WP_PLUGIN_DIR . '/virtuoso-grandchild/' );
 	}
 
 	/**

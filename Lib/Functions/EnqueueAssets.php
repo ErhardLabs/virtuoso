@@ -26,6 +26,13 @@ class EnqueueAssets {
 	 */
 	function enqueue_assets() {
 
+//	  $virtuosoGrandChild = GRANDCHILD_PLUGIN_DIR . 'index.php';
+//
+//    var_dump($virtuosoGrandChild);
+//	  if (file_exists($virtuosoGrandChild)) {
+//      include( '/Volumes/music_and_web/Web/Sites/mamp/tylerpaulsonpictures/wp-content/plugins/virtuoso-grandchild/index.php' );
+//    }
+
 		wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Roboto:300,400,900', array(), CHILD_THEME_VERSION );
 		wp_enqueue_style( CHILD_TEXT_DOMAIN . '-ion-icons', 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array(), CHILD_THEME_VERSION );
 

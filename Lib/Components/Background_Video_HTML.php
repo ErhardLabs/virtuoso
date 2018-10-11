@@ -20,10 +20,10 @@ class Background_Video_HTML
 
     $prefix = CustomizerHelpers::get_settings_prefix();
 
-    $this->videoID = get_theme_mod($prefix.'_video_id');
-    $this->playlistID = get_theme_mod($prefix.'_playlist');
-    $this->startTime = get_theme_mod($prefix.'_start_time');
-    $this->belowHeader = get_theme_mod($prefix.'_below_header');
+    $this->videoID = str_replace(",", "", get_theme_mod($prefix.'_video_id'));
+    $this->playlistID = str_replace(",", "", get_theme_mod($prefix.'_playlist'));
+    $this->startTime = str_replace(",", "", get_theme_mod($prefix.'_start_time'));
+    $this->belowHeader = str_replace(",", "", get_theme_mod($prefix.'_below_header'));
     $this->determine_display_locations();
 
   }

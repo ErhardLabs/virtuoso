@@ -23,7 +23,6 @@ remove_action( 'genesis_entry_content', 'genesis_do_post_content' );
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_action( 'genesis_loop', __NAMESPACE__ . '\virtuoso_front_page_loop' );
 
-
 /**
  * Front page content.
  *
