@@ -30,7 +30,7 @@ class Customizer {
 	  new HeaderMenuLayout();
 	  new FooterLayout();
 	  new FloatingContact();
-//    new Slide_Out_Sidebar();
+    new Slide_Out_Sidebar();
 
 	}
 
