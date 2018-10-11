@@ -106,11 +106,6 @@ class ThemeConfig {
 						'description' => __( 'Front page 5 widget area.', 'virtuoso' ),
 					),
 				),
-				// Virtuoso Settings
-				'sticky-contact'            => array(
-					'align-left'   => false,
-					'alight-right' => true,
-				)
 			),
 			//=============================================
 			// Image Sizes
