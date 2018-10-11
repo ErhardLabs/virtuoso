@@ -26,7 +26,7 @@ use Virtuoso\Lib\Functions\DetectJS;
 // Structure
 use Virtuoso\Lib\Structure\Menu;
 use Virtuoso\Lib\Structure\Header;
-use Virtuoso\Lib\Structure\SideBar;
+use Virtuoso\Lib\Structure\Sidebar;
 use Virtuoso\Lib\Structure\Comments;
 use Virtuoso\Lib\Structure\Archive;
 use Virtuoso\Lib\Structure\Footer;
@@ -54,7 +54,7 @@ class VirtuosoTheme extends ThemeConfig {
 
 		$menu     = new Menu();
 		$header   = new Header();
-		$sidebar  = new SideBar( $config );
+		$sidebar  = new Sidebar( $config );
 		$comments = new Comments();
 		$archive  = new Archive();
 		$footer  = new Footer();

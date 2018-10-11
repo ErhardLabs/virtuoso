@@ -12,7 +12,7 @@
 namespace Virtuoso\Lib\Structure;
 
 
-class SideBar {
+class Sidebar {
 	public $config = "";
 	public function __construct( $config ) {
 
