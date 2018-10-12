@@ -48,28 +48,28 @@ class Slide_Out_Sidebar
 
     $this->settings[] = $prefix . '_width';
 
-    $wp_customize->add_setting(
-        $prefix . '_enabled',
-        array(
-            'default'           => true,
-        )
-    );
-
-    $wp_customize->add_control(
-        $prefix . '_enabled',
-        array(
-            'label' => __('Enabled', CHILD_TEXT_DOMAIN, 'virtuoso'),
-            'section' => 'slide_out_sidebar',
-            'type' => 'checkbox',
-        )
-    );
-
-    $this->settings[] = $prefix . '_enabled';
+//    $wp_customize->add_setting(
+//        $prefix . '_enabled',
+//        array(
+//            'default'           => true,
+//        )
+//    );
+//
+//    $wp_customize->add_control(
+//        $prefix . '_enabled',
+//        array(
+//            'label' => __('Enabled', CHILD_TEXT_DOMAIN, 'virtuoso'),
+//            'section' => 'slide_out_sidebar',
+//            'type' => 'checkbox',
+//        )
+//    );
+//
+//    $this->settings[] = $prefix . '_enabled';
 
     $wp_customize->add_setting(
         $prefix . '_cart_item_quantity',
         array(
-            'default'           => true,
+//            'default'           => false,
         )
     );
 
@@ -87,7 +87,7 @@ class Slide_Out_Sidebar
     $wp_customize->add_setting(
         $prefix . '_cart_classes',
         array(
-//            'default'           => true,
+            'default'           => '.cart-icon',
         )
     );
 
@@ -125,14 +125,14 @@ class Slide_Out_Sidebar
         $widgetSlug = strtolower($widgetTitle);
 
         $wp_customize->add_setting(
-            $prefix . '_' . $widgetSlug . '_widget_class_list',
+            $prefix . '_widget_class_list' . '_wid_' . $widget,
             array(
 //            'default'           => true,
             )
         );
 
         $wp_customize->add_control(
-            $prefix . '_' . $widgetSlug . '_widget_class_list',
+            $prefix . '_widget_class_list' . '_wid_' . $widget,
             array(
                 'label' => __("Custom $widgetTitle Classes/IDs", CHILD_TEXT_DOMAIN, 'virtuoso'),
                 'description' => __("Add $widgetSlug classes or IDs (with prepending period or pound symbol). For multiple classes/IDs, comma separate them", CHILD_TEXT_DOMAIN, 'virtuoso'),
@@ -141,7 +141,7 @@ class Slide_Out_Sidebar
             )
         );
 
-        $this->settings[] = $prefix . '_' . $widgetSlug . '_widget_class_list';
+        $this->settings[] = $prefix . '_widget_class_list' . '_wid_' . $widget;
 
       }
     }

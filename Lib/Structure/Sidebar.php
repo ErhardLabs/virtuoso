@@ -12,6 +12,7 @@
 namespace Virtuoso\Lib\Structure;
 
 use Virtuoso\Config\ThemeConfig;
+use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
 
 class Sidebar {
 	public $config = "";
@@ -50,10 +51,10 @@ class Sidebar {
 
 	  ?>
 
-    <div id="slider" class="slider">
+    <div id="slide_out_sidebar" class="slide_out_sidebar">
       <section id="close_slider" class="widget widget_text">
         <div class="textwidget">
-          <a href="#/" class="close" data-wpel-link="internal"><i class="fa fa-times-circle fa-2x"></i></a>
+          <a href="#/" class="close" data-wpel-link="internal" id="close_slider"><i class="ti-close"></i></a>
         </div>
       </section>
 
@@ -79,12 +80,6 @@ class Sidebar {
           <a href="#" class="cart_plus plus_btn"><i class="fas fa-plus"></i></a>
         </section>
 
-        <section id="sexy-woo-checkout">
-          <h4>CHECKOUT</h4>
-  <!--                --><?php //echo do_shortcode('[woocommerce_checkout]'); ?>
-          <a href="#" class="checkout_plus plus_btn"><span>+</span></a>
-        </section>
-
          <?php
       }
 
@@ -93,6 +88,46 @@ class Sidebar {
     </div>
 
     <?php
+  }
+
+  static function get_user_options() {
+
+
+    $prefix = CustomizerHelpers::get_settings_prefix();
+
+    $userOptions['width'] = get_theme_mod($prefix.'_width');
+//    $userOptions['enabled'] = get_theme_mod($prefix.'_enabled');
+    $userOptions['cart_item_quantity'] = get_theme_mod($prefix.'_cart_item_quantity');
+    $userOptions['click_map']['sexy-woo-cart'] = get_theme_mod($prefix.'_cart_classes');
+
+    $sidebarWidgets = get_option( 'sidebars_widgets');
+    $sliderWidgets = $sidebarWidgets['slider'];
+    foreach($sliderWidgets as $widget) {
+
+      $widgetPieces = explode('-', $widget);
+      $widgetName = $widgetPieces[0];
+      $widgetIndex = $widgetPieces[1];
+      $widgetData = get_option('widget_'.$widgetName);
+      if (isset($widgetData['_multiwidget'])) {
+        unset($widgetData['_multiwidget']);
+      }
+
+      foreach($widgetData as $data) {
+        if (count($data) < 1) {
+          continue;
+        }
+
+        $widgetTitle = $data['title'];
+        $widgetSlug = strtolower($widgetTitle);
+
+        $userOptions['click_map'][$widget] = get_theme_mod($prefix . '_widget_class_list' . '_wid_' . $widget);
+
+
+      }
+    }
+
+    return $userOptions;
+
   }
 
 }

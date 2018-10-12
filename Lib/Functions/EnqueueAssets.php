@@ -9,6 +9,7 @@
  * @license     GNU General Public License 2.0+
  */
 namespace Virtuoso\Lib\Functions;
+use Virtuoso\Lib\Structure\Sidebar;
 
 class EnqueueAssets {
 
@@ -25,13 +26,6 @@ class EnqueueAssets {
 	 * @return void
 	 */
 	function enqueue_assets() {
-
-//	  $virtuosoGrandChild = GRANDCHILD_PLUGIN_DIR . 'index.php';
-//
-//    var_dump($virtuosoGrandChild);
-//	  if (file_exists($virtuosoGrandChild)) {
-//      include( '/Volumes/music_and_web/Web/Sites/mamp/tylerpaulsonpictures/wp-content/plugins/virtuoso-grandchild/index.php' );
-//    }
 
 		wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Roboto:300,400,900', array(), CHILD_THEME_VERSION );
 		wp_enqueue_style( CHILD_TEXT_DOMAIN . '-ion-icons', 'http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array(), CHILD_THEME_VERSION );
@@ -50,7 +44,10 @@ class EnqueueAssets {
 			'mainMenu' => __( '', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 			'subMenu'  => __( 'Menu', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 		);
-		wp_localize_script( CHILD_TEXT_DOMAIN . '-app', 'virtuosoLocalizedArgs', $localized_script_args );
+
+    $localized_script_args['sidebar_options'] = Sidebar::get_user_options();
+
+    wp_localize_script( CHILD_TEXT_DOMAIN . '-app', 'virtuosoLocalizedArgs', $localized_script_args );
 	}
 
 	/**
