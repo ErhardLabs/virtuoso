@@ -37,7 +37,7 @@ function buildImports() {
   imports.push('utilities/index');
 
   if (fs.pathExistsSync('../../plugins/virtuoso-grandchild/assets/sass/utilities/index.scss') ) {
-    imports.push(config.grandchildSassPath + '/utilities/index');
+    imports.push(config.grandchildSassPath + 'utilities/index');
   }
 
   imports.push('base/index');
