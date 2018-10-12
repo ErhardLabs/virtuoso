@@ -14,11 +14,13 @@ use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
 
 class Menu {
 	public $headerMenuLayout;
+	public $displayContactIcon;
 
 	public function __construct() {
 		$prefix = CustomizerHelpers::get_settings_prefix();
 
 		$this->headerMenuLayout = get_theme_mod($prefix.'_header_design', $default = true);
+		$this->displayContactIcon = get_theme_mod($prefix.'_display_contact_in_menu', $default = true);
 
 		add_filter( 'body_class', [ $this, 'set_header_class' ] );
 
@@ -123,8 +125,8 @@ class Menu {
 	 */
 	function add_menu_items( $menu, $args ) {
 
-		if ( 'primary' === $args->theme_location ) {
-			//$menu .= '<li class="menu-item menu-email"><a href="#"><span class="ti-email"></span></a></li>';
+		if ( 'primary' === $args->theme_location && $this->displayContactIcon == true) {
+			$menu .= '<li class="menu-item menu-email"><a href="#"><span class="ti-email"></span></a></li>';
 
 		}
 

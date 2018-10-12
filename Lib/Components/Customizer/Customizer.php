@@ -29,7 +29,7 @@ class Customizer {
 	  new Background_Video();
 	  new HeaderMenuLayout();
 	  new FooterLayout();
-	  new FloatingContact();
+	  new Contact();
 //    new Slide_Out_Sidebar();
 
 	}

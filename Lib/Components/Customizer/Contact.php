@@ -11,7 +11,7 @@
 
 namespace Virtuoso\Lib\Components\Customizer;
 
-class FloatingContact {
+class Contact {
 
 	public $settings = array();
 
@@ -25,8 +25,8 @@ class FloatingContact {
 
 		global $wp_customize;
 
-		$wp_customize->add_section( 'floating_contact', array(
-			'title'    => __( 'Floating Contact', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+		$wp_customize->add_section( 'contact', array(
+			'title'    => __( 'Contact', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 			'priority' => 50
 		) );
 
@@ -42,12 +42,31 @@ class FloatingContact {
 			$prefix . '_display_floating_contact',
 			array(
 				'label' => __('Display Floating Contact', CHILD_TEXT_DOMAIN, 'virtuoso'),
-				'section' => 'floating_contact',
+				'section' => 'contact',
 				'type' => 'checkbox',
 			)
 		);
 
 		$this->settings[] = $prefix . '_display_floating_contact';
+
+		$wp_customize->add_setting(
+			$prefix . '_display_contact_in_menu',
+			array(
+				'capability' => 'edit_theme_options',
+				'default' => true,
+			)
+		);
+
+		$wp_customize->add_control(
+			$prefix . '_display_contact_in_menu',
+			array(
+				'label' => __('Display Contact in Menu', CHILD_TEXT_DOMAIN, 'virtuoso'),
+				'section' => 'contact',
+				'type' => 'checkbox',
+			)
+		);
+
+		$this->settings[] = $prefix . '_display_contact_in_menu';
 
 		$wp_customize->add_setting(
 			$prefix . '_contact_url',
@@ -61,7 +80,7 @@ class FloatingContact {
 			array(
 				'label' => __('Contact Page URL', CHILD_TEXT_DOMAIN, 'virtuoso'),
 				'description' => __('Add the URL of the Contact page.', CHILD_TEXT_DOMAIN, 'virtuoso'),
-				'section' => 'floating_contact',
+				'section' => 'contact',
 				'type' => 'text',
 			)
 		);
