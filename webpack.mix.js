@@ -1,12 +1,61 @@
 let mix = require('laravel-mix');
+let fs = require('fs-extra');
 
 /*
  * Sets the development path to assets. By default, this is the `/resources`
  * folder in the theme.
  */
-const devPath  = 'assets';
+const devPath = 'assets';
 
-mix.setPublicPath( 'dist' );
+mix.setPublicPath('dist');
+
+let sassPath = 'assets/sass/';
+let grandchildSassPath = '../../plugins/virtuoso-grandchild/assets/sass/';
+
+const config = {
+  sassPath,
+  grandchildSassPath
+};
+
+/*
+ * Remove assets/sass/style.scss and dynamically load imported files
+ * This is useful for when you want to add custom styles in a plugin
+ *
+ */
+fs.removeSync('assets/sass/style.scss');
+fs.writeFile('assets/sass/style.scss', buildImports());
+
+/**
+ * Build up the contents of the sass import file.
+ *
+ * @return {string}
+ */
+function buildImports() {
+  let imports = [];
+
+  imports.push('../../node_modules/sass-rem/rem');
+  imports.push('utilities/index');
+
+  if (fs.pathExistsSync('../../plugins/virtuoso-grandchild/assets/sass/utilities/index.scss') ) {
+    imports.push(config.grandchildSassPath + '/utilities/index');
+  }
+
+  imports.push('base/index');
+  imports.push('layouts/index');
+  imports.push('components/index');
+  imports.push('views/index');
+
+  if (fs.pathExistsSync('../../plugins/virtuoso-grandchild/assets/sass/style.scss')) {
+    imports.push(config.grandchildSassPath + 'style');
+  }
+
+  let toImport = '';
+  imports.forEach(function (sassPath) {
+    toImport += "@import '" + sassPath + "';\n";
+  });
+
+  return toImport;
+}
 
 /*
  * Copy node modules we want in our project
