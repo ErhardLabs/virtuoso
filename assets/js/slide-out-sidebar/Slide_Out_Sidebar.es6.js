@@ -8,7 +8,7 @@ class Slide_Out_Sidebar {
     this.sidebar_options = virtuosoLocalizedArgs.sidebar_options;
 
     this.mapClickLocations();
-    // this.mapCloseAbility();
+    this.mapCloseAbility();
 
 
   }
@@ -36,45 +36,45 @@ class Slide_Out_Sidebar {
 
     // CLOSE SLIDER if clicked OUTSIDE of slider div
 
-    $('body').unbind().click(function (e) {
-
-      let sliderOpen = false;
-
-      if ($('#slide_out_sidebar').hasClass('slider-active')) {
-
-        sliderDivItems.forEach(function (elements) {
-
-          // If a user clicks an element in slideDivItem then the slider should stay open
-          if ($(e.target).closest(elements.element).length === 0) {
-            elements["sliderStatus"] = "close";
-            //console.log('close ', $(e.target), elements);
-          } else {
-            elements["sliderStatus"] = "open";
-            //console.log('open ', $(e.target), elements);
-          }
-
-          // Assign the status
-          if (elements['sliderStatus'] === "open") {
-            //console.log(elements);
-            sliderOpen = true;
-          }
-        });
-
-        // If user clicks anywhere within #slide_out_sidebar, slider should stay open
-        if ($(e.target).closest('#slide_out_sidebar').length !== 0) {
-          sliderOpen = true;
-        }
-
-        if ($(e.target).closest('.single_add_to_cart_button').length !== 0) {
-          sliderOpen = true;
-        }
-
-        console.log(sliderOpen);
-        if (sliderOpen === false) {
-          self.close();
-        }
-      }
-    });
+    // $('body').unbind().click(function (e) {
+    //
+    //   let sliderOpen = false;
+    //
+    //   if ($('#slide_out_sidebar').hasClass('slider-active')) {
+    //
+    //     sliderDivItems.forEach(function (elements) {
+    //
+    //       // If a user clicks an element in slideDivItem then the slider should stay open
+    //       if ($(e.target).closest(elements.element).length === 0) {
+    //         elements["sliderStatus"] = "close";
+    //         //console.log('close ', $(e.target), elements);
+    //       } else {
+    //         elements["sliderStatus"] = "open";
+    //         //console.log('open ', $(e.target), elements);
+    //       }
+    //
+    //       // Assign the status
+    //       if (elements['sliderStatus'] === "open") {
+    //         //console.log(elements);
+    //         sliderOpen = true;
+    //       }
+    //     });
+    //
+    //     // If user clicks anywhere within #slide_out_sidebar, slider should stay open
+    //     if ($(e.target).closest('#slide_out_sidebar').length !== 0) {
+    //       sliderOpen = true;
+    //     }
+    //
+    //     if ($(e.target).closest('.single_add_to_cart_button').length !== 0) {
+    //       sliderOpen = true;
+    //     }
+    //
+    //     console.log(sliderOpen);
+    //     if (sliderOpen === false) {
+    //       self.close();
+    //     }
+    //   }
+    // });
 
     // CLOSE SLIDER button
     $('#slide_out_sidebar #close_slider').unbind().click(function (e) {
@@ -86,6 +86,7 @@ class Slide_Out_Sidebar {
   open(widgetID) {
 
     $('#slide_out_sidebar').addClass('slider-active');
+    $('#slide_out_sidebar').removeClass('slider-close');
 
     $('#slide_out_sidebar section').fadeOut();
 
@@ -99,7 +100,6 @@ class Slide_Out_Sidebar {
 
     $('#slide_out_sidebar').animate({
       right: '0%',
-      width: this.sidebar_options.width
     }, 500, function () {
 
       if (!$('.fa-shopping-cart').hasClass('shopping_cart_clicked_before')) {
@@ -108,6 +108,8 @@ class Slide_Out_Sidebar {
 
     });
 
+    //$('#genesis-content').css('filter', 'brightness(25%)');
+
     $("#slide_out_sidebar").animate({ scrollTop: 0 }, "slow");
 
   }
@@ -115,7 +117,10 @@ class Slide_Out_Sidebar {
   close(){
 
     $('#slide_out_sidebar').removeClass('slider-active');
+    $('#slide_out_sidebar').addClass('slider-close');
     $('#sexy-woo-cart').hide();
+
+    //$('#genesis-content').css('filter', 'unset');
 
     $('#slide_out_sidebar').animate({
       right: '-100%'

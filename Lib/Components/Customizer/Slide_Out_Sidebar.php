@@ -30,24 +30,6 @@ class Slide_Out_Sidebar
         'priority' => 1,
     ) );
 
-    $wp_customize->add_setting(
-        $prefix . '_width',
-        array(
-            'default'           => '400px',
-        )
-    );
-
-    $wp_customize->add_control(
-        $prefix . '_width',
-        array(
-            'label' => __('Width', CHILD_TEXT_DOMAIN, 'virtuoso'),
-            'section' => 'slide_out_sidebar',
-            'type' => 'text',
-        )
-    );
-
-    $this->settings[] = $prefix . '_width';
-
 //    $wp_customize->add_setting(
 //        $prefix . '_enabled',
 //        array(
