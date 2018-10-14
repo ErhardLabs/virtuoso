@@ -43,6 +43,7 @@
   },
   "dependencies": {
     "animate.css": "^3.7.0",
+    "autosize": "^4.0.2",
     "component-install": "^1.0.1",
     "waypoints": "^4.0.1"
   }
