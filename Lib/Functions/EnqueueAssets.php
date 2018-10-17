@@ -9,7 +9,6 @@
  * @license     GNU General Public License 2.0+
  */
 namespace Virtuoso\Lib\Functions;
-use Virtuoso\Lib\Components\Customizer\Background_Video;
 use Virtuoso\Lib\Structure\Sidebar;
 
 class EnqueueAssets {
@@ -47,7 +46,6 @@ class EnqueueAssets {
 		);
 
     $localized_script_args['sidebar_options'] = Sidebar::get_user_options();
-    $localized_script_args['background_video'] = Background_Video::get_user_options();
 
     wp_localize_script( CHILD_TEXT_DOMAIN . '-app', 'virtuosoLocalizedArgs', $localized_script_args );
 	}
