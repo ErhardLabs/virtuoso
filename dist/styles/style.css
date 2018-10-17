@@ -4606,177 +4606,6 @@ p.entry-meta {
 	z-index: 9999;
 }
 
-/* # Plugins
----------------------------------------------------------------------------------------------------- */
-/* ## Genesis eNews Extended
---------------------------------------------- */
-.sidebar .enews-widget {
-	background-color: #333;
-}
-
-.sidebar .enews-widget, .sidebar .enews-widget .widget-title {
-	color: #fff;
-}
-
-.sidebar .enews-widget input,
-.sidebar .enews-widget input:focus {
-	border: 1px solid #333;
-}
-
-.sidebar .enews-widget input[type="submit"] {
-	background-color: #c3251d;
-	color: #fff;
-}
-
-.sidebar .enews-widget input:hover[type="submit"],
-.sidebar .enews-widget input:focus[type="submit"] {
-	background-color: #fff;
-	color: #c3251d;
-}
-
-.enews-widget input {
-	font-size: 16px;
-	font-size: 1.6rem;
-	margin-bottom: 16px;
-}
-
-.enews-widget input[type="submit"] {
-	margin: 0;
-	width: 100%;
-}
-
-.enews form + p {
-	margin-top: 24px;
-}
-
-/* ## Jetpack
---------------------------------------------- */
-#wpstats {
-	display: none;
-}
-
-/* # Sexy Popup
----------------------------------------------------------------------------------------------------- */
-.sexy_popup_container {
-	background: rgba(0, 0, 0, 0.4);
-	display: none;
-	height: 100%;
-	position: fixed;
-	text-align: center;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	width: 100%;
-	z-index: 100;
-}
-
-.sexy_popup_container .helper {
-	display: inline-block;
-	height: 100%;
-	vertical-align: middle;
-}
-
-.sexy_popup_container .link_wrapper {
-	background-color: #fff;
-	-webkit-box-shadow: 0px 5px 30px #555;
-	        box-shadow: 0px 5px 30px #555;
-	display: inline-block;
-	height: auto;
-	max-width: 400px;
-	min-height: 100px;
-	vertical-align: middle;
-	width: 60%;
-	position: relative;
-	border-radius: 8px;
-	padding: 15px 5%;
-}
-
-.sexy_popup_container .copy_link {
-	padding: 5px 15px;
-}
-
-.sexy_popup_container .share_buttons {
-	padding-top: 1em;
-}
-
-.sexy_popup_container .popup_text {
-	margin: 0;
-	color: #000;
-}
-
-.sexy_popup_container .popupCloseButton {
-	color: #333;
-	border-radius: 50px;
-	cursor: pointer;
-	display: inline-block;
-	position: absolute;
-	top: -23px;
-	right: -6px;
-	font-size: 40px;
-}
-
-.sexy_popup_container .popupCloseButton i:hover {
-	color: #777;
-}
-
-#popup_text {
-	font-family: "Roboto", sans-serif;
-}
-
-#popup_link {
-	font-family: "Roboto", sans-serif;
-}
-
-.popup_toast {
-	position: absolute;
-	text-align: center;
-	display: none;
-	-webkit-box-shadow: 0px 3px 13px #555;
-	        box-shadow: 0px 3px 13px #555;
-	bottom: 0;
-	left: 0;
-	right: 0;
-	background: white;
-	width: 200px;
-	margin: 0 auto;
-	color: #3c3c3c;
-	margin-bottom: 2em;
-	border-radius: 8px;
-	z-index: 101;
-}
-
-.popup_toast p {
-	margin: 0 !important;
-	font-family: "Roboto", sans-serif;
-}
-
-/* # Woocommerce
----------------------------------------------------------------------------------------------------- */
-/* # Cart Navigation
----------------------------------------------------------------------------------------------------- */
-.menu-item-type-woocommerce-cart .cart-icon {
-	position: relative;
-	font-size: 2rem;
-}
-
-.menu-item-type-woocommerce-cart .menu-cart-count {
-	position: absolute;
-	font-size: 1.5rem;
-	font-family: "Roboto", sans-serif;
-	font-weight: bold;
-	background: #3d3d3d;
-	width: 100%;
-	height: 100%;
-	padding: 2px;
-	border-radius: 50%;
-	color: white;
-}
-
-.menu-item-type-woocommerce-cart .menu-cart-empty {
-	display: none;
-}
-
 /* # Archive
 --------------------------------------------- */
 .archive-description {
@@ -4801,4 +4630,43 @@ p.entry-meta {
 .archive-description .entry-title,
 .archive-title {
 	font-size: 20px;
+}
+
+.error404 .entry-content ol, .error404 .entry-content ul {
+	margin-left: 0;
+}
+
+.home .front-page-1 {
+	text-align: center;
+	color: whitesmoke;
+	max-width: 800px;
+	margin: 100px auto 0 auto;
+}
+
+.home .front-page-1 h1 {
+	font-size: 4.6em;
+	text-shadow: 1px 1px 1px #222;
+	margin: 0;
+}
+
+.home .front-page-1 .widget {
+	margin-bottom: 15px;
+}
+
+.home .front-page-1 .textwidget {
+	font-size: 30px;
+	text-shadow: 1px 1px 10px #222;
+}
+
+.home .front-page-1 .widget_custom_html .link_wrap {
+	padding: 10px;
+}
+
+.home .front-page-1 .widget_custom_html .link_wrap a {
+	border-radius: 40px;
+	background: white;
+	color: #0A0A0A;
+	font-size: 24px;
+	text-shadow: none;
+	padding: 10px 20px;
 }
