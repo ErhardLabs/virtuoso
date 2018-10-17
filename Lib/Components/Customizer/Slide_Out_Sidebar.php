@@ -30,30 +30,8 @@ class Slide_Out_Sidebar
         'priority' => 1,
     ) );
 
-//    $wp_customize->add_setting(
-//        $prefix . '_enabled',
-//        array(
-//            'default'           => true,
-//        )
-//    );
-//
-//    $wp_customize->add_control(
-//        $prefix . '_enabled',
-//        array(
-//            'label' => __('Enabled', CHILD_TEXT_DOMAIN, 'virtuoso'),
-//            'section' => 'slide_out_sidebar',
-//            'type' => 'checkbox',
-//        )
-//    );
-//
-//    $this->settings[] = $prefix . '_enabled';
 
-    $wp_customize->add_setting(
-        $prefix . '_cart_item_quantity',
-        array(
-//            'default'           => false,
-        )
-    );
+    $wp_customize->add_setting($prefix . '_cart_item_quantity');
 
     $wp_customize->add_control(
         $prefix . '_cart_item_quantity',
@@ -87,47 +65,33 @@ class Slide_Out_Sidebar
 
     $sidebarWidgets = get_option( 'sidebars_widgets');
     $sliderWidgets = $sidebarWidgets['slider'];
+
     foreach($sliderWidgets as $widget) {
 
       $widgetPieces = explode('-', $widget);
       $widgetName = $widgetPieces[0];
       $widgetIndex = $widgetPieces[1];
       $widgetData = get_option('widget_'.$widgetName);
-      if (isset($widgetData['_multiwidget'])) {
-        unset($widgetData['_multiwidget']);
-      }
 
-      foreach($widgetData as $data) {
-        if (count($data) < 1) {
-          continue;
-        }
+      $widgetHeader = $widgetData[$widgetIndex]['title'];
 
+      $widgetHeaderSlug = strtolower($widgetHeader);
 
-        $widgetTitle = $data['title'];
-        $widgetSlug = strtolower($widgetTitle);
+      $wp_customize->add_setting($prefix . '_widget_class_list' . '_wid_' . $widget);
 
-        $wp_customize->add_setting(
-            $prefix . '_widget_class_list' . '_wid_' . $widget,
-            array(
-//            'default'           => true,
-            )
-        );
+      $wp_customize->add_control(
+          $prefix . '_widget_class_list' . '_wid_' . $widget,
+          array(
+              'label' => __("Custom $widgetHeader Classes/IDs", CHILD_TEXT_DOMAIN, 'virtuoso'),
+              'description' => __("Add $widgetHeaderSlug classes or IDs (with period/pound before class/ID). For multiple classes/IDs, comma separate them.", CHILD_TEXT_DOMAIN, 'virtuoso'),
+              'section' => 'slide_out_sidebar',
+              'type' => 'text',
+          )
+      );
 
-        $wp_customize->add_control(
-            $prefix . '_widget_class_list' . '_wid_' . $widget,
-            array(
-                'label' => __("Custom $widgetTitle Classes/IDs", CHILD_TEXT_DOMAIN, 'virtuoso'),
-                'description' => __("Add $widgetSlug classes or IDs (with prepending period or pound symbol). For multiple classes/IDs, comma separate them", CHILD_TEXT_DOMAIN, 'virtuoso'),
-                'section' => 'slide_out_sidebar',
-                'type' => 'text',
-            )
-        );
+      $this->settings[] = $prefix . '_widget_class_list' . '_wid_' . $widget;
 
-        $this->settings[] = $prefix . '_widget_class_list' . '_wid_' . $widget;
-
-      }
     }
-
 
 
   }

@@ -19,10 +19,13 @@ class Slide_Out_Sidebar {
     let clickMap = this.sidebar_options.click_map;
 
     for (let widgetID in clickMap){
+
       if (typeof clickMap[widgetID] !== 'function') {
         let elementClicked = clickMap[widgetID];
-        $(elementClicked).unbind().click(function (e) {
+        $(elementClicked).click(function (e) {
+          console.log(elementClicked, widgetID);
           e.preventDefault();
+          // $(elementClicked).unbind();
           self.open(widgetID);
         });
       }
@@ -77,7 +80,7 @@ class Slide_Out_Sidebar {
     // });
 
     // CLOSE SLIDER button
-    $('#slide_out_sidebar #close_slider').unbind().click(function (e) {
+    $('#slide_out_sidebar #close_slider_button').unbind().click(function (e) {
       self.close();
     });
 
@@ -90,21 +93,17 @@ class Slide_Out_Sidebar {
 
     $('#slide_out_sidebar section').fadeOut();
 
-    if ($('.fa-shopping-cart').hasClass('shopping_cart_clicked_before')) {
-      $('#slide_out_sidebar #sexy-woo-cart').fadeIn();
-    }
-
     $('#slide_out_sidebar').show();
     $('#slide_out_sidebar section:first-of-type').fadeIn();
 
 
     $('#slide_out_sidebar').animate({
       right: '0%',
-    }, 500, function () {
+    }, 250, function () {
 
-      if (!$('.fa-shopping-cart').hasClass('shopping_cart_clicked_before')) {
+      // if (!$('.fa-shopping-cart').hasClass('shopping_cart_clicked_before')) {
         $('#slide_out_sidebar #' + widgetID).fadeIn();
-      }
+      // }
 
     });
 
@@ -124,11 +123,11 @@ class Slide_Out_Sidebar {
 
     $('#slide_out_sidebar').animate({
       right: '-100%'
-    }, 500, function () {
+    }, 250, function () {
       $('#slide_out_sidebar').fadeOut();
       $('#slide_out_sidebar section').fadeOut();
-      $('#slide_out_sidebar a.button.checkout.wc-forward').fadeIn();
-      $('.woocommerce-mini-cart__total').fadeIn();
+      // $('#slide_out_sidebar a.button.checkout.wc-forward').fadeIn();
+      // $('.woocommerce-mini-cart__total').fadeIn();
       $('#slide_out_sidebar #sexy-woo-cart').css({'width': '100%'});
     });
 
