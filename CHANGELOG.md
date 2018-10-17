@@ -1,6 +1,13 @@
 ## [Unreleased]
 #### This Project uses Semantic Versioning
 
+## 2.3.0 @2018-10-16
+### Added
+- Background video feature in customizer debugged further and YouTube playlist feature integrated.
+- Slide-out sidebar feature added.
+- Slide-out sidebar now works with custom text widget. 
+
+
 ## 2.2.0 @2018-09-26
 ### Added
 - Background video feature in customizer
