@@ -16,7 +16,7 @@ use Virtuoso\Lib\Functions\Markup;
 // Structure
 use Virtuoso\Lib\Structure\Menu;
 use Virtuoso\Lib\Structure\Header;
-use Virtuoso\Lib\Structure\SideBar;
+use Virtuoso\Lib\Structure\Sidebar;
 use Virtuoso\Lib\Structure\Comments;
 use Virtuoso\Lib\Structure\Archive;
 use Virtuoso\Lib\Structure\Footer;

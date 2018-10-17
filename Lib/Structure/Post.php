@@ -11,12 +11,28 @@
 
 namespace Virtuoso\Lib\Structure;
 
+use Virtuoso\Config\ThemeConfig;
 
 class Post {
 	public $config = "";
-	public function __construct( $config ) {
+	public function __construct( ) {
+
+
+    $this->config = ThemeConfig::get_configuration_parameters( 'theme_default_settings' );
+
 		add_filter( 'genesis_author_box_gravatar_size', [ $this, 'setup_author_box_gravatar_size' ] );
+    add_action( 'widgets_init', [ $this, 'register_widgets' ] );
 	}
+
+  public function register_widgets() {
+
+    $widgets = $this->config['front-page-widgets'];
+
+    foreach ( $widgets as $widget ) {
+      genesis_register_sidebar($widget);
+    }
+
+  }
 
 	/**
 	 * Unregister post callbacks.

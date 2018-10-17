@@ -101,4 +101,15 @@ class CustomizerHelpers {
 
 	}
 
+
+  static function live_preview($settings) {
+
+    global $wp_customize;
+
+    foreach($settings as $setting) {
+      $wp_customize->get_setting( $setting )->transport = 'postMessage';
+    }
+
+  }
+
 }

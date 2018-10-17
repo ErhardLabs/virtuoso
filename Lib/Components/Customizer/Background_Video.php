@@ -20,6 +20,7 @@ class Background_Video
   public function __construct()
   {
     $this->register_section();
+    CustomizerHelpers::live_preview($this->settings);
   }
 
   public function register_section()
@@ -37,7 +38,7 @@ class Background_Video
     $wp_customize->add_setting(
         $prefix . '_video_id',
         array(
-            'default' => 'GlmTrpsNPh4',
+//            'default' => 'GlmTrpsNPh4',
         )
     );
 
@@ -160,16 +161,6 @@ class Background_Video
     );
 
     $this->settings[] = $prefix . '_below_header';
-
-  }
-
-  public function live_preview() {
-
-    global $wp_customize;
-
-    foreach($this->settings as $setting) {
-      $wp_customize->get_setting( $setting )->transport = 'postMessage';
-    }
 
   }
 

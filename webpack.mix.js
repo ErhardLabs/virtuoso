@@ -37,13 +37,13 @@ function buildImports() {
   imports.push('utilities/index');
 
   if (fs.pathExistsSync('../../plugins/virtuoso-grandchild/assets/sass/utilities/index.scss') ) {
-    imports.push(config.grandchildSassPath + '/utilities/index');
+    imports.push(config.grandchildSassPath + 'utilities/index');
   }
 
   imports.push('base/index');
   imports.push('layouts/index');
   imports.push('components/index');
-  imports.push('views/index');
+  imports.push('templates/index');
 
   if (fs.pathExistsSync('../../plugins/virtuoso-grandchild/assets/sass/style.scss')) {
     imports.push(config.grandchildSassPath + 'style');

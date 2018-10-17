@@ -1,0 +1,40 @@
+.services {
+  .entry {
+    background: transparent;
+  }
+
+  article {
+    text-align: center;
+    color: whitesmoke;
+    max-width: 800px;
+    margin: 100px auto 0 auto;
+
+    h1 {
+      font-size: 4.6em;
+      text-shadow: 1px 1px 1px #222;
+      margin: 0;
+    }
+
+    .widget {
+      margin-bottom: 15px;
+    }
+
+    .h4 {
+      font-size: 30px;
+      text-shadow: 1px 1px 10px #222;
+    }
+
+    .link_wrap {
+      padding: 10px;
+
+      a {
+        border-radius: 40px;
+        background: white;
+        color: #0A0A0A;
+        font-size: 24px;
+        text-shadow: none;
+        padding: 10px 20px;
+      }
+    }
+  }
+}
