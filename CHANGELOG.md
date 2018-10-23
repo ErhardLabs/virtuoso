@@ -1,7 +1,7 @@
 ## [Unreleased]
 #### This Project uses Semantic Versioning
 
-## 2.3.1 @2018-10-16
+## 2.3.2 @2018-10-16
 ### Added
 - Background video and photo feature working on posts
 - Integrated Advanced Custom Fields and will be relying on this plugin for the foreseeable future
