@@ -65,8 +65,6 @@ class Post {
 
   public function add_admin_fields() {
 
-    include_once(CHILD_THEME_DIR . '/Lib/Components/Post/background-video.php');
-
   }
 
 }
