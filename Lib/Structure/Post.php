@@ -22,6 +22,8 @@ class Post {
 
 		add_filter( 'genesis_author_box_gravatar_size', [ $this, 'setup_author_box_gravatar_size' ] );
     add_action( 'widgets_init', [ $this, 'register_widgets' ] );
+
+    $this->add_admin_fields();
 	}
 
   public function register_widgets() {
@@ -59,4 +61,10 @@ class Post {
 
 		return 90;
 	}
+
+
+  public function add_admin_fields() {
+
+  }
+
 }

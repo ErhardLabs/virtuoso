@@ -102,28 +102,20 @@ class Sidebar {
 
     $sidebarWidgets = get_option( 'sidebars_widgets');
     $sliderWidgets = $sidebarWidgets['slider'];
+
     foreach($sliderWidgets as $widget) {
 
       $widgetPieces = explode('-', $widget);
       $widgetName = $widgetPieces[0];
       $widgetIndex = $widgetPieces[1];
       $widgetData = get_option('widget_'.$widgetName);
-      if (isset($widgetData['_multiwidget'])) {
-        unset($widgetData['_multiwidget']);
-      }
 
-      foreach($widgetData as $data) {
-        if (count($data) < 1) {
-          continue;
-        }
+      $widgetHeader = $widgetData[$widgetIndex]['title'];
 
-        $widgetTitle = $data['title'];
-        $widgetSlug = strtolower($widgetTitle);
+      $widgetHeaderSlug = strtolower($widgetHeader);
 
-        $userOptions['click_map'][$widget] = get_theme_mod($prefix . '_widget_class_list' . '_wid_' . $widget);
+      $userOptions['click_map'][$widget] = get_theme_mod($prefix . '_widget_class_list' . '_wid_' . $widget);
 
-
-      }
     }
 
     return $userOptions;
