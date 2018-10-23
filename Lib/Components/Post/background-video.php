@@ -67,4 +67,4 @@ function save_background_video_meta( $post_id ) {
 //  }
 
 }
-add_action( 'save_post', 'save_background_video_meta' );
+//add_action( 'save_post', 'save_background_video_meta' );

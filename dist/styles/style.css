@@ -4731,3 +4731,104 @@ p.entry-meta {
 	text-shadow: none;
 	padding: 10px 20px;
 }
+
+p {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack: center;
+	    -ms-flex-pack: center;
+	        justify-content: center;
+}
+
+h4.widgettitle {
+	text-transform: uppercase;
+}
+
+label {
+	text-transform: uppercase;
+}
+
+input.wpcf7-form-control.wpcf7-submit {
+	-ms-flex-item-align: center;
+	    align-self: center;
+	text-transform: uppercase;
+	font-weight: normal;
+	border-radius: 40px;
+	background: white;
+	color: #0A0A0A;
+	font-size: 20px;
+	text-shadow: none;
+	padding: 10px 20px;
+	-webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+textarea.wpcf7-form-control.wpcf7-textarea {
+	-webkit-appearance: none;
+	width: 100%;
+	border: 0;
+	font-family: inherit;
+	height: 30px;
+	font-size: 16px;
+	font-weight: 500;
+	border-bottom: 2px solid #C8CCD4;
+	background: none;
+	border-radius: 0;
+	color: #223254;
+}
+
+input.wpcf7-form-control.wpcf7-text {
+	-webkit-appearance: none;
+	width: 100%;
+	border: 0;
+	font-family: inherit;
+	height: 30px;
+	font-size: 16px;
+	font-weight: 500;
+	border-bottom: 2px solid #C8CCD4;
+	background: none;
+	border-radius: 0;
+	color: #223254;
+}
+
+.services article .link_wrap a {
+	-webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	font-weight: normal;
+}
+
+.entry-content {
+	-webkit-box-align: center;
+	    -ms-flex-align: center;
+	        align-items: center;
+}
+
+.entry-title {
+	text-shadow: 8px 8px 16px #FF0000;
+	text-transform: uppercase;
+}
+
+a.button.floating-contact {
+	font-weight: normal;
+	border-radius: 40px;
+	background: white;
+	color: #0A0A0A;
+	font-size: 24px;
+	text-shadow: none;
+	padding: 10px 20px;
+	-webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+a.page_item {
+	font-weight: normal;
+	border-radius: 40px;
+	background: white;
+	color: #0A0A0A;
+	font-size: 24px;
+	text-shadow: none;
+	padding: 10px 20px;
+	-webkit-box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
