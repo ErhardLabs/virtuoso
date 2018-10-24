@@ -57,8 +57,8 @@ class VirtuosoTheme extends ThemeConfig {
 		$sidebar  = new Sidebar();
 		$comments = new Comments();
 		$archive  = new Archive();
+    $post = new Post();
 		$footer  = new Footer();
-		$post = new Post();
 
 	}
 
