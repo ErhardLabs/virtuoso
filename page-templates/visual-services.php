@@ -1,6 +1,7 @@
 <?php
 /**
  * Template Name: Visual - Services
+ * Template Post Type: page
  */
 
 // Add our custom loop

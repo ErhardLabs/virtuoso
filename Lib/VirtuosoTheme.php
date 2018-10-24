@@ -61,6 +61,13 @@ class VirtuosoTheme extends ThemeConfig {
 		$footer  = new Footer();
 		$post = new Post();
 
+		$this->register_cpts();
+
+    add_filter('genesis_breadcrumb_args', function($args) {
+      $args['labels']['prefix'] = '';
+      return $args;
+    });
+
 	}
 
 	private function init_constants() {
@@ -199,5 +206,15 @@ class VirtuosoTheme extends ThemeConfig {
 
 		update_option( 'posts_per_page', $config['blog_cat_num'] );
 	}
+
+	public function register_cpts() {
+
+	  $directory = get_stylesheet_directory() . '/Lib/Components/CPTs';
+
+    foreach(glob($directory.'/*.*') as $file) {
+      include_once($file);
+    }
+
+  }
 
 }

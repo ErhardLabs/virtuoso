@@ -26,7 +26,7 @@ class Customizer {
 	 */
 	public function register_with_customizer() {
 
-	  new Background_Video();
+//	  new Background_Video();
 	  new HeaderMenuLayout();
 	  new FooterLayout();
 	  new Contact();
