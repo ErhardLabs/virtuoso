@@ -44,6 +44,7 @@ function buildImports() {
   imports.push('layouts/index');
   imports.push('components/index');
   imports.push('templates/index');
+  imports.push('plugins/index');
 
   if (fs.pathExistsSync('../../plugins/virtuoso-grandchild/assets/sass/style.scss')) {
     imports.push(config.grandchildSassPath + 'style');
