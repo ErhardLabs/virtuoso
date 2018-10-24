@@ -11,20 +11,18 @@ use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
 class Background_Video_HTML
 {
 
-  public $videoID;
-  public $playlistID;
+  public $homeVideoID;
+  public $homePlaylistID;
+  public $postVideoID;
+  public $postPlaylistID;
   public $startTime;
   public $belowHeader;
+  public $archiveDisplayEnabled;
+  public $stickyBackgroundVideoEnabled;
 
   public function __construct() {
 
-    $prefix = CustomizerHelpers::get_settings_prefix();
-
-    $this->videoID = str_replace(",", "", get_theme_mod($prefix.'_video_id'));
-    $this->playlistID = str_replace(",", "", get_theme_mod($prefix.'_playlist'));
-    $this->startTime = str_replace(",", "", get_theme_mod($prefix.'_start_time'));
-    $this->belowHeader = str_replace(",", "", get_theme_mod($prefix.'_below_header'));
-    $this->blurVidBg = str_replace(",", "", get_theme_mod($prefix.'_blur_vid_bg'));
+    $this->get_user_options();
     $this->determine_display_locations();
 
   }
@@ -32,41 +30,68 @@ class Background_Video_HTML
 
   public function determine_display_locations() {
 
-    $prefix = CustomizerHelpers::get_settings_prefix();
-
-    $stickyBackgroundVideoEnabled = get_theme_mod( $prefix.'_sticky');
-    $archiveDisplayEnabled = get_theme_mod( $prefix.'_woo_archive_display');
-
     if ( class_exists( 'WooCommerce' ) ) {
 
-      if ($archiveDisplayEnabled) {
-        $this->display_in_category();
+      if (($this->archiveDisplayEnabled) && (is_product_category())) {
+          $this->display();
+      } else {
+        if (!is_product_category()) {
+          $this->display();
+        }
       }
 
+    } else {
+      $this->display();
     }
-
-	  $this->display();
-
   }
 
   public function display() {
+    global $post;
 
-//    $videoID = get_post_meta( get_the_ID(), 'ge_video_bg', true );
+    if (is_front_page()) {
+      if (($this->homeVideoID !== '') || ($this->homePlaylistID !== '')) {
 
-    if ((is_front_page()) || ($this->videoID !== '')) {
-      echo "<span id='landing_yt_player' data-id='" . $this->videoID . "' data-playlist-id='" . $this->playlistID . "' data-start-time='" . $this->startTime . "' data-below-header='" . $this->belowHeader. "' data-blur='" . $this->blurVidBg . "'></span>";
+        echo "<span id='landing_yt_player' data-id='" . $this->homeVideoID . "' data-playlist-id='" . $this->homePlaylistID . "' data-start-time='" . $this->startTime . "' data-below-header='" . $this->belowHeader. "' data-blur='" . $this->blurVidBg . "'></span>";
+
+      }
+    } else {
+      if (($this->postVideoID !== '') || ($this->postPlaylistID !== '')) {
+
+        echo "<span id='landing_yt_player' data-id='" . $this->postVideoID . "' data-playlist-id='" . $this->postPlaylistID . "' data-below-header='0' data-blur='" . $this->blurVidBg . "'></span>";
+
+      } else {
+
+        $image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id(  $post->ID ), 'full' );
+
+        if ( $image_attributes ) {
+
+          ?><img class="page_background_image" src="<?php echo $image_attributes[0]; ?>"/><?php
+
+        }
+
+      }
     }
+
+
+
+
 
   }
 
+  public function get_user_options() {
+    global $post;
+    $prefix = CustomizerHelpers::get_settings_prefix();
 
-  function display_in_category() {
-    if (is_product_category() || is_front_page()) {
-//      genesis_widget_area( 'home-subscribe-widget', array(
-//          'before' => '<div id="home-subscribe-widget" class="home-subscribe-widget"><div class="widget-area ' . prettycreative_widget_area_class( 'home-subscribe-widget' ) . '"><div class="wrap">',
-//          'after'  => '</div></div></div>',
-//      ) );
-    }
+    $this->homeVideoID = get_theme_mod($prefix.'_video_id');
+    $this->homePlaylistID = get_theme_mod($prefix.'_playlist');
+
+    $this->postVideoID = get_field('post_youtube_video_id', $post->ID, false);
+    $this->postPlaylistID = get_field('post_youtube_playlist_id', $post->ID, false);
+    $this->startTime = get_theme_mod($prefix.'_start_time');
+    $this->belowHeader = get_theme_mod($prefix.'_below_header');
+    $this->blurVidBg = get_theme_mod($prefix.'_blur_vid_bg');
+    $this->stickyBackgroundVideoEnabled = get_theme_mod( $prefix.'_sticky');
+    $this->archiveDisplayEnabled = get_theme_mod( $prefix.'_woo_archive_display');
   }
 
 }
