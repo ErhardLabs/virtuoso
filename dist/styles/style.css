@@ -2833,7 +2833,7 @@ img.alignright {
 /* ## Breadcrumbs
 --------------------------------------------- */
 .breadcrumb {
-	background-color: #fff;
+	background-color: transparent;
 	font-size: 16px;
 	font-size: 1.6rem;
 	margin-bottom: 1px;
@@ -4700,6 +4700,19 @@ p.entry-meta {
 	font-size: 24px;
 	text-shadow: none;
 	padding: 10px 20px;
+}
+
+.portfolio-template-visual-photography-single .site-inner {
+	padding: 10px;
+}
+
+.portfolio-template-visual-photography-single .site-inner .entry {
+	background: transparent;
+}
+
+.portfolio-template-visual-photography-single .site-inner .entry-content ol,
+.portfolio-template-visual-photography-single .site-inner .entry-content ul {
+	margin: 0 auto;
 }
 
 .error404 .entry-content ol, .error404 .entry-content ul {

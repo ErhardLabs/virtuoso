@@ -53,13 +53,16 @@ class Background_Video_HTML
 
     } else {
 
-      $image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id(  $post->ID ), 'full' );
+      if (!is_category()) {
+        $image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id(  $post->ID ), 'full' );
 
-      if ( $image_attributes ) {
+        if ( $image_attributes ) {
 
-        ?><img class="page_background_image" src="<?php echo $image_attributes[0]; ?>"/><?php
+          ?><img class="page_background_image" src="<?php echo $image_attributes[0]; ?>"/><?php
 
+        }
       }
+
 
     }
 
