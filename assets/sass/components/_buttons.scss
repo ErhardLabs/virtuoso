@@ -1,2 +1,10 @@
 /* ## Buttons
 --------------------------------------------- */
+
+.button {
+  @include rounded-button($black, $white, $hover-effect: true);
+}
+
+.btn {
+  @include rounded-button($black, $white, $hover-effect: true);
+}
