@@ -9,10 +9,12 @@
  * @license     GNU General Public License 2.0+
  */
 namespace Virtuoso\Lib\Functions;
+use Virtuoso\Lib\Components\Background_Image;
 
 class Formatting {
 	public function __construct() {
     $this->format_breadcrumbs();
+    $this->set_background_image_default();
 	}
 
 	public function format_breadcrumbs() {
@@ -20,5 +22,9 @@ class Formatting {
       $args['labels']['prefix'] = '';
       return $args;
     });
+  }
+
+  public function set_background_image_default() {
+    Background_Image::add();
   }
 }

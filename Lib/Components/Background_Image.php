@@ -3,9 +3,6 @@ namespace Virtuoso\Lib\Components;
 
 class Background_Image {
 
-  public function __construct() {
-  }
-
   public static function background_image($postID) {
 
     $image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id(  $postID ), 'full' );
@@ -18,12 +15,12 @@ class Background_Image {
 
   }
 
-//  public function add() {
-//    add_action('virtuoso_featured_background_image', [$this, 'background_image']);
-//  }
-//
-//  public function remove() {
-//    remove_action('virtuoso_featured_background_image', [$this, 'background_image'], 10);
-//  }
+  public static function add() {
+    add_action('virtuoso_featured_background_image', array(__class__, 'background_image'));
+  }
+
+  public static function remove() {
+    remove_action('virtuoso_featured_background_image', array(__class__, 'background_image'), 10);
+  }
 
 }
