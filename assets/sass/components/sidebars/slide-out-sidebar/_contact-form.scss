@@ -25,7 +25,7 @@
   input[type=submit]{
     padding-left: 20px;
 
-    @include rounded-button($white, $black, true);
+    @include rounded-button($black, $white, true);
 
 
   }
