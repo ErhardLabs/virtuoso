@@ -2,14 +2,14 @@
 /**
  * Customizer handler for Background Video
  *
- * @package     Virtuoso\Lib\Components\Customizer
+ * @package     Virtuoso\Lib\Admin\Customizer
  * @since       2.0.0
  * @author      ErhardLabs
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+
  */
 
-namespace Virtuoso\Lib\Components\Customizer;
+namespace Virtuoso\Lib\Admin\Customizer;
 
 
 class Background_Video

@@ -12,6 +12,7 @@
 namespace Virtuoso\Lib\Structure;
 
 use Virtuoso\Config\ThemeConfig;
+use Virtuoso\Lib\Components\Background_Image;
 
 class Post {
 	public $config = "";

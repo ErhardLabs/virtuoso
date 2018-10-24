@@ -15,12 +15,13 @@ namespace Virtuoso\Lib;
 use Virtuoso\Config\ThemeConfig;
 
 // Components
-use Virtuoso\Lib\Components\Customizer\Customizer;
+use Virtuoso\Lib\Admin\Admin;
+use Virtuoso\Lib\Components\Background_Video_HTML;
+use Virtuoso\Lib\Admin\Customizer\Customizer;
 
 // Functions
 use Virtuoso\Lib\Functions\Formatting;
 use Virtuoso\Lib\Functions\EnqueueAssets;
-use Virtuoso\Lib\Functions\Markup;
 use Virtuoso\Lib\Functions\DetectJS;
 
 // Structure
@@ -46,12 +47,10 @@ class VirtuosoTheme extends ThemeConfig {
 
 		$detectJS = new DetectJS();
 
-		$customizer = new Customizer();
+		$customizer = new Admin();
 
 		$formatting = new Formatting();
 		$loadAssets = new EnqueueAssets();
-		$markup     = new Markup();
-
 
 		$menu     = new Menu();
 		$header   = new Header();
@@ -60,13 +59,6 @@ class VirtuosoTheme extends ThemeConfig {
 		$archive  = new Archive();
 		$footer  = new Footer();
 		$post = new Post();
-
-		$this->register_cpts();
-
-    add_filter('genesis_breadcrumb_args', function($args) {
-      $args['labels']['prefix'] = '';
-      return $args;
-    });
 
 	}
 
@@ -206,15 +198,5 @@ class VirtuosoTheme extends ThemeConfig {
 
 		update_option( 'posts_per_page', $config['blog_cat_num'] );
 	}
-
-	public function register_cpts() {
-
-	  $directory = get_stylesheet_directory() . '/Lib/Components/CPTs';
-
-    foreach(glob($directory.'/*.*') as $file) {
-      include_once($file);
-    }
-
-  }
 
 }

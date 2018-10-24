@@ -12,7 +12,7 @@
 namespace Virtuoso\Lib\Structure;
 
 use Virtuoso\Config\ThemeConfig;
-use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
+use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
 
 class Sidebar {
 	public $config = "";

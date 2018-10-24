@@ -6,7 +6,8 @@
  * Time: 3:51 PM
  */
 namespace Virtuoso\Lib\Components;
-use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
+use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
+use Virtuoso\Lib\Components\Background_Image;
 
 class Background_Video_HTML
 {
@@ -18,9 +19,13 @@ class Background_Video_HTML
   public $blurVidBg;
   public $archiveDisplayEnabled;
   public $stickyBackgroundVideoEnabled;
+  public $postID;
 
   public function __construct() {
 
+    global $post;
+
+    $this->postID = $post->ID;
     $this->get_user_options();
     $this->determine_display_locations();
 
@@ -45,7 +50,6 @@ class Background_Video_HTML
   }
 
   public function display() {
-    global $post;
 
     if (($this->videoID !== '') || ($this->playlistID !== '')) {
 
@@ -54,13 +58,7 @@ class Background_Video_HTML
     } else {
 
       if (!is_category()) {
-        $image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id(  $post->ID ), 'full' );
-
-        if ( $image_attributes ) {
-
-          ?><img class="page_background_image" src="<?php echo $image_attributes[0]; ?>"/><?php
-
-        }
+        do_action('virtuoso_featured_background_image', $this->postID);
       }
 
 
@@ -69,11 +67,10 @@ class Background_Video_HTML
   }
 
   public function get_user_options() {
-    global $post;
-    global $wp_query;
+
     $prefix = CustomizerHelpers::get_settings_prefix();
 
-    $videoLink = get_field('post_youtube_video_link', $post->ID, false);
+    $videoLink = get_field('post_youtube_video_link', $this->postID, false);
 
     if (($videoLink !== '') && ($videoLink !== NULL)) {
       $video_id = explode("?v=", $videoLink);
@@ -83,7 +80,7 @@ class Background_Video_HTML
       $this->videoID = '';
     }
 
-    $playlistLink = get_field('post_youtube_playlist_link', $post->ID, false);
+    $playlistLink = get_field('post_youtube_playlist_link', $this->postID, false);
 
     if (($playlistLink !== '') && ($playlistLink !== NULL)) {
       $playlist_id = explode("?list=", $playlistLink);
@@ -94,10 +91,10 @@ class Background_Video_HTML
     }
 
 
-    $this->startTime = get_field('start_time', $post->ID, false);
-    $this->belowHeader = get_field('display_below_header', $post->ID, false);
-    $this->blurVidBg = get_field('blur', $post->ID, false);
-    $this->stickyBackgroundVideoEnabled = get_field('fixed_to_page', $post->ID, false);
+    $this->startTime = get_field('start_time', $this->postID, false);
+    $this->belowHeader = get_field('display_below_header', $this->postID, false);
+    $this->blurVidBg = get_field('blur', $this->postID, false);
+    $this->stickyBackgroundVideoEnabled = get_field('fixed_to_page', $this->postID, false);
 
 //    $this->startTime = get_theme_mod($prefix.'_start_time');
 //    $this->belowHeader = get_theme_mod($prefix.'_below_header');

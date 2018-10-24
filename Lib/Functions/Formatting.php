@@ -12,5 +12,13 @@ namespace Virtuoso\Lib\Functions;
 
 class Formatting {
 	public function __construct() {
+    $this->format_breadcrumbs();
 	}
+
+	public function format_breadcrumbs() {
+    add_filter('genesis_breadcrumb_args', function($args) {
+      $args['labels']['prefix'] = '';
+      return $args;
+    });
+  }
 }

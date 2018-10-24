@@ -47,9 +47,7 @@ class Header {
 	}
 
 	function include_background_video() {
-
     new Background_Video_HTML();
-
   }
 
 }
