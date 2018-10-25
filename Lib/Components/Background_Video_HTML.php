@@ -23,11 +23,12 @@ class Background_Video_HTML
 
   public function __construct() {
 
-    global $post;
-
-    $this->postID = $post->ID;
-    $this->get_user_options();
-    $this->determine_display_locations();
+    if (!is_category()) {
+      global $post;
+      $this->postID = $post->ID;
+      $this->get_user_options();
+      $this->determine_display_locations();
+    }
 
   }
 
@@ -56,12 +57,7 @@ class Background_Video_HTML
       echo "<span id='landing_yt_player' data-id='" . $this->videoID . "' data-playlist-id='" . $this->playlistID . "' data-start-time='" . $this->startTime . "' data-below-header='" . $this->belowHeader. "' data-blur='" . $this->blurVidBg . "'></span>";
 
     } else {
-
-      if (!is_category()) {
-        do_action('virtuoso_featured_background_image', $this->postID);
-      }
-
-
+      do_action('virtuoso_featured_background_image', $this->postID);
     }
 
   }
