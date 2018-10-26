@@ -4,6 +4,7 @@ $('.wp-block-gallery').slick({
   adaptiveHeight: true,
   centerMode: true,
   arrows: true,
+  lazyLoad: true,
   slidesToShow: 1,
   slidesToScroll: 1,
   prevArrow: '<i class="prevArrow ti-angle-left"></i>',
