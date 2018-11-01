@@ -36,13 +36,17 @@ function virtuoso_display_videography_slider() {
               $videoLink = get_sub_field('video_links', false);
               $video_id = explode("?v=", $videoLink);
               $video_id = $video_id[1];
-              $videoSrc = "https://www.youtube.com/embed/$video_id?rel=0&controls=1&showinfo=0&autoplay=0&loop=1&enablejsapi=1"
+              $videoSrc = "https://www.youtube.com/embed/$video_id?rel=0&controls=1&enablejsapi=1"
               ?>
 
               <li class="slide">
                 <?php if( $video_id ): ?>
+                  <div class="portfolio_header_wrap">
                   <a class="portfolio_name" href="<?php echo $permalink; ?>"><?php echo $title; ?></a>
+                  </div>
+                <div class="embed-container">
                   <iframe class="home_video" id="yt_home_embed" width="2460" height="1440" src="<?php echo $videoSrc ?>" frameborder="0" allowfullscreen></iframe>
+                </div>
                 <?php endif; ?>
 
               </li>

@@ -48,7 +48,7 @@
    *
    */
   function _combineMenus() {
-    if ( window.innerWidth <= 769 ) {
+    if ( window.innerWidth <= 767 ) {
 
       $( 'ul.menu-secondary > li' ).addClass( 'moved-item' ); // tag moved items so we can move them back
       $( 'ul.menu-secondary > li' ).appendTo( 'ul.menu-primary' );
