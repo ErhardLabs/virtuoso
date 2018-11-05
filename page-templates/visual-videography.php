@@ -23,11 +23,13 @@ function virtuoso_display_videography_slider() {
       // loop through posts
       while( have_posts() ): the_post();
 
-        $title = get_the_title() . ' Videography';
+        $title = get_the_title();
         $permalink = get_the_permalink();
 
         if( have_rows('video_portfolio') ): ?>
-
+            <header class="entry-header">
+                <h1 class="portfolio_name"><?php echo $title; ?></h1>
+            </header>
           <ul class="videography_portfolio_slides">
 
             <?php while( have_rows('video_portfolio') ): the_row();
@@ -41,9 +43,6 @@ function virtuoso_display_videography_slider() {
 
               <li class="slide">
                 <?php if( $video_id ): ?>
-                  <div class="portfolio_header_wrap">
-                  <a class="portfolio_name" href="<?php echo $permalink; ?>"><?php echo $title; ?></a>
-                  </div>
                 <div class="embed-container">
                   <iframe class="home_video" id="yt_home_embed" width="2460" height="1440" src="<?php echo $videoSrc ?>" frameborder="0" allowfullscreen></iframe>
                 </div>
@@ -54,6 +53,20 @@ function virtuoso_display_videography_slider() {
             <?php endwhile; ?>
 
           </ul>
+
+        <?php
+        $category_name = get_the_category()[0]->name;
+	    $category_id = get_cat_ID( get_the_category()[0]->name );
+        $category_link = get_category_link( $category_id );
+
+          ?>
+        <footer class="entry-footer">
+            <p class="entry-meta">
+                <span class="entry-categories">
+                    <a href="<?php echo $category_link ?>"><?php echo $category_name ?></a>
+                </span>
+            </p>
+        </footer>
 
         <?php endif;
 
