@@ -7,7 +7,7 @@
  */
 
 namespace Virtuoso\Lib\Components;
-use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
+use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
 
 class FloatingContactHTML {
 

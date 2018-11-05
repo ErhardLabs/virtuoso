@@ -9,7 +9,7 @@
  * @license     GNU General Public License 2.0+
  */
 
-namespace Virtuoso\Lib\Components\Customizer;
+namespace Virtuoso\Lib\Admin\Customizer;
 
 class Customizer {
 
@@ -26,7 +26,7 @@ class Customizer {
 	 */
 	public function register_with_customizer() {
 
-	  new Background_Video();
+//	  new Background_Video();
 	  new HeaderMenuLayout();
 	  new FooterLayout();
 	  new Contact();

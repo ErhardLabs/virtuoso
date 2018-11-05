@@ -2,7 +2,7 @@
 // .virtuoso-js enabled styles
 //=======================
 
-@media only screen and (max-width: #{map-get($breakpoints, 'med')}) {
+@media only screen and (max-width: 767px) {
 
   .virtuoso-js {
     .genesis-nav-menu {

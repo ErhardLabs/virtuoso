@@ -10,7 +10,7 @@
  */
 
 namespace Virtuoso\Lib\Structure;
-use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
+use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
 use Virtuoso\Lib\Components\FloatingContactHTML;
 
 class Footer {

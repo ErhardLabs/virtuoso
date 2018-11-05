@@ -15,12 +15,13 @@ namespace Virtuoso\Lib;
 use Virtuoso\Config\ThemeConfig;
 
 // Components
-use Virtuoso\Lib\Components\Customizer\Customizer;
+use Virtuoso\Lib\Admin\Admin;
+use Virtuoso\Lib\Components\Background_Video_HTML;
+use Virtuoso\Lib\Admin\Customizer\Customizer;
 
 // Functions
 use Virtuoso\Lib\Functions\Formatting;
 use Virtuoso\Lib\Functions\EnqueueAssets;
-use Virtuoso\Lib\Functions\Markup;
 use Virtuoso\Lib\Functions\DetectJS;
 
 // Structure
@@ -46,20 +47,18 @@ class VirtuosoTheme extends ThemeConfig {
 
 		$detectJS = new DetectJS();
 
-		$customizer = new Customizer();
+		$customizer = new Admin();
 
 		$formatting = new Formatting();
 		$loadAssets = new EnqueueAssets();
-		$markup     = new Markup();
-
 
 		$menu     = new Menu();
 		$header   = new Header();
 		$sidebar  = new Sidebar();
 		$comments = new Comments();
 		$archive  = new Archive();
+    $post = new Post();
 		$footer  = new Footer();
-		$post = new Post();
 
 	}
 

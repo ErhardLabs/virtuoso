@@ -9,7 +9,7 @@
  * @license     GNU General Public License 2.0+
  */
 
-namespace Virtuoso\Lib\Components\Customizer;
+namespace Virtuoso\Lib\Admin\Customizer;
 
 class CustomizerCSSHandler extends CustomizerHelpers {
 

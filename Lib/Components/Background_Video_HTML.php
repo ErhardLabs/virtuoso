@@ -6,24 +6,29 @@
  * Time: 3:51 PM
  */
 namespace Virtuoso\Lib\Components;
-use Virtuoso\Lib\Components\Customizer\CustomizerHelpers;
+use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
+use Virtuoso\Lib\Components\Background_Image;
 
 class Background_Video_HTML
 {
 
-  public $homeVideoID;
-  public $homePlaylistID;
-  public $postVideoID;
-  public $postPlaylistID;
+  public $videoID;
+  public $playlistID;
   public $startTime;
   public $belowHeader;
+  public $blurVidBg;
   public $archiveDisplayEnabled;
   public $stickyBackgroundVideoEnabled;
+  public $postID;
 
   public function __construct() {
 
-    $this->get_user_options();
-    $this->determine_display_locations();
+    if (!is_category()) {
+      global $post;
+      $this->postID = $post->ID;
+      $this->get_user_options();
+      $this->determine_display_locations();
+    }
 
   }
 
@@ -46,52 +51,52 @@ class Background_Video_HTML
   }
 
   public function display() {
-    global $post;
 
-    if (is_front_page()) {
-      if (($this->homeVideoID !== '') || ($this->homePlaylistID !== '')) {
+    if (($this->videoID !== '') || ($this->playlistID !== '')) {
 
-        echo "<span id='landing_yt_player' data-id='" . $this->homeVideoID . "' data-playlist-id='" . $this->homePlaylistID . "' data-start-time='" . $this->startTime . "' data-below-header='" . $this->belowHeader. "' data-blur='" . $this->blurVidBg . "'></span>";
+      echo "<span id='landing_yt_player' data-id='" . $this->videoID . "' data-playlist-id='" . $this->playlistID . "' data-start-time='" . $this->startTime . "' data-below-header='" . $this->belowHeader. "' data-blur='" . $this->blurVidBg . "'></span>";
 
-      }
     } else {
-      if (($this->postVideoID !== '') || ($this->postPlaylistID !== '')) {
-
-        echo "<span id='landing_yt_player' data-id='" . $this->postVideoID . "' data-playlist-id='" . $this->postPlaylistID . "' data-below-header='0' data-blur='" . $this->blurVidBg . "'></span>";
-
-      } else {
-
-        $image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id(  $post->ID ), 'full' );
-
-        if ( $image_attributes ) {
-
-          ?><img class="page_background_image" src="<?php echo $image_attributes[0]; ?>"/><?php
-
-        }
-
-      }
+      do_action('virtuoso_featured_background_image', $this->postID);
     }
-
-
-
-
 
   }
 
   public function get_user_options() {
-    global $post;
+
     $prefix = CustomizerHelpers::get_settings_prefix();
 
-    $this->homeVideoID = get_theme_mod($prefix.'_video_id');
-    $this->homePlaylistID = get_theme_mod($prefix.'_playlist');
+    $videoLink = get_field('post_youtube_video_link', $this->postID, false);
 
-    $this->postVideoID = get_field('post_youtube_video_id', $post->ID, false);
-    $this->postPlaylistID = get_field('post_youtube_playlist_id', $post->ID, false);
-    $this->startTime = get_theme_mod($prefix.'_start_time');
-    $this->belowHeader = get_theme_mod($prefix.'_below_header');
-    $this->blurVidBg = get_theme_mod($prefix.'_blur_vid_bg');
-    $this->stickyBackgroundVideoEnabled = get_theme_mod( $prefix.'_sticky');
-    $this->archiveDisplayEnabled = get_theme_mod( $prefix.'_woo_archive_display');
+    if (($videoLink !== '') && ($videoLink !== NULL)) {
+      $video_id = explode("?v=", $videoLink);
+      $video_id = $video_id[1];
+      $this->videoID = $video_id;
+    } else {
+      $this->videoID = '';
+    }
+
+    $playlistLink = get_field('post_youtube_playlist_link', $this->postID, false);
+
+    if (($playlistLink !== '') && ($playlistLink !== NULL)) {
+      $playlist_id = explode("?list=", $playlistLink);
+      $playlist_id = $playlist_id[1];
+      $this->playlistID = $playlist_id;
+    } else {
+      $this->playlistID = '';
+    }
+
+
+    $this->startTime = get_field('start_time', $this->postID, false);
+    $this->belowHeader = get_field('display_below_header', $this->postID, false);
+    $this->blurVidBg = get_field('blur', $this->postID, false);
+    $this->stickyBackgroundVideoEnabled = get_field('fixed_to_page', $this->postID, false);
+
+//    $this->startTime = get_theme_mod($prefix.'_start_time');
+//    $this->belowHeader = get_theme_mod($prefix.'_below_header');
+//    $this->blurVidBg = get_theme_mod($prefix.'_blur_vid_bg');
+//    $this->stickyBackgroundVideoEnabled = get_theme_mod( $prefix.'_sticky');
+//    $this->archiveDisplayEnabled = get_theme_mod( $prefix.'_woo_archive_display');
   }
 
 }

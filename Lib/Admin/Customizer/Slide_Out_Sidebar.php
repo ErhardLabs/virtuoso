@@ -6,7 +6,7 @@
  * Time: 3:12 PM
  */
 
-namespace Virtuoso\Lib\Components\Customizer;
+namespace Virtuoso\Lib\Admin\Customizer;
 
 class Slide_Out_Sidebar
 {
