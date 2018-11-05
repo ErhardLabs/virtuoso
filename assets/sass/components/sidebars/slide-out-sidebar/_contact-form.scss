@@ -1,0 +1,33 @@
+#slide_out_sidebar {
+
+  .wpcf7 {
+    margin-top: 40px;
+  }
+
+  .checkbox-label {
+    font-weight: bold;
+  }
+
+  .wpcf7-checkbox {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .wpcf7-list-item {
+    margin: 0;
+  }
+
+  input, textarea {
+    padding-left: 0;
+  }
+
+  input[type=submit]{
+    padding-left: 20px;
+
+    @include rounded-button($black, $white, true);
+
+
+  }
+
+}

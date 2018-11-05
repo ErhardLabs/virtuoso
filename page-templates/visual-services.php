@@ -8,20 +8,23 @@
 add_action( 'genesis_before_entry_content', 'visual_services' );
 function visual_services() {
 
-  ?>
+	?>
 
     <div class="visual_services_wrap">
-      <h4>Select a service below</h4>
-      <div class='link_wrap one-half first'>
-        <a href="/category/photography/" class="button">PHOTOGRAPHY <i class="ti-gallery"></i></a>
-      </div>
-      <div class='link_wrap one-half'>
-        <a href="/category/videography/" class="button">VIDEOGRAPHY <i class="ti-video-clapper"></i></a>
-      </div>
+        <h4>Select a service below</h4>
+        <div class="button_wrap">
+            <div class='link_wrap button'>
+                <a href="/photos">PHOTOGRAPHY <i class="ti-gallery"></i></a>
+            </div>
+            <div class='link_wrap button'>
+                <a href="/videos">VIDEOGRAPHY <i class="ti-video-clapper"></i></a>
+            </div>
+        </div>
     </div>
 
 
-  <?php
+	<?php
 
 }
+
 genesis();
