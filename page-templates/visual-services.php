@@ -14,10 +14,10 @@ function visual_services() {
         <h4>Select a service below</h4>
         <div class="button_wrap">
             <div class='link_wrap button'>
-                <a href="/photos">PHOTOGRAPHY <i class="ti-gallery"></i></a>
+                <a href="/category/photography">PHOTOGRAPHY <i class="ti-gallery"></i></a>
             </div>
             <div class='link_wrap button'>
-                <a href="/videos">VIDEOGRAPHY <i class="ti-video-clapper"></i></a>
+                <a href="/category/videography">VIDEOGRAPHY <i class="ti-video-clapper"></i></a>
             </div>
         </div>
     </div>
