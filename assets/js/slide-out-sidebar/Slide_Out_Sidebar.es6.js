@@ -99,7 +99,8 @@ class Slide_Out_Sidebar {
 
     $('#slide_out_sidebar').animate({
       right: '0%',
-    }, 50, function () {
+      width: '100%'
+    }, 200, function () {
 
       // if (!$('.fa-shopping-cart').hasClass('shopping_cart_clicked_before')) {
         $('#slide_out_sidebar #' + widgetID).fadeIn();
@@ -117,13 +118,13 @@ class Slide_Out_Sidebar {
 
     $('#slide_out_sidebar').removeClass('slider-active');
     $('#slide_out_sidebar').addClass('slider-close');
-    $('#sexy-woo-cart').hide();
+    //$('#sexy-woo-cart').hide();
 
     //$('#genesis-content').css('filter', 'unset');
 
     $('#slide_out_sidebar').animate({
       right: '-100%'
-    }, 50, function () {
+    }, 200, function () {
       $('#slide_out_sidebar').fadeOut();
       $('#slide_out_sidebar section').fadeOut();
       // $('#slide_out_sidebar a.button.checkout.wc-forward').fadeIn();

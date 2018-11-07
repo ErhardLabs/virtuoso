@@ -34,10 +34,6 @@ class EnqueueAssets {
 
     wp_enqueue_script(CHILD_TEXT_DOMAIN . '-slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), CHILD_THEME_VERSION);
 
-		wp_enqueue_script( CHILD_TEXT_DOMAIN . '-waypoints', CHILD_URL . '/dist/js/jquery.waypoints.min.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
-
-		wp_enqueue_style( CHILD_TEXT_DOMAIN . '-animate', CHILD_URL . '/dist/styles/animate.min.css' );
-
 		wp_enqueue_style( 'dashicons' );
 		wp_enqueue_script( CHILD_TEXT_DOMAIN . '-app', CHILD_URL . '/dist/js/app.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 		wp_enqueue_script( CHILD_TEXT_DOMAIN . '-projectSpecific', CHILD_URL . '/dist/js/projectSpecific.js', array( 'jquery' ), CHILD_THEME_VERSION, true );

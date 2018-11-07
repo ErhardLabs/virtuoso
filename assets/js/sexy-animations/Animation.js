@@ -1,5 +1,7 @@
 $=jQuery;
 
+import 'waypoints/lib/jquery.waypoints.min.js';
+
 /**
  *  Animations Class
  *
@@ -134,6 +136,7 @@ class Animation {
   }
 
   onScrollInit( items, trigger ) {
+
     items.each( function() {
       let wpElement = $(this),
         wpAnimationClass = wpElement.attr('data-wp-animation'),

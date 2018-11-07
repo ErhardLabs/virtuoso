@@ -64,8 +64,6 @@ function buildImports() {
  * @link https://laravel.com/docs/5.6/mix#copying-files-and-directories
  */
 
-mix.copy('node_modules/animate.css/animate.min.css', 'dist/styles/animate.min.css');
-mix.copy('node_modules/waypoints/lib/jquery.waypoints.min.js', 'dist/js/jquery.waypoints.min.js');
 
 /*
  * Set Laravel Mix options.
