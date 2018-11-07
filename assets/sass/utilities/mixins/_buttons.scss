@@ -1,22 +1,22 @@
 
 // Round button
 @mixin rounded-button($text-color, $background-color, $hover-effect) {
-  text-align: center !important;
-  color: $text-color !important;
-  background: $background-color !important;
-  border: none !important;
-  border-radius: 50px !important;
-  box-shadow: 0 10px 48px -8px rgba(171,171,171,1) !important;
+  text-align: center;
+  color: $text-color;
+  background: $background-color;
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0 10px 48px -8px rgba(171,171,171,1);
 
   @if $hover-effect {
       &:hover {
-        box-shadow: 0 10px 48px -13px rgba(171, 171, 171, 1) !important;
-        color: lighten($text-color, 20%) !important;
+        box-shadow: 0 10px 48px -13px rgba(171, 171, 171, 1);
+        color: lighten($text-color, 20%);
       }
   } @else {
       &:hover {
-        box-shadow: 0 10px 48px -8px rgba(171, 171, 171, 1) !important;
-        color: $text-color !important;
+        box-shadow: 0 10px 48px -8px rgba(171, 171, 171, 1);
+        color: $text-color;
       }
   }
 
@@ -25,21 +25,21 @@
 
 // Bordered rectangular button
 @mixin rect-button($text-color, $background-color, $hover-effect) {
-  text-align: center !important;
-  color: $text-color !important;
-  background: $background-color !important;
+  text-align: center;
+  color: $text-color;
+  background: $background-color;
   border: solid 1px $black;
   border-radius: 4px;
 
   @if $hover-effect {
     &:hover {
-      box-shadow: 0 10px 48px -13px rgba(171, 171, 171, 1) !important;
-      color: lighten($text-color, 20%) !important;
+      box-shadow: 0 10px 48px -13px rgba(171, 171, 171, 1);
+      color: lighten($text-color, 20%);
     }
   } @else {
     &:hover {
-      box-shadow: 0 10px 48px -8px rgba(171, 171, 171, 1) !important;
-      color: $text-color !important;
+      box-shadow: 0 10px 48px -8px rgba(171, 171, 171, 1);
+      color: $text-color;
     }
   }
 

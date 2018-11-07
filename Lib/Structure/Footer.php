@@ -64,7 +64,7 @@ class Footer {
 	 * @return string
 	 */
 	public function custom_footer() {
-		return include( CHILD_DIR . '/lib/views/footer-copyright.php' );
+		return include( CHILD_DIR . '/Lib/Views/footer-copyright.php' );
 	}
 
 	public function include_floating_contact() {
