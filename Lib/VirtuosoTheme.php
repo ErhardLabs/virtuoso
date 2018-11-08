@@ -16,12 +16,7 @@ use Virtuoso\Config\ThemeConfig;
 
 // Components
 use Virtuoso\Lib\Admin\Admin;
-use Virtuoso\Lib\Components\Background_Video_HTML;
-use Virtuoso\Lib\Admin\Customizer\Customizer;
 
-// Functions
-use Virtuoso\Lib\Functions\Formatting;
-use Virtuoso\Lib\Functions\EnqueueAssets;
 use Virtuoso\Lib\Functions\DetectJS;
 
 // Structure
@@ -47,18 +42,22 @@ class VirtuosoTheme extends ThemeConfig {
 
 		$detectJS = new DetectJS();
 
-		$customizer = new Admin();
+    if (is_admin()) {
 
-		$formatting = new Formatting();
-		$loadAssets = new EnqueueAssets();
+      $admin = new Admin();
 
-		$menu     = new Menu();
-		$header   = new Header();
-		$sidebar  = new Sidebar();
-		$comments = new Comments();
-		$archive  = new Archive();
-    $post = new Post();
-		$footer  = new Footer();
+    } else {
+      $formatting = new Formatting();
+      $loadAssets = new EnqueueAssets();
+
+      $menu     = new Menu();
+      $header   = new Header();
+      $sidebar  = new Sidebar();
+      $comments = new Comments();
+      $archive  = new Archive();
+      $post = new Post();
+      $footer  = new Footer();
+    }
 
 	}
 

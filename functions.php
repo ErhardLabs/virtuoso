@@ -10,8 +10,9 @@
  */
 namespace Virtuoso;
 
-require_once 'vendor/autoload.php';
+require get_stylesheet_directory(__FILE__) . '/vendor/autoload.php';
 use Virtuoso\Lib\VirtuosoTheme;
 
 // Initialize the Virtuoso Genesis Child Theme
 $virtuoso = new VirtuosoTheme();
+
