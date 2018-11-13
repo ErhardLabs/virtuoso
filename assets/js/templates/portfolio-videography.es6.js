@@ -1,4 +1,4 @@
-$('.category-videography .videography_slider_wrap').slick({
+$('.portfolio-template-visual-videography .videography_portfolio_slides').slick({
   adaptiveHeight: true,
   centerMode: true,
   centerPadding: "25em",
@@ -28,16 +28,16 @@ $('.category-videography .videography_slider_wrap').slick({
     }, {
 
 
-      breakpoint: 600,
-      settings: {
-        centerMode: true,
-        centerPadding: "40px"
-      }
+    breakpoint: 600,
+    settings: {
+      centerMode: true,
+      centerPadding: "40px"
+    }
 
-    }, {
+  }, {
 
-      breakpoint: 300,
-      settings: "unslick" //destroy slick
+    breakpoint: 300,
+    settings: "unslick" //destroy slick
 
-    }]
+  }]
 });
