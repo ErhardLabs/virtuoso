@@ -1,6 +1,11 @@
 ## [Unreleased]
 #### This Project uses Semantic Versioning
 
+## 2.3.3 @2018-11-13
+### Added
+- Background video youtube shortlinks don't break site anymore.
+- ajax-loader.gif now included to suppress error
+
 ## 2.3.2 @2018-10-16
 ### Added
 - Background video and photo feature working on posts

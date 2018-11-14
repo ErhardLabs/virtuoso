@@ -76,7 +76,7 @@ class BackgroundVideo {
     tag.src = 'https://www.youtube.com/iframe_api';
     let firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-    console.log(tag);
+    // console.log(tag);
   }
 
 
@@ -101,7 +101,7 @@ class BackgroundVideo {
       iframe.setAttribute("src", embed);
       iframe.setAttribute("frameborder", "0");
       iframe.setAttribute("allowfullscreen", "1");
-      console.log(this);
+      // console.log(this);
       this.parentNode.replaceChild(iframe, this);
     };
 

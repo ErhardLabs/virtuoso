@@ -69,8 +69,13 @@ class Background_Video_HTML
     $videoLink = get_field('post_youtube_video_link', $this->postID, false);
 
     if (($videoLink !== '') && ($videoLink !== NULL)) {
-      $video_id = explode("?v=", $videoLink);
-      $video_id = $video_id[1];
+
+      if (strpos($videoLink, 'youtu.be') !== false) {
+        $video_id = explode('youtu.be/', $videoLink)[1];
+      } else {
+        preg_match('/[\\?\\&]v=([^\\?\\&]+)/', $videoLink, $matches );
+        $video_id = $matches[1];
+      }
       $this->videoID = $video_id;
     } else {
       $this->videoID = '';
@@ -86,17 +91,11 @@ class Background_Video_HTML
       $this->playlistID = '';
     }
 
-
     $this->startTime = get_field('start_time', $this->postID, false);
     $this->belowHeader = get_field('display_below_header', $this->postID, false);
     $this->blurVidBg = get_field('blur', $this->postID, false);
     $this->stickyBackgroundVideoEnabled = get_field('fixed_to_page', $this->postID, false);
 
-//    $this->startTime = get_theme_mod($prefix.'_start_time');
-//    $this->belowHeader = get_theme_mod($prefix.'_below_header');
-//    $this->blurVidBg = get_theme_mod($prefix.'_blur_vid_bg');
-//    $this->stickyBackgroundVideoEnabled = get_theme_mod( $prefix.'_sticky');
-//    $this->archiveDisplayEnabled = get_theme_mod( $prefix.'_woo_archive_display');
   }
 
 }
