@@ -49,7 +49,7 @@
   section:first-of-type {
     margin-top: 0;
     position: fixed;
-    display: block !important;
+    display: none;
     background: $side-out-sidebar--background-color;
     z-index: 1;
     top: 0;
