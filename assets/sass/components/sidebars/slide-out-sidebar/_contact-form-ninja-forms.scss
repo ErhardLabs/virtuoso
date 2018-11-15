@@ -14,7 +14,7 @@
 
   input[type=button]{
     padding-left: 20px;
-    @include rounded-button($black, $white, true);
+    @include rounded-button($white, $black, true);
 
 
   }
