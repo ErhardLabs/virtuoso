@@ -58,7 +58,7 @@ class BackgroundVideo {
         $('body').prepend(
             '<div class="video-background">' +
             '<div class="video-foreground">' +
-            '<iframe class="home_video ' + blur + '" id="yt_home_embed" width="2460" height="1440" src="' + src + '" frameborder="0" allowfullscreen style="top: ' + offset +'"></iframe>' +
+            '<iframe class="home_video ' + blur + '" id="yt_home_embed" width="2460" height="1440" src="' + src + '" frameborder="0" allowfullscreen style="top: ' + offset +'" data-autoplay="1"></iframe>' +
             '<div class="video-overlay" >' +
             '</div>' +
             '</div>'
@@ -117,15 +117,18 @@ class BackgroundVideo {
 new BackgroundVideo();
 
 window.onYouTubeIframeAPIReady = function () {
-  document.dispatchEvent(new CustomEvent('onYouTubeIframeAPIReady', {}))
+  document.dispatchEvent(new CustomEvent('onYouTubeIframeAPIReady', {}));
 
-  console.log('YT API loaded!');
   let player = new YT.Player('yt_home_embed', {
     events: {
       'onReady': function () {
-        // Mute!
-        player.mute();
-        // player.playVideo();
+
+        let autoplay = player.a.attributes['data-autoplay'];
+
+        if (autoplay) {
+          player.mute();
+          player.playVideo();
+        }
       }
     }
   });
