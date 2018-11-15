@@ -1,6 +1,10 @@
 ## [Unreleased]
 #### This Project uses Semantic Versioning
 
+## 2.3.4 @2018-11-14
+### Fixed
+- Fixed background video bug that made other youtube videos play automatically 
+
 ## 2.3.3 @2018-11-13
 ### Added
 - Background video youtube shortlinks don't break site anymore.
