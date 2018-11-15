@@ -56,6 +56,11 @@
     height: 50px;
     margin-left: -15px;
     padding: 10px 20px;
+    width: 100%;
+
+    @include media-query('med') {
+      width: unset;
+    }
   }
 
   .gform_wrapper ul.gfield_checkbox li label,

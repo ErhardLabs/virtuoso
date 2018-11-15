@@ -125,7 +125,7 @@ window.onYouTubeIframeAPIReady = function () {
       'onReady': function () {
         // Mute!
         player.mute();
-        player.playVideo();
+        // player.playVideo();
       }
     }
   });

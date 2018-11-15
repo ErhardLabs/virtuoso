@@ -39,7 +39,7 @@ function virtuoso_display_videography_archive_content() {
 									$videoLink = get_sub_field( 'video_links', false );
 									$video_id  = explode( "?v=", $videoLink );
 									$video_id  = $video_id[1];
-									$videoSrc  = "https://www.youtube.com/embed/$video_id?rel=0&controls=0&showinfo=0&loop=1&enablejsapi=1"
+									$videoSrc  = "https://www.youtube.com/embed/$video_id?rel=0&controls=0&showinfo=0&loop=1&enablejsapi=1&autoplay=0"
 									?>
 
                     <li class="slide">

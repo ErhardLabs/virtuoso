@@ -1,6 +1,16 @@
 #floatingContact {
   position: fixed;
-  right: 5vw;
-  top: 90vh;
+  right: 5%;
+  top: 85vh;
   z-index: 10;
+
+  a{
+    color: $black;
+    padding: 5px 10px;
+    background: rgba(255,255,255,0.7);
+
+    @include media-query('med') {
+      padding: 10px 15px;
+    }
+  }
 }
