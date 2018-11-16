@@ -18,6 +18,7 @@ class FloatingContactHTML {
 		$prefix = CustomizerHelpers::get_settings_prefix();
 
 		$this->contactURL = get_theme_mod($prefix.'_contact_url');
+		$this->contactInnerText = get_theme_mod($prefix.'_contact_inner_text');
 
 		$this->displayFloatingContact = get_theme_mod( $prefix . '_display_floating_contact' );
 		$this->display();
@@ -28,7 +29,7 @@ class FloatingContactHTML {
 
 		if ( $this->displayFloatingContact ) {
 			echo '<div id="floatingContact">';
-			echo '<a class="button floating-contact" href="' . $this->contactURL . '">Contact</a>';
+			echo '<a class="button floating-contact" href="' . $this->contactURL . '">' . $this->contactInnerText . '</a>';
 			echo '</div>';
 		}
 

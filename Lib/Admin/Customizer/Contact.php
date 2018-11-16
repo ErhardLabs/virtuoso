@@ -87,6 +87,25 @@ class Contact {
 
 		$this->settings[] = $prefix . '_contact_url';
 
+		$wp_customize->add_setting(
+			$prefix . '_contact_inner_text',
+			array(
+				'default' => 'Contact',
+			)
+		);
+
+		$wp_customize->add_control(
+			$prefix . '_contact_inner_text',
+			array(
+				'label' => __('Contact Inner text', CHILD_TEXT_DOMAIN, 'virtuoso'),
+				'description' => __('Change the inner text', CHILD_TEXT_DOMAIN, 'virtuoso'),
+				'section' => 'contact',
+				'type' => 'text',
+			)
+		);
+
+		$this->settings[] = $prefix . '_contact_inner_text';
+
 
 	}
 
