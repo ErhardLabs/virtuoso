@@ -129,7 +129,6 @@ window.onYouTubeIframeAPIReady = function () {
           player.mute();
           player.playVideo();
         }
-
       }
     }
   });

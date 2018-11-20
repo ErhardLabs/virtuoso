@@ -19,6 +19,4 @@ vendor
 
 _keep-old/
 
-#TODO: REMOVE THIS BEFORE DEPLOYMENT
-/dist/js/app.js
-/dist/styles/style.css
+/dist/

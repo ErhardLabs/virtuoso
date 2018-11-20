@@ -6,16 +6,16 @@
   background: $background-color;
   border: none;
   border-radius: 50px;
-  box-shadow: 0 10px 48px -8px rgba(171,171,171,1);
+  box-shadow: 0 10px 48px -15px rgba(171,171,171,1);
 
   @if $hover-effect {
       &:hover {
-        box-shadow: 0 10px 48px -13px rgba(171, 171, 171, 1);
+        box-shadow: 0 10px 48px -17px rgba(171, 171, 171, 1);
         color: lighten($text-color, 20%);
       }
   } @else {
       &:hover {
-        box-shadow: 0 10px 48px -8px rgba(171, 171, 171, 1);
+        box-shadow: 0 10px 48px -15px rgba(171, 171, 171, 1);
         color: $text-color;
       }
   }

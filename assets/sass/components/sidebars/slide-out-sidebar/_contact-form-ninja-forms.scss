@@ -1,0 +1,22 @@
+#slide_out_sidebar {
+  
+  .nf-form-fields-required {
+    display: none;
+  }
+
+  input, textarea {
+    padding-left: 0;
+  }
+
+  .submit-wrap {
+    text-align: center;
+  }
+
+  input[type=button]{
+    padding-left: 20px;
+    @include rounded-button($white, $black, true);
+
+
+  }
+
+}
