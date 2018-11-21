@@ -1,6 +1,12 @@
 ## [Unreleased]
 #### This Project uses Semantic Versioning
 
+## 2.3.5 @2018-11-21
+### Fixed
+- Fixed background image not displaying on mobile due to z-index.
+- made floating contact button less transparent
+- Made remove meta tag function in formatting
+
 ## 2.3.4 @2018-11-14
 ### Fixed
 - Fixed background video bug that made other youtube videos play automatically 

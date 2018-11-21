@@ -35,4 +35,8 @@ class Formatting {
       return $post_meta;
     } );
   }
+
+  public static function remove_meta_tags() {
+    remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
+  }
 }

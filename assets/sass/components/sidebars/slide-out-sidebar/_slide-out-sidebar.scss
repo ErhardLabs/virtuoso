@@ -59,7 +59,7 @@
     width: 100%;
 
     @include media-query('med') {
-      width: unset;
+      width: 100%;
     }
   }
 

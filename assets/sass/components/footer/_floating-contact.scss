@@ -4,10 +4,10 @@
   top: 85vh;
   z-index: 10;
 
-  a{
+  a {
     color: $black;
     padding: 5px 10px;
-    background: rgba(255,255,255,0.7);
+    background: rgba(255, 255, 255, 0.9);
 
     @include media-query('med') {
       padding: 10px 15px;
