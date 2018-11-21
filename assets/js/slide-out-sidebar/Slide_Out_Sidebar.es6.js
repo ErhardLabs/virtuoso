@@ -1,3 +1,5 @@
+$=jQuery;
+
 class Slide_Out_Sidebar {
 
   constructor() {
