@@ -10,7 +10,7 @@ $('.portfolio-template-visual-videography .videography_portfolio_slides').slick(
   responsive: [
     {
 
-      breakpoint: 1550,
+      breakpoint: 1500,
       settings: {
         centerMode: true,
         centerPadding: "10em"

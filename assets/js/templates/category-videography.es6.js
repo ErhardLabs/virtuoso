@@ -10,7 +10,7 @@ $('.category-videography .videography_slider_wrap').slick({
   responsive: [
     {
 
-      breakpoint: 1550,
+      breakpoint: 1500,
       settings: {
         centerMode: true,
         centerPadding: "10em"
