@@ -1,6 +1,11 @@
 ## [Unreleased]
 #### This Project uses Semantic Versioning
 
+# 2.3.6 @2018-12-12
+### Added
+- Additional templates (unfinished at the moment)
+- arrow key functionality to slick slider
+
 ## 2.3.5 @2018-11-21
 ### Fixed
 - Fixed background image not displaying on mobile due to z-index.
