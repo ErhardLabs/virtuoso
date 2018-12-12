@@ -9,7 +9,7 @@
 
   > .wrap {
     color: $siteFooter--color;
-    border-top: 1px solid #f0f1f2;
+    border-top: 1px solid $site-footer--border-color;
     padding: 5vw;
 
     @include media-query('med'){
@@ -18,6 +18,16 @@
 
     }
 
+  }
+
+  .footer-login {
+    margin-left: 20px;
+    padding-bottom: 4px;
+    border-bottom: 1px solid $siteFooter__login--border-color;
+
+    &:hover {
+      border-bottom: none;
+    }
   }
 
   a {
