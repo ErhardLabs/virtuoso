@@ -18,6 +18,7 @@
     clear: both;
   }
 
+
   > .wrap {
     position: relative;
     padding: 0;
@@ -43,6 +44,11 @@
         text-align: center;
       }
       
+    }
+
+    .header-navigation-middle & {
+      float: none;
+      display: inline-block;
     }
 
   }
