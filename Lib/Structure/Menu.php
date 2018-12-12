@@ -51,7 +51,7 @@ class Menu {
 		$prefix = CustomizerHelpers::get_settings_prefix();
 		$headerMenuLayout = get_theme_mod($prefix.'_header_design', $default = true);
 
-		if ( $headerMenuLayout == 'logo-left' ) {
+		if ( $headerMenuLayout == 'logo-left' || $headerMenuLayout == 'navigation-middle' ) {
 			add_action( 'genesis_header', 'genesis_do_nav', 11 );
 		}
 
@@ -73,8 +73,10 @@ class Menu {
 
 		if ( $this->headerMenuLayout == 'logo-left' ) {
 			$classes[] .= ' header-logo-left';
-		} else {
+		} elseif ( $this->headerMenuLayout == 'logo-middle' ) {
 			$classes[] .= ' header-logo-middle';
+		} else {
+			$classes[] .= ' header-navigation-middle';
 		}
 
 		return $classes;

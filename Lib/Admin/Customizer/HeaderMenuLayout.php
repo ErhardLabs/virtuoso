@@ -47,6 +47,7 @@ class HeaderMenuLayout {
 			'choices' => array(
 				'logo-left' => __( 'Logo Left' ),
 				'logo-middle' => __( 'Logo Middle' ),
+				'navigation-middle' => __( 'Navigation Middle' ),
 			),
 		) );
 
