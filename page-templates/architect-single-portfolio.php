@@ -10,7 +10,7 @@ use Virtuoso\Lib\Functions\Formatting;
 Background_Image::remove();
 remove_action( 'genesis_entry_header', 'genesis_do_post_title' ); // remove title
 remove_action( 'genesis_entry_header', 'genesis_post_info', 12 ); // remove date, post meta
-remove_action('genesis_entry_footer', 'genesis_post_meta', 10);
+remove_action('genesis_entry_footer', 'genesis_post_meta', 10); // remove post meta footer
 
 add_action('genesis_after_entry', 'virtuoso_architect_single_portfolio');
 
