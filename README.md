@@ -28,6 +28,7 @@ This child theme is dependent upon the following:
 3. Navigate into the new folder `virtuoso`
 4. Run `npm install`
 5. Run `composer install`
+6. Run `npm run dev`
 
 ## Sass Files
 
