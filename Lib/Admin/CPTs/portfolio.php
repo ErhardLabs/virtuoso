@@ -1,4 +1,41 @@
 <?php
+
+add_action( 'init', 'virtuoso_create_style_taxonomy', 0 );
+function virtuoso_create_style_taxonomy() {
+// Labels part for the GUI
+  $labels = array(
+      'name' => _x( 'Style', 'style' ),
+      'singular_name' => _x( 'Style', 'style' ),
+      'search_items' => __( 'Search Style' ),
+      'popular_items' => __( 'Popular Style' ),
+      'all_items' => __( 'All Style' ),
+      'parent_item' => null,
+      'parent_item_colon' => null,
+      'edit_item' => __( 'Edit Style' ),
+      'update_item' => __( 'Update Style' ),
+      'add_new_item' => __( 'Add New Style' ),
+      'new_item_name' => __( 'New Style Name' ),
+      'separate_items_with_commas' => __( 'Separate style with commas' ),
+      'add_or_remove_items' => __( 'Add or remove style' ),
+      'choose_from_most_used' => __( 'Choose from the most used style' ),
+      'menu_name' => __( 'Style' ),
+  );
+
+// Register the taxonomy like tag for case study
+  register_taxonomy('style','portfolio',array(
+      'hierarchical' => false,
+      'labels' => $labels,
+      'show_ui' => true,
+      'show_admin_column' => true,
+      'update_count_callback' => '_update_post_term_count',
+      'query_var' => true,
+      'rewrite' => array( 'slug' => 'style' ),
+      'show_in_rest'  => true
+  ));
+}
+
+
+
 if ( ! function_exists('virtuoso_register_portfolio_cpt') ) {
 
 // Register Custom Post Type
@@ -38,7 +75,7 @@ if ( ! function_exists('virtuoso_register_portfolio_cpt') ) {
         'description'           => __( 'Portfolio items for visual creatives.', 'CHILD_TEXT_DOMAIN' ),
         'labels'                => $labels,
         'supports'              => array( 'title', 'editor', 'thumbnail', 'custom-fields', 'page-attributes' ),
-        'taxonomies'            => array( 'category', 'post_tag' ),
+        'taxonomies'            => array( 'category', 'post_tag', 'style' ),
         'hierarchical'          => false,
         'public'                => true,
         'show_ui'               => true,
