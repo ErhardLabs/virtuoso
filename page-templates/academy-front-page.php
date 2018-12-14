@@ -27,9 +27,7 @@ function virtuoso_academy_front_page_welcome() {
 
 add_action( 'the_content', 'virtuoso_academy_front_page_clean' );
 function virtuoso_academy_front_page_clean($content) {
-
   // do nothing
-
 }
 
 
