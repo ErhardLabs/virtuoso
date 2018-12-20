@@ -16,6 +16,7 @@ class Formatting {
     $this->format_breadcrumbs();
     $this->set_background_image_default();
     $this->format_metadata();
+    remove_theme_support( 'custom-background' ); // TODO: GET THIS TO REMOVE CUSTOMIZER BACKGROUND IMAGE
 	}
 
 	public function format_breadcrumbs() {
