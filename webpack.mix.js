@@ -9,11 +9,11 @@ const devPath = 'assets';
 
 mix.setPublicPath('dist');
 
-let sassPath = 'assets/sass/';
+let themeSassPath = 'assets/sass/';
 let grandchildSassPath = '../../plugins/virtuoso-grandchild/assets/sass/';
 
 const config = {
-  sassPath,
+  themeSassPath,
   grandchildSassPath
 };
 
@@ -36,7 +36,7 @@ function buildImports() {
   imports.push('../../node_modules/sass-rem/rem');
   imports.push('utilities/index');
 
-  if (fs.pathExistsSync('../../plugins/virtuoso-grandchild/assets/sass/utilities/index.scss') ) {
+  if (fs.pathExistsSync('../../plugins/virtuoso-grandchild/assets/sass/utilities/index.scss')) {
     imports.push(config.grandchildSassPath + 'utilities/index');
   }
 
@@ -71,10 +71,10 @@ function buildImports() {
  * @link https://laravel.com/docs/5.6/mix#postcss
  * @link https://laravel.com/docs/5.6/mix#url-processing
  */
-mix.options( {
-  postCss        : [ require( 'postcss-preset-env' )() ],
-  processCssUrls : false
-} );
+mix.options({
+  postCss: [require('postcss-preset-env')()],
+  processCssUrls: false
+});
 
 
 /*
@@ -113,12 +113,12 @@ mix.js(`${devPath}/js/app.js`, 'js');
 
 // Sass configuration.
 let sassConfig = {
-  outputStyle : 'expanded',
-  indentType  : 'tab',
-  indentWidth : 1
+  outputStyle: 'expanded',
+  indentType: 'tab',
+  indentWidth: 1
 };
 
-mix.sass( `${devPath}/sass/style.scss`, 'styles', sassConfig );
+mix.sass(`${devPath}/sass/style.scss`, 'styles', sassConfig);
 
 
 /*
