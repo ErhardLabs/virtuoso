@@ -31,7 +31,7 @@ function virtuoso_academy_front_page_clean($content) {
 }
 
 
-add_action( 'genesis_loop', 'virtuoso_academy_front_page_content' );
+add_action( 'the_content', 'virtuoso_academy_front_page_content' );
 function virtuoso_academy_front_page_content($content) {
 
   if (is_front_page()) {
