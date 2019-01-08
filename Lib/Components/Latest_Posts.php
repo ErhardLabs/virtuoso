@@ -35,14 +35,16 @@ class Latest_Posts
         ?>
 
         <div class="latest_post">
-          <div class="featured_image_wrap">
-            <?php the_post_thumbnail('thumbnail'); ?>
-          </div>
-          <div class="info_wrap">
-            <h4><?php echo get_the_title();?></h4>
-            <p class="latest_post_excerpt"><?php echo get_the_excerpt();?></p>
-            <a href="<?php echo get_the_permalink()?>">Read more <i class="dashicons-arrow-right"></i></a>
-          </div>
+            <div class="latest_post_wrap">
+              <div class="featured_image_wrap">
+                <?php the_post_thumbnail('medium' ); ?>
+              </div>
+              <div class="info_wrap">
+                <h4><?php echo get_the_title();?></h4>
+                <p class="latest_post_excerpt"><?php echo get_the_excerpt();?></p>
+                <a href="<?php echo get_the_permalink()?>">Read more <i class="ti-arrow-right"></i></a>
+              </div>
+            </div>
         </div>
 
         <?php
