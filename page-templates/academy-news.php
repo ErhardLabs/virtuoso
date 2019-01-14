@@ -4,7 +4,9 @@
  * Template Post Type: page
  */
 
-add_action( 'genesis_loop', 'virtuoso_display_news_archive_content' );
+add_action( 'the_content', function() {} ); // clear content so nothing displays
+
+add_action( 'the_content', 'virtuoso_display_news_archive_content' );
 function virtuoso_display_news_archive_content()
 {
 
@@ -12,6 +14,7 @@ function virtuoso_display_news_archive_content()
     <div class="page_title_wrap">
       <h2>NEWS</h2>
     </div>
+    <div class="blog_posts">
     <div class="blog_posts_wrap">
 
 <?php
@@ -19,7 +22,7 @@ function virtuoso_display_news_archive_content()
   // WP_Query arguments
   $args = array(
       'post_type' => array('post'),
-      'post_status' => array('published'),
+      'post_status' => array('publish'),
       'category_name' => 'news',
       'orderby' => 'post_date',
       'order' => 'DESC',
@@ -31,26 +34,21 @@ function virtuoso_display_news_archive_content()
 if ( $query->have_posts() ) {
   while ( $query->have_posts() ) {
     $query->the_post();
-    ?>
-
-    <div class="post">
-      <div class="featured_image_wrap">
-        <?php the_post_thumbnail('thumbnail'); ?>
-      </div>
-      <div class="info_wrap">
-        <h4><?php echo get_the_title();?></h4>
-        <p class="post_excerpt"><?php echo get_the_excerpt();?></p>
-        <a href="<?php echo get_the_permalink()?>">Read more <i class="dashicons-arrow-right"></i></a>
-      </div>
-    </div>
-
-    <?php
+    $content = get_the_content();
+    include( CHILD_DIR . '/lib/views/post.php' );
   }
+    // Restore original Post Data
+    wp_reset_postdata();
 } else {
-  // no posts found
+	// no posts found
+	__('No News');
 }
 
-  ?></div> <!-- blog_posts_wrap --> <?php
+  ?>
+    </div> <!-- blog_posts -->
+    </div> <!-- blog_posts_wrap -->
+
+  <?php
 
 }
 

@@ -45,7 +45,7 @@ function virtuoso_academy_lessons_welcome() {
 }
 
 
-add_action( 'genesis_loop', 'virtuoso_academy_lessons_content' );
+add_action( 'the_content', 'virtuoso_academy_lessons_content' );
 function virtuoso_academy_lessons_content($content) {
 
   global $post;
