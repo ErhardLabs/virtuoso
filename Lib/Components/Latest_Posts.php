@@ -18,11 +18,8 @@ class Latest_Posts
     // WP_Query arguments
     $args = array(
         'post_type'              => array( 'post' ),
-        'post_status'            => array( 'published' ),
-        'posts_per_page'         => 3,
-        'order'                  => 'DESC',
-        'orderby'                => 'date',
-        'nopaging'               => true,
+        'post_status'            => array( 'publish' ),
+        'posts_per_page' => 3
     );
 
 // The Query
@@ -32,29 +29,15 @@ class Latest_Posts
     if ( $query->have_posts() ) {
       while ( $query->have_posts() ) {
         $query->the_post();
-        ?>
-
-        <div class="latest_post">
-            <div class="latest_post_wrap">
-              <div class="featured_image_wrap">
-                <?php the_post_thumbnail('medium' ); ?>
-              </div>
-              <div class="info_wrap">
-                <h4><?php echo get_the_title();?></h4>
-                <p class="latest_post_excerpt"><?php echo get_the_excerpt();?></p>
-                <a href="<?php echo get_the_permalink()?>">Read more <i class="ti-arrow-right"></i></a>
-              </div>
-            </div>
-        </div>
-
-        <?php
+        $content = get_the_content();
+	    include( CHILD_DIR . '/lib/views/post.php' );
       }
-    } else {
-      // no posts found
-    }
-
     // Restore original Post Data
     wp_reset_postdata();
+    } else {
+      // no posts found
+      __('No News');
+    }
   }
 
 }
