@@ -28,8 +28,7 @@ class Latest_Posts
     // The Loop
     if ( $query->have_posts() ) {
       while ( $query->have_posts() ) {
-        $query->the_post();
-        $content = get_the_content();
+      $query->the_post();
 	    include( CHILD_DIR . '/lib/views/post.php' );
       }
     // Restore original Post Data

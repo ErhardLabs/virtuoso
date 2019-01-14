@@ -72,12 +72,12 @@
       }
     }
 
-    nav button:hover,
-    .menu-toggle:hover,
-    .nav-primary,
-    nav button:focus,
-    .menu-toggle:focus {
-      background-color: $js-nav--background-color;
+    //nav button:hover,
+    //.menu-toggle:hover,
+    //nav button:focus,
+    //.menu-toggle:focus,
+    .nav-primary {
+      background: $js-nav--background-color;
     }
 
     nav button:hover,

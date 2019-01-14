@@ -21,7 +21,7 @@ class Sidebar {
 		$this->config = ThemeConfig::get_configuration_parameters( 'theme_default_settings' );
 
 		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
-    add_action('get_footer', [ $this, 'display' ]);
+        add_action('get_footer', [ $this, 'display' ]);
 	}
 
 	public function register_widgets() {
