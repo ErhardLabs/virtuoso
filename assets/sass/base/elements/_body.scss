@@ -9,7 +9,7 @@ body {
   font-family: $base--font-family;
   @include rem( font-size, $base--font-size );
   -webkit-font-smoothing: antialiased;
-  font-weight: 400;
+  font-weight: $base--font-weight;
   line-height: $base--line-height;
   margin: 0;
   opacity: 0;
