@@ -18,6 +18,10 @@
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
+
+    a {
+      color: $footer-widgets--link-color;
+    }
   }
 
   .footer-widgets-left-column & {
