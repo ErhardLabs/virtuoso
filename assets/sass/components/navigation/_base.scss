@@ -5,7 +5,8 @@
 .genesis-nav-menu {
   clear: both;
   @include rem( font-size, $nav--font-size );
-  font-weight: 600;
+  font-weight: $nav--font-weight;
+  letter-spacing: $nav--letter-spacing;
   line-height: 1;
   width: 100%;
 

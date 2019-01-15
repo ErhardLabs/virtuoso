@@ -16,15 +16,16 @@ add_action('genesis_after_header', 'virtuoso_academy_lessons_welcome');
 function virtuoso_academy_lessons_welcome() {
 
   ?>
-    <h1><?php echo get_the_title(); ?></h1>
     <div class="lessons_welcome_wrap">
+      <div class="background-overlay"></div>
+      <h1 class="page-title"><?php echo get_the_title(); ?></h1>
       <div class="lessons_left">
         <div class="icon_text_wrap">
           <div class="icon_wrap">
-            <i class="ti-computer"></i>
+            <i class="ti-desktop"></i>
           </div>
           <div class="button_wrap">
-            <a href="/#" class="button">ONLINE <i class="ti-computer"></i></a>
+            <a href="/#" class="button">ONLINE <i class="ti-desktop"></i></a>
           </div>
         </div>
       </div>

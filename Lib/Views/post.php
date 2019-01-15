@@ -1,7 +1,7 @@
 <div class="post">
     <div class="post_wrap">
       <div class="featured_image_wrap">
-          <a href="<?php echo get_the_permalink()?>"><?php the_post_thumbnail('thumbnail'); ?></a>
+          <a href="<?php echo get_the_permalink()?>"><?php the_post_thumbnail('medium'); ?></a>
       </div>
       <div class="info_wrap">
 	    <a href="<?php echo get_the_permalink()?>"><h4><?php echo get_the_title();?></h4></a>

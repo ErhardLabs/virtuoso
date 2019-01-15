@@ -11,9 +11,6 @@ function virtuoso_display_news_archive_content()
 {
 
   ?>
-    <div class="page_title_wrap">
-      <h2>NEWS</h2>
-    </div>
     <div class="blog_posts">
     <div class="blog_posts_wrap">
 
