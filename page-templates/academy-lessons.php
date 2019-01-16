@@ -18,7 +18,9 @@ function virtuoso_academy_lessons_welcome() {
   ?>
     <div class="lessons_welcome_wrap">
       <div class="background-overlay"></div>
-      <h1 class="page-title"><?php echo get_the_title(); ?></h1>
+      <div class="title_wrap">
+        <h1 class="page_title"><?php echo get_the_title(); ?></h1>
+      </div>
       <div class="lessons_left">
         <div class="icon_text_wrap">
           <div class="icon_wrap">
