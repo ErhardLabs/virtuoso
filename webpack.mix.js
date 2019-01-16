@@ -72,9 +72,12 @@ function buildImports() {
  * @link https://laravel.com/docs/5.6/mix#url-processing
  */
 mix.options( {
-  postCss        : [ require( 'postcss-preset-env' )() ],
+  postCss        : [
+    require( 'postcss-preset-env' ) ({
+      autoprefixer: { grid: true }
+    }) ],
   processCssUrls : false
-} );
+});
 
 
 /*
