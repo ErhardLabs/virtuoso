@@ -38,7 +38,7 @@ if ( $query->have_posts() ) {
     wp_reset_postdata();
 } else {
 	// no posts found
-	__('No News');
+	__('No News', CHILD_TEXT_DOMAIN);
 }
 
   ?>

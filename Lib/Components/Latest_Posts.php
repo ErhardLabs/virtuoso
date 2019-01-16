@@ -35,7 +35,7 @@ class Latest_Posts
     wp_reset_postdata();
     } else {
       // no posts found
-      __('No News');
+      __('No News', CHILD_TEXT_DOMAIN);
     }
   }
 

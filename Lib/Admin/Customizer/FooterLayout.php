@@ -42,11 +42,11 @@ class FooterLayout {
 			$prefix. '_footer_design', array(
 			'type' => 'radio',
 			'section' => 'footer_layout', // Add a default or your own section
-			'label' => __( 'Footer Layout Design' ),
-			'description' => __( 'Choose the Footer layout design' ),
+			'label' => __( 'Footer Layout Design', CHILD_TEXT_DOMAIN ),
+			'description' => __( 'Choose the Footer layout design', CHILD_TEXT_DOMAIN ),
 			'choices' => array(
-				'footer-widgets-left-column' => __( 'Left aligned' ),
-				'footer-widgets-block' => __( 'Block (Stacked)' ),
+				'footer-widgets-left-column' => __( 'Left aligned', CHILD_TEXT_DOMAIN ),
+				'footer-widgets-block' => __( 'Block (Stacked)', CHILD_TEXT_DOMAIN ),
 			),
 		) );
 
