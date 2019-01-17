@@ -35,7 +35,7 @@ class EnqueueAssets {
     wp_enqueue_script(CHILD_TEXT_DOMAIN . '-slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), CHILD_THEME_VERSION);
 
 		wp_enqueue_style( 'dashicons' );
-		wp_enqueue_script( CHILD_TEXT_DOMAIN . '-app', CHILD_URL . '/dist/js/app.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
+		wp_enqueue_script( CHILD_TEXT_DOMAIN . '-app', CHILD_URL . 'dist/js/app.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 		$localized_script_args = array(
 			'mainMenu' => __( '', CHILD_TEXT_DOMAIN, 'virtuoso' ),

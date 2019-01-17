@@ -1,7 +1,5 @@
-$=jQuery;
-
-jQuery(document).ready(function () {
-  jQuery('body').addClass('body-loaded');
+$( document ).ready( function() {
+  $( 'body' ).addClass( 'body-loaded' );
 });
 
 import './menu/app.js';

@@ -1,4 +1,4 @@
-( function ( document, $, undefined ) {
+( function( document, $, undefined ) {
 
   'use strict';
 
@@ -8,33 +8,33 @@
 
   virtuoso.init = function() {
     let toggleButtons = {
-      menu: $('<button />', {
+      menu: $( '<button />', {
         'class': mainMenuButtonClass,
         'aria-expanded': false,
         'aria-pressed': false,
         'role': 'button'
       })
-        .append(virtuoso.params.mainMenu),
-      submenu: $('<button />', {
+        .append( virtuoso.params.mainMenu ),
+      submenu: $( '<button />', {
         'class': subMenuButtonClass,
         'aria-expanded': false,
         'aria-pressed': false,
         'role': 'button'
       })
-        .append($('<span />', {
+        .append( $( '<span />', {
           'class': 'screen-reader-text',
           text: virtuoso.params.subMenu
-        }))
+        }) )
     };
 
-    if ($( '.nav-primary' ).length > 0 ) {
+    if ( 0 < $( '.nav-primary' ).length ) {
       $( '.nav-primary' ).before( toggleButtons.menu ); // add the main nav buttons
     } else {
       $( '.nav-header' ).before( toggleButtons.menu );
     }
     $( 'nav .sub-menu' ).before( toggleButtons.submenu ); // add the submenu nav buttons
     $( '.' + mainMenuButtonClass ).each( _addClassID );
-    $( '.' + subMenuButtonClass ).addClass('dashicons-before dashicons-arrow-down');
+    $( '.' + subMenuButtonClass ).addClass( 'dashicons-before dashicons-arrow-down' );
     $( window ).on( 'resize.virtuoso', _doResize ).triggerHandler( 'resize.virtuoso' );
     $( '.' + mainMenuButtonClass ).on( 'click.virtuoso-mainbutton', _mainmenuToggle );
     $( '.' + subMenuButtonClass ).on( 'click.virtuoso-subbutton', _submenuToggle );
@@ -48,14 +48,14 @@
    *
    */
   function _combineMenus() {
-    if ( window.innerWidth <= 767 ) {
+    if ( 767 >= window.innerWidth ) {
 
       $( 'ul.menu-secondary > li' ).addClass( 'moved-item' ); // tag moved items so we can move them back
       $( 'ul.menu-secondary > li' ).appendTo( 'ul.menu-primary' );
       $( '.nav-secondary' ).hide();
     }
 
-    if ( window.innerWidth > 768 ) {
+    if ( 768 < window.innerWidth ) {
       $( '.nav-primary .genesis-nav-menu, nav .sub-menu' ).removeAttr( 'style' );
       $( '.nav-secondary' ).show();
       $( 'ul.menu-primary > li.moved-item' ).appendTo( 'ul.menu-secondary' );
@@ -87,7 +87,7 @@
    */
   function _doResize() {
     let buttons = $( 'button[id^="mobile-"]' ).attr( 'id' );
-    if ( typeof buttons === 'undefined' ) {
+    if ( 'undefined' === typeof buttons ) {
       return;
     }
     _superfishToggle( buttons );
@@ -136,11 +136,11 @@
    *
    */
   function _superfishToggle( buttons ) {
-    if ( typeof $( '.js-superfish' ).superfish !== 'function' ) {
+    if ( 'function' !== typeof $( '.js-superfish' ).superfish ) {
       return;
     }
     if ( 'none' === _getDisplayValue( buttons ) ) {
-      $( '.js-superfish' ).superfish( {
+      $( '.js-superfish' ).superfish({
         'delay': 100,
         'animation': {'opacity': 'show', 'height': 'show'},
         'dropShadows': false
@@ -217,28 +217,28 @@
     });
   }
 
-  $(document).ready(function () {
+  $( document ).ready( function() {
 
     // Check to see if menus should be combined on initial page load
     _combineMenus();
 
     // Check to see if menus should be combined on resize of the window
-    $( window ).resize( function () {
+    $( window ).resize( function() {
         _combineMenus();
     });
 
-    virtuoso.params = typeof virtuosoLocalizedArgs === 'undefined' ? '' : virtuosoLocalizedArgs;
+    virtuoso.params = 'undefined' === typeof virtuosoLocalizedArgs ? '' : virtuosoLocalizedArgs;
 
-    if ( typeof virtuoso.params !== 'undefined' ) {
+    if ( 'undefined' !== typeof virtuoso.params ) {
       virtuoso.init();
     }
 
-    $( '.menu-toggle' ).click( function (e) {
+    $( '.menu-toggle' ).click( function( e ) {
 
       if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
 
         //Prevent page scrolling if mobile menu is activated
-        $('html, body').css({
+        $( 'html, body' ).css({
           margin: 0,
           height: '100%',
           overflow: 'hidden'
@@ -246,7 +246,7 @@
 
       } else {
 
-        $('html, body').css({
+        $( 'html, body' ).css({
           margin: 0,
           height: 'unset',
           overflow: 'unset'
@@ -257,4 +257,4 @@
 
   });
 
-})( document, jQuery );
+}( document, jQuery ) );
