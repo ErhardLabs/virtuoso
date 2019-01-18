@@ -137,20 +137,23 @@ mix.webpackConfig({
 
 });
 
-/*
-  * Check to see if there is a browsersync configuration file in the virtuoso grandchild plugin
-  *
-  */
-if ( fs.pathExistsSync( browsersyncConf ) ) {
-  let conf = fs.readFileSync( browsersyncConf, 'utf8' );
 
-  if ( process.env.sync ) {
+if ( process.env.sync ) {
+
+  /*
+* Check to see if there is a browsersync configuration file in the virtuoso grandchild plugin
+*
+*/
+
+  if ( fs.pathExistsSync( browsersyncConf ) ) {
+
+    let conf = fs.readFileSync( browsersyncConf, 'utf8' );
 
     /*
-     * Monitor files for changes and inject your changes into the browser.
-     *
-     * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
-     */
+       * Monitor files for changes and inject your changes into the browser.
+       *
+       * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
+       */
     mix.browserSync({
       proxy: conf,
       files: [
@@ -158,10 +161,11 @@ if ( fs.pathExistsSync( browsersyncConf ) ) {
         'Lib/**/*',
         'functions.php'
       ] });
+
+
+  } else {
+    console.log( '\x1b[31m%s\x1b[0m', 'ERROR: No configuration file found for browser sync in the virtuoso-grandchild plugin. If you want to use browsersync with this project then please add a browsersync.conf file to the root directory of the virtuoso-grandchild plugin. The browsersync.conf file should only contain the url of the site you are working on (example.test)' );
+    process.exit( 1 );
   }
-
-
-} else {
-  console.log( '\x1b[31m%s\x1b[0m', 'ERROR: No configuration file found for browser sync in the virtuoso-grandchild plugin. If you want to use browsersync with this project then please add a browsersync.conf file to the root directory of the virtuoso-grandchild plugin. The browsersync.conf file should only contain the url of the site you are working on (example.test)');
-  process.exit( 1 );
 }
+

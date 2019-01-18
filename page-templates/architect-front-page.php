@@ -14,72 +14,76 @@ function virtuoso_architect_front_page_clean($content) {
   // display nothing
 }
 
-add_action('genesis_after_header', 'virtuoso_architect_front_page_content');
+add_action('genesis_after_header', 'virtuoso_architect_front_page_after_header');
+
+function virtuoso_architect_front_page_after_header() {
+
+	//////////////////////// SLIDER START ////////////////////////
+
+//    global $post;
+//    echo get_the_content();
+
+	// WP_Query arguments
+	$args = array(
+		'post_type'       => array( 'portfolio' ),
+		'post_status'     => array( 'publish' ),
+		'orderby'         => 'post_date',
+		'order'           => 'DESC',
+		'posts_per_page'  => 3
+	);
+
+// The Query
+	$loop = new WP_Query( $args );
+
+	if ( $loop->have_posts() ) {
+
+		?>
+      <style>
+          body {
+              color: white;
+          }
+      </style>
+      <div class="architecture_slider_wrap"> <?php
+
+				// loop through posts
+				while ( $loop->have_posts() ): $loop->the_post();
+
+
+					$image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
+
+					if ( $image_attributes ) {
+
+						?>
+              <li>
+                  <img class="single_slider_item" src="<?php echo $image_attributes[0]; ?>"/>
+                  <div class="portfolio_header_wrap">
+                      <a class="portfolio_name" href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
+                      <span><?php echo get_field('category'); ?></span>
+                      <a class="portfolio_view" href="<?php the_permalink(); ?>"><span>View <i class="ti-right"></i></span></a>
+                  </div>
+              </li>
+						<?php
+
+					}
+
+				endwhile;
+
+				?> </div> <?php
+
+	}
+
+	wp_reset_query();
+	wp_reset_postdata();
+
+	//////////////////////// SLIDER END ////////////////////////
+}
+
+add_action('the_content', 'virtuoso_architect_front_page_content');
 
 function virtuoso_architect_front_page_content() {
 
   if (is_front_page()) {
 
-
-
-    //////////////////////// SLIDER START ////////////////////////
-
-//    global $post;
-//    echo get_the_content();
-
-    // WP_Query arguments
-    $args = array(
-        'post_type'       => array( 'portfolio' ),
-        'post_status'     => array( 'published' ),
-        'orderby'         => 'post_date',
-        'order'           => 'DESC',
-        'posts_per_page'  => 3
-    );
-
-// The Query
-    $loop = new WP_Query( $args );
-
-    if ( $loop->have_posts() ) {
-
-      ?>
-        <style>
-          body {
-            color: white;
-          }
-        </style>
-      <div class="architecture_slider_wrap"> <?php
-
-        // loop through posts
-        while ( $loop->have_posts() ): $loop->the_post();
-
-
-          $image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'full' );
-
-          if ( $image_attributes ) {
-
-            ?>
-            <li>
-              <img class="single_slider_item" src="<?php echo $image_attributes[0]; ?>"/>
-              <div class="portfolio_header_wrap">
-                <a class="portfolio_name" href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
-                <span><?php echo get_field('category'); ?></span>
-                <a class="portfolio_view" href="<?php the_permalink(); ?>"><span>View <i class="ti-right"></i></span></a>
-              </div>
-            </li>
-            <?php
-
-          }
-
-        endwhile;
-
-        ?> </div> <?php
-
-    }
-
-    wp_reset_query();
-    wp_reset_postdata();
-
-    //////////////////////// SLIDER END ////////////////////////
 
     //////////////////////// OFFSET TRANSPARENT IMAGE START ////////////////////////
 
