@@ -2,6 +2,8 @@
 ---------------------------------------------------------------------------------------------------- */
 
 .footer-widgets {
+  display: table; // If put into display block the div will not fill the height
+  width: 100%;
   background: $footer-widgets--background-color;
   @include rem(font-size, $footer-widgets--font-size);
   clear: both;
@@ -16,6 +18,10 @@
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
+
+    a {
+      color: $footer-widgets--link-color;
+    }
   }
 
   .footer-widgets-left-column & {

@@ -1,5 +1,5 @@
-let mix = require('laravel-mix');
-let fs = require('fs-extra');
+const mix = require( 'laravel-mix' );
+const fs = require( 'fs-extra' );
 
 /*
  * Sets the development path to assets. By default, this is the `/resources`
@@ -7,10 +7,12 @@ let fs = require('fs-extra');
  */
 const devPath = 'assets';
 
-mix.setPublicPath('dist');
+mix.setPublicPath( 'dist' );
 
-let sassPath = 'assets/sass/';
-let grandchildSassPath = '../../plugins/virtuoso-grandchild/assets/sass/';
+const sassPath = `${devPath}/sass/`;
+const grandchildPath = '../../plugins/virtuoso-grandchild/';
+const browsersyncConf = `${grandchildPath}browsersync.conf`;
+const grandchildSassPath = `${grandchildPath}assets/sass/`;
 
 const config = {
   sassPath,
@@ -22,8 +24,9 @@ const config = {
  * This is useful for when you want to add custom styles in a plugin
  *
  */
-fs.removeSync('assets/sass/style.scss');
-fs.writeFile('assets/sass/style.scss', buildImports());
+fs.removeSync( `${sassPath}style.scss` );
+fs.writeFile( `${sassPath}style.scss`, buildImports() );
+fs.appendFile( `${sassPath}style.scss`, '// DO NOT MODIFY. This file is being generated dynamically through the webpack.mix.js file in the theme root directory' );
 
 /**
  * Build up the contents of the sass import file.
@@ -32,38 +35,30 @@ fs.writeFile('assets/sass/style.scss', buildImports());
  */
 function buildImports() {
   let imports = [];
+  imports.push( '../../node_modules/sass-rem/rem' );
+  imports.push( 'utilities/index' );
 
-  imports.push('../../node_modules/sass-rem/rem');
-  imports.push('utilities/index');
-
-  if (fs.pathExistsSync('../../plugins/virtuoso-grandchild/assets/sass/utilities/index.scss') ) {
-    imports.push(config.grandchildSassPath + 'utilities/index');
+  if ( fs.pathExistsSync( `${grandchildSassPath}utilities/index.scss` ) ) {
+    imports.push( config.grandchildSassPath + 'utilities/index' );
   }
 
-  imports.push('base/index');
-  imports.push('layouts/index');
-  imports.push('components/index');
-  imports.push('templates/index');
-  imports.push('plugins/index');
+  imports.push( 'base/index' );
+  imports.push( 'layouts/index' );
+  imports.push( 'components/index' );
+  imports.push( 'templates/index' );
+  imports.push( 'plugins/index' );
 
-  if (fs.pathExistsSync('../../plugins/virtuoso-grandchild/assets/sass/style.scss')) {
-    imports.push(config.grandchildSassPath + 'style');
+  if ( fs.pathExistsSync( `${grandchildSassPath}style.scss` ) ) {
+    imports.push( config.grandchildSassPath + 'style' );
   }
 
   let toImport = '';
-  imports.forEach(function (sassPath) {
-    toImport += "@import '" + sassPath + "';\n";
+  imports.forEach( function( sassPath ) {
+    toImport += '@import \'' + sassPath + '\';\n';
   });
 
   return toImport;
 }
-
-/*
- * Copy node modules we want in our project
- *
- * @link https://laravel.com/docs/5.6/mix#copying-files-and-directories
- */
-
 
 /*
  * Set Laravel Mix options.
@@ -71,10 +66,13 @@ function buildImports() {
  * @link https://laravel.com/docs/5.6/mix#postcss
  * @link https://laravel.com/docs/5.6/mix#url-processing
  */
-mix.options( {
-  postCss        : [ require( 'postcss-preset-env' )() ],
-  processCssUrls : false
-} );
+mix.options({
+  postCss: [
+    require( 'postcss-preset-env' ) ({
+      autoprefixer: { grid: true }
+    }) ],
+  processCssUrls: false
+});
 
 
 /*
@@ -100,7 +98,7 @@ mix.version();
  * @link https://laravel.com/docs/5.6/mix#working-with-scripts
  */
 
-mix.js(`${devPath}/js/app.js`, 'js');
+mix.js( `${devPath}/js/app.js`, 'js' );
 
 /*
  * Compile CSS. Mix supports Sass, Less, Stylus, and plain CSS, and has functions
@@ -113,24 +111,57 @@ mix.js(`${devPath}/js/app.js`, 'js');
 
 // Sass configuration.
 let sassConfig = {
-  outputStyle : 'expanded',
-  indentType  : 'tab',
-  indentWidth : 1
+  outputStyle: 'expanded',
+  indentType: 'tab',
+  indentWidth: 1
 };
 
 mix.sass( `${devPath}/sass/style.scss`, 'styles', sassConfig );
 
 
 /*
- * Monitor files for changes and inject your changes into the browser.
+ * Add custom Webpack configuration.
  *
- * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
+ * Laravel Mix doesn't currently minimize images while using its `.copy()`
+ * function, so we're using the `CopyWebpackPlugin` for processing and copying
+ * images into the distribution folder.
+ *
+ * @link https://laravel.com/docs/5.6/mix#custom-webpack-configuration
+ * @link https://webpack.js.org/configuration/
  */
-// mix.browserSync( {
-//   proxy : 'https://tylerpaulsonpictures.test',
-//   port  : 8080,
-//   files : [
-//     '**/*.{jpg,jpeg,png,gif,svg,eot,ttf,woff,woff2,js,css}',
-//     `/lib/**/*.php`
-//   ]
-// } );
+mix.webpackConfig({
+  stats: 'minimal',
+  devtool: mix.inProduction() ? false : 'source-map',
+  performance: { hints: false    },
+  externals: { jquery: 'jQuery' }
+
+});
+
+/*
+  * Check to see if there is a browsersync configuration file in the virtuoso grandchild plugin
+  *
+  */
+if ( fs.pathExistsSync( browsersyncConf ) ) {
+  let conf = fs.readFileSync( browsersyncConf, 'utf8' );
+
+  if ( process.env.sync ) {
+
+    /*
+     * Monitor files for changes and inject your changes into the browser.
+     *
+     * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
+     */
+    mix.browserSync({
+      proxy: conf,
+      files: [
+        'dist/**/*',
+        'Lib/**/*',
+        'functions.php'
+      ] });
+  }
+
+
+} else {
+  console.log( '\x1b[31m%s\x1b[0m', 'ERROR: No configuration file found for browser sync in the virtuoso-grandchild plugin. If you want to use browsersync with this project then please add a browsersync.conf file to the root directory of the virtuoso-grandchild plugin. The browsersync.conf file should only contain the url of the site you are working on (example.test)');
+  process.exit( 1 );
+}

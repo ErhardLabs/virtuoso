@@ -1,6 +1,23 @@
 ## [Unreleased]
 #### This Project uses Semantic Versioning
 
+# 2.4.0 @2019-1-14
+### Added
+- Better support for browsersync. can now use npm run watch:sync to activate the sync function
+### Updated
+- Larvel Mix to v4.0
+- All js files with minor ESLint errors
+- babelrc file to use v7 syntax
+
+# 2.3.7 @2019-1-14
+### Added
+- Made a new view for posts. This should allow us to create different post markups in a more dynamic way.
+- More style support for ninja forms
+### Changed
+- academy template markup to pull new post view
+- Floating contact default styles to be larger
+
+
 # 2.3.6 @2018-12-12
 ### Added
 - Additional templates (unfinished at the moment)

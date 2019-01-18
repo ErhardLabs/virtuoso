@@ -43,11 +43,11 @@ class HeaderMenuLayout {
 			'type' => 'radio',
 			'section' => 'header_menu_layout', // Add a default or your own section
 			'label' => __( 'Header Layout Design' ),
-			'description' => __( 'Choose the header layout design' ),
+			'description' => __( 'Choose the header layout design', CHILD_TEXT_DOMAIN ),
 			'choices' => array(
-				'logo-left' => __( 'Logo Left' ),
-				'logo-middle' => __( 'Logo Middle' ),
-				'navigation-middle' => __( 'Navigation Middle' ),
+				'logo-left' => __( 'Logo Left', CHILD_TEXT_DOMAIN ),
+				'logo-middle' => __( 'Logo Middle', CHILD_TEXT_DOMAIN ),
+				'navigation-middle' => __( 'Navigation Middle', CHILD_TEXT_DOMAIN ),
 			),
 		) );
 

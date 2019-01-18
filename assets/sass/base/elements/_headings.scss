@@ -8,8 +8,9 @@ h4,
 h5,
 h6 {
   font-family: $headings--font-family;
-  font-weight: 600;
+  font-weight: $headings--font-weight;
   line-height: $headings--line-height;
+  letter-spacing: $headings--letter-spacing;
   margin: 0 0 10px;
 }
 

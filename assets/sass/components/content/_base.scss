@@ -4,11 +4,16 @@
 
 .entry {
   background-color: $entry--background-color;
-  margin-bottom: 40px;
-  padding: 70px 80px;
+  padding: 30px;
+  margin-bottom: 5%;
 
-  @media only screen and (max-width: 860px) {
-    padding: 30px;
-    margin-bottom: 5%;
+  //@media only screen and (max-width: 860px) {
+  //  padding: 30px;
+  //  margin-bottom: 5%;
+  //}
+
+  @include media-query('med') {
+    margin-bottom: 40px;
+    padding: 70px 80px;
   }
 }

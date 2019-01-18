@@ -8,6 +8,7 @@ $html--font-size: 62.5%;
 
 $base--font-family: $font-family--roboto;
 $base--font-size: 16px;
+$base--font-weight: 400;
 $base--font-size--small-screen: 14px;
 $base__div--font-size: 2rem;
 $base__div--font-size--small-screen: 1.8rem;
@@ -15,6 +16,8 @@ $base--line-height: 1.612;
 
 // Headings
 $headings--font-family: $font-family--roboto;
+$headings--font-weight: 600;
+$headings--letter-spacing: 0;
 $headings--line-height: 1.2;
 $h1--font-size:  36px;
 $h2--font-size:  30px;
@@ -32,6 +35,8 @@ $button--font-size: 16px;
 // Navigation
 //===========
 $nav--font-size: 16px;
+$nav--font-weight: 600;
+$nav--letter-spacing: 1;
 $submenu--font-size: 14px;
 $primary-nav--font-size: 14px;
 $archive-pagination--font-size: 16px;

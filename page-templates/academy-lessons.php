@@ -16,15 +16,18 @@ add_action('genesis_after_header', 'virtuoso_academy_lessons_welcome');
 function virtuoso_academy_lessons_welcome() {
 
   ?>
-    <h1><?php echo get_the_title(); ?></h1>
     <div class="lessons_welcome_wrap">
+      <div class="background-overlay"></div>
+      <div class="title_wrap">
+        <h1 class="page_title"><?php echo get_the_title(); ?></h1>
+      </div>
       <div class="lessons_left">
         <div class="icon_text_wrap">
           <div class="icon_wrap">
-            <i class="ti-computer"></i>
+            <i class="ti-desktop"></i>
           </div>
           <div class="button_wrap">
-            <a href="/#" class="button">ONLINE <i class="ti-computer"></i></a>
+            <a href="/#" class="button">ONLINE <i class="ti-desktop"></i></a>
           </div>
         </div>
       </div>
@@ -45,7 +48,7 @@ function virtuoso_academy_lessons_welcome() {
 }
 
 
-add_action( 'genesis_loop', 'virtuoso_academy_lessons_content' );
+add_action( 'the_content', 'virtuoso_academy_lessons_content' );
 function virtuoso_academy_lessons_content($content) {
 
   global $post;

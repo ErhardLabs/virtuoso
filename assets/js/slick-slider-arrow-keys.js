@@ -1,19 +1,18 @@
-$=jQuery;
-$(document).ready(function() {
+$ = jQuery;
+$( document ).ready( function() {
   document.onkeydown = checkKey;
 });
 
-function checkKey(e) {
+function checkKey( e ) {
 
   e = e || window.event;
 
-  if (e.keyCode == '37') {
-    console.log('left');
-    $('.prevArrow').click();
-  }
-  else if (e.keyCode == '39') {
-    console.log('right');
-    $('.nextArrow').click();
+  if ( '37' == e.keyCode ) {
+    console.log( 'left' );
+    $( '.prevArrow' ).click();
+  } else if ( '39' == e.keyCode ) {
+    console.log( 'right' );
+    $( '.nextArrow' ).click();
   }
 
 }
