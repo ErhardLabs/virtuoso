@@ -38,7 +38,8 @@ function virtuoso_architect_single_portfolio() {
       </div>
       <div class="info_wrap_right">
         <div class="description_wrap">
-          <p><?php echo get_field('description'); ?></p>
+          <img src="" />
+          <?php echo get_field('description'); ?>
         </div>
       </div>
     </div>

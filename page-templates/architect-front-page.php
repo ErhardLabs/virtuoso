@@ -4,6 +4,11 @@
  * Template Post Type: page
  */
 
+// REMOVE ENTIRE CONTAINER FOR ENTRY HEADER
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
+remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
+remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
+
 add_action( 'the_content', 'virtuoso_architect_front_page_clean' );
 function virtuoso_architect_front_page_clean($content) {
   // display nothing
