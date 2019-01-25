@@ -38,11 +38,6 @@ function virtuoso_architect_front_page_after_header() {
 	if ( $loop->have_posts() ) {
 
 		?>
-      <style>
-          body {
-              color: white;
-          }
-      </style>
       <div class="architecture_slider_wrap"> <?php
 
 				// loop through posts
@@ -54,21 +49,27 @@ function virtuoso_architect_front_page_after_header() {
 					if ( $image_attributes ) {
 
 						?>
-              <li>
-                  <img class="single_slider_item" src="<?php echo $image_attributes[0]; ?>"/>
-                  <div class="portfolio_header_wrap">
-                      <a class="portfolio_name" href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
-                      <span><?php echo get_field('category'); ?></span>
-                      <a class="portfolio_view" href="<?php the_permalink(); ?>"><span>View <i class="ti-right"></i></span></a>
-                  </div>
-              </li>
+
+                        <div class="photo" style="background-image: url('<?php echo $image_attributes[0]; ?>');">
+                            <div class="portfolio_header_container">
+                                <a class="container_link" href="<?php the_permalink(); ?>"></a>
+                                <div class="portfolio_header_wrap">
+                                    <a class="portfolio_name" href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
+                                    <span class="portfolio_category"><?php echo get_field('category'); ?></span>
+                                    <a class="portfolio_view" href="<?php the_permalink(); ?>"><span>View <i class="ti-arrow-right icon"></i></span></a>
+                                </div>
+                            </div>
+                        </div>
 						<?php
 
 					}
 
 				endwhile;
 
-				?> </div> <?php
+				?>
+      </div>
+
+      <?php
 
 	}
 
@@ -93,11 +94,13 @@ function virtuoso_architect_front_page_content() {
         <div class="section_info">
           <h2><?php echo bloginfo('title'); ?></h2>
           <p>Architectural design, planning, interiors, furniture design, and construction services.</p>
-          <a class="" href="/#">Read More <i class="ti-right-arrow"></i></a>
+            <a class="read_more" href="/#"><span>Read More<i class="ti-arrow-right icon"></i></span></a>
         </div>
       </section>
       <div class="transparent_image_wrap">
-        <img src="/wp-content/uploads/2018/12/racestreet7.jpg"/>
+          <div class="transparent-overlay"></div>
+          <img src="/wp-content/uploads/2018/12/racestreet7.jpg"/>
+          <div class="yellow-accent"></div>
       </div>
     </div>
     <?php
