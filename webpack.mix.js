@@ -159,7 +159,8 @@ if ( process.env.sync ) {
       files: [
         'dist/**/*',
         'Lib/**/*',
-        'functions.php'
+        'functions.php',
+        'page-templates/**/*'
       ] });
 
 
