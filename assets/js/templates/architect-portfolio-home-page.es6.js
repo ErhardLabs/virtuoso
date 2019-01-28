@@ -17,12 +17,3 @@ $('.js-slick').on('beforeChange', function(event, slick, currentSlide, nextSlide
 $('.js-slick').on('afterChange', function(event, slick, currentSlide, nextSlide) {
     $(slick.$slides.get(currentSlide)).addClass('is-animating');
 });
-//
-// function scrollToAnchor(aid){
-//   var aTag = $("a[name='"+ aid +"']");
-//   $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-// }
-//
-// $("#menu-item-26").click(function() {
-//   scrollToAnchor('image_gallery');
-// });

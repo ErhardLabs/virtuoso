@@ -13,6 +13,11 @@
 
   }
 
+  .nf-error .ninja-forms-field {
+    border: none;
+    border-bottom: 1px solid #e80000;
+  }
+
   .nf-form-fields-required {
     display: none;
   }
