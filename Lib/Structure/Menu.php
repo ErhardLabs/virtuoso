@@ -112,7 +112,7 @@ class Menu {
 	 * @return header-navigation view container
 	 */
 	function render_header_menu() {
-		include( CHILD_DIR . '/lib/views/header-navigation.php' );
+		include( CHILD_DIR . '/Lib/Views/header-navigation.php' );
 	}
 
 	/**

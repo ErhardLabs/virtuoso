@@ -32,7 +32,7 @@ if ( $query->have_posts() ) {
   while ( $query->have_posts() ) {
     $query->the_post();
     $content = get_the_content();
-    include( CHILD_DIR . '/lib/views/post.php' );
+    include( CHILD_DIR . '/Lib/Views/post.php' );
   }
     // Restore original Post Data
     wp_reset_postdata();
