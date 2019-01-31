@@ -93,15 +93,27 @@ function virtuoso_architect_front_page_content() {
       <section>
         <div class="section_info">
           <h2><?php echo bloginfo('title'); ?></h2>
-          <p>Architectural design, planning, interiors, furniture design, and construction services.</p>
+          <?php if ( get_field('snippet') ): ?>
+            <p><?php echo get_field('snippet'); ?></p>
+          <?php endif; ?>
             <a class="read_more" href="/#"><span>Read More<i class="ti-arrow-right icon"></i></span></a>
         </div>
       </section>
-      <div class="transparent_image_wrap">
+
+      <?php if ( get_field('image') ): ?>
+        <div class="transparent_image_wrap">
           <div class="transparent-overlay"></div>
-          <img src="/wp-content/uploads/2018/12/racestreet7.jpg"/>
+          <?php
+          echo get_field('image');
+          $image_attributes = wp_get_attachment_image_src( get_field('image'), 'medium' );
+          if ( $image_attributes ) {
+            ?><img src="<?php echo $image_attributes[0]; ?>"/><?php
+          }
+          ?>
           <div class="yellow-accent"></div>
-      </div>
+        </div>
+      <?php endif; ?>
+
     </div>
     <?php
 

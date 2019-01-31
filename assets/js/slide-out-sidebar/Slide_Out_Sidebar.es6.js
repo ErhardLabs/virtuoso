@@ -10,7 +10,7 @@ class Slide_Out_Sidebar {
     this.sidebar_options = virtuosoLocalizedArgs.sidebar_options;
 
     this.mapClickLocations();
-    this.mapCloseAbility();
+    // this.mapCloseAbility();
 
 
   }
@@ -25,7 +25,7 @@ class Slide_Out_Sidebar {
       if ( 'function' !== typeof clickMap[widgetID]) {
         let elementClicked = clickMap[widgetID];
         $( elementClicked ).click( function( e ) {
-          console.log( elementClicked, widgetID );
+          // console.log( elementClicked, widgetID );
           e.preventDefault();
 
           // $(elementClicked).unbind();
@@ -40,48 +40,6 @@ class Slide_Out_Sidebar {
 
     let self = this;
 
-    // CLOSE SLIDER if clicked OUTSIDE of slider div
-
-    // $('body').unbind().click(function (e) {
-    //
-    //   let sliderOpen = false;
-    //
-    //   if ($('#slide_out_sidebar').hasClass('slider-active')) {
-    //
-    //     sliderDivItems.forEach(function (elements) {
-    //
-    //       // If a user clicks an element in slideDivItem then the slider should stay open
-    //       if ($(e.target).closest(elements.element).length === 0) {
-    //         elements["sliderStatus"] = "close";
-    //         //console.log('close ', $(e.target), elements);
-    //       } else {
-    //         elements["sliderStatus"] = "open";
-    //         //console.log('open ', $(e.target), elements);
-    //       }
-    //
-    //       // Assign the status
-    //       if (elements['sliderStatus'] === "open") {
-    //         //console.log(elements);
-    //         sliderOpen = true;
-    //       }
-    //     });
-    //
-    //     // If user clicks anywhere within #slide_out_sidebar, slider should stay open
-    //     if ($(e.target).closest('#slide_out_sidebar').length !== 0) {
-    //       sliderOpen = true;
-    //     }
-    //
-    //     if ($(e.target).closest('.single_add_to_cart_button').length !== 0) {
-    //       sliderOpen = true;
-    //     }
-    //
-    //     console.log(sliderOpen);
-    //     if (sliderOpen === false) {
-    //       self.close();
-    //     }
-    //   }
-    // });
-
     // CLOSE SLIDER button
     $( '#slide_out_sidebar #close_slider_button' ).unbind().click( function( e ) {
       self.close();
@@ -90,6 +48,8 @@ class Slide_Out_Sidebar {
   }
 
   open( widgetID ) {
+
+    let self = this;
 
     $( '#slide_out_sidebar' ).addClass( 'slider-active' );
     $( '#slide_out_sidebar' ).removeClass( 'slider-close' );
@@ -107,6 +67,8 @@ class Slide_Out_Sidebar {
 
       // if (!$('.fa-shopping-cart').hasClass('shopping_cart_clicked_before')) {
         $( '#slide_out_sidebar #' + widgetID ).fadeIn();
+        $( '#slide_out_sidebar #close_slider' ).fadeIn();
+        self.mapCloseAbility();
 
       // }
 
