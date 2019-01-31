@@ -135,6 +135,25 @@
                     "prepend": "",
                     "append": "",
                     "maxlength": ""
+                },
+                {
+                    "key": "field_5c528aad42613",
+                    "label": "Custom Classes",
+                    "name": "custom_classes",
+                    "type": "text",
+                    "instructions": "Add classes without the period and make sure to separate them out with spaces.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
                 }
             ]
         }
@@ -156,5 +175,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1544656611
+    "modified": 1548913389
 }
