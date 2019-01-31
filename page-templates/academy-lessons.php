@@ -27,7 +27,7 @@ function virtuoso_academy_lessons_welcome() {
             <i class="ti-desktop"></i>
           </div>
           <div class="button_wrap">
-            <a href="/#" class="button">ONLINE <i class="ti-desktop"></i></a>
+            <a href="#online" class="button">ONLINE <i class="ti-desktop"></i></a>
           </div>
         </div>
       </div>
@@ -37,7 +37,7 @@ function virtuoso_academy_lessons_welcome() {
             <i class="ti-user"></i>
           </div>
           <div class="button_wrap">
-            <a href="/#" class="button">IN-PERSON <i class="ti-user"></i></a>
+            <a href="#in_person" class="button">IN-PERSON <i class="ti-user"></i></a>
           </div>
         </div>
       </div>
