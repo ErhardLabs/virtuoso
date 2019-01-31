@@ -92,7 +92,7 @@ function virtuoso_architect_front_page_content() {
     <div class="offset_transparent_image">
       <section>
         <div class="section_info">
-          <h2><?php echo bloginfo('title'); ?></h2>
+          <h2><?php echo bloginfo('name'); ?></h2>
           <?php if ( get_field('snippet') ): ?>
             <p><?php echo get_field('snippet'); ?></p>
           <?php endif; ?>
@@ -104,7 +104,6 @@ function virtuoso_architect_front_page_content() {
         <div class="transparent_image_wrap">
           <div class="transparent-overlay"></div>
           <?php
-          echo get_field('image');
           $image_attributes = wp_get_attachment_image_src( get_field('image'), 'medium' );
           if ( $image_attributes ) {
             ?><img src="<?php echo $image_attributes[0]; ?>"/><?php
