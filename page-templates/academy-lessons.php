@@ -48,8 +48,8 @@ function virtuoso_academy_lessons_welcome() {
 }
 
 
-add_action( 'the_content', 'virtuoso_academy_lessons_content' );
-function virtuoso_academy_lessons_content($content) {
+add_action( 'genesis_before_entry_content', 'virtuoso_academy_lessons_content' );
+function virtuoso_academy_lessons_content() {
 
   global $post;
   $blocks = parse_blocks($post->post_content);

@@ -6,7 +6,7 @@
 
 add_action( 'the_content', function() {} ); // clear content so nothing displays
 
-add_action( 'the_content', 'virtuoso_display_news_archive_content' );
+add_action( 'genesis_before_entry_content', 'virtuoso_display_news_archive_content' );
 function virtuoso_display_news_archive_content()
 {
 
