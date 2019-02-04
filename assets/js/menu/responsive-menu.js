@@ -106,6 +106,7 @@
     _toggleAria( $this, 'aria-pressed' );
     _toggleAria( $this, 'aria-expanded' );
     $this.toggleClass( 'activated' );
+    $( '.site-header nav' ).toggleClass( 'mobile-menu-active' );
     $this.next( 'nav, .sub-menu' ).slideToggle( 'fast' );
   }
 
