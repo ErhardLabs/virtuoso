@@ -9,11 +9,6 @@ remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );
 remove_action( 'genesis_entry_header', 'genesis_do_post_title' );
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_close', 15 );
 
-add_action( 'the_content', 'virtuoso_architect_front_page_clean' );
-function virtuoso_architect_front_page_clean($content) {
-  // display nothing
-}
-
 add_action('genesis_after_header', 'virtuoso_architect_front_page_after_header');
 
 function virtuoso_architect_front_page_after_header() {
@@ -79,7 +74,7 @@ function virtuoso_architect_front_page_after_header() {
 	//////////////////////// SLIDER END ////////////////////////
 }
 
-add_action('the_content', 'virtuoso_architect_front_page_content');
+add_action('genesis_before_entry_content', 'virtuoso_architect_front_page_content');
 
 function virtuoso_architect_front_page_content() {
 
