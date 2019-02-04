@@ -8,7 +8,5 @@ $( '.home .architecture_slider_wrap' ).slick({
 
 // Move Living to the first position.
 $( 'div.categories a:first-child' ).filter( function() {
-  return 'Living' === $( this ).text();
+  return 'Gathering' === $( this ).text();
 }).insertAfter( $( 'div.categories a:nth-child(2)' ) );
-
-
