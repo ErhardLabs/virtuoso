@@ -62,8 +62,8 @@ class BackgroundVideo {
             '<div class="video-background">' +
             '<div class="video-foreground">' +
             '<iframe class="home_video ' + blur + '" id="yt_home_embed" width="2460" height="1440" src="' + src + '" frameborder="0" allowfullscreen style="top: ' + offset + '" data-autoplay="1"></iframe>' +
-            '<div class="video-overlay" >' +
-            '</div>' +
+            '<div class="hero-overlay-fade" ></div>' +
+            '<div class="hero-overlay" ></div>' +
             '</div>'
         );
 
@@ -123,18 +123,37 @@ new BackgroundVideo();
 
 window.onYouTubeIframeAPIReady = function() {
   document.dispatchEvent( new CustomEvent( 'onYouTubeIframeAPIReady', {}) );
-
+  let done = false;
   let player = new YT.Player( 'yt_home_embed', {
     events: {
-      'onReady': function() {
-
-        let autoplay = player.a.attributes['data-autoplay'];
-
-        if ( autoplay ) {
-          player.mute();
-          player.playVideo();
-        }
-      }
+      'onReady': onPlayerReady,
+      'onStateChange': onPlayerStateChange
     }
+
   });
+
+  // The API will call this function when the video player is ready.
+  function onPlayerReady( event ) {
+
+    let autoplay = event.target.a.attributes['data-autoplay'];
+
+    if ( autoplay ) {
+      event.target.mute();
+      event.target.playVideo();
+    }
+  }
+
+  // The API calls this function when the player's state changes.
+  // The function indicates that when playing a video (state=1),
+  // -1 unstarted
+  // 0 ended
+  // 1 playing
+  // 2 paused
+  // 3 buffering
+  // 5 video cued
+  function onPlayerStateChange( event ) {
+    if ( event.data === YT.PlayerState.PLAYING ) {
+      $( '.video-background' ).addClass( 'playing' );
+    }
+  }
 };

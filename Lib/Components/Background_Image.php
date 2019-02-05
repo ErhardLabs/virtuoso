@@ -9,7 +9,12 @@ class Background_Image {
 
     if ( $image_attributes ) {
 
-      ?><img class="page_background_image" src="<?php echo $image_attributes[0]; ?>"/><?php
+      ?>
+      <div class="page_background_image">
+          <div class="hero-overlay"></div>
+        <img src="<?php echo $image_attributes[0]; ?>"/>
+      </div>
+      <?php
 
     }
 

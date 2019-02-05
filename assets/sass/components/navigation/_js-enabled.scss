@@ -50,9 +50,11 @@
       top: 0;
       padding: 13rem 3rem;
       z-index: 9998;
+      overflow: scroll;
 
       @include media-query('med') {
         padding-right: 0;
+        overflow: visible;
       }
     }
 
