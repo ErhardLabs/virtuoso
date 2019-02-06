@@ -25,19 +25,25 @@ function virtuoso_landscaping_front_page_welcome() {
 
 }
 
-//add_action( 'genesis_before_entry_content', 'virtuoso_landscaping_front_page_content' );
-//function virtuoso_landscaping_front_page_content($content) {
-//
-//  if (is_front_page()) {
-//    global $post;
-//    $blocks = parse_blocks($post->post_content);
-//    unset($blocks[0]); // don't display welcome block
-//
-//    foreach($blocks as $block) {
-//      echo render_block($block);
-//    }
-//  }
-//
-//}
+add_action( 'the_content', 'virtuoso_landscaping_front_page_clean' );
+function virtuoso_landscaping_front_page_clean($content) {
+  // do nothing
+}
+
+
+add_action( 'genesis_before_entry_content', 'virtuoso_landscaping_front_page_content' );
+function virtuoso_landscaping_front_page_content($content) {
+
+  if (is_front_page()) {
+    global $post;
+    $blocks = parse_blocks($post->post_content);
+    unset($blocks[0]); // don't display welcome block
+
+    foreach($blocks as $block) {
+      echo render_block($block);
+    }
+  }
+
+}
 
 genesis();
