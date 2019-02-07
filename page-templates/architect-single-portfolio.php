@@ -17,7 +17,7 @@ add_action('genesis_after_header', 'virtuoso_architect_single_portfolio_title');
 function virtuoso_architect_single_portfolio_title() {
   ?>
     <div class="back_to_home">
-        <a href="<?php echo get_home_url(); ?>"><i class="ti-arrow-left"></i>Home</a>
+        <a href="<?php echo get_home_url(); ?>">Home</a>
     </div>
     <div class="title_wrap mobile">
         <h1><?php the_title(); ?></h1>

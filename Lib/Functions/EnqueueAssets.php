@@ -31,8 +31,7 @@ class EnqueueAssets {
 		wp_enqueue_style( CHILD_TEXT_DOMAIN . '-ion-icons', '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array(), CHILD_THEME_VERSION );
 
     wp_enqueue_style( CHILD_TEXT_DOMAIN . '-slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', array(), CHILD_THEME_VERSION );
-
-    wp_enqueue_script(CHILD_TEXT_DOMAIN . '-slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), CHILD_THEME_VERSION);
+    wp_enqueue_script(CHILD_TEXT_DOMAIN . '-slick', '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', array('jquery'), CHILD_THEME_VERSION, false);
 
 		wp_enqueue_style( 'dashicons' );
 		wp_enqueue_script( CHILD_TEXT_DOMAIN . '-app', CHILD_URL . '/dist/js/app.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
