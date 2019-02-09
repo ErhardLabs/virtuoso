@@ -61,7 +61,13 @@
   z-index: 9999;
 
   .header-logo-middle & {
-    width: 100%;
+    position: absolute;
+    margin-top: -95px;
+    right: 0;
+
+    @include media-query('med') {
+      position: relative;
+    }
   }
 
   .header-logo-left & {

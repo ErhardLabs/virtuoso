@@ -4,8 +4,9 @@
 .navigation-container {
 
   @include media-query('med'){
+    position: relative;
     margin-bottom: 17px;
-    margin-top: -87px;
+    margin-top: -95px;
     min-height: 70px;
   }
 

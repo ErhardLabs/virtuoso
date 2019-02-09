@@ -132,6 +132,7 @@ class Menu {
 
 		}
 
+		// TODO: Add to customizer
 		// 'secondary' navigation menu
 		if ( 'secondary' === $args->theme_location ) {
 
@@ -139,7 +140,7 @@ class Menu {
 				// Add buddy press profile link if user is logged in
 				//$menu .= '<li class="menu-item user-image"><a href="/my-account"><img src="' . get_avatar_url( get_current_user_id() ) . '"></a></li>';
 			} else {
-				$menu .= '<li class="menu-item create phoen-login-signup-popup-open"><a href="">Login</a></li>';
+//				$menu .= '<li class="menu-item create phoen-login-signup-popup-open"><a href="">Login</a></li>';
 			}
 		}
 
