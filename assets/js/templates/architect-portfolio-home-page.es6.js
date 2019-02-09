@@ -3,7 +3,8 @@ $( '.home .architecture_slider_wrap' ).slick({
   lazyLoad: true,
   dots: true,
   autoplay: true,
-  autoplaySpeed: 4000
+  autoplaySpeed: 4000,
+  pauseOnHover: false
 });
 
 // Move Living to the first position.
