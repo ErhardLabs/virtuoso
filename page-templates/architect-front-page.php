@@ -24,7 +24,7 @@ function virtuoso_architect_front_page_after_header() {
 		'post_status'     => array( 'publish' ),
 		'orderby'         => 'post_date',
 		'order'           => 'DESC',
-		'posts_per_page'  => 3
+		'posts_per_page'  => 5
 	);
 
 // The Query
@@ -46,12 +46,13 @@ function virtuoso_architect_front_page_after_header() {
 						?>
 
                         <div class="photo" style="background-image: url('<?php echo $image_attributes[0]; ?>');">
+                            <a class="container_link" href="<?php the_permalink(); ?>"></a>
                             <div class="portfolio_header_container">
                                 <a class="container_link" href="<?php the_permalink(); ?>"></a>
                                 <div class="portfolio_header_wrap">
                                     <a class="portfolio_name" href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
                                     <span class="portfolio_category"><?php echo get_field('category'); ?></span>
-                                    <a class="portfolio_view" href="<?php the_permalink(); ?>"><span>View <i class="ti-arrow-right icon"></i></span></a>
+<!--                                    <a class="portfolio_view" href="--><?php //the_permalink(); ?><!--"><span>View <i class="ti-arrow-right icon"></i></span></a>-->
                                 </div>
                             </div>
                         </div>
