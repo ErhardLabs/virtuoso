@@ -3,6 +3,25 @@
     "title": "BLOCK: Bio",
     "fields": [
         {
+            "key": "field_5c6e30760dfd7",
+            "label": "Bio Title",
+            "name": "bio_title",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5c1085304980b",
             "label": "Image",
             "name": "image",
@@ -119,5 +138,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1544658234
+    "modified": 1550725462
 }

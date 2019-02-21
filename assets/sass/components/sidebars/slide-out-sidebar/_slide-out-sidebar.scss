@@ -44,6 +44,12 @@
   section {
     width: 100%;
     display: none;
+
+    &:not(:first-child) {
+      border-left: 1px solid $side-out-sidebar--border-color;
+      padding: 0 2em;
+    }
+
   }
 
   section:first-of-type {

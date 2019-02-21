@@ -18,6 +18,11 @@
     flex-wrap: wrap;
     flex-direction: column;
     text-align: center;
+    align-items: center;
+
+    @include media-query('med') {
+      align-items: baseline;
+    }
 
     a {
       color: $footer-widgets--link-color;
