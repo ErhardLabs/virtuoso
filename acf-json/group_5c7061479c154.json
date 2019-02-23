@@ -1,110 +1,11 @@
 {
-    "key": "group_5c10851843783",
-    "title": "BLOCK: Bio",
+    "key": "group_5c7061479c154",
+    "title": "Publisher - Artist Info",
     "fields": [
         {
-            "key": "field_5c6e30760dfd7",
-            "label": "Bio Title",
-            "name": "bio_title",
-            "type": "text",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
-            "key": "field_5c1085304980b",
-            "label": "Image",
-            "name": "image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
-        },
-        {
-            "key": "field_5c10854b4980c",
-            "label": "Social Media Links",
-            "name": "social_media_links",
-            "type": "repeater",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_5c10855e4980d",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5c1085804980f",
-                    "label": "Icon",
-                    "name": "icon",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
-        },
-        {
             "key": "field_5c7066af30bcb",
-            "label": "Social Media Links (copy)",
-            "name": "social_media_links_copy",
+            "label": "Artist Social Media Links",
+            "name": "artist_social_media_links",
             "type": "repeater",
             "instructions": "",
             "required": 0,
@@ -158,10 +59,10 @@
             ]
         },
         {
-            "key": "field_5c10859037429",
-            "label": "Bio Text",
-            "name": "bio_text",
-            "type": "wysiwyg",
+            "key": "field_5c7066fae8078",
+            "label": "Artist Website",
+            "name": "artist_website",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -171,18 +72,119 @@
                 "id": ""
             },
             "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5c70671af0521",
+            "label": "Artist Music Embed Links",
+            "name": "artist_music_embed_links",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5c70693e3bc52",
+                    "label": "Song ID",
+                    "name": "song_id",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "maxlength": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5c706786f0522",
+            "label": "Artist Videos",
+            "name": "artist_videos",
+            "type": "repeater",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 0,
+            "max": 0,
+            "layout": "table",
+            "button_label": "",
+            "sub_fields": [
+                {
+                    "key": "field_5c70960062980",
+                    "label": "Artist Video",
+                    "name": "artist_video",
+                    "type": "oembed",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "width": "",
+                    "height": ""
+                }
+            ]
+        },
+        {
+            "key": "field_5c7067a7f0523",
+            "label": "Artist Bio",
+            "name": "artist_bio",
+            "type": "textarea",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": ""
         }
     ],
     "location": [
         [
             {
-                "param": "block",
+                "param": "post_template",
                 "operator": "==",
-                "value": "acf\/bio"
+                "value": "page-templates\/publisher-single-artist.php"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "artists"
             }
         ]
     ],
@@ -194,5 +196,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1550870201
+    "modified": 1550891508
 }
