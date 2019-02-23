@@ -1,0 +1,12 @@
+@mixin has-nth($expression, $element: '*') {
+  &:nth-last-child(#{$expression}):first-child,
+  &:nth-last-child(#{$expression}):first-child ~ #{$element} {
+    @content;
+  }
+}
+
+@mixin at-least($quantity, $element: '*') {
+  @include has-nth('n + #{$quantity}', $element) {
+    @content;
+  }
+}
