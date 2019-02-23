@@ -14,7 +14,7 @@ function get_page_from_slug($page_slug) {
 			<a href="/terms-conditions">Terms & Conditions</a>
 		<?php endif; ?>
 		<?php if (get_page_from_slug('cookie-policy') ): ?>
-			<a href="/cookie-consent">Cookie Consent</a>
+			<a href="/cookie-policy">Cookie Policy</a>
 		<?php endif; ?>
 	</div>
 <?php endif; ?>
