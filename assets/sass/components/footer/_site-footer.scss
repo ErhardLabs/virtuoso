@@ -20,6 +20,38 @@
 
   }
 
+  .footer-consent {
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    a {
+
+      @include at-least(2, 'a') { //four or more
+        &:nth-child(2) {
+          border-left: 1px solid $site-footer--border-color;
+          margin: 10px 5px;
+          padding: 0 5px;
+        }
+      }
+
+      @include at-least(3, 'a') { //three or more
+        &:nth-child(2) {
+          border-left: 1px solid $site-footer--border-color;
+          border-right: 1px solid $site-footer--border-color;
+          margin: 10px 5px;
+          padding: 0 5px;
+        }
+      }
+
+      &:hover {
+        color: lighten($siteFooter--color, 20%);
+      }
+
+    }
+  }
+
   .footer-login {
     margin-left: 20px;
     padding-bottom: 4px;

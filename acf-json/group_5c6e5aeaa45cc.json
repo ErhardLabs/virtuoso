@@ -1,0 +1,50 @@
+{
+    "key": "group_5c6e5aeaa45cc",
+    "title": "BLOCK: Row Frame",
+    "fields": [
+        {
+            "key": "field_5c6e5b6a036a7",
+            "label": "Frame Type",
+            "name": "frame_type",
+            "type": "radio",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "arrow-top": "arrow-top",
+                "arrow-bottom": "arrow-bottom",
+                "curve-top": "curve-top",
+                "curve-bottom": "curve-bottom"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "",
+            "layout": "vertical",
+            "return_format": "value",
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "acf\/frame-row"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1550736350
+}

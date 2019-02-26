@@ -55,7 +55,7 @@
       $( '.nav-secondary' ).hide();
     }
 
-    if ( 768 < window.innerWidth ) {
+    if ( 767 < window.innerWidth ) {
       $( '.nav-primary .genesis-nav-menu, nav .sub-menu' ).removeAttr( 'style' );
       $( '.nav-secondary' ).show();
       $( 'ul.menu-primary > li.moved-item' ).appendTo( 'ul.menu-secondary' );

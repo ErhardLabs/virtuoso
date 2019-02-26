@@ -1,22 +1,9 @@
 /* ## Site Containers
 --------------------------------------------- */
 
-.site-inner,
 .wrap {
   margin: 0 auto;
   padding: 0 5%;
-  //max-width: $max-width;
-
-  //@include media( $breakpoint__screen-size--larger ) {
-  //  max-width: $max-width-larger-screen;
-  //}
-  // @include media( $breakpoint__screen-size--large ) {
-  //  max-width: $max-width-large-screen;
-  //}
-  //
-  // @include media( $breakpoint__screen-size--medium ) {
-  //  max-width: $max-width--medium-screen;
-  //}
 }
 
 .site-inner {
@@ -26,9 +13,6 @@
   min-height: calc(100vh - 112px);
   margin-bottom: 4rem;
 
-  @include media-query('sm') {
-    padding: 5% 5% 0;
-  }
 }
 
 @include media-query('sm'){

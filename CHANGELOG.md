@@ -1,6 +1,12 @@
 ## [Unreleased]
 #### This Project uses Semantic Versioning
 
+# 2.4.1 @2019-2-22
+### Added
+- Footer consent view for Privacy policy, terms, and cookie policy pages
+### Changed
+- custom_footer changed to footer_copyright
+
 # 2.4.0 @2019-1-14
 ### Added
 - Better support for browsersync. can now use npm run watch:sync to activate the sync function
