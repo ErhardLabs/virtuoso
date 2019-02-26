@@ -233,28 +233,29 @@
     if ( 'undefined' !== typeof virtuoso.params ) {
       virtuoso.init();
     }
+    //TODO: Close menu when user scrolls past menu
 
-    $( '.menu-toggle' ).click( function( e ) {
-
-      if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
-
-        //Prevent page scrolling if mobile menu is activated
-        $( 'html, body' ).css({
-          margin: 0,
-          height: '100%',
-          overflow: 'hidden'
-        });
-
-      } else {
-
-        $( 'html, body' ).css({
-          margin: 0,
-          height: 'unset',
-          overflow: 'unset'
-        });
-      }
-
-    });
+    // $( '.menu-toggle' ).click( function( e ) {
+    //
+    //   if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
+    //
+    //     //Prevent page scrolling if mobile menu is activated
+    //     $( 'html, body' ).css({
+    //       margin: 0,
+    //       height: '100%',
+    //       overflow: 'hidden'
+    //     });
+    //
+    //   } else {
+    //
+    //     $( 'html, body' ).css({
+    //       margin: 0,
+    //       height: 'unset',
+    //       overflow: 'unset'
+    //     });
+    //   }
+    //
+    // });
 
   });
 

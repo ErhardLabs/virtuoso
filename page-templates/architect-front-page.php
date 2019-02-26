@@ -100,7 +100,7 @@ function virtuoso_architect_front_page_content() {
         <div class="transparent_image_wrap">
           <div class="transparent-overlay"></div>
           <?php
-          $image_attributes = wp_get_attachment_image_src( get_field('image'), 'medium' );
+          $image_attributes = wp_get_attachment_image_src( get_field('image'), 'large' );
           if ( $image_attributes ) {
             ?><img src="<?php echo $image_attributes[0]; ?>"/><?php
           }
