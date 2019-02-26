@@ -22,6 +22,12 @@ function virtuoso_publisher_single_artist() {
 	$artist_website = get_field('artist_website');
 	$artist_bio = get_field("artist_bio");
 	?>
+    <div class="virtuoso-block frame-row">
+	<?php
+		$path = VIRTUOSO_BLOCKS_DIR_PATH . 'assets/images/frame-rows/';
+		$svg = file_get_contents($path . 'curve-bottom.svg');
+		echo $svg;?>
+    </div>
     <section class="single-artist-content">
         <section class="artist-profile">
             <div class="wrap">
@@ -51,7 +57,8 @@ function virtuoso_publisher_single_artist() {
                     </div>
 	                <?php while( have_rows( 'artist_music_embed_links' ) ): the_row(); ?>
                         <div class="bwpp_iframe_wrap song">
-                              <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=<?php the_sub_field('song_id'); ?>/size=small/bgcol=0B0C10/linkcol=ffffff/transparent=true/" seamless></iframe>
+<!--                              <iframe style="border: 0; width: 100%; height: 42px;" src="https://bandcamp.com/EmbeddedPlayer/track=--><?php //the_sub_field('song_id'); ?><!--/size=small/bgcol=0B0C10/linkcol=ffffff/transparent=true/" seamless></iframe>-->
+                              <iframe src="https://open.spotify.com/embed/track/<?php the_sub_field('song_id'); ?>" width="1100" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                         </div>
 	                <?php endwhile; ?>
                 </div>
