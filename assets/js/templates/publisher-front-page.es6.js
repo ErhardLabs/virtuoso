@@ -1,4 +1,4 @@
-$( '.team-member' ).unbind().click( function( e ) {
+$( '.team-member' ).unbind().hover( function( e ) {
   e.preventDefault();
   $(this).toggleClass('visible');
 });
