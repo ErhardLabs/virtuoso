@@ -47,6 +47,7 @@ class FooterLayout {
 			'choices' => array(
 				'footer-widgets-left-column' => __( 'Left aligned', CHILD_TEXT_DOMAIN ),
 				'footer-widgets-block' => __( 'Block (Stacked)', CHILD_TEXT_DOMAIN ),
+				'footer-widgets-minimal' => __( 'Minimal left aligned', CHILD_TEXT_DOMAIN ),
 			),
 		) );
 

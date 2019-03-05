@@ -50,8 +50,10 @@ class Footer {
 
 		if ( $this->footerLayout == 'footer-widgets-block' ) {
 			$classes[] .= ' footer-widgets-block';
-		} else {
+		} elseif ( $this->footerLayout == 'footer-widgets-left-column' ) {
 			$classes[] .= ' footer-widgets-left-column';
+		} else {
+			$classes[] .= ' footer-widgets-minimal';
 		}
 
 		return $classes;
