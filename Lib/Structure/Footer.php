@@ -18,7 +18,7 @@ class Footer {
 
 	public function __construct() {
 		$prefix = CustomizerHelpers::get_settings_prefix();
-		$this->footerLayout = get_theme_mod($prefix.'_footer_design');
+		$this->footerLayout = get_theme_mod('genesis-settings')[$prefix.'_footer_design'];
 		add_filter( 'body_class', [ $this, 'set_footer_class' ] );
 //		add_action( 'get_footer', [ $this, 'display_slide_out_sidebar' ] );
 		add_action( 'genesis_footer', [ $this, 'footer_consent' ] );

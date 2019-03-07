@@ -25,13 +25,7 @@ class Customizer {
 	 * @param WP_Customize_Manager $wp_customize Customizer object.
 	 */
 	public function register_with_customizer() {
-
-//	  new Background_Video();
-	  new HeaderMenuLayout();
-	  new FooterLayout();
-	  new Contact();
     new Slide_Out_Sidebar();
-
 	}
 
 }
