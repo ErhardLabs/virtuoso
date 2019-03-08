@@ -1,4 +1,5 @@
 $ = jQuery;
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 
 class Slide_Out_Sidebar {
 
@@ -50,6 +51,7 @@ class Slide_Out_Sidebar {
   open( widgetID ) {
 
     let self = this;
+    disableBodyScroll(document.querySelector('#slide_out_sidebar'));
 
     $( '#slide_out_sidebar' ).addClass( 'slider-active' );
     $( '#slide_out_sidebar' ).removeClass( 'slider-close' );
@@ -81,7 +83,7 @@ class Slide_Out_Sidebar {
   }
 
   close() {
-
+    clearAllBodyScrollLocks();
 
     $( '#slide_out_sidebar #close_slider' ).hide();
 
