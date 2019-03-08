@@ -43,13 +43,24 @@ return array(
 				'title'    => __( 'Contact', $prefix ),
 				'panel'    => 'genesis',
 				'controls' => array(
-					$prefix . '_display_contact_in_menu' => array(
+					$prefix . '_display_floating_contact' => array(
 						'label' => __('Display Floating Contact', CHILD_TEXT_DOMAIN, $prefix),
 						'section' => 'contact',
 						'type' => 'checkbox',
 						'settings' => array (
 							'capability' => 'edit_theme_options',
-							'default' => true,
+							'default' => false,
+							'type'       => 'theme_mod',
+							'transport'  => 'postMessage',
+						),
+					),
+					$prefix . '_display_contact_in_menu' => array(
+						'label' => __('Display Contact in menu', CHILD_TEXT_DOMAIN, $prefix),
+						'section' => 'contact',
+						'type' => 'checkbox',
+						'settings' => array (
+							'capability' => 'edit_theme_options',
+							'default' => false,
 							'type'       => 'theme_mod',
 							'transport'  => 'postMessage',
 						),
