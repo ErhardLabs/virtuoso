@@ -231,6 +231,8 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
           .attr( 'aria-pressed', false );
         $( '.nav-primary' ).removeClass( 'mobile-menu-active' );
         $( '.nav-primary' ).css( 'display', 'none' );
+
+        clearAllBodyScrollLocks();
       });
     }
   }
