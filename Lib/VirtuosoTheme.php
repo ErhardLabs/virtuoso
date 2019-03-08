@@ -12,7 +12,7 @@
 namespace Virtuoso\Lib;
 
 // Config
-use Virtuoso\Config\ThemeConfig;
+use Virtuoso\Lib\ThemeConfig;
 
 // Components
 use Virtuoso\Lib\Admin\Admin;

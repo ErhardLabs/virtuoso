@@ -220,14 +220,31 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
     });
   }
 
+  function closeMenuFromLinkClick() {
+    if ( 767 >= window.innerWidth ) {
+
+      //Close menu when user clicks a link with in menu
+      $( '.nav-primary a' ).click( function() {
+        $( '.menu-toggle, .sub-menu-toggle' )
+          .removeClass( 'activated' )
+          .attr( 'aria-expanded', false )
+          .attr( 'aria-pressed', false );
+        $( '.nav-primary' ).removeClass( 'mobile-menu-active' );
+        $( '.nav-primary' ).css( 'display', 'none' );
+      });
+    }
+  }
+
   $( document ).ready( function() {
 
     // Check to see if menus should be combined on initial page load
     _combineMenus();
+    closeMenuFromLinkClick();
 
     // Check to see if menus should be combined on resize of the window
     $( window ).resize( function() {
         _combineMenus();
+        closeMenuFromLinkClick();
     });
 
     virtuoso.params = 'undefined' === typeof virtuosoLocalizedArgs ? '' : virtuosoLocalizedArgs;
@@ -245,15 +262,6 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
       }
     });
 
-    //Close menu when user clicks a link with in menu
-    $( '.nav-primary a' ).unbind().click( function() {
-      $( '.menu-toggle, .sub-menu-toggle' )
-        .removeClass( 'activated' )
-        .attr( 'aria-expanded', false )
-        .attr( 'aria-pressed', false );
-      $( '.nav-primary' ).removeClass( 'mobile-menu-active' );
-      $( '.nav-primary' ).css( 'display', 'none' );
-    });
 
   });
 

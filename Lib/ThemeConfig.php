@@ -9,7 +9,7 @@
  * @license     GNU General Public License 2.0+
  */
 
-namespace Virtuoso\Config;
+namespace Virtuoso\Lib;
 
 
 class ThemeConfig {
