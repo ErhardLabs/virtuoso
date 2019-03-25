@@ -135,7 +135,7 @@ class Menu {
 
 		}
 		// 'secondary' navigation menu
-		if ( 'secondary' === $args->theme_location ) {
+		if ( 'secondary' === $args->theme_location && $this->displayLoginButton ) {
 
 			if ( is_user_logged_in() && $this->displayLoginButton ) {
 				// Add buddy press profile link if user is logged in
