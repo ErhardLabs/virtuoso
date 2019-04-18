@@ -107,6 +107,7 @@ return array(
 							'logo-left' => __( 'Logo Left', CHILD_TEXT_DOMAIN ),
 							'logo-middle' => __( 'Logo Middle', CHILD_TEXT_DOMAIN ),
 							'navigation-middle' => __( 'Navigation Middle', CHILD_TEXT_DOMAIN ),
+							'web-application' => __( 'Web Application', CHILD_TEXT_DOMAIN ),
 						),
 						'settings' => array(
 							'capability' => 'edit_theme_options',

@@ -1,0 +1,70 @@
+/* ## Accessible Menu
+--------------------------------------------- */
+
+.header-web-application .menu .menu-item {
+  &:focus {
+    position: static;
+  }
+
+  > a:focus + ul.sub-menu,
+  &.sfHover > ul.sub-menu {
+    left: auto;
+    opacity: 1;
+  }
+}
+
+.header-web-application .sub-menu-toggle,
+.header-web-application .menu-toggle {
+  position: absolute;
+  left: 75px;
+  border-width: 0;
+  display: block;
+  margin: 0 auto;
+  overflow: hidden;
+  text-align: center;
+  visibility: visible;
+  padding: 0;
+}
+
+.header-web-application .sub-menu-toggle {
+  float: none;
+  position: relative;
+
+  &:hover, &:focus {
+    border-width: 0;
+  }
+
+  &:before {
+    display: inline-block;
+    text-rendering: auto;
+    transform: translate(0, 0);
+  }
+
+  &.activated:before {
+    content: "\f142";
+  }
+}
+
+.header-web-application .menu-toggle {
+  line-height: 20px;
+  z-index: 1;
+
+  .site-header & {
+    border: 0;
+  }
+
+  &:before,
+  &.activated:before {
+    text-rendering: auto;
+    transform: translate(0, 0);
+  }
+
+  &:before {
+    content: url('../../assets/images/icon-down.svg');
+  }
+
+  &.activated:before {
+    content: url('../../assets/images/icon-up.svg');
+  }
+
+}

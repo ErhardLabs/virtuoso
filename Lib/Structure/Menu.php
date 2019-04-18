@@ -29,9 +29,9 @@ class Menu {
 
 		add_filter( 'wp_nav_menu_args', [ $this, 'setup_secondary_menu_args' ] );
 
-		if ( $this->headerMenuLayout == 'logo-middle' ) {
-			add_filter( 'genesis_after_header', [ $this, 'render_header_menu' ] );
-		}
+		add_filter( 'genesis_header', [ $this, 'render_header_menu_html' ], 15 );
+
+		add_filter( 'genesis_after_header', [ $this, 'render_after_header_menu_html' ] );
 
 		add_filter( 'wp_nav_menu_items', [ $this, 'add_menu_items' ], 10, 2 );
 
@@ -66,7 +66,7 @@ class Menu {
 	/**
 	 * Set the design of the header based on the theme configuration settings
 	 *
-	 * @since 1.0.5
+	 * @since 2.4.2
 	 *
 	 * @param array
 	 *
@@ -78,6 +78,8 @@ class Menu {
 			$classes[] .= ' header-logo-left';
 		} elseif ( $this->headerMenuLayout == 'logo-middle' ) {
 			$classes[] .= ' header-logo-middle';
+		} elseif ( $this->headerMenuLayout == 'web-application' ) {
+			$classes[] .= ' header-web-application';
 		} else {
 			$classes[] .= ' header-navigation-middle';
 		}
@@ -108,14 +110,33 @@ class Menu {
 	/**
 	 * Wrap the primary and secondary navigation together
 	 *
-	 * @since 1.0.3
+	 * @since 2.4.2
 	 *
 	 * @param array $args
 	 *
 	 * @return header-navigation view container
 	 */
-	function render_header_menu() {
-		include( CHILD_DIR . '/Lib/Views/header-navigation.php' );
+	function render_header_menu_html() {
+		if ( $this->headerMenuLayout == 'web-application' ) {
+			include( CHILD_DIR . '/Lib/Views/header-web-application.php' );
+		}
+	}
+
+	/**
+	 * Wrap the primary and secondary navigation together
+	 *
+	 * @since 2.4.2
+	 *
+	 * @param array $args
+	 *
+	 * @return header-navigation view container
+	 */
+	function render_after_header_menu_html() {
+		if ( $this->headerMenuLayout == 'logo-middle' ) {
+			include( CHILD_DIR . '/Lib/Views/header-logo-middle.php' );
+		} elseif ( $this->headerMenuLayout == 'web-application' ) {
+			include( CHILD_DIR . '/Lib/Views/header-search-and-header-right.php' );
+		}
 	}
 
 	/**
@@ -134,6 +155,7 @@ class Menu {
 			$menu .= '<li class="menu-item menu-email"><a href="#"><span class="ti-email"></span></a></li>';
 
 		}
+
 		// 'secondary' navigation menu
 		if ( 'secondary' === $args->theme_location && $this->displayLoginButton ) {
 

@@ -257,11 +257,14 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
 
     // Disable body scroll if the menu is activated
     $( '.menu-toggle' ).click( function() {
-      if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
+      if ( $( '.header-web-application .menu-toggle' ).hasClass( 'activated' ) ) {
+        enableBodyScroll( document.querySelector( '.nav-primary' ) );
+      } else if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
         disableBodyScroll( document.querySelector( '.nav-primary' ) );
       } else {
         enableBodyScroll( document.querySelector( '.nav-primary' ) );
       }
+
     });
 
 
