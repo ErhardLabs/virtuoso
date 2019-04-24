@@ -26,8 +26,13 @@
   }
 
   .widget {
-    width: 70%;
-    margin: 50px auto 100px auto;
+    //width: 70%;
+    margin: 50px 0 100px 0;
+    padding: 0 40px;
+
+    @include media-query('med') {
+      padding: 0 40px;
+    }
   }
 
   .widgettitle {
@@ -47,7 +52,6 @@
 
     &:not(:first-child) {
       border-left: 1px solid $side-out-sidebar--border-color;
-      padding: 0 2em;
     }
 
   }

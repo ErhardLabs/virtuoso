@@ -1,10 +1,14 @@
 #floatingContact {
   position: fixed;
   right: 5%;
-  top: 85vh;
+  bottom: 2vh;
   z-index: 10;
   height: 60px;
   width: 60px;
+
+  @include media-query('med') {
+    bottom: 5vh;
+  }
 
   a {
     display: flex;

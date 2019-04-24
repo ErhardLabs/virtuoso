@@ -19,8 +19,11 @@ class Menu {
 	public function __construct() {
 		$prefix = CustomizerHelpers::get_settings_prefix();
 
-		$this->headerMenuLayout = get_theme_mod($prefix.'_header_design', $default = true);
-		$this->displayContactIcon = get_theme_mod($prefix.'_display_contact_in_menu', $default = true);
+		$this->headerMenuLayout = get_theme_mod("genesis-settings")[$prefix.'_header_nav_menu_design'];
+		$this->displayContactIcon = get_theme_mod("genesis-settings")[$prefix.'_display_contact_in_menu'];
+		$this->displayCartIcon = get_theme_mod("genesis-settings")[$prefix.'_display_cart_icon'];
+		$this->displayLoginButton = get_theme_mod("genesis-settings")[$prefix.'_display_login_button'];
+		$this->loginButtonURL = get_theme_mod("genesis-settings")[$prefix.'_login_button_url'];
 
 		add_filter( 'body_class', [ $this, 'set_header_class' ] );
 
@@ -49,7 +52,7 @@ class Menu {
 
 		remove_action( 'genesis_after_header', 'genesis_do_nav' );
 		$prefix = CustomizerHelpers::get_settings_prefix();
-		$headerMenuLayout = get_theme_mod($prefix.'_header_design', $default = true);
+		$headerMenuLayout = get_theme_mod("genesis-settings")[$prefix.'_header_nav_menu_design'];
 
 		if ( $headerMenuLayout == 'logo-left' || $headerMenuLayout == 'navigation-middle' ) {
 			add_action( 'genesis_header', 'genesis_do_nav', 11 );
@@ -131,16 +134,14 @@ class Menu {
 			$menu .= '<li class="menu-item menu-email"><a href="#"><span class="ti-email"></span></a></li>';
 
 		}
-
-		// TODO: Add to customizer
 		// 'secondary' navigation menu
-		if ( 'secondary' === $args->theme_location ) {
+		if ( 'secondary' === $args->theme_location && $this->displayLoginButton ) {
 
-			if ( is_user_logged_in() ) {
+			if ( is_user_logged_in() && $this->displayLoginButton ) {
 				// Add buddy press profile link if user is logged in
-				//$menu .= '<li class="menu-item user-image"><a href="/my-account"><img src="' . get_avatar_url( get_current_user_id() ) . '"></a></li>';
+				$menu .= '<li class="menu-item user-image"><a href="/my-account"><img src="' . get_avatar_url( get_current_user_id() ) . '"></a></li>';
 			} else {
-//				$menu .= '<li class="menu-item create phoen-login-signup-popup-open"><a href="">Login</a></li>';
+				$menu .= '<li class="menu-item create phoen-login-signup-popup-open"><a href="'. $this->loginButtonURL .'">Login</a></li>';
 			}
 		}
 
@@ -162,7 +163,7 @@ class Menu {
 	function add_cart_count_to_navigation( $items, $args ) {
 		// Top Navigation Area Only
 
-		if ( property_exists( $args, 'theme_location' ) && ( ( $args->theme_location === 'primary' && $this->headerMenuLayout == 'logo-left' ) || ( $args->theme_location === 'secondary' && $this->headerMenuLayout == 'logo-middle' ) ) ) {
+		if ( property_exists( $args, 'theme_location' ) && ( $this->displayCartIcon ) && ( ( $args->theme_location === 'primary' && $this->headerMenuLayout == 'logo-left' ) || ( $args->theme_location === 'secondary' && $this->headerMenuLayout == 'logo-middle' ) ) ) {
 			// WooCommerce
 			if ( class_exists( 'woocommerce' ) ) {
 				$css_class = 'menu-item menu-item-type-cart menu-item-type-woocommerce-cart';
