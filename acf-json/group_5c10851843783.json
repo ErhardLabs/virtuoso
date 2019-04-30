@@ -102,10 +102,10 @@
             ]
         },
         {
-            "key": "field_5c7066af30bcb",
-            "label": "Social Media Links (copy)",
-            "name": "social_media_links_copy",
-            "type": "repeater",
+            "key": "field_5cc8ccfa0d141",
+            "label": "Bio ID",
+            "name": "bio_id",
+            "type": "text",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -114,48 +114,11 @@
                 "class": "",
                 "id": ""
             },
-            "collapsed": "",
-            "min": 0,
-            "max": 0,
-            "layout": "table",
-            "button_label": "",
-            "sub_fields": [
-                {
-                    "key": "field_5c7066af30bcc",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "url",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": ""
-                },
-                {
-                    "key": "field_5c7066af30bcd",
-                    "label": "Icon",
-                    "name": "icon",
-                    "type": "text",
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    },
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
-                }
-            ]
+            "default_value": "bio",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5c10859037429",
@@ -194,5 +157,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1550870201
+    "modified": 1556663578
 }
