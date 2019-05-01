@@ -20,7 +20,7 @@ add_action('genesis_before_entry_content', 'virtuoso_publisher_single_artist');
 
 function virtuoso_publisher_single_artist() {
 	$artist_website = get_field('artist_website');
-	$artist_bio = get_field("artist_bio");
+	$artist_bio = get_field('artist_bio');
 	?>
     <div class="virtuoso-block frame-row">
 	<?php
@@ -43,9 +43,13 @@ function virtuoso_publisher_single_artist() {
                 </div>
                 <?php endif; ?>
 
-                <?php if ( $artist_website ): ?>
+                <?php if ( $artist_website ):
+                    $artist_website_url = $artist_website['url'];
+	                $artist_website_title = $artist_website['title'];
+	                $artist_website_target = $artist_website['target'];
+	                ?>
                     <div class="artist-website_wrap">
-                        <a href="https://<?php echo $artist_website; ?>"><?php echo $artist_website?></a>
+                        <a href="<?php echo esc_url($artist_website_url); ?>" target="<?php echo esc_html($artist_website_target);?>"><?php echo esc_html($artist_website_title);?></a>
                     </div>
                 <?php endif; ?>
 
