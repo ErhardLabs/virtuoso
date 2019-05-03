@@ -1,9 +1,10 @@
 .search-and-header-right-container {
   .header-web-application & {
-    width: calc(100% - 140px);
-    position: absolute;
-    top: 53px;
-    right: 20px;
+    width: calc(100% - 84px);
+    position: relative;
+    //top: 53px;
+    right: -66px;
+    margin-top: -54px;
 
     .search-and-header-right-wrap {
       display: flex;
@@ -13,12 +14,16 @@
 
     form {
       width: calc(53% - 98px);
-      margin-right: 30px;
+      margin-right: 14px;
       flex: 1;
+
+      .search-input-wrap {
+        position: relative;
+      }
 
       button {
         position: absolute;
-        background: transparent;
+        background: none;
         top: 0;
         bottom: 0;
         padding: 0;
@@ -39,6 +44,13 @@
       display: flex;
       align-items: center;
 
+      .notifications {
+        padding: 7px 14px;
+        margin-right: 14px;
+        background-color: $web-app-button--background-color;
+        border-radius: 4px;
+      }
+
       .user-image {
         width: $profile-image--width;
         height: $profile-image--height;
@@ -46,6 +58,70 @@
           border-radius: 50%;
         }
       }
+
+      #user-menu-button {
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      .user-profile-menu {
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        z-index: 100;
+        list-style: none;
+        max-height: calc(100vh - 71px);
+        white-space: nowrap;
+        padding: 1rem 0 .5rem;
+        width: 150px;
+        background: $secondary-nav--background-color;
+        top: calc(100% + 10px);
+        right: -1rem;
+        transform: scale(.9);
+        transform-origin: top right;
+        transition: all .2s ease-in-out,visibility 0s linear .2s;
+
+        @include media-query('med') {
+          width: 200px;
+        }
+
+        &[data-open=true]{
+          transform: scale(1);
+          transition-delay: 0s;
+          opacity: 1;
+          visibility: visible;
+        }
+
+        .user-profile-sep-before {
+          margin-top: .5rem;
+
+          &::before {
+            content: '';
+            display: block;
+            border-bottom: 1px solid #2d303a;
+            margin-right: 8px;
+            margin-left: 8px;
+          }
+        }
+
+        .user-profile-sep-after {
+          margin-bottom: .5rem;
+        }
+
+        a {
+          text-align: left;
+          display: flex;
+          align-items: center;
+          padding: 10px 8px;
+          font-weight: 600;
+
+          @include media-query('med') {
+            padding: 17px;
+          }
+        }
+      }
+
     }
 
   }

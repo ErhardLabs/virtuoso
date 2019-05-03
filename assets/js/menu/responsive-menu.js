@@ -36,7 +36,7 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
     }
     $( 'nav .sub-menu' ).before( toggleButtons.submenu ); // add the submenu nav buttons
     $( '.' + mainMenuButtonClass ).each( _addClassID );
-    $( '.' + subMenuButtonClass ).addClass( 'dashicons-before dashicons-arrow-down' );
+    $( '.' + subMenuButtonClass ).addClass( 'ti-angle-down' );
     $( window ).on( 'resize.virtuoso', _doResize ).triggerHandler( 'resize.virtuoso' );
     $( '.' + mainMenuButtonClass ).on( 'click.virtuoso-mainbutton', _mainmenuToggle );
     $( '.' + subMenuButtonClass ).on( 'click.virtuoso-subbutton', _submenuToggle );

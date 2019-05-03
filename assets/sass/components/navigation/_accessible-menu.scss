@@ -56,7 +56,8 @@
   }
 
   &.activated:before {
-    content: "\f142";
+    font-family: "Themify";
+    content: "\e648";
   }
 }
 

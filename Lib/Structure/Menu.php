@@ -61,8 +61,6 @@ class Menu {
 		remove_action( 'genesis_after_header', 'genesis_do_subnav' );
 	}
 
-
-
 	/**
 	 * Set the design of the header based on the theme configuration settings
 	 *
