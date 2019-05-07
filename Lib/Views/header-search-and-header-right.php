@@ -22,7 +22,8 @@
 
                     <?php
 				} else {
-					echo '<li class="menu-item create phoen-login-signup-popup-open"><a href="'. $this->loginButtonURL .'">Login</a></li>';
+					echo '<li class="menu-item menu-sign-up"><a href="'. site_url('/wp-login.php?action=register&redirect_to=' . esc_url_raw(get_permalink() ) ) .'">Sign Up</a></li>';
+					echo '<li class="menu-item menu-login phoen-login-signup-popup-open"><a href="'. $this->loginButtonURL .'">Login</a></li>';
 				}
 				?>
 			</div>

@@ -44,6 +44,28 @@
       display: flex;
       align-items: center;
 
+      .menu-login,
+      .menu-sign-up {
+        a {
+          border-radius: 4px;
+          padding: 8px 10px;
+        }
+
+      }
+
+      .menu-login {
+        margin-left: 8px;
+        a {
+          background: $search--background-color;
+        }
+      }
+
+      .menu-sign-up {
+        a {
+          background: $web-app-cta-button--background-color;
+        }
+      }
+
       .notifications {
         padding: 7px 14px;
         margin-right: 14px;
