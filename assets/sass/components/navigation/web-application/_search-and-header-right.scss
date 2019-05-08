@@ -3,8 +3,12 @@
     width: calc(100% - 84px);
     position: relative;
     //top: 53px;
-    right: -66px;
+    right: -40px;
     margin-top: -54px;
+
+    @include media-query('med') {
+      right: -66px;
+    }
 
     .search-and-header-right-wrap {
       display: flex;
@@ -14,8 +18,12 @@
 
     form {
       width: calc(53% - 98px);
-      margin-right: 14px;
+      margin-right: -25px;
       flex: 1;
+
+      @include media-query('med') {
+        margin-right: 14px;
+      }
 
       .search-input-wrap {
         position: relative;
@@ -27,34 +35,58 @@
         top: 0;
         bottom: 0;
         padding: 0;
-        left: 1em;
+        left: 6px;
         margin: auto 0 auto 0;
+        font-size: 13px;
+
+        @include media-query('med') {
+          font-size: 100%;
+          left: 1em;
+        }
       }
 
       input {
-        padding-left: 50px;
+        padding-left: 25px;
         border: $search--border-color;
         background: $search--background-color;
         border-radius: 4px;
         max-height: 38px;
+
+        @include media-query('med') {
+          padding-left: 50px;
+        }
       }
     }
 
     .header-right {
       display: flex;
       align-items: center;
+      position: relative;
+      left: 28px;
+      @include media-query('med') {
+        margin-left: 8px;
+        left: 0;
+      }
 
       .menu-login,
       .menu-sign-up {
         a {
           border-radius: 4px;
-          padding: 8px 10px;
+          padding: 8px 6px;
+
+          @include media-query('med') {
+            padding: 8px 10px;
+          }
         }
 
       }
 
       .menu-login {
-        margin-left: 8px;
+        margin-left: 3px;
+
+        @include media-query('med') {
+          margin-left: 8px;
+        }
         a {
           background: $search--background-color;
         }

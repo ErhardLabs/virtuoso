@@ -19,7 +19,7 @@
 
 .header-web-application .menu-toggle {
   position: absolute;
-  left: 67px;
+  left: 63px;
   border-width: 0;
   display: block;
   margin: 0 auto;
@@ -27,32 +27,51 @@
   text-align: center;
   visibility: visible;
   padding: 0;
-}
-
-.header-web-application .sub-menu-toggle {
-  float: none;
-  display: block;
-  position: absolute;
-  visibility: visible;
-  right: 8px;
-  padding: 10px 8px;
-  margin-right: -8px;
 
   @include media-query('med') {
-    padding: 17px;
+    left: 67px;
+  }
+}
+
+.header-web-application {
+
+  .sfHover {
+    .sub-menu-toggle::before {
+        font-family: "Themify";
+        content: "\e648";
+    }
   }
 
-  &:before {
-    display: inline-block;
-    text-rendering: auto;
-    transform: translate(0, 0);
-  }
+  .sub-menu-toggle {
+    //float: none;
+    //display: block;
+    //position: absolute;
+    //visibility: visible;
+    //right: 8px;
+    //padding: 10px 8px;
+    //margin-right: -8px;
+    display: block;
+    visibility: visible;
+    background: none;
+    width: 100%;
+    text-align: right;
 
-  &.activated:before {
-    font-family: "Themify";
-    content: "\e648";
-  }
+    @include media-query('med') {
+      padding: 17px;
+    }
 
+    &:before {
+      display: inline-block;
+      text-rendering: auto;
+      transform: translate(0, 0);
+    }
+
+    &.activated:before {
+      font-family: "Themify";
+      content: "\e648";
+    }
+
+  }
 }
 
 .header-web-application .menu-toggle {
@@ -71,9 +90,13 @@
 
   &:before {
     content: url('../../assets/images/icon-down.svg');
-    padding: 11px 11px;
+    padding: 11px 6px;
     background-color: $web-app-button--background-color;
     border-radius: 4px;
+
+    @include media-query('med') {
+      padding: 11px 11px;
+    }
 
   }
 
