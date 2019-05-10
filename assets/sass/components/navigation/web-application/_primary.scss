@@ -1,0 +1,13 @@
+/* ## Primary Navigation
+--------------------------------------------- */
+
+.header-web-application .nav-primary {
+  display: none;
+  position: absolute;
+  top: 70px;
+
+  > .wrap {
+    position: relative;
+    padding: 0;
+  }
+}

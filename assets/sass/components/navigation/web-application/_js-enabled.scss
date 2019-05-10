@@ -1,0 +1,94 @@
+//
+// .virtuoso-js enabled styles
+//=======================
+
+@media only screen and (max-width: 767px) {
+
+  .virtuoso-js.header-web-application {
+    .genesis-nav-menu {
+      .sub-menu, .sub-menu a {
+        width: 100%;
+      }
+
+      .menu-item:hover {
+        position: relative;
+      }
+
+      .menu-item > a:focus {
+        ul.sub-menu,
+        ul.sub-menu .sub-menu {
+          left: 0;
+          margin-left: 0;
+        }
+      }
+
+      > .menu-item-has-children > a:after {
+        content: none;
+      }
+
+      .sub-menu {
+        border: none;
+        clear: both;
+        display: none;
+        margin: 0;
+        opacity: 1;
+        padding-left: 15px;
+        position: static;
+        width: 100%;
+
+        .sub-menu {
+          margin: 0;
+        }
+      }
+    }
+
+    .nav-primary {
+      position: absolute;
+      height: 100vh;
+      width: 100%;
+      left: 0;
+      top: 0;
+      padding: 13rem 3rem;
+      z-index: 9998;
+
+      @include media-query('med') {
+        padding-right: 0;
+        overflow: visible;
+      }
+    }
+
+    .nav-primary, .site-header {
+      .genesis-nav-menu .menu-item {
+        display: block;
+        float: none;
+        margin: 1px auto;
+        position: relative;
+        text-align: center;
+
+        a {
+          border: none;
+          width: 100%;
+        }
+      }
+    }
+
+    //nav button:hover,
+    //.menu-toggle:hover,
+    //nav button:focus,
+    //.menu-toggle:focus,
+    .nav-primary {
+      background: $js-nav--background-color;
+    }
+
+    nav button:hover,
+    .menu-toggle:hover,
+    .nav-primary {
+      color: $js-nav--hover-color;
+    }
+
+    nav button:focus,
+    .menu-toggle:focus {
+      color: $js-nav--focus-color;
+    }
+  }
+}

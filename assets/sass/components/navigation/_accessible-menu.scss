@@ -24,6 +24,12 @@
   text-align: center;
   visibility: visible;
 
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: $nav-toggle--background-color;
+  }
+
   @include media-query('med') {
     display: none;
     visibility: hidden;
@@ -50,7 +56,8 @@
   }
 
   &.activated:before {
-    content: "\f142";
+    font-family: "Themify";
+    content: "\e648";
   }
 }
 

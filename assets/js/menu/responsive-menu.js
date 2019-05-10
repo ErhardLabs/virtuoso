@@ -36,7 +36,7 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
     }
     $( 'nav .sub-menu' ).before( toggleButtons.submenu ); // add the submenu nav buttons
     $( '.' + mainMenuButtonClass ).each( _addClassID );
-    $( '.' + subMenuButtonClass ).addClass( 'dashicons-before dashicons-arrow-down' );
+    $( '.' + subMenuButtonClass ).addClass( 'ti-angle-down' );
     $( window ).on( 'resize.virtuoso', _doResize ).triggerHandler( 'resize.virtuoso' );
     $( '.' + mainMenuButtonClass ).on( 'click.virtuoso-mainbutton', _mainmenuToggle );
     $( '.' + subMenuButtonClass ).on( 'click.virtuoso-subbutton', _submenuToggle );
@@ -257,11 +257,14 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
 
     // Disable body scroll if the menu is activated
     $( '.menu-toggle' ).click( function() {
-      if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
+      if ( $( '.header-web-application .menu-toggle' ).hasClass( 'activated' ) ) {
+        enableBodyScroll( document.querySelector( '.nav-primary' ) );
+      } else if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
         disableBodyScroll( document.querySelector( '.nav-primary' ) );
       } else {
         enableBodyScroll( document.querySelector( '.nav-primary' ) );
       }
+
     });
 
 
