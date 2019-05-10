@@ -56,7 +56,7 @@
     width: 100%;
     text-align: right;
 
-    @include media-query('med') {
+    @include media-query('lg') {
       padding: 17px;
     }
 
