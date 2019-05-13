@@ -12,12 +12,12 @@
 namespace Virtuoso\Lib;
 
 // Config
+use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
 use Virtuoso\Lib\ThemeConfig;
 
 // Components
 use Virtuoso\Lib\Admin\Admin;
 use Virtuoso\Lib\Components\Background_Video_HTML;
-use Virtuoso\Lib\Admin\Customizer\Customizer;
 
 // Functions
 use Virtuoso\Lib\Functions\Formatting;
@@ -33,6 +33,8 @@ use Virtuoso\Lib\Structure\Archive;
 use Virtuoso\Lib\Structure\Footer;
 use Virtuoso\Lib\Structure\Post;
 
+use WP_Customize_Manager;
+
 
 class VirtuosoTheme extends ThemeConfig {
 
@@ -44,21 +46,22 @@ class VirtuosoTheme extends ThemeConfig {
 		add_filter( 'genesis_theme_settings_defaults', [ $this, 'set_theme_settings_defaults' ] );
 		add_action( 'after_switch_theme', [ $this, 'update_theme_settings_defaults' ] );
 		add_action( 'body_class', [ $this, 'add_gutenberg_class' ] );
+//		add_action( 'customize_register', [ $this, 'save_customizer_settings_defaults' ] );
 
-		$detectJS = new DetectJS();
+		new DetectJS();
 
-		$customizer = new Admin();
+		new Admin();
 
-		$formatting = new Formatting();
-		$loadAssets = new EnqueueAssets();
+		new Formatting();
+		new EnqueueAssets();
 
-		$menu     = new Menu();
-		$header   = new Header();
-		$sidebar  = new Sidebar();
-		$comments = new Comments();
-		$archive  = new Archive();
-    $post = new Post();
-		$footer  = new Footer();
+		new Menu();
+		new Header();
+		new Sidebar();
+		new Comments();
+		new Archive();
+    new Post();
+		new Footer();
 
 	}
 
@@ -197,6 +200,32 @@ class VirtuosoTheme extends ThemeConfig {
 		}
 
 		update_option( 'posts_per_page', $config['blog_cat_num'] );
+	}
+
+	/**
+	 * Set default values for customizer settings
+	 *
+	 * @since 2.4.3
+	 *
+	 * @param WP_Customize_Manager $wp_customize
+	 */
+	public function save_customizer_settings_defaults( WP_Customize_Manager $wp_customize ) {
+		$prefix = CustomizerHelpers::get_settings_prefix();
+
+		$settings_ids = array(
+			$prefix . '_display_floating_contact',
+			$prefix . '_display_contact_in_menu',
+			$prefix . '_contact_url',
+			$prefix . '_contact_inner_text',
+			$prefix . '_header_nav_menu_design',
+			$prefix . '_display_login_button',
+			$prefix . '_login_button_url',
+			$prefix . '_display_cart_icon',
+			$prefix . '_footer_design',
+			$prefix . '_cart_classes',
+		);
+
+		CustomizerHelpers::initialize_defaults( $wp_customize, $settings_ids );
 	}
 
 }

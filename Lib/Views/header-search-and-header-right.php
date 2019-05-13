@@ -14,9 +14,9 @@
 					echo '<li id="user-menu-button" class="menu-item user-image" aria-expanded="false"><img src="' . get_avatar_url( get_current_user_id() ) . '"></li>';
 					?>
                     <ul class="user-profile-menu" role="navigation" data-open="false">
-                        <li><a href="/my-account">Profile</a></li>
-                        <li class="user-profile-sep-after"><a href="/my-account/notifications">Notifications</a></li>
-                        <li class="user-profile-sep-before"><a href="/my-account/settings">Settings</a></li>
+                        <li><a href="<?php echo bp_loggedin_user_link(); ?>">Profile</a></li>
+                        <li class="user-profile-sep-after"><a href="<?php echo bp_loggedin_user_link() . 'notifications'; ?>">Notifications</a></li>
+                        <li class="user-profile-sep-before"><a href="<?php echo bp_loggedin_user_link() . 'settings'; ?>">Settings</a></li>
                         <li><a href="/wp-login.php?action=logout">Logout</a></li>
                     </ul>
 

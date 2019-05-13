@@ -10,6 +10,7 @@
  */
 
 namespace Virtuoso\Lib\Admin\Customizer;
+use WP_Customize_Manager;
 
 class Customizer {
 

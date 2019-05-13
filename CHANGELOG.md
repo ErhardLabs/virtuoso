@@ -1,6 +1,10 @@
 ## [Unreleased]
 #### This Project uses Semantic Versioning
 
+# 2.4.3 @2019-5-13
+### Added
+- Customizer default settings will not save to database
+
 # 2.4.2 @2019-2-22
 ### Added
 - Web application header menu option

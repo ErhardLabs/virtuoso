@@ -11,6 +11,7 @@
 
 namespace Virtuoso\Lib\Structure;
 use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
+use WP_Customize_Manager;
 
 class Menu {
 	public $headerMenuLayout;
@@ -19,11 +20,11 @@ class Menu {
 	public function __construct() {
 		$prefix = CustomizerHelpers::get_settings_prefix();
 
-		$this->headerMenuLayout = get_theme_mod("genesis-settings")[$prefix.'_header_nav_menu_design'];
-		$this->displayContactIcon = get_theme_mod("genesis-settings")[$prefix.'_display_contact_in_menu'];
-		$this->displayCartIcon = get_theme_mod("genesis-settings")[$prefix.'_display_cart_icon'];
-		$this->displayLoginButton = get_theme_mod("genesis-settings")[$prefix.'_display_login_button'];
-		$this->loginButtonURL = get_theme_mod("genesis-settings")[$prefix.'_login_button_url'];
+		$this->headerMenuLayout = get_theme_mod("genesis-settings", 'logo-left' )[$prefix.'_header_nav_menu_design'];
+		$this->displayContactIcon = get_theme_mod("genesis-settings", 'false' )[$prefix.'_display_contact_in_menu'];
+		$this->displayCartIcon = get_theme_mod("genesis-settings", 'false' )[$prefix.'_display_cart_icon'];
+		$this->displayLoginButton = get_theme_mod("genesis-settings", 'false' )[$prefix.'_display_login_button'];
+		$this->loginButtonURL = get_theme_mod("genesis-settings", '/wp-admin' )[$prefix.'_login_button_url'];
 
 		add_filter( 'body_class', [ $this, 'set_header_class' ] );
 
@@ -38,6 +39,7 @@ class Menu {
 		add_filter( 'wp_nav_menu_items', [ $this, 'add_cart_count_to_navigation' ], 10, 2 );
 
 		add_filter( 'woocommerce_add_to_cart_fragments', [ $this, 'my_woocommerce_add_to_cart_fragments' ], 10, 1 );
+
 	}
 
 	/**

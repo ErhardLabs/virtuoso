@@ -10,6 +10,8 @@
  */
 namespace Virtuoso\Lib\Admin\Customizer;
 
+use WP_Customize_Manager;
+
 class CustomizerHelpers {
 	public function __construct() {
 
@@ -111,5 +113,23 @@ class CustomizerHelpers {
     }
 
   }
+
+	/**
+	 * Helper function to initialize default values for settings as customizer api do not do so.
+	 *
+	 * @since 2.4.3
+	 */
+	public static function initialize_defaults( WP_Customize_Manager $wp_customize, $settings_ids ) {
+
+		if ( is_array( $settings_ids ) && ! empty( $settings_ids ) ) {
+			$mods = get_theme_mods();
+			foreach ( $settings_ids as $setting_id ) {
+				$setting = $wp_customize->get_setting( $setting_id );
+				if ( ! isset( $mods[ $setting->id ] ) ) {
+					set_theme_mod( $setting->id, $setting->default );
+				}
+			}
+		}
+	}
 
 }
