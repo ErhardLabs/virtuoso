@@ -133,7 +133,7 @@ class Menu {
 		if ( $this->headerMenuLayout == 'logo-middle' ) {
 			include( CHILD_DIR . '/Lib/Views/header-logo-middle.php' );
 		} elseif ( $this->headerMenuLayout == 'web-application' ) {
-			include( CHILD_DIR . '/Lib/Views/header-search-and-header-right.php' );
+			include( CHILD_DIR . '/Lib/Views/header-web-application-search.php' );
 		}
 	}
 

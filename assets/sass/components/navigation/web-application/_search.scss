@@ -1,0 +1,62 @@
+.search-and-header-right-container {
+  .header-web-application & {
+    width: calc(100% - 84px);
+    position: relative;
+    //top: 53px;
+    right: -40px;
+    margin-top: -54px;
+
+    @include media-query('med') {
+      right: -66px;
+    }
+
+    .search-and-header-right-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    form {
+      width: calc(53% - 98px);
+      margin-right: -25px;
+      flex: 1;
+
+      @include media-query('med') {
+        margin-right: 14px;
+      }
+
+      .search-input-wrap {
+        position: relative;
+      }
+
+      button {
+        position: absolute;
+        background: none;
+        top: 0;
+        bottom: 0;
+        padding: 0;
+        left: 6px;
+        margin: auto 0 auto 0;
+        font-size: 13px;
+
+        @include media-query('med') {
+          font-size: 100%;
+          left: 1em;
+        }
+      }
+
+      input {
+        padding-left: 25px;
+        border: $search--border-color;
+        background: $search--background-color;
+        border-radius: 4px;
+        max-height: 38px;
+
+        @include media-query('med') {
+          padding-left: 50px;
+        }
+      }
+    }
+
+  }
+}
