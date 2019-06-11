@@ -18,8 +18,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Virtuoso\\": "",
-      "Virtuoso\\Lib\\": "Lib/"
+      "Virtuoso": "Virtuoso"
     }
   },
   "require-dev": {
