@@ -5,6 +5,7 @@
  */
 
 use Virtuoso\Lib\Components\Background_Image;
+use Virtuoso\Lib\Helper;
 
 Background_Image::remove();
 
@@ -38,13 +39,12 @@ function display_videography_slider() {
 						<?php while ( have_rows( 'video_portfolio' ) ): the_row();
 
 							// vars
-							$videoLink = get_sub_field( 'video_links', false );
-							$video_id  = explode( "?v=", $videoLink );
-							$video_id  = $video_id[1];
-							$videoSrc  = "https://www.youtube.com/embed/$video_id?rel=0&controls=1&enablejsapi=1";
+							$video_link = get_sub_field( 'video_links', false );
+							$video_id = Helper::extract_video_id( $video_link );
 							?>
 
 							<?php if ( $video_id ): ?>
+								<?php $videoSrc  = "https://www.youtube.com/embed/$video_id?rel=0&controls=1&enablejsapi=1"; ?>
 								<li class="slide">
 									<div class="embed-container">
 										<iframe class="home_video" id="yt_home_embed" width="2460" height="1440" src="<?php echo $videoSrc ?>" frameborder="0" allowfullscreen></iframe>

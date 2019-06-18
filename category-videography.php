@@ -1,4 +1,7 @@
 <?php
+
+use Virtuoso\Lib\Helper;
+
 remove_action( 'genesis_before_loop', 'genesis_do_taxonomy_title_description', 15 );
 remove_action( 'genesis_loop', 'genesis_do_loop' );
 add_action( 'genesis_loop', 'virtuoso_display_videography_archive_content' );
@@ -21,52 +24,51 @@ function virtuoso_display_videography_archive_content() {
 	if ( $loop->have_posts() ) {
 
 		?>
-      <div class="videography_slider_wrap"> <?php
+		<div class="videography_slider_wrap"> <?php
 
-				// loop through posts
-				while ( $loop->have_posts() ): $loop->the_post();
+			// loop through posts
+			while ( $loop->have_posts() ): $loop->the_post();
 
-					$title     = get_the_title() . ' Videography';
-					$permalink = get_the_permalink();
+				$title     = get_the_title() . ' Videography';
+				$permalink = get_the_permalink();
 
-					if ( have_rows( 'video_portfolio' ) ): ?>
+				if ( have_rows( 'video_portfolio' ) ): ?>
 
-              <ul class="videography_portfolio_slides">
+					<ul class="videography_portfolio_slides">
 
-								<?php while ( have_rows( 'video_portfolio' ) ): the_row();
+						<?php while ( have_rows( 'video_portfolio' ) ): the_row();
 
-									// vars
-									$videoLink = get_sub_field( 'video_links', false );
-									$video_id  = explode( "?v=", $videoLink );
-									$video_id  = $video_id[1];
-									$videoSrc  = "https://www.youtube.com/embed/$video_id?rel=0&controls=0&showinfo=0&loop=1&enablejsapi=1&autoplay=0"
-									?>
+							// vars
+							$video_link = get_sub_field( 'video_links', false );
+							$video_id   = Helper::extract_video_id( $video_link );
+							?>
 
-                    <li class="slide">
-											<?php if ( $video_id ): ?>
-                          <div class="portfolio_header_wrap">
-                              <a class="portfolio_name"
-                                 href="<?php echo $permalink; ?>"><span><?php echo $title; ?></span></a>
-                              <a class="portfolio_view" href="<?php echo $permalink; ?>"><span>View</span></a>
-                          </div>
-                          <div class="embed-container">
-                              <iframe class="home_video" id="yt_home_embed" width="800" height="443"
-                                      src="<?php echo $videoSrc ?>" frameborder="0" allowfullscreen></iframe>
-                          </div>
-												<?php break; ?>
-											<?php endif; ?>
+							<?php if ( $video_id ): ?>
+								<?php $videoSrc = "https://www.youtube.com/embed/$video_id?rel=0&controls=1&enablejsapi=1"; ?>
+								<li class="slide">
+									<div class="portfolio_header_wrap">
+										<a class="portfolio_name"
+										   href="<?php echo $permalink; ?>"><span><?php echo $title; ?></span></a>
+										<a class="portfolio_view" href="<?php echo $permalink; ?>"><span>View</span></a>
+									</div>
+									<div class="embed-container">
+										<iframe class="home_video" id="yt_home_embed" width="800" height="443"
+										        src="<?php echo $videoSrc ?>" frameborder="0" allowfullscreen></iframe>
+									</div>
+									<?php break; ?>
 
-                    </li>
+								</li>
+							<?php endif; ?>
 
-								<?php endwhile; ?>
+						<?php endwhile; ?>
 
-              </ul>
+					</ul>
 
-					<?php endif;
+				<?php endif;
 
-				endwhile;
+			endwhile;
 
-				?> </div> <?php
+			?> </div> <?php
 
 	}
 
