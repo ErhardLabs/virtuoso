@@ -44,6 +44,7 @@ class VirtuosoTheme extends ThemeConfig {
 		add_filter( 'genesis_theme_settings_defaults', [ $this, 'set_theme_settings_defaults' ] );
 		add_action( 'after_switch_theme', [ $this, 'update_theme_settings_defaults' ] );
 		add_action( 'body_class', [ $this, 'add_gutenberg_class' ] );
+		add_action( 'body_class', [ $this, 'add_search_class' ] );
 
 		$detectJS = new DetectJS();
 
@@ -94,6 +95,22 @@ class VirtuosoTheme extends ThemeConfig {
 		$this->adds_new_image_sizes( $config['theme_image_sizes'] );
 
 
+	}
+
+	/**
+	 * Add body class if the page is search page
+	 *
+	 * @since 2.4.1
+	 *
+	 * @return array
+	 */
+	public function add_search_class( $classes ) {
+		if ( is_search() ) {
+			$classes[] .= 'search-page';
+			$classes[] .= 'archive';
+		}
+
+		return $classes;
 	}
 
 	/**
