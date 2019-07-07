@@ -12,7 +12,7 @@ use WP_Query;
 class Latest_Posts
 {
 
-  public function __construct()
+  public function __construct( $support_article = false )
   {
 
     // WP_Query arguments
@@ -29,7 +29,11 @@ class Latest_Posts
     if ( $query->have_posts() ) {
       while ( $query->have_posts() ) {
       $query->the_post();
-	    include( CHILD_DIR . '/Lib/Views/post.php' );
+      if ($support_article){
+	      include( CHILD_DIR . '/Lib/Views/support-article.php' );
+      } else {
+	      include( CHILD_DIR . '/Lib/Views/post.php' );
+      }
       }
     // Restore original Post Data
     wp_reset_postdata();
