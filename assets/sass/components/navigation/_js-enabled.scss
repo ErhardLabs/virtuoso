@@ -59,7 +59,7 @@
 
     .nav-primary, .site-header {
       .genesis-nav-menu .menu-item {
-        display: block;
+        display: inline-block !important;
         float: none;
         margin: 1px auto;
         position: relative;
