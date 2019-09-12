@@ -20,12 +20,13 @@ class Customizer {
 	/**
 	 * Register settings and controls with the Customizer.
 	 *
+	 * @param WP_Customize_Manager $wp_customize Customizer object.
+	 *
 	 * @since 1.0.0
 	 *
-	 * @param WP_Customize_Manager $wp_customize Customizer object.
 	 */
 	public function register_with_customizer() {
-    new Slide_Out_Sidebar();
+		new Slide_Out_Sidebar();
 	}
 
 }
