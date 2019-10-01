@@ -50,4 +50,4 @@ Feedback, bug reports, and pull requests are welcome.
 
 Virtuoso is licensed under the [GNU GPL](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
 
-2018 © Erhard Labs
+2019 © Erhard Labs
