@@ -1,3 +1,4 @@
+$=jQuery;
 $( document ).ready( function() {
   $( '#user-menu-button' ).unbind().click( function() {
 
