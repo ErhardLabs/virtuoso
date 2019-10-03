@@ -1,5 +1,5 @@
 {
-  "name"        : "ErhardLabs/Virtuoso",
+  "name"        : "erhardlabs/virtuoso",
   "description" : "Genesis Child theme with a Laravel-like file structure",
   "keywords"    : ["wordpress","genesis","genesis-child-theme"],
   "homepage"    : "https://github.com/ErhardLabs/virtuoso",
@@ -18,7 +18,8 @@
   ],
   "autoload": {
     "psr-4": {
-      "Virtuoso": "Virtuoso"
+      "Virtuoso\\": "",
+      "Virtuoso\\Lib\\": "Lib/"
     }
   },
   "require-dev": {
