@@ -26,10 +26,12 @@ class Background_Video_HTML {
 	public function __construct() {
 
 		if ( ! is_category() ) {
-			global $post;
-			$this->postID = $post->ID;
-			$this->get_user_options();
-			$this->determine_display_locations();
+			if ( !is_buddypress() ) {
+				global $post;
+				$this->postID = $post->ID;
+				$this->get_user_options();
+				$this->determine_display_locations();
+			}
 		}
 
 	}
