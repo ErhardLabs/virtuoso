@@ -10,20 +10,21 @@
  */
 
 namespace Virtuoso\Lib\Structure;
+
 use Virtuoso\Lib\Components\Background_Video_HTML;
 
 class Header {
 	public function __construct() {
 		add_action( 'genesis_after_header', [ $this, 'include_sexy_popup' ] );
-    add_action( 'genesis_after_header', [ $this, 'include_background_video' ] );
+		add_action( 'genesis_after_header', [ $this, 'include_background_video' ] );
 	}
 
 	/**
 	 * Unregister header callbacks.
 	 *
+	 * @return void
 	 * @since 1.0.0
 	 *
-	 * @return void
 	 */
 	public static function unregister_header_callbacks() {
 		unregister_sidebar( 'header-right' );
@@ -33,9 +34,9 @@ class Header {
 	/**
 	 * Include sexy popup if it's available
 	 *
+	 * @return void
 	 * @since 1.0.4
 	 *
-	 * @return void
 	 */
 	function include_sexy_popup() {
 
@@ -47,7 +48,13 @@ class Header {
 	}
 
 	function include_background_video() {
-    new Background_Video_HTML();
-  }
+		if ( ! is_category() ) {
+			if ( ! is_buddypress() ) {
+				if ( ! is_search() ) {
+					new Background_Video_HTML();
+				}
+			}
+		}
+	}
 
 }
