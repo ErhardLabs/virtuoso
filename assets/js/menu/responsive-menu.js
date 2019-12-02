@@ -1,3 +1,5 @@
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
+
 ( function( document, $, undefined ) {
 
   'use strict';
@@ -218,14 +220,33 @@
     });
   }
 
+  function closeMenuFromLinkClick() {
+    if ( 767 >= window.innerWidth ) {
+
+      //Close menu when user clicks a link with in menu
+      $( '.nav-primary a' ).click( function() {
+        $( '.menu-toggle, .sub-menu-toggle' )
+          .removeClass( 'activated' )
+          .attr( 'aria-expanded', false )
+          .attr( 'aria-pressed', false );
+        $( '.nav-primary' ).removeClass( 'mobile-menu-active' );
+        $( '.nav-primary' ).css( 'display', 'none' );
+
+        clearAllBodyScrollLocks();
+      });
+    }
+  }
+
   $( document ).ready( function() {
 
     // Check to see if menus should be combined on initial page load
     _combineMenus();
+    closeMenuFromLinkClick();
 
     // Check to see if menus should be combined on resize of the window
     $( window ).resize( function() {
         _combineMenus();
+        closeMenuFromLinkClick();
     });
 
     virtuoso.params = 'undefined' === typeof virtuosoLocalizedArgs ? '' : virtuosoLocalizedArgs;
@@ -233,29 +254,16 @@
     if ( 'undefined' !== typeof virtuoso.params ) {
       virtuoso.init();
     }
-    //TODO: Close menu when user scrolls past menu
 
-    // $( '.menu-toggle' ).click( function( e ) {
-    //
-    //   if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
-    //
-    //     //Prevent page scrolling if mobile menu is activated
-    //     $( 'html, body' ).css({
-    //       margin: 0,
-    //       height: '100%',
-    //       overflow: 'hidden'
-    //     });
-    //
-    //   } else {
-    //
-    //     $( 'html, body' ).css({
-    //       margin: 0,
-    //       height: 'unset',
-    //       overflow: 'unset'
-    //     });
-    //   }
-    //
-    // });
+    // Disable body scroll if the menu is activated
+    $( '.menu-toggle' ).click( function() {
+      if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
+        disableBodyScroll( document.querySelector( '.nav-primary' ) );
+      } else {
+        enableBodyScroll( document.querySelector( '.nav-primary' ) );
+      }
+    });
+
 
   });
 

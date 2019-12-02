@@ -11,7 +11,7 @@ mix.setPublicPath( 'dist' );
 
 const sassPath = `${devPath}/sass/`;
 const grandchildPath = '../../plugins/virtuoso-grandchild/';
-const browsersyncConf = `${grandchildPath}browsersync.conf`;
+const browsersyncConf = `${grandchildPath}browsersync.json`;
 const grandchildSassPath = `${grandchildPath}assets/sass/`;
 
 const config = {
@@ -151,7 +151,7 @@ if ( process.env.sync ) {
 
   if ( fs.pathExistsSync( browsersyncConf ) ) {
 
-    let conf = fs.readFileSync( browsersyncConf, 'utf8' );
+    let conf = JSON.parse( fs.readFileSync( browsersyncConf, 'utf8' ) );
 
     /*
        * Monitor files for changes and inject your changes into the browser.
@@ -159,7 +159,11 @@ if ( process.env.sync ) {
        * @link https://laravel.com/docs/5.6/mix#browsersync-reloading
        */
     mix.browserSync({
-      proxy: conf,
+      proxy: 'https://' + conf[0].url,
+      https: {
+        key: conf[0].key,
+        cert: conf[0].cert
+      },
       files: [
         'dist/**/*',
         'Lib/**/*',

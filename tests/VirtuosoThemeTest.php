@@ -3,7 +3,7 @@ declare(strict_types=1);
 use PHPUnit\Framework\TestCase;
 
 // Config
-use Virtuoso\Config\ThemeConfig;
+use Virtuoso\Lib\ThemeConfig;
 
 // Components
 use Virtuoso\Lib\Components\Customizer\Customizer;

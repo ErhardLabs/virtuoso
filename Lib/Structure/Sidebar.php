@@ -11,7 +11,7 @@
 
 namespace Virtuoso\Lib\Structure;
 
-use Virtuoso\Config\ThemeConfig;
+use Virtuoso\Lib\ThemeConfig;
 use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
 
 class Sidebar {

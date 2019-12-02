@@ -20,11 +20,11 @@ function virtuoso_404()
     <div id="parallax">
         <div class="parallax_wrap">
 
-            <img src="wp-content/themes/virtuoso/assets/images/parallax3.png" />
+            <img src="/wp-content/themes/virtuoso/assets/images/parallax3.png" />
 
-            <img src="wp-content/themes/virtuoso/assets/images/parallax2.png" />
+            <img src="/wp-content/themes/virtuoso/assets/images/parallax2.png" />
 
-            <img src="wp-content/themes/virtuoso/assets/images/parallax1.png" />
+            <img src="/wp-content/themes/virtuoso/assets/images/parallax1.png" />
 
         </div>
     </div>
