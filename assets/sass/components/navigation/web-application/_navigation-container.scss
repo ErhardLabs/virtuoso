@@ -1,0 +1,12 @@
+/* ## Navigation Container
+--------------------------------------------- */
+
+.header-web-application .navigation-container {
+  position: unset;
+
+  @include media-query('med'){
+    position: unset;
+    margin: 0;
+  }
+
+}

@@ -45,3 +45,9 @@ Navigate to `assets/js/src`.  This is where you will add new JS files or make ch
 ## Contributions
 
 Feedback, bug reports, and pull requests are welcome.
+
+## Copyright and License
+
+Virtuoso is licensed under the [GNU GPL](https://www.gnu.org/licenses/old-licenses/gpl-2.0.html), version 2 or later.
+
+2019 © Erhard Labs

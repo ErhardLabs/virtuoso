@@ -6,5 +6,13 @@ $( '.portfolio-template-architect-single-portfolio .wp-block-gallery' ).slick({
   centerPadding: '0',
   autoplaySpeed: 4000,
   prevArrow: '<i class="prevArrow ti-angle-left"></i>',
-  nextArrow: '<i class="nextArrow ti-angle-right"></i>'
+  nextArrow: '<i class="nextArrow ti-angle-right"></i>',
+  responsive: [ {
+
+    breakpoint: 768,
+    settings: {
+      autoplay: false
+    }
+
+  } ]
 });

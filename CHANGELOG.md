@@ -1,6 +1,13 @@
 ## [Unreleased]
 #### This Project uses Semantic Versioning
 
+# 2.4.2 @2019-2-22
+### Added
+- Web application header menu option
+- `render_header_menu_html`
+### Changed
+- `render_header_menu` to `render_after_header_menu_html`
+
 # 2.4.1 @2019-2-22
 ### Added
 - Footer consent view for Privacy policy, terms, and cookie policy pages

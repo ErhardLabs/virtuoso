@@ -4,7 +4,6 @@ remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 
 add_action('genesis_entry_footer', 'virtuoso_display_latest_posts');
 
-
 add_action('genesis_after_header', 'virtuoso_header_image_spacing');
 function virtuoso_header_image_spacing() {
 

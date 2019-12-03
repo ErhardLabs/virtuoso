@@ -8,6 +8,10 @@
   padding: 15px 0;
   transition: padding 400ms linear;
 
+  .header-web-application & {
+    position: relative;
+  }
+
 
   &.nav-up {
     position: fixed;

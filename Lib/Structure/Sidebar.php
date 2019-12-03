@@ -101,20 +101,29 @@ class Sidebar {
     $userOptions['click_map']['sexy-woo-cart'] = get_theme_mod($prefix.'_cart_classes');
 
     $sidebarWidgets = get_option( 'sidebars_widgets');
-    $sliderWidgets = $sidebarWidgets['slider'];
 
-    foreach($sliderWidgets as $widget) {
+    if (isset($sidebarWidgets)) {
 
-      $widgetPieces = explode('-', $widget);
-      $widgetName = $widgetPieces[0];
-      $widgetIndex = $widgetPieces[1];
-      $widgetData = get_option('widget_'.$widgetName);
+      if (isset($sidebarWidgets['slider'])){
 
-      $widgetHeader = $widgetData[$widgetIndex]['title'];
+        $sliderWidgets = $sidebarWidgets['slider'];
 
-      $widgetHeaderSlug = strtolower($widgetHeader);
+        foreach($sliderWidgets as $widget) {
 
-      $userOptions['click_map'][$widget] = get_theme_mod($prefix . '_widget_class_list' . '_wid_' . $widget);
+          $widgetPieces = explode('-', $widget);
+          $widgetName = $widgetPieces[0];
+          $widgetIndex = $widgetPieces[1];
+          $widgetData = get_option('widget_'.$widgetName);
+
+          $widgetHeader = $widgetData[$widgetIndex]['title'];
+
+          $widgetHeaderSlug = strtolower($widgetHeader);
+
+          $userOptions['click_map'][$widget] = get_theme_mod($prefix . '_widget_class_list' . '_wid_' . $widget);
+
+        }
+
+      }
 
     }
 

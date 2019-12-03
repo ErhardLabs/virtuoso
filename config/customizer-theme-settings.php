@@ -22,23 +22,44 @@
 use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
 $prefix = CustomizerHelpers::get_settings_prefix();
 
-return array(
-	'genesis' => array(
+return [
+	'genesis' => [
 		'title'          => __( 'Virtuoso Theme Settings', 'genesis' ),
 		'description'    => __( 'Customize the various theme settings.', 'genesis' ),
 		'theme_supports' => 'genesis-customizer-theme-settings',
 		'settings_field' => 'genesis-settings',
 		'control_prefix' => 'genesis',
-		'sections'       => array(
+		'sections'       => [
+			'genesis_updates'      => [
+				'title'          => __( 'Updates', 'genesis' ),
+				'panel'          => 'genesis',
+				'theme_supports' => 'genesis-auto-updates',
+				'controls'       => [
+					'update'               => [
+						'label'       => __( 'Check For Updates', 'genesis' ),
+						/* translators: %s: Link to privacy policy */
+						'description' => sprintf( __( 'By checking this box, you allow Genesis to periodically check for updates. Update requests send information about your site including software and theme data, as well as the site’s URL and locale. See the <a href="%s" target="_blank" rel="noopener noreferrer">privacy policy</a>.', 'genesis' ), 'https://www.studiopress.com/go/privacy-policy/' ),
+						'section'     => 'genesis_updates',
+						'type'        => 'checkbox',
+						'settings'    => [
+							'default' => 1,
+						],
+					],
+					'update_email_address' => [
+						'label'       => __( 'Email Address', 'genesis' ),
+						'description' => __( 'If you provide an email address below, you will be notified via email when a new version of Genesis is available. Your email address is not sent to us.', 'genesis' ),
+						'section'     => 'genesis_updates',
+						'type'        => 'email',
+						'input_attrs' => [
+							'placeholder' => __( 'Email Address', 'genesis' ),
+						],
+						'settings'    => [
+							'default' => '',
+						],
+					],
 
-			///////////////////////////////
-			///
-			// Virtuoso Customizer Settings
-			///
-			///////////////////////////////
-
-			// Contact
-
+				],
+			],
 			'contact' => array(
 				'title'    => __( 'Contact', $prefix ),
 				'panel'    => 'genesis',
@@ -107,6 +128,7 @@ return array(
 							'logo-left' => __( 'Logo Left', CHILD_TEXT_DOMAIN ),
 							'logo-middle' => __( 'Logo Middle', CHILD_TEXT_DOMAIN ),
 							'navigation-middle' => __( 'Navigation Middle', CHILD_TEXT_DOMAIN ),
+							'web-application' => __( 'Web Application', CHILD_TEXT_DOMAIN ),
 						),
 						'settings' => array(
 							'capability' => 'edit_theme_options',
@@ -176,13 +198,6 @@ return array(
 					),
 				),
 			),
-
-			///////////////////////////////
-			///
-			// Genesis Customizer Settings
-			///
-			///////////////////////////////
-
 			'genesis_header'       => array(
 				'active_callback' => 'genesis_show_header_customizer_callback',
 				'title'           => __( 'Header', 'genesis' ),
@@ -348,6 +363,12 @@ return array(
 					),
 				),
 			),
+			'genesis_single'       => [
+				'title'       => __( 'Singular Content', 'genesis' ),
+				'description' => __( 'Modify the settings for individual entries such as posts and pages.', 'genesis' ),
+				'panel'       => 'genesis',
+				'controls'    => [],
+			],
 			'genesis_archives'     => array(
 				'title'    => __( 'Content Archives', 'genesis' ),
 				'panel'    => 'genesis',
@@ -417,6 +438,24 @@ return array(
 					),
 				),
 			),
+			'genesis_footer'       => [
+				'active_callback' => function() {
+					return is_null( apply_filters( 'genesis_footer_output', null ) );
+				},
+				'title'           => __( 'Footer', 'genesis' ),
+				'panel'           => 'genesis',
+				'controls'        => [
+					'footer_text' => [
+						/* translators: %s: Link to footer shortcodes documentation */
+						'description' => sprintf( __( 'The text that will appear in your site footer. Can include <a href="%s" target="_blank" rel="noopener noreferrer">footer shortcodes</a>.', 'genesis' ), 'https://studiopress.github.io/genesis/basics/genesis-shortcodes/#footer-shortcodes' ),
+						'section'     => 'genesis_footer',
+						'type'        => 'textarea',
+						'settings'    => [
+							'default' => sprintf( '[footer_copyright before="%s "] · [footer_childtheme_link before="" after=" %s"] [footer_genesis_link url="https://www.studiopress.com/" before=""] · [footer_wordpress_link] · [footer_loginout]', __( 'Copyright', 'genesis' ), __( 'on', 'genesis' ) ),
+						],
+					],
+				],
+			],
 			'genesis_scripts'      => array(
 				'title'    => __( 'Header/Footer Scripts', 'genesis' ),
 				'panel'    => 'genesis',
@@ -443,6 +482,6 @@ return array(
 					),
 				),
 			),
-		),
-	),
-);
+		],
+	],
+];

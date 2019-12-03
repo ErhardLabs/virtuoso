@@ -1,5 +1,9 @@
 {
-  "name"        : "ErhardLabs/Virtuoso",
+<<<<<<< HEAD
+  "name"        : "erhard-labs/virtuoso",
+=======
+  "name"        : "erhardlabs/virtuoso",
+>>>>>>> 3d55518fde36649f5dba1328484808778ad73437
   "description" : "Genesis Child theme with a Laravel-like file structure",
   "keywords"    : ["wordpress","genesis","genesis-child-theme"],
   "homepage"    : "https://github.com/ErhardLabs/virtuoso",
@@ -8,21 +12,22 @@
     {
       "name"    : "Sumner Erhard",
       "email"   : "develop@sumnererhard.com",
-      "homepage": "https://github.com/ErhardLabs/virtuoso"
+      "homepage": "https://github.com/ErhardLabs"
     },
     {
       "name"    : "Grayson Erhard",
       "email"   : "web@graysonerhard.com",
-      "homepage": "https://github.com/ErhardLabs/virtuoso"
+      "homepage": "https://github.com/ErhardLabs"
     }
   ],
   "autoload": {
     "psr-4": {
+<<<<<<< HEAD
+      "Virtuoso\\": "./"
+=======
       "Virtuoso\\": "",
       "Virtuoso\\Lib\\": "Lib/"
+>>>>>>> 3d55518fde36649f5dba1328484808778ad73437
     }
-  },
-  "require-dev": {
-    "phpunit/phpunit": "^7"
   }
 }
