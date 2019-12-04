@@ -20,8 +20,6 @@ function virtuoso_publisher_front_page_content() {
 
   if (is_front_page()) {
 
-//    $profileOwner = ((int) buddypress()->displayed_user->id === (int) buddypress()->loggedin_user->userdata->ID);
-
     if (is_user_logged_in()) {
       ?>
       <h2>Recommended</h2>

@@ -12,7 +12,7 @@ mix.setPublicPath( 'dist' );
 const sassPath = `${devPath}/sass/`;
 const grandchildPath = '../../plugins/virtuoso-grandchild/';
 const browsersyncConf = `${grandchildPath}browsersync.json`;
-const grandchildSassPath = `${grandchildPath}assets/sass/`;
+const grandchildSassPath = `${grandchildPath}public/assets/src/sass/`;
 
 const config = {
   sassPath,
