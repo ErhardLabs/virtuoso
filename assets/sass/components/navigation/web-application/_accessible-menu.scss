@@ -10,11 +10,21 @@
     position: relative;
   }
 
-  > a:focus + ul.sub-menu,
-  &.sfHover > ul.sub-menu {
-    left: auto;
-    opacity: 1;
-  }
+	> a:focus + ul.sub-menu {
+		left: auto;
+		opacity: 1;
+	}
+
+	&.sfHover > ul.sub-menu {
+		display: block;
+		left: auto;
+		opacity: 1;
+	}
+
+	&.click-activated > ul.sub-menu {
+		display: block !important;
+		opacity: 1;
+	}
 }
 
 .header-web-application .menu-toggle {
@@ -35,7 +45,7 @@
 
 .header-web-application {
 
-  .sfHover {
+  .click-activated {
     .sub-menu-toggle::before {
         font-family: "Themify";
         content: "\e648";

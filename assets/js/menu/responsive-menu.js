@@ -109,7 +109,7 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
     _toggleAria( $this, 'aria-expanded' );
     $this.toggleClass( 'activated' );
     $( '.site-header nav' ).toggleClass( 'mobile-menu-active' );
-    $this.next( 'nav, .sub-menu' ).slideToggle( 'fast' );
+    $this.next( 'nav, .sub-menu' ).toggle();
   }
 
   /**
@@ -119,16 +119,16 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
    *
    */
   function _submenuToggle() {
-
     let $this  = $( this ),
       others = $this.closest( '.menu-item' ).siblings();
     _toggleAria( $this, 'aria-pressed' );
     _toggleAria( $this, 'aria-expanded' );
     $this.toggleClass( 'activated' );
-    $this.next( '.sub-menu' ).slideToggle( 'fast' );
+    $this.next( '.sub-menu' ).toggle();
 
+    $this.closest( '.menu-item' ).toggleClass('click-activated');
     others.find( '.' + subMenuButtonClass ).removeClass( 'activated' ).attr( 'aria-pressed', 'false' );
-    others.find( '.sub-menu' ).slideUp( 'fast' );
+    others.find( '.sub-menu' ).toggle();
 
   }
 
@@ -144,7 +144,7 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
     }
     if ( 'none' === _getDisplayValue( buttons ) ) {
       $( '.js-superfish' ).superfish({
-        'delay': 100,
+        'delay': 0,
         'animation': {'opacity': 'show', 'height': 'show'},
         'dropShadows': false
       });
@@ -237,6 +237,19 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
     }
   }
 
+  function closeMenu() {
+    if ( $( '.menu-toggle' ).hasClass('activated') ) {
+      $('.menu-toggle, .sub-menu-toggle')
+        .removeClass('activated')
+        .attr('aria-expanded', false)
+        .attr('aria-pressed', false);
+      $('.nav-primary').removeClass('mobile-menu-active');
+      $('.nav-primary').css('display', 'none');
+
+      clearAllBodyScrollLocks();
+    }
+  }
+
   $( document ).ready( function() {
 
     // Check to see if menus should be combined on initial page load
@@ -247,6 +260,15 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
     $( window ).resize( function() {
         _combineMenus();
         closeMenuFromLinkClick();
+        closeMenu();
+    });
+
+    $(document).mouseup(function (e) {
+      let mainMenu = $('.header-web-application .nav-primary');
+      let mainMenuButton = $('.header-web-application .menu-toggle');
+      if (!mainMenu.is(e.target) && mainMenu.has(e.target).length === 0 && !mainMenuButton.is(e.target) && mainMenuButton.has(e.target).length === 0) {
+        closeMenu();
+      }
     });
 
     virtuoso.params = 'undefined' === typeof virtuosoLocalizedArgs ? '' : virtuosoLocalizedArgs;
@@ -255,6 +277,11 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
       virtuoso.init();
     }
 
+    // Disable superfish hover on web application menus
+    $('.header-web-application #menu-primary-navigation > li').on('mouseover', function(event) {
+      return false;
+    });
+
     // Disable body scroll if the menu is activated
     $( '.menu-toggle' ).click( function() {
       if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
@@ -262,6 +289,11 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
       } else {
         enableBodyScroll( document.querySelector( '.nav-primary' ) );
       }
+    });
+
+    // Disable body scroll if the menu is activated
+    $( '.header-web-application .menu-toggle' ).click( function() {
+        enableBodyScroll( document.querySelector( '.nav-primary' ) );
     });
 
 

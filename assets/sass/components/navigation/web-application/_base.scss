@@ -44,14 +44,14 @@
 
 
   .sub-menu {
-    position: relative;
+    position: static;
     width: 200px;
+		opacity: 1;
     transition: opacity .4s ease-in-out;
     background: $primary-nav--background-color;
 
     @include media-query('med'){
-      left: -9999px;
-      opacity: 0;
+      opacity: 1;
     }
 
     @include media-query('lg') {
@@ -79,6 +79,15 @@
     .sub-menu {
       margin: -56px 0 0 199px;
     }
+
   }
 
+	.menu-item:hover {
+		position: static;
+
+		> .sub-menu {
+			left: auto;
+			opacity: 1;
+		}
+	}
 }
