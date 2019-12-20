@@ -21,9 +21,17 @@
   }
 
 	.footer-copyright {
-		display: flex;
-		justify-content: center;
-		align-items: center;
+		@include media-query('med') {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+
+		p {
+			@include media-query('med') {
+				margin: 0 5px;
+			}
+		}
 	}
 
   .footer-consent {
@@ -59,10 +67,12 @@
   }
 
   .footer-login {
-    margin-left: 20px;
     padding-bottom: 4px;
     border-bottom: 1px solid $siteFooter__login--border-color;
 
+		@include media-query('med') {
+			margin-left: 10px;
+		}
     &:hover {
       border-bottom: none;
     }
