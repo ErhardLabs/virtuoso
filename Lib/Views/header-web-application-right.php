@@ -8,7 +8,7 @@
 			<li><a href="<?php echo bp_loggedin_user_link(); ?>">Profile</a></li>
 			<li class="user-profile-sep-after"><a href="<?php echo bp_loggedin_user_link() . 'notifications'; ?>">Notifications</a></li>
 			<li class="user-profile-sep-before"><a href="<?php echo bp_loggedin_user_link() . 'settings'; ?>">Settings</a></li>
-			<li><a href="/wp-login.php?action=logout">Logout</a></li>
+			<li><a href="<?php echo wp_logout_url(); ?>&redirect_to=/>">Logout</a></li>
 		</ul>
 
 		<?php
