@@ -36,7 +36,7 @@ fs.appendFile( `${sassPath}style.scss`, '// DO NOT MODIFY. This file is being ge
 function buildImports() {
   let imports = [];
   imports.push( '../../node_modules/sass-rem/rem' );
-  // imports.push( '../../node_modules/slick-carousel/slick/slick' );
+  imports.push( '../../node_modules/slick-carousel/slick/slick' );
   imports.push( 'utilities/index' );
 
   if ( fs.pathExistsSync( `${grandchildSassPath}utilities/index.scss` ) ) {

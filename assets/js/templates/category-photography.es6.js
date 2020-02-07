@@ -1,4 +1,5 @@
 // TODO: MAKE THIS JQUERY SELECTOR MORE TEMPLATE-SPECIFIC
+import 'slick-carousel'
 
 $('.photography_slider_wrap').slick({
   adaptiveHeight: true,
