@@ -35,7 +35,7 @@
     "@babel/preset-env": "^7.2.3",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "2.2.2",
-    "copy-webpack-plugin": "^4.6.0",
+    "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^5.2.0",
     "eslint": "^5.12.0",
     "eslint-config-wordpress": "^2.0.0",
@@ -50,7 +50,7 @@
     "sass": "^1.16.0",
     "sass-loader": "^7.1.0",
     "sass-rem": "^1.2.2",
-    "stylelint": "^9.10.0",
+    "stylelint": "^13.0.0",
     "stylelint-config-wordpress": "^13.1.0",
     "vue-template-compiler": "^2.5.22"
   },
