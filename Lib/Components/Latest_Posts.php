@@ -39,7 +39,7 @@ class Latest_Posts
     wp_reset_postdata();
     } else {
       // no posts found
-      __('No News', CHILD_TEXT_DOMAIN);
+      __('No News', CHILD_TEXT_DOMAIN, 'virtuoso');
     }
   }
 

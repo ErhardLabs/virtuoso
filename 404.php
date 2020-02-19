@@ -10,7 +10,7 @@ function virtuoso_404()
 	add_action( 'genesis_404_entry', '</div>');
 
 
-	printf('<h1 class="entry-title">%s</h1>', apply_filters('genesis_404_entry_title', __('Error 404', 'genesis')));
+	printf('<h1 class="entry-title">%s</h1>', apply_filters('genesis_404_entry_title', __('Error 404', 'virtuoso')));
 
 	echo '<div class="entry-content">';
 	echo apply_filters('genesis_404_entry_content', '<p>' . 'ooops, something went wrong.' . '</p>');
