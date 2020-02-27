@@ -44,12 +44,10 @@
 
     .nav-primary {
       position: absolute;
-      height: 100vh;
-      width: 100%;
-      left: 0;
-      top: 0;
-      padding: 13rem 3rem;
+      height: unset;
+      width: unset;
       z-index: 9998;
+			padding: 0;
 
       @include media-query('med') {
         padding-right: 0;
@@ -59,15 +57,15 @@
 
     .nav-primary, .site-header {
       .genesis-nav-menu .menu-item {
-        display: block;
+        display: block !important;
         float: none;
         margin: 1px auto;
         position: relative;
-        text-align: center;
+        text-align: left;
 
         a {
           border: none;
-          width: 100%;
+          width: unset;
         }
       }
     }
