@@ -22,7 +22,7 @@ class Footer {
 		add_filter( 'body_class', [ $this, 'set_footer_class' ] );
 //		add_action( 'get_footer', [ $this, 'display_slide_out_sidebar' ] );
 		add_action( 'genesis_footer', [ $this, 'footer_consent' ] );
-		add_action( 'genesis_footer', [ $this, 'footer_copyright' ] );
+		add_action( 'genesis_footer', [ __NAMESPACE__ . '\Footer', 'footer_copyright' ] );
 		add_action( 'genesis_after_footer', [ $this, 'include_floating_contact' ] );
 	}
 
@@ -77,7 +77,7 @@ class Footer {
 	 *
 	 * @return string
 	 */
-	public function footer_copyright() {
+	public static function footer_copyright() {
 		return include( CHILD_DIR . '/Lib/Views/footer-copyright.php' );
 	}
 

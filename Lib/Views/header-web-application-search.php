@@ -4,7 +4,7 @@
 				<?php //wp_nonce_field( 'header_search_action', 'header_search_nonce' ); ?>
                 <label for="search" class="search-input-wrap">
                     <button type="submit"><i class="search ti-search"></i></button>
-                    <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label' ) ?></span>
+                    <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'virtuoso' ) ?></span>
                     <input name="s" type="text" placeholder="<?php
                     if ( get_search_query() ) {
 	                    echo esc_attr( get_search_query() );

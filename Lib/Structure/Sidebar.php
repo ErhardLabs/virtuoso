@@ -68,6 +68,8 @@ class Sidebar {
 
       <?php
 
+      do_action('sidebar_before');
+
       dynamic_sidebar('slider');
 
       if ((class_exists('woocommerce')) && (!is_checkout()) && (!is_cart())) {
@@ -82,6 +84,11 @@ class Sidebar {
 
          <?php
       }
+
+      do_action('sidebar_body');
+
+      do_action('sidebar_after');
+
 
       ?>
 

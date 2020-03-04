@@ -1,3 +1,42 @@
+#### 1.0.2 (2020-03-04)
+
+##### Bug Fixes
+
+*  Slick slider on visual photography template and primary nav not defaulting to inline-flex display. ([ef329b72](https://github.com/ErhardLabs/virtuoso/commit/ef329b722b50b2271cb4459cadf35c0c32760e7b))
+
+#### 1.0.1 (2020-02-07)
+
+##### New Features
+
+*  Added auto-changelog feature and changed slick carousel to being loaded through npm rather than a cdn that was slowing down the load time of pages. ([24e506f1](https://github.com/ErhardLabs/virtuoso/commit/24e506f1e9191cfb554038b64f530bea21d6c631))
+
+##### Other Changes
+
+* //github.com/ErhardLabs/virtuoso ([c40ca25f](https://github.com/ErhardLabs/virtuoso/commit/c40ca25f8dcdc1b71548b341fca820789d5f2e3d))
+*  updated webpack grandchild sass path ([c51b568a](https://github.com/ErhardLabs/virtuoso/commit/c51b568a155c28796b78c725dcd35ed3df45c8e1))
+* //github.com/ErhardLabs/virtuoso ([da736a12](https://github.com/ErhardLabs/virtuoso/commit/da736a120998fe94dfe2ddde90d0eb732786d714))
+* //github.com/ErhardLabs/virtuoso ([68bd629e](https://github.com/ErhardLabs/virtuoso/commit/68bd629e3a968f475b1a1bb2ad46d4fceae44f1d))
+* //github.com/ErhardLabs/virtuoso into buddypressIntegration ([249ed910](https://github.com/ErhardLabs/virtuoso/commit/249ed91007ace2850d22d16730105e572bcb8252))
+* //github.com/ErhardLabs/virtuoso ([8fd65b01](https://github.com/ErhardLabs/virtuoso/commit/8fd65b01968abe49d5b32eafec68ef39fe18dfc6))
+* //github.com/ErhardLabs/virtuoso ([20321d58](https://github.com/ErhardLabs/virtuoso/commit/20321d5851477980367b51907f9940ea2b8dcec6))
+* //github.com/ErhardLabs/virtuoso ([594b7966](https://github.com/ErhardLabs/virtuoso/commit/594b79661173771ca53b05a0b5fa7d097d6d2923))
+* //github.com/ErhardLabs/virtuoso ([a80d0573](https://github.com/ErhardLabs/virtuoso/commit/a80d057322160a2e6451726655e99308ecde33e5))
+* //github.com/ErhardLabs/virtuoso ([92587d7c](https://github.com/ErhardLabs/virtuoso/commit/92587d7cf8f7da19a6cdbb4b8239a607406861de))
+* sync to activate the sync function ([c082b36f](https://github.com/ErhardLabs/virtuoso/commit/c082b36fe96a06fadda729ffaaed6b8bf4436cf2))
+* //github.com/ErhardLabs/virtuoso ([b82e3ca0](https://github.com/ErhardLabs/virtuoso/commit/b82e3ca041bbeec771d0fbb4610c5ff1d16cf6d6))
+* //github.com/ErhardLabs/virtuoso ([80e263fa](https://github.com/ErhardLabs/virtuoso/commit/80e263faac274482cb00fafbfcc25bd4da1c3eff))
+* //github.com/ErhardLabs/virtuoso ([bf95e775](https://github.com/ErhardLabs/virtuoso/commit/bf95e77515ded604419930ebdf107941fa745c49))
+* //github.com/ErhardLabs/virtuoso ([243fcfad](https://github.com/ErhardLabs/virtuoso/commit/243fcfad8f47c684e54c672b1dc47ad8d9c64195))
+* //github.com/ErhardLabs/virtuoso ([f8c6691e](https://github.com/ErhardLabs/virtuoso/commit/f8c6691e01c7cc5e85e5f80ffccb1bfca6220ae7))
+* //github.com/ErhardLabs/virtuoso into features/portfolio ([21b0a3bc](https://github.com/ErhardLabs/virtuoso/commit/21b0a3bcf24de3358f0106f35a81819ccd07e626))
+* //github.com/ErhardLabs/virtuoso into features/portfolio ([58215b10](https://github.com/ErhardLabs/virtuoso/commit/58215b101503995e9f1be5d39824db9fec5e92be))
+* //github.com/ErhardLabs/virtuoso into features/portfolio ([48aba57b](https://github.com/ErhardLabs/virtuoso/commit/48aba57b879a534bb3b4ae05d48f245292227f90))
+* //github.com/ErhardLabs/virtuoso into features/portfolio ([778d10b4](https://github.com/ErhardLabs/virtuoso/commit/778d10b47c37b1d2df15ddb96ea99190c57dd0ec))
+* //github.com/ErhardLabs/virtuoso ([95c3b4e6](https://github.com/ErhardLabs/virtuoso/commit/95c3b4e6b39906f3cc2f9babc810f4ce2f5915b8))
+* //github.com/ErhardLabs/virtuoso ([0a933d5a](https://github.com/ErhardLabs/virtuoso/commit/0a933d5a9a7d1818942fc0ad8fc683a30d8263d6))
+* //github.com/ErhardLabs/virtuoso ([287b949d](https://github.com/ErhardLabs/virtuoso/commit/287b949dea15a8bb40a91cd8e0c11dceaaee2c2f))
+* //github.com/ErhardLabs/virtuoso ([ed86c8b4](https://github.com/ErhardLabs/virtuoso/commit/ed86c8b43ebd018e3c17667275a3c61a8aa2354c))
+
 ## [Unreleased]
 #### This Project uses Semantic Versioning
 

@@ -1,6 +1,6 @@
 {
   "name": "virtuoso",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Your all encompassing Genesis child theme",
   "author": "ErhardLabs",
   "license": "GPL-2.0+",
@@ -23,7 +23,15 @@
     "lint:php": "cross-env ./vendor/bin/phpcs . --runtime-set testVersion 5.6- -s",
     "i18n": "npm run i18n:textdomain && npm run i18n:pot",
     "i18n:textdomain": "npx wpi18n addtextdomain --exclude=vendor,node_modules",
-    "i18n:pot": "npx wpi18n makepot"
+    "i18n:pot": "npx wpi18n makepot",
+    "@comment r": "Update changelog and create a new release.",
+    "r:M": "changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin && git push origin --tags",
+    "r:m": "changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin && git push origin --tags",
+    "r:p": "changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin && git push origin --tags",
+    "@comment v": "Update changelog and version but DO NOT create a new release.",
+    "v:M": "git add . && git commit -m 'updated version' && changelog -M && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version major && git push origin",
+    "v:m": "git add . && git commit -m 'updated version' && changelog -m && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version minor && git push origin",
+    "v:p": "git add . && git commit -m 'updated version' && changelog -p && git add CHANGELOG.md && git commit -m 'updated CHANGELOG.md' && npm version patch && git push origin"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
@@ -32,7 +40,7 @@
     "@babel/preset-env": "^7.2.3",
     "browser-sync": "^2.26.7",
     "browser-sync-webpack-plugin": "2.2.2",
-    "copy-webpack-plugin": "^4.6.0",
+    "copy-webpack-plugin": "^5.1.1",
     "cross-env": "^5.2.0",
     "eslint": "^5.12.0",
     "eslint-config-wordpress": "^2.0.0",
@@ -47,7 +55,7 @@
     "sass": "^1.16.0",
     "sass-loader": "^7.1.0",
     "sass-rem": "^1.2.2",
-    "stylelint": "^9.10.0",
+    "stylelint": "^13.0.0",
     "stylelint-config-wordpress": "^13.1.0",
     "vue-template-compiler": "^2.5.22"
   },
@@ -55,7 +63,9 @@
     "animate.css": "^3.7.0",
     "body-scroll-lock": "^2.6.1",
     "component-install": "^1.0.1",
+    "generate-changelog": "^1.8.0",
     "normalize.css": "^8.0.1",
+    "slick-carousel": "^1.8.1",
     "waypoints": "^4.0.1"
   }
 }

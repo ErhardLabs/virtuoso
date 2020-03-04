@@ -12,7 +12,7 @@ mix.setPublicPath( 'dist' );
 const sassPath = `${devPath}/sass/`;
 const grandchildPath = '../../plugins/virtuoso-grandchild/';
 const browsersyncConf = `${grandchildPath}browsersync.json`;
-const grandchildSassPath = `${grandchildPath}assets/sass/`;
+const grandchildSassPath = `${grandchildPath}public/assets/src/sass/`;
 
 const config = {
   sassPath,
@@ -36,7 +36,7 @@ fs.appendFile( `${sassPath}style.scss`, '// DO NOT MODIFY. This file is being ge
 function buildImports() {
   let imports = [];
   imports.push( '../../node_modules/sass-rem/rem' );
-  // imports.push( '../../node_modules/slick-carousel/slick/slick' );
+  imports.push( '../../node_modules/slick-carousel/slick/slick' );
   imports.push( 'utilities/index' );
 
   if ( fs.pathExistsSync( `${grandchildSassPath}utilities/index.scss` ) ) {

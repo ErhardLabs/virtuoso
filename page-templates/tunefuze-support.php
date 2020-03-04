@@ -32,7 +32,7 @@ function virtuoso_display_support_archive_content()
 
 	?>
 	<div class="blog_posts">
-		<p class="post_count"><?php printf( _n( '%s Article', '%s Articles', $query->post_count, CHILD_TEXT_DOMAIN ), number_format_i18n( $query->post_count ) ); ?></p>
+		<p class="post_count"><?php printf( _n( '%s Article', '%s Articles', $query->post_count, CHILD_TEXT_DOMAIN, 'virtuoso' ), number_format_i18n( $query->post_count ) ); ?></p>
 		<div class="blog_posts_wrap">
 
 			<?php
@@ -47,7 +47,7 @@ function virtuoso_display_support_archive_content()
 				wp_reset_postdata();
 			} else {
 				// no posts found
-				__('No Support Articles Found', CHILD_TEXT_DOMAIN);
+				__('No Support Articles Found', CHILD_TEXT_DOMAIN, 'virtuoso');
 			}
 
 			?>

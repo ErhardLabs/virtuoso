@@ -7,6 +7,8 @@ virtuoso.pot
 mix-manifest.json
 vendor
 
+/assets/sass/style.scss
+
 # Sass cache
 .sass-cache/
 
