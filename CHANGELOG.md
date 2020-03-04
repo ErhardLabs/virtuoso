@@ -1,3 +1,14 @@
+#### 1.0.3 (2020-03-04)
+
+##### Bug Fixes
+
+*  Mobile usability issues in footer. ([8eb9c0bc](https://github.com/ErhardLabs/virtuoso/commit/8eb9c0bc82ad75dab42faa65b8994cbb9a97f23f))
+*  Slick slider on visual photography template and primary nav not defaulting to inline-flex display. ([ef329b72](https://github.com/ErhardLabs/virtuoso/commit/ef329b722b50b2271cb4459cadf35c0c32760e7b))
+
+##### Other Changes
+
+* //github.com/ErhardLabs/virtuoso ([2a606442](https://github.com/ErhardLabs/virtuoso/commit/2a6064421b804c0b64e79c727d140a4766771553))
+
 #### 1.0.2 (2020-03-04)
 
 ##### Bug Fixes
