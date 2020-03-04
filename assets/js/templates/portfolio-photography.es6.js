@@ -1,6 +1,6 @@
 // TODO: MAKE THIS JQUERY SELECTOR MORE TEMPLATE-SPECIFIC
 
-$('.portfolio-template-visual-photography .wp-block-gallery').slick({
+$('.portfolio-template-visual-photography .slick-carousel').slick({
   adaptiveHeight: true,
   centerMode: true,
   arrows: true,
