@@ -1,3 +1,9 @@
+#### 1.0.2 (2020-03-04)
+
+##### Bug Fixes
+
+*  Slick slider on visual photography template and primary nav not defaulting to inline-flex display. ([ef329b72](https://github.com/ErhardLabs/virtuoso/commit/ef329b722b50b2271cb4459cadf35c0c32760e7b))
+
 #### 1.0.1 (2020-02-07)
 
 ##### New Features
