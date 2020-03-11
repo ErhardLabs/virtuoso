@@ -5,7 +5,7 @@
                 <label for="search" class="search-input-wrap">
                     <button type="submit"><i class="search ti-search"></i></button>
                     <span class="screen-reader-text"><?php echo _x( 'Search for:', 'label', 'virtuoso' ) ?></span>
-                    <input name="s" type="text" placeholder="<?php
+                    <input name="s" type="text" value="<?php
                     if ( get_search_query() ) {
 	                    echo esc_attr( get_search_query() );
                     } else {
