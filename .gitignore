@@ -24,3 +24,5 @@ assets/sass/style.scss
 _keep-old/
 
 /dist/
+
+assets/sass/plugins/.DS_Store
