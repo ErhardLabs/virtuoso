@@ -4,10 +4,8 @@
 }
 
 #slide_out_sidebar {
-  display: none;
   position: fixed;
   top: 0;
-  right: -40%;
   background: $side-out-sidebar--background-color;
   padding: 50px 15px 15px 15px;
   overflow-y: scroll;
@@ -15,10 +13,40 @@
   height: 100vh;
   z-index: 9999;
   width: 100%;
+	transform: translateX(100%);
+	right: 0;
 
   @include media-query('med'){
     max-width: 500px;
   }
+
+	&.slider-active {
+		display: block;
+		animation: slide-in 0.5s forwards;
+
+		section:first-of-type {
+			opacity: 1;
+			display: block;
+		}
+	}
+
+	&.slider-close {
+		animation: slide-out 0.5s forwards;
+
+		section:first-of-type {
+			opacity: 0;
+		}
+	}
+
+	@keyframes slide-in {
+		0% { transform: translateX(100%); }
+		100% { transform: translateX(0%); }
+	}
+
+	@keyframes slide-out {
+		0% { transform: translateX(0%); }
+		100% { transform: translateX(100%); }
+	}
 
 
   h1, h2, h3, h4, h5, h6, p, span, label, i {
