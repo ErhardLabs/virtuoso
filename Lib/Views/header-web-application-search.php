@@ -8,8 +8,10 @@
                     <input name="s" type="text" value="<?php
                     if ( get_search_query() ) {
 	                    echo esc_attr( get_search_query() );
+                    } else {
+                    	echo "Search";
                     }
-                    ?>" placeholder="Search">
+                    ?>">
                 </label>
 			</form>
         <?php include_once CHILD_DIR . '/Lib/Views/header-web-application-right.php'?>
