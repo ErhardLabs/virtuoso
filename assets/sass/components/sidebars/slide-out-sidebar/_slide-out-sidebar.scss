@@ -1,5 +1,5 @@
 .admin-bar #slide_out_sidebar,
-.admin-bar #close_slider{
+.admin-bar #close_slider {
   margin-top: 30px !important;
 }
 
@@ -16,7 +16,11 @@
   z-index: 9999;
   width: 100%;
 
-  @include media-query('med'){
+  #close_slider #close_slider_button {
+    cursor: pointer;
+  }
+
+  @include media-query('med') {
     max-width: 500px;
   }
 
