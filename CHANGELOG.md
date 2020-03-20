@@ -1,3 +1,9 @@
+#### 1.0.5 (2020-03-20)
+
+##### Bug Fixes
+
+*  Removed hash href value from slide out sidebar close button. ([3425524d](https://github.com/ErhardLabs/virtuoso/commit/3425524d019e24480798c4653f6e5785272f517e))
+
 #### 1.0.4 (2020-03-11)
 
 ##### Bug Fixes
