@@ -54,7 +54,7 @@ class Sidebar {
     <div id="slide_out_sidebar" class="slide_out_sidebar">
       <section id="close_slider" class="widget widget_text">
         <div class="textwidget">
-          <a href="#/" class="close" data-wpel-link="internal" id="close_slider_button"><i class="ti-close"></i></a>
+          <a class="close" data-wpel-link="internal" id="close_slider_button"><i class="ti-close"></i></a>
         </div>
       </section>
 
