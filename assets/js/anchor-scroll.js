@@ -8,7 +8,6 @@ $( 'a[href*="#"]' )
   .not( '[href="#"]' )
   .not( '[href="#0"]' )
   .click( function( event ) {
-
     // On-page links
     if (
       location.pathname.replace( /^\//, '' ) == this.pathname.replace( /^\//, '' )      &&
@@ -21,11 +20,10 @@ $( 'a[href*="#"]' )
 
       // Does a scroll target exist?
       if ( target.length ) {
-
         // Only prevent default if animation is actually gonna happen
         event.preventDefault();
         $( 'html, body' ).animate({
-          scrollTop: target.offset().top
+          scrollTop: target.offset().top - 125
         }, 1000, function() {
 
           // Callback after animation
@@ -39,6 +37,7 @@ $( 'a[href*="#"]' )
             $target.focus(); // Set focus again
           };
         });
+
       }
     }
   });
