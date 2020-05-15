@@ -1,3 +1,6 @@
+<?php
+defined( 'ABSPATH' ) || exit;
+?>
 <div class="header-right">
 	<?php
 	if ( is_user_logged_in() ) {

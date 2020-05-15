@@ -14,6 +14,10 @@ namespace Virtuoso\Lib\Structure;
 use Virtuoso\Lib\ThemeConfig;
 use Virtuoso\Lib\Components\Background_Image;
 
+defined( 'ABSPATH' ) || exit;
+/**
+ * Class Post.
+ */
 class Post {
 	public $config = "";
 	public function __construct( ) {

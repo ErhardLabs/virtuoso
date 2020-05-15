@@ -1,6 +1,20 @@
 <?php
+/**
+ * Background image
+ *
+ * @package     Virtuoso\Lib\Components
+ * @since       2.1.7
+ * @author      ErhardLabs
+ * @link        https://sumnererhard.com https://graysonerhard.com
+ * @license     GNU General Public License 2.0+
+ */
 namespace Virtuoso\Lib\Components;
 
+defined( 'ABSPATH' ) || exit;
+
+/**
+ * Class Background_Image.
+ */
 class Background_Image {
 
   public static function background_image($postID) {
