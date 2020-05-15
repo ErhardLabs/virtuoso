@@ -1,3 +1,6 @@
+<?php
+defined( 'ABSPATH' ) || exit;
+?>
 <div class="post">
     <div class="post_wrap">
       <div class="featured_image_wrap">

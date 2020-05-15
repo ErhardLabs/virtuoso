@@ -1,9 +1,12 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: gerhard
- * Date: 9/24/18
- * Time: 3:51 PM
+ * Background video
+ *
+ * @package     Virtuoso\Lib\Components
+ * @since       2.1.7
+ * @author      ErhardLabs
+ * @link        https://sumnererhard.com https://graysonerhard.com
+ * @license     GNU General Public License 2.0+
  */
 
 namespace Virtuoso\Lib\Components;
@@ -12,6 +15,11 @@ use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
 use Virtuoso\Lib\Components\Background_Image;
 use Virtuoso\Lib\Helper;
 
+defined( 'ABSPATH' ) || exit;
+
+/**
+ * Class Background_Video_HTML.
+ */
 class Background_Video_HTML {
 
 	public $videoID;
