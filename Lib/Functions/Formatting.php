@@ -11,10 +11,6 @@
 namespace Virtuoso\Lib\Functions;
 use Virtuoso\Lib\Components\Background_Image;
 
-defined( 'ABSPATH' ) || exit;
-/**
- * Class EnqueueAssets.
- */
 class Formatting {
 	public function __construct() {
     $this->format_breadcrumbs();

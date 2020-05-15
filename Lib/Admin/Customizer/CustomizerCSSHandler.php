@@ -11,22 +11,10 @@
 
 namespace Virtuoso\Lib\Admin\Customizer;
 
-defined( 'ABSPATH' ) || exit;
-
-/**
- * CustomizerCSSHandler.
- */
 class CustomizerCSSHandler extends CustomizerHelpers {
 
-	/**
-	 * Constructor.
-	 */
 	public function __construct() {
-
 		add_action( 'wp_enqueue_scripts', array( $this, 'build_inline_css_from_customizer_settings' ) );
-
-		parent::__construct();
-
 	}
 
 	/**
@@ -35,7 +23,7 @@ class CustomizerCSSHandler extends CustomizerHelpers {
 	 *
 	 * @since 1.0.0
 	 */
-	public function build_inline_css_from_customizer_settings() {
+	function build_inline_css_from_customizer_settings() {
 		$prefix = $this->get_settings_prefix();
 
 		$handle = defined( 'CHILD_THEME_NAME' ) && CHILD_THEME_NAME ? sanitize_title_with_dashes( CHILD_THEME_NAME ) : 'child-theme';
@@ -45,8 +33,7 @@ class CustomizerCSSHandler extends CustomizerHelpers {
 
 		$css = '';
 
-		$css .= ( $this->get_default_link_color() !== $color_link ) ? sprintf(
-			'
+		$css .= ( $this->get_default_link_color() !== $color_link ) ? sprintf( '
 
 		a,
 		.entry-title a:focus,
@@ -60,12 +47,9 @@ class CustomizerCSSHandler extends CustomizerHelpers {
 		.js .menu-toggle:focus {
 			color: %s;
 		}
-		',
-			$color_link
-		) : '';
+		', $color_link ) : '';
 
-		$css .= ( $this->get_default_accent_color() !== $color_accent ) ? sprintf(
-			'
+		$css .= ( $this->get_default_accent_color() !== $color_accent ) ? sprintf( '
 
 		button:focus,
 		button:hover,
@@ -84,10 +68,7 @@ class CustomizerCSSHandler extends CustomizerHelpers {
 			background-color: %s;
 			color: %s;
 		}
-		',
-			$color_accent,
-			$this->calculate_color_contrast( $color_accent )
-		) : '';
+		', $color_accent, $this->calculate_color_contrast( $color_accent ) ) : '';
 
 		if ( $css ) {
 			wp_add_inline_style( $handle, $css );

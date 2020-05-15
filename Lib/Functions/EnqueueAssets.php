@@ -11,10 +11,6 @@
 namespace Virtuoso\Lib\Functions;
 use Virtuoso\Lib\Structure\Sidebar;
 
-defined( 'ABSPATH' ) || exit;
-/**
- * Class EnqueueAssets.
- */
 class EnqueueAssets {
 
 	public function __construct() {

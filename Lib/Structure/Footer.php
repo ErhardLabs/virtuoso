@@ -13,10 +13,6 @@ namespace Virtuoso\Lib\Structure;
 use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
 use Virtuoso\Lib\Components\FloatingContactHTML;
 
-defined( 'ABSPATH' ) || exit;
-/**
- * Class footer.
- */
 class Footer {
 	public $footerLayout;
 

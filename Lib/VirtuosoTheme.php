@@ -11,20 +11,20 @@
 
 namespace Virtuoso\Lib;
 
-// Config.
+// Config
 use Virtuoso\Lib\ThemeConfig;
 
-// Components.
+// Components
 use Virtuoso\Lib\Admin\Admin;
 use Virtuoso\Lib\Components\Background_Video_HTML;
 use Virtuoso\Lib\Admin\Customizer\Customizer;
 
-// Functions.
+// Functions
 use Virtuoso\Lib\Functions\Formatting;
 use Virtuoso\Lib\Functions\EnqueueAssets;
 use Virtuoso\Lib\Functions\DetectJS;
 
-// Structure.
+// Structure
 use Virtuoso\Lib\Structure\Menu;
 use Virtuoso\Lib\Structure\Header;
 use Virtuoso\Lib\Structure\Sidebar;
@@ -33,18 +33,9 @@ use Virtuoso\Lib\Structure\Archive;
 use Virtuoso\Lib\Structure\Footer;
 use Virtuoso\Lib\Structure\Post;
 
-defined( 'ABSPATH' ) || exit;
 
-/**
- * Class VirtuosoTheme.
- */
 class VirtuosoTheme extends ThemeConfig {
 
-	/**
-	 * Constructor.
-	 *
-	 * @since 1.0.0
-	 */
 	public function __construct() {
 		$this->init_constants();
 		$config = $this->get_theme_settings_defaults();
@@ -55,25 +46,23 @@ class VirtuosoTheme extends ThemeConfig {
 		add_action( 'body_class', [ $this, 'add_gutenberg_class' ] );
 		add_action( 'body_class', [ $this, 'add_search_class' ] );
 
-		new DetectJS();
-		new Admin();
-		new Formatting();
-		new EnqueueAssets();
-		new Menu();
-		new Header();
-		new Sidebar();
-		new Comments();
-		new Archive();
-		new Post();
-		new Footer();
+		$detectJS = new DetectJS();
+
+		$customizer = new Admin();
+
+		$formatting = new Formatting();
+		$loadAssets = new EnqueueAssets();
+
+		$menu     = new Menu();
+		$header   = new Header();
+		$sidebar  = new Sidebar();
+		$comments = new Comments();
+		$archive  = new Archive();
+    $post = new Post();
+		$footer  = new Footer();
 
 	}
 
-	/**
-	 * Constants that will be used with the theme.
-	 *
-	 * @since 1.0.0
-	 */
 	private function init_constants() {
 		$child_theme = wp_get_theme();
 
@@ -83,8 +72,8 @@ class VirtuosoTheme extends ThemeConfig {
 		define( 'CHILD_TEXT_DOMAIN', $child_theme->get( 'TextDomain' ) );
 		define( 'CHILD_THEME_DIR', get_stylesheet_directory() );
 
-		// GRANDCHILD PLUGIN.
-		define( 'GRANDCHILD_PLUGIN_DIR', WP_PLUGIN_DIR . '/virtuoso-grandchild/' );
+    //		GRANDCHILD PLUGIN
+    define( 'GRANDCHILD_PLUGIN_DIR', WP_PLUGIN_DIR . '/virtuoso-grandchild/' );
 	}
 
 	/**
@@ -105,14 +94,13 @@ class VirtuosoTheme extends ThemeConfig {
 		$this->adds_theme_supports( $config['add_theme_support'] );
 		$this->adds_new_image_sizes( $config['theme_image_sizes'] );
 
+
 	}
 
 	/**
 	 * Add body class if the page is search page
 	 *
 	 * @since 2.4.1
-	 *
-	 * @param array $classes the body classes.
 	 *
 	 * @return array
 	 */
@@ -129,8 +117,6 @@ class VirtuosoTheme extends ThemeConfig {
 	 * Check to see if Gutenburg is active on a page
 	 *
 	 * @since 2.1.8
-	 *
-	 * @param array $classes the body classes.
 	 *
 	 * @return array
 	 */
@@ -149,7 +135,7 @@ class VirtuosoTheme extends ThemeConfig {
 	 *
 	 * @return void
 	 */
-	public function unregister_genesis_callbacks() {
+	function unregister_genesis_callbacks() {
 
 		$config = $this->get_theme_settings_defaults();
 
@@ -166,7 +152,7 @@ class VirtuosoTheme extends ThemeConfig {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $config the genesis theme config options.
+	 * @param array
 	 *
 	 * @return void
 	 */
@@ -182,7 +168,7 @@ class VirtuosoTheme extends ThemeConfig {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $config the genesis theme config options.
+	 * @param array
 	 *
 	 * @return void
 	 */
@@ -200,7 +186,7 @@ class VirtuosoTheme extends ThemeConfig {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param array $defaults theme settings defaults.
+	 * @param array $defaults
 	 *
 	 * @return array
 	 */

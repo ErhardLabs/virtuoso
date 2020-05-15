@@ -11,11 +11,6 @@
 
 namespace Virtuoso\Lib\Structure;
 
-defined( 'ABSPATH' ) || exit;
-
-/**
- * Class Comments.
- */
 class Comments {
 	public function __construct() {
 		add_filter( 'genesis_comment_list_args', [ $this, 'setup_comments_gravatar' ] );

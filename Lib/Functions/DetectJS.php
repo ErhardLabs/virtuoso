@@ -11,11 +11,7 @@
 
 namespace Virtuoso\Lib\Functions;
 
-defined( 'ABSPATH' ) || exit;
 
-/**
- * Class DetectJS.
- */
 class DetectJS {
 
 	public function __construct() {

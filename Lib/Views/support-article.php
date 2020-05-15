@@ -1,6 +1,3 @@
-<?php
-defined( 'ABSPATH' ) || exit;
-?>
 <div class="post support-article">
 	<div class="post_wrap">
 		<div class="info_wrap">
