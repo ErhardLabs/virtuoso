@@ -13,10 +13,6 @@ namespace Virtuoso\Lib\Structure;
 
 use Virtuoso\Lib\Components\Background_Video_HTML;
 
-defined( 'ABSPATH' ) || exit;
-/**
- * Class Header.
- */
 class Header {
 	public function __construct() {
 		add_action( 'genesis_after_header', [ $this, 'include_sexy_popup' ] );

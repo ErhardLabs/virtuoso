@@ -10,16 +10,7 @@
  */
 namespace Virtuoso\Lib\Admin\Customizer;
 
-defined( 'ABSPATH' ) || exit;
-
-/**
- * CustomizerHelpers.
- */
 class CustomizerHelpers {
-
-	/**
-	 * Constructor.
-	 */
 	public function __construct() {
 
 	}
@@ -44,7 +35,7 @@ class CustomizerHelpers {
 	 *
 	 * @return string Hex color code for link color.
 	 */
-	public static function get_default_link_color() {
+	static function get_default_link_color() {
 		return '#c3251d';
 	}
 
@@ -57,7 +48,7 @@ class CustomizerHelpers {
 	 *
 	 * @return string Hex color code for accent color.
 	 */
-    public static function get_default_accent_color() {
+  static function get_default_accent_color() {
 		return '#c3251d';
 	}
 
@@ -70,7 +61,7 @@ class CustomizerHelpers {
 	 *
 	 * @return string
 	 */
-    public static function calculate_color_contrast( $color ) {
+  static function calculate_color_contrast( $color ) {
 
 		$hexcolor = str_replace( '#', '', $color );
 
@@ -94,7 +85,7 @@ class CustomizerHelpers {
 	 *
 	 * @return string
 	 */
-    public static function calculate_color_brightness( $color, $change ) {
+  static function calculate_color_brightness( $color, $change ) {
 
 		$hexcolor = str_replace( '#', '', $color );
 
@@ -111,14 +102,14 @@ class CustomizerHelpers {
 	}
 
 
-    public static function live_preview($settings) {
+  static function live_preview($settings) {
 
-	    global $wp_customize;
+    global $wp_customize;
 
-	    foreach($settings as $setting) {
-	        $wp_customize->get_setting( $setting )->transport = 'postMessage';
-	    }
-
+    foreach($settings as $setting) {
+      $wp_customize->get_setting( $setting )->transport = 'postMessage';
     }
+
+  }
 
 }

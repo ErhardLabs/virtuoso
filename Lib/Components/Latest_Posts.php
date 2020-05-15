@@ -1,22 +1,14 @@
 <?php
 /**
- * Latest Posts
- *
- * @package     Virtuoso\Lib\Components
- * @since       2.1.7
- * @author      ErhardLabs
- * @link        https://sumnererhard.com https://graysonerhard.com
- * @license     GNU General Public License 2.0+
+ * Created by PhpStorm.
+ * User: gerhard
+ * Date: 12/11/18
+ * Time: 8:37 PM
  */
 
 namespace Virtuoso\Lib\Components;
 use WP_Query;
 
-defined( 'ABSPATH' ) || exit;
-
-/**
- * Class Background_Image.
- */
 class Latest_Posts
 {
 

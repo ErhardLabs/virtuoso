@@ -1,6 +1,3 @@
-<?php
-defined( 'ABSPATH' ) || exit;
-?>
 <div class="search-and-header-right-container">
 	<div class="search-and-header-right-wrap">
 			<form action="<?php echo home_url();?>" method="get">
