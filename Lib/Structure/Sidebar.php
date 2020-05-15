@@ -14,6 +14,10 @@ namespace Virtuoso\Lib\Structure;
 use Virtuoso\Lib\ThemeConfig;
 use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
 
+defined( 'ABSPATH' ) || exit;
+/**
+ * Class Sidebar.
+ */
 class Sidebar {
 	public $config = "";
 	public function __construct() {
