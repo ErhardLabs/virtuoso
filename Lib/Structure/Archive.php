@@ -11,6 +11,10 @@
 
 namespace Virtuoso\Lib\Structure;
 
+defined( 'ABSPATH' ) || exit;
+/**
+ * Class Archive.
+ */
 class Archive {
 	public function __construct() {
 

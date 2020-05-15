@@ -11,8 +11,16 @@
 
 namespace Virtuoso\Lib\Admin\Customizer;
 
+defined( 'ABSPATH' ) || exit;
+
+/**
+ * Customizer.
+ */
 class Customizer {
 
+	/**
+	 * Constructor.
+	 */
 	public function __construct() {
 		add_action( 'customize_register', [ $this, 'register_with_customizer' ] );
 	}

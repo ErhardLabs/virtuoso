@@ -8,7 +8,11 @@
 
 namespace Virtuoso\Lib\Functions;
 
+defined( 'ABSPATH' ) || exit;
 
+/**
+ * Class Background_Image.
+ */
 class Ajax {
 
 	public function __construct() {

@@ -1,14 +1,22 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: gerhard
- * Date: 9/24/18
- * Time: 3:51 PM
+ * Floating Contact button
+ *
+ * @package     Virtuoso\Lib\Components
+ * @since       2.1.7
+ * @author      ErhardLabs
+ * @link        https://sumnererhard.com https://graysonerhard.com
+ * @license     GNU General Public License 2.0+
  */
 
 namespace Virtuoso\Lib\Components;
 use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
 
+defined( 'ABSPATH' ) || exit;
+
+/**
+ * Class Background_Image.
+ */
 class FloatingContactHTML {
 
 	public $displayFloatingContact;

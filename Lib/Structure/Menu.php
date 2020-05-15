@@ -12,6 +12,10 @@
 namespace Virtuoso\Lib\Structure;
 use Virtuoso\Lib\Admin\Customizer\CustomizerHelpers;
 
+defined( 'ABSPATH' ) || exit;
+/**
+ * Class Menu.
+ */
 class Menu {
 	public $headerMenuLayout;
 	public $displayContactIcon;

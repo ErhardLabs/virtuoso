@@ -11,6 +11,7 @@
 
 namespace Virtuoso\Lib;
 
+defined( 'ABSPATH' ) || exit;
 
 class ThemeConfig {
 
@@ -138,7 +139,6 @@ class ThemeConfig {
 	 * @since 2.1.7
 	 *
 	 * @param string $key Configuration parameter key
-	 * @param string $config_file (Optional) Configuration filename without the extension.
 	 *
 	 * @return array|null|mixed
 	 */
