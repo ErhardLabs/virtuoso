@@ -63,7 +63,7 @@ class Background_Video_HTML {
 
 		if ( ( $this->videoID !== '' ) || ( $this->playlistID !== '' ) ) {
 
-			echo "<span id='landing_yt_player' data-id='" . $this->videoID . "' data-playlist-id='" . $this->playlistID . "' data-start-time='" . $this->startTime . "' data-below-header='" . $this->belowHeader . "' data-blur='" . $this->blurVidBg . "'></span>";
+			echo "<span id='landing_yt_player' data-id='" . esc_attr( $this->videoID ). "' data-playlist-id='" . esc_attr( $this->playlistID ) . "' data-start-time='" . esc_attr( $this->startTime ) . "' data-below-header='" . esc_attr( $this->belowHeader ). "' data-blur='" . esc_attr( $this->blurVidBg ). "'></span>";
 
 		}
 

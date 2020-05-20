@@ -163,7 +163,7 @@ class Menu {
 
 			if ( is_user_logged_in() && $this->displayLoginButton ) {
 				// Add buddy press profile link if user is logged in
-				$menu .= '<li class="menu-item user-image"><a href="/my-account"><img src="' . get_avatar_url( get_current_user_id() ) . '"></a></li>';
+				$menu .= '<li class="menu-item user-image"><a href="/my-account"><img src="' . esc_url( get_avatar_url( get_current_user_id() ) ) . '"></a></li>';
 			} else {
 				$menu .= '<li class="menu-item create phoen-login-signup-popup-open"><a href="'. $this->loginButtonURL .'">Login</a></li>';
 			}

@@ -26,7 +26,7 @@ class Background_Image {
       ?>
       <div class="page_background_image">
           <div class="hero-overlay"></div>
-        <img src="<?php echo $image_attributes[0]; ?>"/>
+        <img src="<?php echo esc_attr( $image_attributes[0] ); ?>"/>
       </div>
       <?php
 
