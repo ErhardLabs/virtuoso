@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 
 remove_action( 'genesis_entry_footer', 'genesis_post_meta' );
 

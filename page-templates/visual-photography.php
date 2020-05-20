@@ -3,6 +3,7 @@
  * Template Name: Visual - Photography Single
  * Template Post Type: portfolio
  */
+defined( 'ABSPATH' ) || exit;
 
 use Virtuoso\Lib\Components\Background_Image;
 

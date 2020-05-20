@@ -3,6 +3,7 @@
  * Template Name: Tunefuze - Support
  * Template Post Type: page
  */
+defined( 'ABSPATH' ) || exit;
 
 add_action( 'the_content', function() {} ); // clear content so nothing displays
 

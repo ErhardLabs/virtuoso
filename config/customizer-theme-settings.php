@@ -10,6 +10,7 @@
  * @license GPL-2.0-or-later
  * @link    https://my.studiopress.com/themes/genesis/
  */
+defined( 'ABSPATH' ) || exit;
 
 /**
  * The config array for setting up a Customizer panel, sections within that panel, settings and controls.

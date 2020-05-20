@@ -10,6 +10,8 @@
  */
 namespace Virtuoso;
 
+defined( 'ABSPATH' ) || exit;
+
 require_once 'vendor/autoload.php';
 use Virtuoso\Lib\VirtuosoTheme;
 
