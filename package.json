@@ -55,8 +55,8 @@
     "rimraf": "^3.0.2",
     "sass": "^1.26.5",
     "sass-loader": "^7.1.0",
-    "sass-rem": "^2.0.1",
     "stylelint": "^13.5.0",
+    "sass-rem": "^1.2.2",
     "stylelint-config-wordpress": "^16.0.0",
     "vue-template-compiler": "^2.6.11"
   },
