@@ -19,13 +19,13 @@ defined( 'ABSPATH' ) || exit;
  * Class Sidebar.
  */
 class Sidebar {
-	public $config = "";
+	public $config = '';
 	public function __construct() {
 
 		$this->config = ThemeConfig::get_configuration_parameters( 'theme_default_settings' );
 
 		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
-        add_action('get_footer', [ $this, 'display' ]);
+		add_action( 'get_footer', [ __CLASS__, 'display' ] );
 	}
 
 	public function register_widgets() {
@@ -33,7 +33,7 @@ class Sidebar {
 		$widgets = $this->config['sidebar-widgets'];
 
 		foreach ( $widgets as $widget ) {
-			genesis_register_sidebar($widget);
+			genesis_register_sidebar( $widget );
 		}
 
 	}
@@ -45,102 +45,97 @@ class Sidebar {
 	 *
 	 * @return void
 	 */
-	public static function unregister_sidebar_callbacks( $config )
-  {
-//    remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-  }
+	public static function unregister_sidebar_callbacks( $config ) {
+		// remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
+	}
 
 
-  public function display() {
+	public static function display() {
 
-	  ?>
+		?>
 
-    <div id="slide_out_sidebar" class="slide_out_sidebar">
-      <section id="close_slider" class="widget widget_text">
-        <div class="textwidget">
-          <a class="close" data-wpel-link="internal" id="close_slider_button"><i class="ti-close"></i></a>
-        </div>
-      </section>
+	<div id="slide_out_sidebar" class="slide_out_sidebar">
+	  <section id="close_slider" class="widget widget_text">
+		<div class="textwidget">
+		  <a class="close" data-wpel-link="internal" id="close_slider_button"><i class="ti-close"></i></a>
+		</div>
+	  </section>
 
-      <section id="sexy-woo-messages" class="widget widget_text">
-        <div class="textwidget"></div>
-      </section>
+	  <section id="sexy-woo-messages" class="widget widget_text">
+		<div class="textwidget"></div>
+	  </section>
 
-      <section id="loading">
-        <img src="<?php get_stylesheet_directory() . '/assets/images/loading.gif';?>"/>
-      </section>
+	  <section id="loading">
+		<img src="<?php get_stylesheet_directory() . '/assets/images/loading.gif'; ?>"/>
+	  </section>
 
-      <?php
+		<?php
 
-      do_action('sidebar_before');
+		do_action( 'sidebar_before' );
 
-      dynamic_sidebar('slider');
+		dynamic_sidebar( 'slider' );
 
-      if ((class_exists('woocommerce')) && (!is_checkout()) && (!is_cart())) {
-        ?>
-        <section id="sexy-woo-cart">
-          <h4>CART</h4>
-          <div id="sexy-woo-cart-container">
-            <?php echo do_shortcode('[woocommerce_cart]'); ?>
-          </div>
-          <a href="#" class="cart_plus plus_btn"><i class="fas fa-plus"></i></a>
-        </section>
+		if ( ( class_exists( 'woocommerce' ) ) && ( ! is_checkout() ) && ( ! is_cart() ) ) {
+			?>
+		<section id="sexy-woo-cart">
+		  <h4>CART</h4>
+		  <div id="sexy-woo-cart-container">
+			<?php echo do_shortcode( '[woocommerce_cart]' ); ?>
+		  </div>
+		  <a href="#" class="cart_plus plus_btn"><i class="fas fa-plus"></i></a>
+		</section>
 
-         <?php
-      }
+			<?php
+		}
 
-      do_action('sidebar_body');
+		do_action( 'sidebar_body' );
 
-      do_action('sidebar_after');
+		do_action( 'sidebar_after' );
 
+		?>
 
-      ?>
+	</div>
 
-    </div>
+		<?php
+	}
 
-    <?php
-  }
+	static function get_user_options() {
 
-  static function get_user_options() {
+		$prefix = CustomizerHelpers::get_settings_prefix();
 
+		$userOptions['width'] = get_theme_mod( $prefix . '_width' );
+		// $userOptions['enabled'] = get_theme_mod($prefix.'_enabled');
+		$userOptions['cart_item_quantity']         = get_theme_mod( $prefix . '_cart_item_quantity' );
+		$userOptions['click_map']['sexy-woo-cart'] = get_theme_mod( $prefix . '_cart_classes' );
 
-    $prefix = CustomizerHelpers::get_settings_prefix();
+		$sidebarWidgets = get_option( 'sidebars_widgets' );
 
-    $userOptions['width'] = get_theme_mod($prefix.'_width');
-//    $userOptions['enabled'] = get_theme_mod($prefix.'_enabled');
-    $userOptions['cart_item_quantity'] = get_theme_mod($prefix.'_cart_item_quantity');
-    $userOptions['click_map']['sexy-woo-cart'] = get_theme_mod($prefix.'_cart_classes');
+		if ( isset( $sidebarWidgets ) ) {
 
-    $sidebarWidgets = get_option( 'sidebars_widgets');
+			if ( isset( $sidebarWidgets['slider'] ) ) {
 
-    if (isset($sidebarWidgets)) {
+				$sliderWidgets = $sidebarWidgets['slider'];
 
-      if (isset($sidebarWidgets['slider'])){
+				foreach ( $sliderWidgets as $widget ) {
 
-        $sliderWidgets = $sidebarWidgets['slider'];
+					$widgetPieces = explode( '-', $widget );
+					$widgetName   = $widgetPieces[0];
+					$widgetIndex  = $widgetPieces[1];
+					$widgetData   = get_option( 'widget_' . $widgetName );
 
-        foreach($sliderWidgets as $widget) {
+					$widgetHeader = $widgetData[ $widgetIndex ]['title'];
 
-          $widgetPieces = explode('-', $widget);
-          $widgetName = $widgetPieces[0];
-          $widgetIndex = $widgetPieces[1];
-          $widgetData = get_option('widget_'.$widgetName);
+					$widgetHeaderSlug = strtolower( $widgetHeader );
 
-          $widgetHeader = $widgetData[$widgetIndex]['title'];
+					$userOptions['click_map'][ $widget ] = get_theme_mod( $prefix . '_widget_class_list' . '_wid_' . $widget );
 
-          $widgetHeaderSlug = strtolower($widgetHeader);
+				}
+			}
+		}
 
-          $userOptions['click_map'][$widget] = get_theme_mod($prefix . '_widget_class_list' . '_wid_' . $widget);
+		return $userOptions;
 
-        }
-
-      }
-
-    }
-
-    return $userOptions;
-
-  }
+	}
 
 }
 
