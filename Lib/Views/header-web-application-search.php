@@ -17,6 +17,9 @@ defined( 'ABSPATH' ) || exit;
                     ?>">
                 </label>
 			</form>
+        <ul class="header-right">
         <?php include_once CHILD_DIR . '/Lib/Views/header-web-application-right.php'?>
-	</div>
+        </ul>
+		<?php include_once CHILD_DIR . '/Lib/Views/header-web-application-menu.php'?>
+    </div>
 </div>
