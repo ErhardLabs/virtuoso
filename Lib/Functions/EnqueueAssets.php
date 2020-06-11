@@ -31,10 +31,6 @@ class EnqueueAssets {
 	 */
 	function enqueue_assets() {
 
-		wp_enqueue_style( CHILD_TEXT_DOMAIN . '-fonts', '//fonts.googleapis.com/css?family=Roboto:300,400,900', array(), CHILD_THEME_VERSION );
-		wp_enqueue_style( CHILD_TEXT_DOMAIN . '-ion-icons', '//code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css', array(), CHILD_THEME_VERSION );
-
-		wp_enqueue_style( 'dashicons' );
 		wp_enqueue_script( CHILD_TEXT_DOMAIN . '-app', CHILD_URL . '/dist/js/app.js', array( 'jquery' ), CHILD_THEME_VERSION, true );
 
 		$localized_script_args = array(
@@ -42,9 +38,9 @@ class EnqueueAssets {
 			'subMenu'  => __( 'Menu', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 		);
 
-    $localized_script_args['sidebar_options'] = Sidebar::get_user_options();
+	    $localized_script_args['sidebar_options'] = Sidebar::get_user_options();
 
-    wp_localize_script( CHILD_TEXT_DOMAIN . '-app', 'virtuosoLocalizedArgs', $localized_script_args );
+	    wp_localize_script( CHILD_TEXT_DOMAIN . '-app', 'virtuosoLocalizedArgs', $localized_script_args );
 	}
 
 	/**
