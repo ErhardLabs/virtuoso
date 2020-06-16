@@ -69,7 +69,6 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
    * Add nav class and ID to related button
    *
    * @return void
-   *
    */
   function _addClassID() {
     let $this = $( this ),
@@ -85,7 +84,6 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
    * Change Skiplinks and Superfish
    *
    * @return void
-   *
    */
   function _doResize() {
     let buttons = $( 'button[id^="mobile-"]' ).attr( 'id' );
@@ -107,9 +105,9 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
     let $this = $( this );
     _toggleAria( $this, 'aria-pressed' );
     _toggleAria( $this, 'aria-expanded' );
-    $this.toggleClass( 'activated' );
+    closeMenu();
     $( '.site-header nav' ).toggleClass( 'mobile-menu-active' );
-    $this.next( 'nav, .sub-menu' ).toggle();
+    $this.next( 'nav, .sub-menu' ).slideToggle( 'fast' );
   }
 
   /**
@@ -124,11 +122,11 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
     _toggleAria( $this, 'aria-pressed' );
     _toggleAria( $this, 'aria-expanded' );
     $this.toggleClass( 'activated' );
-    $this.next( '.sub-menu' ).toggle();
+    $this.next( '.sub-menu' ).slideToggle( 'fast' );
 
     $this.closest( '.menu-item' ).toggleClass('click-activated');
     others.find( '.' + subMenuButtonClass ).removeClass( 'activated' ).attr( 'aria-pressed', 'false' );
-    others.find( '.sub-menu' ).toggle();
+    others.find( '.sub-menu' ).slideToggle( 'fast' );
 
   }
 
@@ -243,6 +241,7 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
         .removeClass('activated')
         .attr('aria-expanded', false)
         .attr('aria-pressed', false);
+      $('.menu-toggle').removeClass('activated')
       $('.nav-primary').removeClass('mobile-menu-active');
       $('.nav-primary').css('display', 'none');
 
@@ -284,7 +283,7 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
 
     // Disable body scroll if the menu is activated
     $( '.menu-toggle' ).click( function() {
-      if ( $( '.menu-toggle' ).hasClass( 'activated' ) ) {
+      if ( $( '.menu-toggle' ).attr('aria-expanded') === 'true' ) {
         disableBodyScroll( document.querySelector( '.nav-primary' ) );
       } else {
         enableBodyScroll( document.querySelector( '.nav-primary' ) );

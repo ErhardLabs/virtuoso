@@ -1,15 +1,7 @@
 /* ## Mobile Navigation
 --------------------------------------------- */
 
-//.logged-in .mobile-navigation.mobile-navigation-open {
-//  margin-top: 40px;
-//}
-
 .mobile-navigation {
-  //top: 0;
-  //bottom: 0;
-  //left: 0;
-  //right: 0;
   background: $nav--link-color;
 
   &.mobile-navigation-open {
@@ -24,15 +16,6 @@
       &.sub-menu {
         margin: 0 auto;
 
-        //li {
-        //  &::after {
-        //    content: "";
-        //    border-top: 2px solid;
-        //    width: 2em;
-        //    display: block;
-        //    margin: .2em auto;
-        //  }
-        //}
 
       }
 
