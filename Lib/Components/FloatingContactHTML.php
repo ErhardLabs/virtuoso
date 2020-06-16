@@ -39,7 +39,7 @@ class FloatingContactHTML {
 
 		if ( $this->display_floating_contact ) {
 			echo '<div id="floatingContact">';
-			echo '<a class="button floating-contact" href="' . esc_url( $this->contact_url ) . '">' . esc_html( $this->contact_inner_text ) . '</a>';
+			echo '<a class="button floating-contact" href="' . esc_url( $this->contact_url ) . '">' . wp_kses_post( $this->contact_inner_text ) . '</a>';
 			echo '</div>';
 		}
 
