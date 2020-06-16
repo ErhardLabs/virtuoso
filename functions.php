@@ -14,4 +14,4 @@ require_once 'vendor/autoload.php';
 use Virtuoso\Lib\VirtuosoTheme;
 
 // Initialize the Virtuoso Genesis Child Theme
-$virtuoso = new VirtuosoTheme();
+new VirtuosoTheme();

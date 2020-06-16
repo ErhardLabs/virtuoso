@@ -1,4 +1,5 @@
 <?php
+defined( 'ABSPATH' ) || exit;
 
 use Virtuoso\Lib\Helper;
 
@@ -18,57 +19,63 @@ function virtuoso_display_videography_archive_content() {
 		'order'         => 'DESC',
 	);
 
-// The Query
+	// The Query
 	$loop = new WP_Query( $args );
 
 	if ( $loop->have_posts() ) {
 
 		?>
-		<div class="videography_slider_wrap"> <?php
+		<div class="videography_slider_wrap"> 
+		<?php
 
 			// loop through posts
-			while ( $loop->have_posts() ): $loop->the_post();
+		while ( $loop->have_posts() ) :
+			$loop->the_post();
 
-				$title     = get_the_title() . ' Videography';
-				$permalink = get_the_permalink();
+			$title     = get_the_title() . ' Videography';
+			$permalink = get_the_permalink();
 
-				if ( have_rows( 'video_portfolio' ) ): ?>
+			if ( have_rows( 'video_portfolio' ) ) :
+				?>
 
 					<ul class="videography_portfolio_slides">
 
-						<?php while ( have_rows( 'video_portfolio' ) ): the_row();
+						<?php
+						while ( have_rows( 'video_portfolio' ) ) :
+							the_row();
 
 							// vars
 							$video_link = get_sub_field( 'video_links', false );
 							$video_id   = Helper::extract_video_id( $video_link );
 							?>
 
-							<?php if ( $video_id ): ?>
-								<?php $videoSrc = "https://www.youtube.com/embed/$video_id?rel=0&controls=1&enablejsapi=1"; ?>
+							<?php if ( $video_id ) : ?>
+								<?php $video_src = "https://www.youtube.com/embed/$video_id?rel=0&controls=1&enablejsapi=1"; ?>
 								<li class="slide">
 									<div class="portfolio_header_wrap">
-										<a class="portfolio_name"
-										   href="<?php echo $permalink; ?>"><span><?php echo $title; ?></span></a>
-										<a class="portfolio_view" href="<?php echo $permalink; ?>"><span>View</span></a>
+										<a class="portfolio_name" href="<?php echo esc_url( $permalink ); ?>"><span><?php echo esc_html( $title ); ?></span></a>
+										<a class="portfolio_view" href="<?php echo esc_url( $permalink ); ?>"><span>View</span></a>
 									</div>
 									<div class="embed-container">
 										<iframe class="home_video" id="yt_home_embed" width="800" height="443"
-										        src="<?php echo $videoSrc ?>" frameborder="0" allowfullscreen></iframe>
+												src="<?php echo esc_url( $video_src ); ?>" frameborder="0" allowfullscreen></iframe>
 									</div>
-									<?php break; ?>
-
 								</li>
+								<?php break; ?>
 							<?php endif; ?>
 
 						<?php endwhile; ?>
 
 					</ul>
 
-				<?php endif;
+				<?php
+				endif;
 
 			endwhile;
 
-			?> </div> <?php
+		?>
+			</div>
+			<?php
 
 	}
 

@@ -22,7 +22,7 @@ class DetectJS {
 		add_action( 'wp_loaded', [ $this, 'javascript_detection' ] );
 	}
 
-	function javascript_detection() {
+	public function javascript_detection() {
 
 		add_filter( 'body_class', [ $this, 'javascript_detection_body_class' ], 0 );
 		add_action( 'genesis_before', [ $this, 'javascript_detection_script' ], 0 );
@@ -34,10 +34,9 @@ class DetectJS {
 	 *
 	 * @since 2.1.7
 	 *
-	 *
 	 * @return string
 	 */
-	function javascript_detection_script() {
+	public function javascript_detection_script() {
 		echo "<script>document.body.className = document.body.className.replace(\"virtuoso-no-js\",\"virtuoso-js\");</script>\n";
 	}
 
@@ -48,9 +47,9 @@ class DetectJS {
 	 *
 	 * @param array
 	 *
-	 * @return string
+	 * @return array
 	 */
-	function javascript_detection_body_class( $classes ) {
+	public function javascript_detection_body_class( $classes ) {
 
 		return array_merge( $classes, array( 'virtuoso-no-js' ) );
 
@@ -61,17 +60,16 @@ class DetectJS {
 	 *
 	 * @since 2.1.7
 	 *
-	 *
 	 * @return string
 	 */
 	public static function is_javascript_enabled() {
-		$jsEnabled = false;
+		$js_enabled = false;
 
-		if ( in_array( 'virtuoso-js', get_body_class() ) ) {
-			$jsEnabled = true;
+		if ( in_array( 'virtuoso-js', get_body_class(), true ) ) {
+			$js_enabled = true;
 		}
 
-		return $jsEnabled;
+		return $js_enabled;
 	}
 
 }

@@ -30,7 +30,7 @@ return [
 		'settings_field' => 'genesis-settings',
 		'control_prefix' => 'genesis',
 		'sections'       => [
-			'genesis_updates'      => [
+			'genesis_updates'        => [
 				'title'          => __( 'Updates', 'virtuoso' ),
 				'panel'          => 'genesis',
 				'theme_supports' => 'genesis-auto-updates',
@@ -60,52 +60,52 @@ return [
 
 				],
 			],
-			'contact' => array(
+			'contact'                => array(
 				'title'    => __( 'Contact', $prefix, 'virtuoso' ),
 				'panel'    => 'genesis',
 				'controls' => array(
 					$prefix . '_display_floating_contact' => array(
-						'label' => __('Display Floating Contact', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso'),
-						'section' => 'contact',
-						'type' => 'checkbox',
-						'settings' => array (
+						'label'    => __( 'Display Floating Contact', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso' ),
+						'section'  => 'contact',
+						'type'     => 'checkbox',
+						'settings' => array(
 							'capability' => 'edit_theme_options',
-							'default' => false,
+							'default'    => false,
 							'type'       => 'theme_mod',
 							'transport'  => 'postMessage',
 						),
 					),
-					$prefix . '_display_contact_in_menu' => array(
-						'label' => __('Display Contact in menu', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso'),
-						'section' => 'contact',
-						'type' => 'checkbox',
-						'settings' => array (
+					$prefix . '_display_contact_in_menu'  => array(
+						'label'    => __( 'Display Contact in menu', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso' ),
+						'section'  => 'contact',
+						'type'     => 'checkbox',
+						'settings' => array(
 							'capability' => 'edit_theme_options',
-							'default' => false,
+							'default'    => false,
 							'type'       => 'theme_mod',
 							'transport'  => 'postMessage',
 						),
 					),
-					$prefix . '_contact_url' => array(
-						'label' => __('Contact Page URL', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso'),
-						'description' => __('Add the URL of the Contact page.', CHILD_TEXT_DOMAIN, 'virtuoso'),
-						'section' => 'contact',
-						'type' => 'text',
-						'settings' => array (
+					$prefix . '_contact_url'              => array(
+						'label'       => __( 'Contact Page URL', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso' ),
+						'description' => __( 'Add the URL of the Contact page.', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+						'section'     => 'contact',
+						'type'        => 'text',
+						'settings'    => array(
 							'capability' => 'edit_theme_options',
-							'default' => '/contact',
+							'default'    => '/contact',
 							'type'       => 'theme_mod',
 							'transport'  => 'postMessage',
 						),
 					),
-					$prefix . '_contact_inner_text' => array(
-						'label' => __('Contact Inner text', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso'),
-						'description' => __('Change the inner text', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso'),
-						'section' => 'contact',
-						'type' => 'text',
-						'settings' => array (
+					$prefix . '_contact_inner_text'       => array(
+						'label'       => __( 'Contact Inner text', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso' ),
+						'description' => __( 'Change the inner text', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso' ),
+						'section'     => 'contact',
+						'type'        => 'text',
+						'settings'    => array(
 							'capability' => 'edit_theme_options',
-							'default' => 'Contact',
+							'default'    => 'Contact',
 							'type'       => 'theme_mod',
 							'transport'  => 'postMessage',
 						),
@@ -118,54 +118,54 @@ return [
 			'header_nav_menu_layout' => array(
 				'title'    => __( 'Header Menu Layout', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso' ),
 				'panel'    => 'genesis',
-				'controls'        => array(
+				'controls' => array(
 					$prefix . '_header_nav_menu_design' => array(
-						'type' => 'radio',
-						'section' => 'header_nav_menu_layout',
-						'label' => __( 'Navigation Layout Design', 'virtuoso' ),
+						'type'        => 'radio',
+						'section'     => 'header_nav_menu_layout',
+						'label'       => __( 'Navigation Layout Design', 'virtuoso' ),
 						'description' => __( 'Choose the header navigation layout design', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-						'choices' => array(
-							'logo-left' => __( 'Logo Left', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-							'logo-middle' => __( 'Logo Middle', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+						'choices'     => array(
+							'logo-left'         => __( 'Logo Left', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+							'logo-middle'       => __( 'Logo Middle', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 							'navigation-middle' => __( 'Navigation Middle', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-							'web-application' => __( 'Web Application', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+							'web-application'   => __( 'Web Application', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 						),
+						'settings'    => array(
+							'capability' => 'edit_theme_options',
+							'default'    => 'logo-left',
+							'type'       => 'theme_mod',
+							'transport'  => 'postMessage',
+						),
+					),
+					$prefix . '_display_login_button'   => array(
+						'label'    => __( 'Display Login Button', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso' ),
+						'section'  => 'header_nav_menu_layout',
+						'type'     => 'checkbox',
 						'settings' => array(
 							'capability' => 'edit_theme_options',
-							'default' => 'logo-left',
+							'default'    => false,
 							'type'       => 'theme_mod',
 							'transport'  => 'postMessage',
 						),
 					),
-					$prefix . '_display_login_button' => array(
-						'label' => __('Display Login Button', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso'),
-						'section' => 'header_nav_menu_layout',
-						'type' => 'checkbox',
-						'settings' => array (
+					$prefix . '_login_button_url'       => array(
+						'label'    => __( 'Display Login Button', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso' ),
+						'section'  => 'header_nav_menu_layout',
+						'type'     => 'text',
+						'settings' => array(
 							'capability' => 'edit_theme_options',
-							'default' => false,
+							'default'    => '/wp-admin',
 							'type'       => 'theme_mod',
 							'transport'  => 'postMessage',
 						),
 					),
-					$prefix . '_login_button_url' => array(
-						'label' => __('Display Login Button', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso'),
-						'section' => 'header_nav_menu_layout',
-						'type' => 'text',
-						'settings' => array (
+					$prefix . '_display_cart_icon'      => array(
+						'label'    => __( 'Display Cart Icon', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso' ),
+						'section'  => 'header_nav_menu_layout',
+						'type'     => 'checkbox',
+						'settings' => array(
 							'capability' => 'edit_theme_options',
-							'default' => '/wp-admin',
-							'type'       => 'theme_mod',
-							'transport'  => 'postMessage',
-						),
-					),
-					$prefix . '_display_cart_icon' => array(
-						'label' => __('Display Cart Icon', CHILD_TEXT_DOMAIN, $prefix, 'virtuoso'),
-						'section' => 'header_nav_menu_layout',
-						'type' => 'checkbox',
-						'settings' => array (
-							'capability' => 'edit_theme_options',
-							'default' => true,
+							'default'    => true,
 							'type'       => 'theme_mod',
 							'transport'  => 'postMessage',
 						),
@@ -175,30 +175,30 @@ return [
 
 			// Footer
 
-			'footer_layout' => array(
+			'footer_layout'          => array(
 				'title'    => __( 'Footer Layout', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 				'panel'    => 'genesis',
-				'controls'        => array(
+				'controls' => array(
 					$prefix . '_footer_design' => array(
-						'type' => 'radio',
-						'section' => 'footer_layout',
-						'label' => __( 'Footer Layout Design', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+						'type'        => 'radio',
+						'section'     => 'footer_layout',
+						'label'       => __( 'Footer Layout Design', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 						'description' => __( 'Choose the Footer layout design', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-						'choices' => array(
+						'choices'     => array(
 							'footer-widgets-left-column' => __( 'Left aligned', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-							'footer-widgets-block' => __( 'Block (Stacked)', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-							'footer-widgets-minimal' => __( 'Minimal left aligned', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+							'footer-widgets-block'       => __( 'Block (Stacked)', CHILD_TEXT_DOMAIN, 'virtuoso' ),
+							'footer-widgets-minimal'     => __( 'Minimal left aligned', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 						),
-						'settings' => array(
+						'settings'    => array(
 							'capability' => 'edit_theme_options',
-							'default' => 'footer-widgets-block',
+							'default'    => 'footer-widgets-block',
 							'type'       => 'theme_mod',
 							'transport'  => 'postMessage',
 						),
 					),
 				),
 			),
-			'genesis_header'       => array(
+			'genesis_header'         => array(
 				'active_callback' => 'genesis_show_header_customizer_callback',
 				'title'           => __( 'Header', 'virtuoso' ),
 				'panel'           => 'genesis',
@@ -217,7 +217,7 @@ return [
 					),
 				),
 			),
-			'genesis_color_scheme' => array(
+			'genesis_color_scheme'   => array(
 				'active_callback' => 'genesis_has_color_schemes',
 				'theme_supports'  => 'genesis-style-selector',
 				'title'           => __( 'Color Scheme', 'virtuoso' ),
@@ -234,7 +234,7 @@ return [
 					),
 				),
 			),
-			'genesis_layout'       => array(
+			'genesis_layout'         => array(
 				'active_callback' => 'genesis_has_multiple_layouts',
 				'title'           => __( 'Site Layout', 'virtuoso' ),
 				'panel'           => 'genesis',
@@ -250,7 +250,7 @@ return [
 					),
 				),
 			),
-			'genesis_breadcrumbs'  => array(
+			'genesis_breadcrumbs'    => array(
 				'theme_supports' => 'genesis-breadcrumbs',
 				'title'          => __( 'Breadcrumbs', 'virtuoso' ),
 				'description'    => __( 'Select the pages which should display breadcrumbs.', 'virtuoso' ),
@@ -325,7 +325,7 @@ return [
 					),
 				),
 			),
-			'genesis_comments'     => array(
+			'genesis_comments'       => array(
 				'title'    => __( 'Comments and Trackbacks', 'virtuoso' ),
 				'panel'    => 'genesis',
 				'controls' => array(
@@ -363,13 +363,13 @@ return [
 					),
 				),
 			),
-			'genesis_single'       => [
+			'genesis_single'         => [
 				'title'       => __( 'Singular Content', 'virtuoso' ),
 				'description' => __( 'Modify the settings for individual entries such as posts and pages.', 'virtuoso' ),
 				'panel'       => 'genesis',
 				'controls'    => [],
 			],
-			'genesis_archives'     => array(
+			'genesis_archives'       => array(
 				'title'    => __( 'Content Archives', 'virtuoso' ),
 				'panel'    => 'genesis',
 				'controls' => array(
@@ -438,7 +438,7 @@ return [
 					),
 				),
 			),
-			'genesis_footer'       => [
+			'genesis_footer'         => [
 				'active_callback' => function() {
 					return is_null( apply_filters( 'genesis_footer_output', null ) );
 				},
@@ -456,7 +456,7 @@ return [
 					],
 				],
 			],
-			'genesis_scripts'      => array(
+			'genesis_scripts'        => array(
 				'title'    => __( 'Header/Footer Scripts', 'virtuoso' ),
 				'panel'    => 'genesis',
 				'controls' => array(

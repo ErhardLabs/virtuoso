@@ -15,18 +15,18 @@ defined( 'ABSPATH' ) || exit;
 
 class ThemeConfig {
 
-	static function config_settings() {
+	public static function config_settings() {
 		return array(
-			//=============================================
+			// =============================================
 			// Theme support features to add
-			//=============================================
+			// =============================================
 			'add_theme_support'         => array(
 				'html5'                           => array(
 					'caption',
 					'comment-form',
 					'comment-list',
 					'gallery',
-					'search-form'
+					'search-form',
 				),
 				'genesis-accessibility'           => array(
 					'404-page',
@@ -34,7 +34,7 @@ class ThemeConfig {
 					'headings',
 					'rems',
 					'search-form',
-					'skip-links'
+					'skip-links',
 				),
 				'genesis-responsive-viewport'     => null,
 				'custom-header'                   => array(
@@ -52,25 +52,25 @@ class ThemeConfig {
 				'genesis-menus'                   => array(
 					'primary'   => __( 'Primary Navigation', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 					'secondary' => __( 'Secondary Navigation', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-					'footer'    => __( 'Footer Navigation', CHILD_TEXT_DOMAIN, 'virtuoso' )
+					'footer'    => __( 'Footer Navigation', CHILD_TEXT_DOMAIN, 'virtuoso' ),
 				),
 				'woocommerce',
 				'auto-wide',
-//		'genesis-after-entry-widget-area' => null,
+			// 'genesis-after-entry-widget-area' => null,
 			),
-			//=============================================
+			// =============================================
 			// Layouts to unregister
-			//=============================================
+			// =============================================
 			'genesis_unregister_layout' => array(
 				'sidebar-content',
-//				'content-sidebar',
-				'content-sidebar-sidebar',
+				// 'content-sidebar',
+										'content-sidebar-sidebar',
 				'sidebar-content-sidebar',
 				'sidebar-sidebar-content',
 			),
-			//=============================================
+			// =============================================
 			// Theme Default Settings
-			//=============================================
+			// =============================================
 			'theme_default_settings'    => array(
 				'blog_cat_num'              => 12,
 				'content_archive'           => 'full',
@@ -78,7 +78,7 @@ class ThemeConfig {
 				'content_archive_thumbnail' => 0,
 				'posts_nav'                 => 'numeric',
 				'site_layout'               => 'full-width-content',
-				'front-page-widgets'           => array(
+				'front-page-widgets'        => array(
 					array(
 						'id'           => 'front-page-1',
 						'name'         => __( 'Front Page 1', 'virtuoso' ),
@@ -107,21 +107,20 @@ class ThemeConfig {
 						'description' => __( 'Front page 5 widget area.', 'virtuoso' ),
 					),
 				),
-        'sidebar-widgets'       => array(
-            array(
-                'name' => __( 'Slide-Out Sidebar', CHILD_TEXT_DOMAIN, 'virtuoso' ),
-                'id' => 'slider',
-//                'description' => __( '', '' ),
-                'before_widget' => '<section id="%1$s" class="widget %2$s">',
-                'after_widget'  => '</section>',
-                'before_title'  => '<h4 class="widgettitle">',
-                'after_title'   => '</h4>',
-            ),
-        ),
+				'sidebar-widgets'           => array(
+					array(
+						'name'          => __( 'Slide-Out Sidebar', 'virtuoso' ),
+						'id'            => 'slider',
+						'before_widget' => '<section id="%1$s" class="widget %2$s">',
+						'after_widget'  => '</section>',
+						'before_title'  => '<h4 class="widgettitle">',
+						'after_title'   => '</h4>',
+					),
+				),
 			),
-			//=============================================
+			// =============================================
 			// Image Sizes
-			//=============================================
+			// =============================================
 			'theme_image_sizes'         => array(
 				'featured-image' => array(
 					'width'  => 720,
@@ -142,18 +141,18 @@ class ThemeConfig {
 	 *
 	 * @return array|null|mixed
 	 */
-	static function get_configuration_parameters( $key = '' ) {
+	public static function get_configuration_parameters( $key = '' ) {
 
-		$config = ThemeConfig::config_settings();
+		$config = self::config_settings();
 
 		if ( ! $key ) {
 			return $config;
 		}
 
-
 		if ( array_key_exists( $key, $config ) ) {
 			return $config[ $key ];
 		}
+		return $config;
 	}
 
 	/**
@@ -163,8 +162,8 @@ class ThemeConfig {
 	 *
 	 * @return array
 	 */
-	static function get_theme_settings_defaults() {
-		return ThemeConfig::get_configuration_parameters( 'theme_default_settings' );
+	public static function get_theme_settings_defaults() {
+		return self::get_configuration_parameters( 'theme_default_settings' );
 	}
 
 }

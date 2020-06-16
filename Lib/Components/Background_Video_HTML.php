@@ -22,20 +22,20 @@ defined( 'ABSPATH' ) || exit;
  */
 class Background_Video_HTML {
 
-	public $videoID;
-	public $playlistID;
-	public $startTime;
-	public $belowHeader;
-	public $blurVidBg;
-	public $archiveDisplayEnabled;
-	public $stickyBackgroundVideoEnabled;
-	public $postID;
+	public $video_id;
+	public $playlist_id;
+	public $start_time;
+	public $below_header;
+	public $blur_vid_bg;
+	public $archive_display_enabled;
+	public $sticky_background_video_enabled;
+	public $post_id;
 
 	public function __construct() {
 
 		global $post;
-		if ( null !== $post) {
-			$this->postID = $post->ID;
+		if ( null !== $post ) {
+			$this->post_id = $post->ID;
 			$this->get_user_options();
 			$this->determine_display_locations();
 		}
@@ -46,14 +46,13 @@ class Background_Video_HTML {
 
 		if ( class_exists( 'WooCommerce' ) ) {
 
-			if ( ( $this->archiveDisplayEnabled ) && ( is_product_category() ) ) {
+			if ( ( $this->archive_display_enabled ) && ( is_product_category() ) ) {
 				$this->display();
 			} else {
 				if ( ! is_product_category() ) {
 					$this->display();
 				}
 			}
-
 		} else {
 			$this->display();
 		}
@@ -61,13 +60,13 @@ class Background_Video_HTML {
 
 	public function display() {
 
-		if ( ( $this->videoID !== '' ) || ( $this->playlistID !== '' ) ) {
+		if ( ( '' !== $this->video_id ) || ( '' !== $this->playlist_id ) ) {
 
-			echo "<span id='landing_yt_player' data-id='" . $this->videoID . "' data-playlist-id='" . $this->playlistID . "' data-start-time='" . $this->startTime . "' data-below-header='" . $this->belowHeader . "' data-blur='" . $this->blurVidBg . "'></span>";
+			echo "<span id='landing_yt_player' data-id='" . esc_attr( $this->video_id ) . "' data-playlist-id='" . esc_attr( $this->playlist_id ) . "' data-start-time='" . esc_attr( $this->start_time ) . "' data-below-header='" . esc_attr( $this->below_header ) . "' data-blur='" . esc_attr( $this->blur_vid_bg ) . "'></span>";
 
 		}
 
-		do_action( 'virtuoso_featured_background_image', $this->postID );
+		do_action( 'virtuoso_featured_background_image', $this->post_id );
 
 	}
 
@@ -75,24 +74,24 @@ class Background_Video_HTML {
 
 		$prefix = CustomizerHelpers::get_settings_prefix();
 
-		$video_link    = get_field( 'post_youtube_video_link', $this->postID, false );
-		$video_id      = Helper::extract_video_id( $video_link );
-		$this->videoID = ( $video_id ) ? $video_id : '';
+		$video_link     = get_field( 'post_youtube_video_link', $this->post_id, false );
+		$video_id       = Helper::extract_video_id( $video_link );
+		$this->video_id = ( $video_id ) ? $video_id : '';
 
-		$playlistLink = get_field( 'post_youtube_playlist_link', $this->postID, false );
+		$playlist_link = get_field( 'post_youtube_playlist_link', $this->post_id, false );
 
-		if ( ( $playlistLink !== '' ) && ( $playlistLink !== null ) ) {
-			$playlist_id      = explode( "?list=", $playlistLink );
-			$playlist_id      = $playlist_id[1];
-			$this->playlistID = $playlist_id;
+		if ( ( '' !== $playlist_link ) && ( null !== $playlist_link ) ) {
+			$playlist_id       = explode( '?list=', $playlist_link );
+			$playlist_id       = $playlist_id[1];
+			$this->playlist_id = $playlist_id;
 		} else {
-			$this->playlistID = '';
+			$this->playlist_id = '';
 		}
 
-		$this->startTime                    = get_field( 'start_time', $this->postID, false );
-		$this->belowHeader                  = get_field( 'display_below_header', $this->postID, false );
-		$this->blurVidBg                    = get_field( 'blur', $this->postID, false );
-		$this->stickyBackgroundVideoEnabled = get_field( 'fixed_to_page', $this->postID, false );
+		$this->start_time                      = get_field( 'start_time', $this->post_id, false );
+		$this->below_header                    = get_field( 'display_below_header', $this->post_id, false );
+		$this->blur_vid_bg                     = get_field( 'blur', $this->post_id, false );
+		$this->sticky_background_video_enabled = get_field( 'fixed_to_page', $this->post_id, false );
 
 	}
 
