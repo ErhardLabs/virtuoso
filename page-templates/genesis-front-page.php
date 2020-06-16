@@ -7,6 +7,7 @@
  * @package Virtuoso
  * @author  ErhardLabs
  */
+defined( 'ABSPATH' ) || exit;
 
 /**
  * Template Name: Genesis Front Page
