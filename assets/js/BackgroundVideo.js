@@ -134,13 +134,8 @@ window.onYouTubeIframeAPIReady = function() {
 
   // The API will call this function when the video player is ready.
   function onPlayerReady( event ) {
-
-    let autoplay = event.target.a.attributes['data-autoplay'];
-
-    if ( autoplay ) {
-      event.target.mute();
-      event.target.playVideo();
-    }
+    event.target.mute();
+    event.target.playVideo();
   }
 
   // The API calls this function when the player's state changes.
