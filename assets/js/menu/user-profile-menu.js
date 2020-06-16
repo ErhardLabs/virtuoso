@@ -8,10 +8,10 @@ $(document).ready(function () {
     $('#user-menu-button').toggleClass('activated');
 
     $('#user-menu-button').attr('aria-expanded', function (i, attr) {
-      return attr == 'true' ? 'false' : 'true'
+      return attr === 'true' ? 'false' : 'true'
     });
     $('.virtuoso-user-profile-menu').attr('data-open', function (i, attr) {
-      return attr == 'true' ? 'false' : 'true'
+      return attr === 'true' ? 'false' : 'true'
     });
   }
 

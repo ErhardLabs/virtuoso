@@ -3,6 +3,7 @@
  * Template Name: Publisher - Single Artist
  * Template Post Type: artists
  */
+defined( 'ABSPATH' ) || exit;
 
 remove_action( 'genesis_entry_header', 'genesis_do_post_title' ); // remove title
 remove_action( 'genesis_entry_header', 'genesis_post_info', 12 ); // remove date, post meta

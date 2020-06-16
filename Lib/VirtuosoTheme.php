@@ -29,7 +29,6 @@ use Virtuoso\Lib\Structure\Menu;
 use Virtuoso\Lib\Structure\Header;
 use Virtuoso\Lib\Structure\Sidebar;
 use Virtuoso\Lib\Structure\Comments;
-use Virtuoso\Lib\Structure\Archive;
 use Virtuoso\Lib\Structure\Footer;
 use Virtuoso\Lib\Structure\Post;
 
@@ -63,7 +62,6 @@ class VirtuosoTheme extends ThemeConfig {
 		new Header();
 		new Sidebar();
 		new Comments();
-		new Archive();
 		new Post();
 		new Footer();
 
@@ -150,14 +148,9 @@ class VirtuosoTheme extends ThemeConfig {
 	 * @return void
 	 */
 	public function unregister_genesis_callbacks() {
-
 		$config = $this->get_theme_settings_defaults();
-
 		Menu::unregister_menu_callbacks();
 		Header::unregister_header_callbacks();
-		Sidebar::unregister_sidebar_callbacks( $config );
-		Comments::unregister_comments_callbacks();
-		Archive::unregister_archive_callbacks();
 		Footer::unregister_footer_callbacks();
 	}
 

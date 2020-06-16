@@ -3,6 +3,7 @@
  * Template Name: Architect - Front Page
  * Template Post Type: page
  */
+defined( 'ABSPATH' ) || exit;
 
 // REMOVE ENTIRE CONTAINER FOR ENTRY HEADER
 remove_action( 'genesis_entry_header', 'genesis_entry_header_markup_open', 5 );

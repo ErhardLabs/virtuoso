@@ -3,6 +3,7 @@
  * Template Name: Visual - Videography Single
  * Template Post Type: portfolio
  */
+defined( 'ABSPATH' ) || exit;
 
 use Virtuoso\Lib\Components\Background_Image;
 use Virtuoso\Lib\Helper;

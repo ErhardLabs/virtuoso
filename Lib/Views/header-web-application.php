@@ -7,4 +7,3 @@ defined( 'ABSPATH' ) || exit;
 		genesis_do_nav();
 	?>
 </div>
-

@@ -38,36 +38,24 @@ class Sidebar {
 
 	}
 
-	/**
-	 * Unregister sidebar callbacks.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return void
-	 */
-	public static function unregister_sidebar_callbacks( $config ) {
-		// remove_action( 'genesis_sidebar', 'genesis_do_sidebar' );
-	}
-
-
 	public static function display() {
 
 		?>
 
 	<div id="slide_out_sidebar" class="slide_out_sidebar">
-	  <section id="close_slider" class="widget widget_text">
-		<div class="textwidget">
-		  <a class="close" data-wpel-link="internal" id="close_slider_button"><i class="ti-close"></i></a>
-		</div>
-	  </section>
+		<section id="close_slider" class="widget widget_text">
+			<div class="textwidget">
+				<a class="close" data-wpel-link="internal" id="close_slider_button"><i class="ti-close"></i></a>
+			</div>
+		</section>
 
-	  <section id="sexy-woo-messages" class="widget widget_text">
-		<div class="textwidget"></div>
-	  </section>
+		<section id="sexy-woo-messages" class="widget widget_text">
+			<div class="textwidget"></div>
+		</section>
 
-	  <section id="loading">
-		<img src="<?php get_stylesheet_directory() . '/assets/images/loading.gif'; ?>"/>
-	  </section>
+		<section id="loading">
+			<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/assets/images/loading.gif'; ?>"/>
+		</section>
 
 		<?php
 
@@ -78,11 +66,11 @@ class Sidebar {
 		if ( ( class_exists( 'woocommerce' ) ) && ( ! is_checkout() ) && ( ! is_cart() ) ) {
 			?>
 		<section id="sexy-woo-cart">
-		  <h4>CART</h4>
-		  <div id="sexy-woo-cart-container">
-			<?php echo do_shortcode( '[woocommerce_cart]' ); ?>
-		  </div>
-		  <a href="#" class="cart_plus plus_btn"><i class="fas fa-plus"></i></a>
+			<h4>CART</h4>
+			<div id="sexy-woo-cart-container">
+				<?php echo do_shortcode( '[woocommerce_cart]' ); ?>
+			</div>
+			<a href="#" class="cart_plus plus_btn"><i class="fas fa-plus"></i></a>
 		</section>
 
 			<?php
@@ -99,41 +87,40 @@ class Sidebar {
 		<?php
 	}
 
-	static function get_user_options() {
+	public static function get_user_options() {
 
 		$prefix = CustomizerHelpers::get_settings_prefix();
 
-		$userOptions['width'] = get_theme_mod( $prefix . '_width' );
-		// $userOptions['enabled'] = get_theme_mod($prefix.'_enabled');
-		$userOptions['cart_item_quantity']         = get_theme_mod( $prefix . '_cart_item_quantity' );
-		$userOptions['click_map']['sexy-woo-cart'] = get_theme_mod( $prefix . '_cart_classes' );
+		$user_options['width']                      = get_theme_mod( $prefix . '_width' );
+		$user_options['cart_item_quantity']         = get_theme_mod( $prefix . '_cart_item_quantity' );
+		$user_options['click_map']['sexy-woo-cart'] = get_theme_mod( $prefix . '_cart_classes' );
 
-		$sidebarWidgets = get_option( 'sidebars_widgets' );
+		$sidebar_widgets = get_option( 'sidebars_widgets' );
 
-		if ( isset( $sidebarWidgets ) ) {
+		if ( isset( $sidebar_widgets ) ) {
 
-			if ( isset( $sidebarWidgets['slider'] ) ) {
+			if ( isset( $sidebar_widgets['slider'] ) ) {
 
-				$sliderWidgets = $sidebarWidgets['slider'];
+				$slider_widgets = $sidebar_widgets['slider'];
 
-				foreach ( $sliderWidgets as $widget ) {
+				foreach ( $slider_widgets as $widget ) {
 
-					$widgetPieces = explode( '-', $widget );
-					$widgetName   = $widgetPieces[0];
-					$widgetIndex  = $widgetPieces[1];
-					$widgetData   = get_option( 'widget_' . $widgetName );
+					$widget_pieces = explode( '-', $widget );
+					$widget_name   = $widget_pieces[0];
+					$widget_index  = $widget_pieces[1];
+					$widget_data   = get_option( 'widget_' . $widget_name );
 
-					$widgetHeader = $widgetData[ $widgetIndex ]['title'];
+					$widget_header = $widget_data[ $widget_index ]['title'];
 
-					$widgetHeaderSlug = strtolower( $widgetHeader );
+					$widget_header_slug = strtolower( $widget_header );
 
-					$userOptions['click_map'][ $widget ] = get_theme_mod( $prefix . '_widget_class_list' . '_wid_' . $widget );
+					$user_options['click_map'][ $widget ] = get_theme_mod( $prefix . '_widget_class_list' . '_wid_' . $widget );
 
 				}
 			}
 		}
 
-		return $userOptions;
+		return $user_options;
 
 	}
 

@@ -28,7 +28,6 @@ class Header {
 	 *
 	 * @return void
 	 * @since 1.0.0
-	 *
 	 */
 	public static function unregister_header_callbacks() {
 		unregister_sidebar( 'header-right' );
@@ -40,18 +39,17 @@ class Header {
 	 *
 	 * @return void
 	 * @since 1.0.4
-	 *
 	 */
-	function include_sexy_popup() {
+	public function include_sexy_popup() {
 
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		include_once ABSPATH . 'wp-admin/includes/plugin.php';
 
 		if ( ! is_admin() && is_plugin_active( 'sexy-popup/index.php' ) ) {
-			include_once( SEXY_POPUP_PATH . "inc/views/popup.php" );
+			include_once SEXY_POPUP_PATH . 'inc/views/popup.php';
 		}
 	}
 
-	function include_background_video() {
+	public function include_background_video() {
 		if ( ! is_category() ) {
 			if ( function_exists( 'is_buddypress' ) ) {
 				if ( ! is_buddypress() ) {

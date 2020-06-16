@@ -19,37 +19,24 @@ defined( 'ABSPATH' ) || exit;
  * Class Post.
  */
 class Post {
-	public $config = "";
-	public function __construct( ) {
+	public $config = '';
+	public function __construct() {
 
-
-    $this->config = ThemeConfig::get_configuration_parameters( 'theme_default_settings' );
+		$this->config = ThemeConfig::get_configuration_parameters( 'theme_default_settings' );
 
 		add_filter( 'genesis_author_box_gravatar_size', [ $this, 'setup_author_box_gravatar_size' ] );
-    add_action( 'widgets_init', [ $this, 'register_widgets' ] );
+		add_action( 'widgets_init', [ $this, 'register_widgets' ] );
 	}
 
-  public function register_widgets() {
+	public function register_widgets() {
 
-    $widgets = $this->config['front-page-widgets'];
+		$widgets = $this->config['front-page-widgets'];
 
-    foreach ( $widgets as $widget ) {
-      genesis_register_sidebar($widget);
-    }
-
-  }
-
-	/**
-	 * Unregister post callbacks.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @return void
-	 */
-	public static function unregister_post_callbacks( $config ) {
+		foreach ( $widgets as $widget ) {
+			genesis_register_sidebar( $widget );
+		}
 
 	}
-
 
 	/**
 	 * Modify size of the Gravatar in the author box.

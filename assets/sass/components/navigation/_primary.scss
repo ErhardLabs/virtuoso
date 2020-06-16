@@ -8,16 +8,16 @@
   .header-logo-middle & {
     float: left;
     width: 100%;
-
-    //.menu-primary {
-    //  display: none;
-    //}
   }
 
   .header-logo-left & {
     clear: both;
-  }
 
+    #menu-primary-naviagtion {
+      display: flex;
+      flex-direction: column;
+    }
+  }
 
   > .wrap {
     position: relative;
@@ -36,6 +36,11 @@
     }
     .header-logo-left & {
       clear: none;
+      margin-top: 15px;
+
+      #menu-primary-naviagtion {
+        flex-direction: row;
+      }
 
       .menu-primary {
         float: right;

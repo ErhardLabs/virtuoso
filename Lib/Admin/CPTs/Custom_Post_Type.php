@@ -33,10 +33,10 @@ class Custom_Post_Type {
 	public function set() {
 		$directory = get_stylesheet_directory() . '/Lib/Admin/CPTs';
 
-		foreach( glob( $directory.'/*.*' ) as $file) {
-		  if ( $file !== __FILE__ ) {
-		    include_once( $file );
-		  }
+		foreach ( glob( $directory . '/*.*' ) as $file ) {
+			if ( __FILE__ !== $file ) {
+				include_once $file;
+			}
 		}
 	}
 

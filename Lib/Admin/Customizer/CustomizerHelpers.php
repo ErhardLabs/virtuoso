@@ -18,20 +18,13 @@ defined( 'ABSPATH' ) || exit;
 class CustomizerHelpers {
 
 	/**
-	 * Constructor.
-	 */
-	public function __construct() {
-
-	}
-
-	/**
 	 * Get the settings prefix.
 	 *
 	 * @since 1.0.0
 	 *
 	 * @return string
 	 */
-	static function get_settings_prefix() {
+	public static function get_settings_prefix() {
 		return 'virtuoso';
 	}
 
@@ -57,7 +50,7 @@ class CustomizerHelpers {
 	 *
 	 * @return string Hex color code for accent color.
 	 */
-    public static function get_default_accent_color() {
+	public static function get_default_accent_color() {
 		return '#c3251d';
 	}
 
@@ -70,13 +63,13 @@ class CustomizerHelpers {
 	 *
 	 * @return string
 	 */
-    public static function calculate_color_contrast( $color ) {
+	public static function calculate_color_contrast( $color ) {
 
-		$hexcolor = str_replace( '#', '', $color );
+		$hex_color = str_replace( '#', '', $color );
 
-		$red   = hexdec( substr( $hexcolor, 0, 2 ) );
-		$green = hexdec( substr( $hexcolor, 2, 2 ) );
-		$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
+		$red   = hexdec( substr( $hex_color, 0, 2 ) );
+		$green = hexdec( substr( $hex_color, 2, 2 ) );
+		$blue  = hexdec( substr( $hex_color, 4, 2 ) );
 
 		$luminosity = ( ( $red * 0.2126 ) + ( $green * 0.7152 ) + ( $blue * 0.0722 ) );
 
@@ -89,36 +82,36 @@ class CustomizerHelpers {
 	 *
 	 * @since 1.0.0
 	 *
-	 * @param string $color
+	 * @param string     $color
 	 * @param string|int $change
 	 *
 	 * @return string
 	 */
-    public static function calculate_color_brightness( $color, $change ) {
+	public static function calculate_color_brightness( $color, $change ) {
 
-		$hexcolor = str_replace( '#', '', $color );
+		$hex_color = str_replace( '#', '', $color );
 
-		$red   = hexdec( substr( $hexcolor, 0, 2 ) );
-		$green = hexdec( substr( $hexcolor, 2, 2 ) );
-		$blue  = hexdec( substr( $hexcolor, 4, 2 ) );
+		$red   = hexdec( substr( $hex_color, 0, 2 ) );
+		$green = hexdec( substr( $hex_color, 2, 2 ) );
+		$blue  = hexdec( substr( $hex_color, 4, 2 ) );
 
 		$red   = max( 0, min( 255, $red + $change ) );
 		$green = max( 0, min( 255, $green + $change ) );
 		$blue  = max( 0, min( 255, $blue + $change ) );
 
-		return '#'.dechex( $red ).dechex( $green ).dechex( $blue );
+		return '#' . dechex( $red ) . dechex( $green ) . dechex( $blue );
 
 	}
 
 
-    public static function live_preview($settings) {
+	public static function live_preview( $settings ) {
 
-	    global $wp_customize;
+		global $wp_customize;
 
-	    foreach($settings as $setting) {
-	        $wp_customize->get_setting( $setting )->transport = 'postMessage';
-	    }
+		foreach ( $settings as $setting ) {
+			$wp_customize->get_setting( $setting )->transport = 'postMessage';
+		}
 
-    }
+	}
 
 }

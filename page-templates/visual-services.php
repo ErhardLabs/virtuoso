@@ -3,6 +3,7 @@
  * Template Name: Visual - Services
  * Template Post Type: page
  */
+defined( 'ABSPATH' ) || exit;
 
 // Add our custom loop
 add_action( 'genesis_before_entry_content', 'visual_services' );
