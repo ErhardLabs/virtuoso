@@ -2,7 +2,7 @@
 defined( 'ABSPATH' ) || exit;
 function get_page_from_slug( $page_slug ) {
 	$page = get_page_by_path( $page_slug, OBJECT );
-	return ( isset( $page ) ? true : false );
+	return ( isset( $page ) );
 }
 
 ?>
