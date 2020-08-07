@@ -1,3 +1,20 @@
+#### 1.0.6 (2020-08-07)
+
+##### Bug Fixes
+
+*  Fixed front page error from incorrect namespace position. ([c78f6714](https://github.com/ErhardLabs/virtuoso/commit/c78f67140517283c1a5a69dedc6c06fc4ffc719e))
+
+##### Other Changes
+
+* //github.com/ErhardLabs/virtuoso ([8c143cd3](https://github.com/ErhardLabs/virtuoso/commit/8c143cd3dfd9a6c4d52b021b90fef80df7644689))
+* //github.com/ErhardLabs/virtuoso ([53ba8eea](https://github.com/ErhardLabs/virtuoso/commit/53ba8eea724b5cd5f776b40f3fe3be4d5b56a331))
+* //github.com/ErhardLabs/virtuoso ([b63448e8](https://github.com/ErhardLabs/virtuoso/commit/b63448e8ef94a4eb1721546c2c154dbae21474f9))
+* //github.com/ErhardLabs/virtuoso ([b1143973](https://github.com/ErhardLabs/virtuoso/commit/b1143973be8a7f38935d8f4f11c23a0c1745acde))
+
+##### Performance Improvements
+
+*  Removed YouTube script loading on every page regardless if there was a background video. ([75468747](https://github.com/ErhardLabs/virtuoso/commit/7546874765f7a6cd6a2fd08f41b872d35c647058))
+
 #### 1.0.5 (2020-03-20)
 
 ##### Bug Fixes
