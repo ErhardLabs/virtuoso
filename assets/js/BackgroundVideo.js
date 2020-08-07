@@ -12,7 +12,7 @@ class BackgroundVideo {
 			self.blurVideoBackground = $( '#landing_yt_player' ).data( 'blur' );
 
 			// this.thumb = '<img src="https://img.youtube.com/vi/'+homeVideo+'/maxresdefault.jpg">';
-			// this.thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">';
+			// this.thumb  '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">';
 			self.thumb    = '<img src="https://img.youtube.com/vi/' + self.homeVideo + '/0.jpg">';
 			self.thumbSrc = 'https://img.youtube.com/vi/' + self.homeVideo + '/maxresdefault.jpg';
 			self.play     = '<div class="play"></div>';
