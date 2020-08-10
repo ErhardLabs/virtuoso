@@ -21,6 +21,20 @@ class EnqueueAssets {
 	public function __construct() {
 		add_action( 'wp_enqueue_scripts', [ $this, 'enqueue_assets' ] );
 		add_filter( 'stylesheet_uri', [ $this, 'replace_default_style_sheet' ], 10, 2 );
+		add_action( 'wp_head', [ $this, 'preload_fonts' ], 1 );
+	}
+
+	/**
+	 * Preload fonts in header
+	 *
+	 * @since 1.0.6
+	 *
+	 * @return void
+	 */
+	public function preload_fonts() {
+		?>
+			<link rel="preload" href="<?php echo esc_url( CHILD_URL ); ?>/assets/fonts/themify/themify.woff?-fvbane" as="font" type="font/woff" crossorigin="anonymous">
+		<?php
 	}
 
 	/**
