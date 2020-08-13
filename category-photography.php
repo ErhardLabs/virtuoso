@@ -37,8 +37,7 @@ function virtuoso_display_photography_archive_content() {
 				?>
 				<li>
 					<div class="portfolio_header_wrap">
-						<a class="portfolio_name" href="<?php echo esc_url( get_the_permalink() ); ?>"><span><?php echo esc_html( get_the_title() ); ?>
-						Photography</span></a>
+						<a class="portfolio_name" href="<?php echo esc_url( get_the_permalink() ); ?>"><span><?php echo esc_html( get_the_title() ); ?></span></a>
 						<a class="portfolio_view" href="<?php echo esc_url( get_the_permalink() ); ?>"><span>View</span></a>
 					</div>
 					<img class="single_slider_item" src="<?php echo esc_url( $image_attributes[0] ); ?>"/>
