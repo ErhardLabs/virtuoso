@@ -25,14 +25,12 @@ function virtuoso_display_videography_archive_content() {
 	if ( $loop->have_posts() ) {
 
 		?>
-		<div class="videography_slider_wrap"> 
+		<div class="videography_slider_wrap">
 		<?php
 
 			// loop through posts
 		while ( $loop->have_posts() ) :
 			$loop->the_post();
-
-			$title     = get_the_title() . ' Videography';
 			$permalink = get_the_permalink();
 
 			if ( have_rows( 'video_portfolio' ) ) :
@@ -53,7 +51,7 @@ function virtuoso_display_videography_archive_content() {
 								<?php $video_src = "https://www.youtube.com/embed/$video_id?rel=0&controls=1&enablejsapi=1"; ?>
 								<li class="slide">
 									<div class="portfolio_header_wrap">
-										<a class="portfolio_name" href="<?php echo esc_url( $permalink ); ?>"><span><?php echo esc_html( $title ); ?></span></a>
+										<a class="portfolio_name" href="<?php echo esc_url( $permalink ); ?>"><span><?php echo esc_html( get_the_title() ); ?></span></a>
 										<a class="portfolio_view" href="<?php echo esc_url( $permalink ); ?>"><span>View</span></a>
 									</div>
 									<div class="embed-container">
