@@ -281,13 +281,13 @@ import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'bo
 					let mainMenu       = $( '.header-web-application .nav-primary' );
 					let mainMenuButton = $( '.header-web-application .menu-toggle' );
 					if ( ! mainMenu.is( e.target ) && mainMenu.has( e.target ).length === 0 && ! mainMenuButton.is( e.target ) && mainMenuButton.has( e.target ).length === 0) {
-						$( '.menu-toggle, .sub-menu-toggle' )
+						$( '.header-web-application .menu-toggle, .sub-menu-toggle' )
 						  .removeClass( 'activated' )
 						  .attr( 'aria-expanded', false )
 						  .attr( 'aria-pressed', false );
-						$( '.menu-toggle' ).removeClass( 'activated' )
-						$( '.nav-primary' ).removeClass( 'mobile-menu-active' );
-						$( '.nav-primary' ).css( 'display', 'none' );
+						$( '.header-web-application .menu-toggle' ).removeClass( 'activated' );
+						$( '.header-web-application .nav-primary' ).removeClass( 'mobile-menu-active' );
+						$( '.header-web-application .nav-primary' ).css( 'display', 'none' );
 
 						clearAllBodyScrollLocks();
 					}
