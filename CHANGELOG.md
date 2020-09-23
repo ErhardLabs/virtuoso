@@ -1,3 +1,9 @@
+#### 1.0.7 (2020-09-23)
+
+##### Bug Fixes
+
+*  Fixed if ACF and BuddyPress isn't installed, the site would break. ([a811abda](https://github.com/ErhardLabs/virtuoso/commit/a811abda47e95ebedda4aedcf23c179523fae655))
+
 #### 1.0.6 (2020-08-07)
 
 ##### Bug Fixes
