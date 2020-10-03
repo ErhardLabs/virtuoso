@@ -3,8 +3,8 @@ defined('ABSPATH') || exit;
 
 if (is_user_logged_in()) : ?>
     <?php
-    if (function_exists('bp_loggedin_user_link()')) {
-        $user_link = bp_loggedin_user_link();
+    if (function_exists('bp_get_loggedin_user_link')) {
+        $user_link = bp_get_loggedin_user_link();
     } else {
         $user_link = '';
     }
