@@ -1,3 +1,9 @@
+#### 1.0.8 (2020-10-03)
+
+##### Bug Fixes
+
+*  Fixed logged_in_user_link not working in web application header menu. ([b347b526](https://github.com/ErhardLabs/virtuoso/commit/b347b5264d7e84f0ef32beceeeb421b6b5cf1ed1))
+
 #### 1.0.7 (2020-09-23)
 
 ##### Bug Fixes
