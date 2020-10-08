@@ -1,3 +1,31 @@
+#### 1.0.9 (2020-10-08)
+
+##### New Features
+
+*  Added makefile for continuous integration. ([53c7bf07](https://github.com/ErhardLabs/virtuoso/commit/53c7bf07a10e39a2e6d2031dc164406152a9dbd8))
+
+##### Bug Fixes
+
+*  Fixed logged_in_user_link not working in web application header menu. ([b347b526](https://github.com/ErhardLabs/virtuoso/commit/b347b5264d7e84f0ef32beceeeb421b6b5cf1ed1))
+*  Fixed if ACF and BuddyPress isn't installed, the site would break. ([a811abda](https://github.com/ErhardLabs/virtuoso/commit/a811abda47e95ebedda4aedcf23c179523fae655))
+*  Fixed front page error from incorrect namespace position. ([c78f6714](https://github.com/ErhardLabs/virtuoso/commit/c78f67140517283c1a5a69dedc6c06fc4ffc719e))
+*  Removed hash href value from slide out sidebar close button. ([3425524d](https://github.com/ErhardLabs/virtuoso/commit/3425524d019e24480798c4653f6e5785272f517e))
+*  Search query now in input value rather than placeholder. ([77a2592c](https://github.com/ErhardLabs/virtuoso/commit/77a2592cc5f545abb24086a3453045da169f363b))
+*  Mobile usability issues in footer. ([8eb9c0bc](https://github.com/ErhardLabs/virtuoso/commit/8eb9c0bc82ad75dab42faa65b8994cbb9a97f23f))
+*  Slick slider on visual photography template and primary nav not defaulting to inline-flex display. ([ef329b72](https://github.com/ErhardLabs/virtuoso/commit/ef329b722b50b2271cb4459cadf35c0c32760e7b))
+
+##### Other Changes
+
+* //github.com/ErhardLabs/virtuoso ([8c143cd3](https://github.com/ErhardLabs/virtuoso/commit/8c143cd3dfd9a6c4d52b021b90fef80df7644689))
+* //github.com/ErhardLabs/virtuoso ([53ba8eea](https://github.com/ErhardLabs/virtuoso/commit/53ba8eea724b5cd5f776b40f3fe3be4d5b56a331))
+* //github.com/ErhardLabs/virtuoso ([b63448e8](https://github.com/ErhardLabs/virtuoso/commit/b63448e8ef94a4eb1721546c2c154dbae21474f9))
+* //github.com/ErhardLabs/virtuoso ([b1143973](https://github.com/ErhardLabs/virtuoso/commit/b1143973be8a7f38935d8f4f11c23a0c1745acde))
+* //github.com/ErhardLabs/virtuoso ([2a606442](https://github.com/ErhardLabs/virtuoso/commit/2a6064421b804c0b64e79c727d140a4766771553))
+
+##### Performance Improvements
+
+*  Removed YouTube script loading on every page regardless if there was a background video. ([75468747](https://github.com/ErhardLabs/virtuoso/commit/7546874765f7a6cd6a2fd08f41b872d35c647058))
+
 #### 1.0.8 (2020-10-03)
 
 ##### Bug Fixes
