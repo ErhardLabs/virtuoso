@@ -3,7 +3,7 @@
  * Developer's Theme
  *
  * @package     ErhardLabs\Virtuoso
- * @since       1.0.8
+ * @since       1.0.9
  * @author      ErhardLabs
  * @link        https://sumnererhard.com https://graysonerhard.com
  * @license     GNU General Public License 2.0+
