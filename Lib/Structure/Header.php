@@ -19,8 +19,26 @@ defined( 'ABSPATH' ) || exit;
  */
 class Header {
 	public function __construct() {
-		add_action( 'genesis_after_header', [ $this, 'include_sexy_popup' ] );
-		add_action( 'genesis_after_header', [ $this, 'include_background_video' ] );
+		add_action( 'genesis_after_header', array( $this, 'include_sexy_popup' ) );
+		add_action( 'genesis_after_header', array( $this, 'include_background_video' ) );
+		remove_action( 'genesis_doctype', 'genesis_do_doctype' );
+		add_action( 'genesis_doctype', array( $this, 'virtuoso_doctype' ) );
+	}
+
+	/**
+	 * HTML5 doctype markup.
+	 *
+	 * @since 2.0.0
+	 */
+	public function virtuoso_doctype() {
+		?>
+		<!DOCTYPE html>
+		<html <?php language_attributes( 'html' ); ?>>
+		<head <?php echo genesis_attr( 'head' ); ?>>
+		<meta charset="<?php bloginfo( 'charset' ); ?>" />
+		<style>body{visibility: hidden;opacity:0;}</style>
+		<?php
+
 	}
 
 	/**
