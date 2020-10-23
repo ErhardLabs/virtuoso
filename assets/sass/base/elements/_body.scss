@@ -1,6 +1,8 @@
 
 html {
   font-size: $html--font-size; /* 10px browser default */
+  background: $body--background-color;
+  opacity: 1;
 }
 
 body {
@@ -12,11 +14,11 @@ body {
   font-weight: $base--font-weight;
   line-height: $base--line-height;
   margin: 0;
-  opacity: 0;
 
   // Fade in the body so that other animations are less choppy. Body will still display even if the browser has JS disabled
   &.body-loaded, &.virtuoso-no-js {
     opacity: 1;
-    transition: opacity 1s;
+    transition: opacity 1.5s;
+    visibility: visible;
   }
 }
