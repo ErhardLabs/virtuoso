@@ -10,6 +10,7 @@ mix-manifest.json
 
 # Sass cache
 .sass-cache/
+vendor
 
 # Development files
 /node_modules
