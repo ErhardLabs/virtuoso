@@ -135,9 +135,9 @@ class Menu {
 			case 'logo-middle':
 				include CHILD_DIR . '/Lib/Views/header-logo-middle.php';
 				break;
-			case 'web-application':
-				include CHILD_DIR . '/Lib/Views/header-web-application-search.php';
-				break;
+//			case 'web-application':
+//				include CHILD_DIR . '/Lib/Views/header-web-application-search.php';
+//				break;
 		}
 	}
 

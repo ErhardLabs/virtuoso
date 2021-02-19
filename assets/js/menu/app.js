@@ -1,2 +1,2 @@
 import './responsive-menu.js';
-import './user-profile-menu.js';
+import './web-application-menu.js';
