@@ -4,6 +4,10 @@ $(document).ready(function () {
     toggleMenu();
   });
 
+  $('.header-search-toggle').click(function(){
+    toggleSearch();
+  });
+
   function toggleMenu() {
     $('#user-menu-button').toggleClass('activated');
 
@@ -11,6 +15,16 @@ $(document).ready(function () {
       return attr === 'true' ? 'false' : 'true'
     });
     $('.virtuoso-user-profile-menu').attr('data-open', function (i, attr) {
+      return attr === 'true' ? 'false' : 'true'
+    });
+  }
+
+  function toggleSearch() {
+    $('.header-search-container').toggleClass('activated');
+
+    $('.header-search-toggle').toggleClass('activated')
+
+    $('.header-search-container').attr('aria-expanded', function (i, attr) {
       return attr === 'true' ? 'false' : 'true'
     });
   }
