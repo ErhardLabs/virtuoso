@@ -34,7 +34,9 @@ class Menu {
 
 		add_filter( 'wp_nav_menu_args', [ $this, 'setup_secondary_menu_args' ] );
 
-		add_filter( 'genesis_header', [ $this, 'render_header_menu_html' ], 15 );
+		if ( 'web-application' === $this->header_menu_layout ) {
+			add_action( 'genesis_header', 'Virtuoso\Lib\Structure\Menu::render_header_menu_html', 15 );
+		}
 
 		add_filter( 'genesis_after_header', [ $this, 'render_after_header_menu_html' ] );
 
@@ -43,6 +45,7 @@ class Menu {
 		add_filter( 'wp_nav_menu_items', [ $this, 'add_cart_count_to_navigation' ], 10, 2 );
 
 		add_filter( 'woocommerce_add_to_cart_fragments', [ $this, 'add_to_cart_fragments' ], 10, 1 );
+
 	}
 
 	/**
@@ -63,6 +66,7 @@ class Menu {
 		}
 
 		remove_action( 'genesis_after_header', 'genesis_do_subnav' );
+
 	}
 
 	/**
@@ -119,10 +123,8 @@ class Menu {
 	 *
 	 * @since 2.4.2
 	 */
-	public function render_header_menu_html() {
-		if ( 'web-application' === $this->header_menu_layout ) {
-			include CHILD_DIR . '/Lib/Views/header-web-application.php';
-		}
+	public static function render_header_menu_html() {
+		include CHILD_DIR . '/Lib/Views/header-web-application.php';
 	}
 
 	/**
@@ -135,9 +137,6 @@ class Menu {
 			case 'logo-middle':
 				include CHILD_DIR . '/Lib/Views/header-logo-middle.php';
 				break;
-//			case 'web-application':
-//				include CHILD_DIR . '/Lib/Views/header-web-application-search.php';
-//				break;
 		}
 	}
 
