@@ -46,6 +46,28 @@ class Menu {
 
 		add_filter( 'woocommerce_add_to_cart_fragments', [ $this, 'add_to_cart_fragments' ], 10, 1 );
 
+		add_action( 'virtuoso_user_profile_menu_links', [ $this, 'add_user_profile_menu_links' ], 5 );
+
+	}
+
+	/**
+	 * Adds user profile menu links
+	 *
+	 * @return void
+	 */
+	public function add_user_profile_menu_links() {
+		if ( function_exists( 'bp_get_loggedin_user_link' ) ) {
+			$user_link = bp_get_loggedin_user_link();
+		} else {
+			$user_link = '';
+		}
+
+		?>
+		<li><a href="<?php echo esc_url($user_link); ?>">Profile</a></li>
+		<li class="user-profile-sep-after"><a href="<?php echo esc_url($user_link).'notifications'; ?>">Notifications</a></li>
+		<li class="user-profile-sep-before"><a href="<?php echo esc_url($user_link).'settings'; ?>">Settings</a></li>
+		<li><a href="<?php echo esc_url(wp_logout_url()); ?>&redirect_to=/>">Logout</a></li>
+		<?php
 	}
 
 	/**
